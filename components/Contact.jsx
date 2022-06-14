@@ -5,7 +5,9 @@ import { IoIosMail, IoIosPaper } from "react-icons/Io";
 const Contact = () => {
   return (
     <div className="h-screen flex flex-col justify-center items-center">
-      <p className="text-4xl font-bold text-center">Keep in Touch!</p>
+      <p className="text-4xl md:text-5xl font-bold text-center">
+        Keep in Touch!
+      </p>
       <p className="text-center mt-6 text-neutral-400">
         I'm currently specialising in{" "}
         <span className="text-cyan-400">Full Stack Development</span>.
@@ -25,8 +27,8 @@ const Contact = () => {
         <LinkUI title="Email" link="mailto:writetovishnuvinod@gmail.com">
           <IoIosMail className="fill-cyan-400" />
         </LinkUI>
-
-        <LinkUI title="Resume" link="">
+        {/* todo */}
+        <LinkUI title="Resume" link="/">
           <IoIosPaper className="fill-cyan-400" />
         </LinkUI>
       </div>
