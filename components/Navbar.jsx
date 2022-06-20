@@ -7,13 +7,9 @@ import {
   useDisclosure,
   Button,
   DrawerHeader,
-  enableTransition,
-  Box,
-  Slide,
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { AiOutlineMenu } from "react-icons/ai";
-import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -58,7 +54,7 @@ export default function Navbar() {
           </DrawerHeader>
 
           <DrawerBody onClick={onClose}>
-            <div className="text-2xl">{LinkElements}</div>
+            <div className="text-2xl space-y-4">{LinkElements}</div>
           </DrawerBody>
         </DrawerContent>
       </Drawer>
