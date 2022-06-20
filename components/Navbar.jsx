@@ -24,12 +24,8 @@ export default function Navbar() {
           Home
         </p>
       </Link>
-      <Link href="#about" passHref>
-        <p className="px-2 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
-          About
-        </p>
-      </Link>
-      <Link href="#projects" passHref>
+
+      <Link href="/projects" passHref>
         <p className="px-2 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
           Project
         </p>
@@ -79,7 +75,7 @@ export default function Navbar() {
             <AiOutlineMenu className="w-7 h-7" />
           </Button>
         </div>
-        <div className="text-gray-300 hidden text-xl xl:gap-6 sm:flex gap-2">
+        <div className="text-gray-300 text-lg font-medium hidden xl:gap-8 sm:flex gap-8">
           {LinkElements}
         </div>
       </div>
