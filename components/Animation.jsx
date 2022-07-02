@@ -40,7 +40,9 @@ const Animation = () => {
             style={{ opacity: opacityForBlock(progress, 0) }}
           >
             A 20-year-old based in India, currently pursuing Engineering Design
-            from IIT Madras.
+            from <a className="text-cyan-300" href="https://www.iitm.ac.in/">
+                IIT Madras
+              </a>
           </div>
           <span
             className={`${s.skillText} inline-block after:content-['_']`}
@@ -54,7 +56,9 @@ const Animation = () => {
             style={{ opacity: opacityForBlock(progress, 2) }}
           >
             I'm interested in building something awesome or automate tasks with
-            code, currently focused on Web & Mobile Full-Stack Development.
+            code, currently focused on <span className="text-cyan-300">
+            Web & Mobile Full-Stack Development.
+            </span>
           </span>
         </div>
       </div>
