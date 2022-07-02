@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <>
       <SlideUpWhenVisible>
-    <div className="flex flex-wrap">
+    <div className="grid md:grid-cols-2">
       <div>
           <p className="text-3xl mt-16">💪Projects</p>
           <p className="text-gray-400 md:text-xl">

@@ -1,12 +1,14 @@
 import { SiGithub } from "react-icons/si";
 import { MdPreview } from "react-icons/md";
-import { Image } from "@chakra-ui/react";
+import Image from "next/image";
 
 const ProjectCard = () => {
     return (<div>
-        <div className="bg-slate-900 border-gray-700 border p-2 w-[45vw] rounded-md">
+        <div className="bg-slate-900 border-gray-700 border sm: p-2 rounded-md">
             <div className="rounded-md">
-                <Image src="/me.png" width='45vw' height='34vh' />
+                <img src="/me.png" alt='todo' />
+            
+           
             </div>    
             <div className="flex justify-between">
                 <p className="sm:text-xl md:text-3xl">Opinionmeter</p>

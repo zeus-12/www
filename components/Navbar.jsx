@@ -1,18 +1,13 @@
-import {
-  Drawer,
-  DrawerBody,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  Button,
-  DrawerHeader,
-} from "@chakra-ui/react";
+import { Burger, Drawer } from "@mantine/core";
 import Link from "next/link";
-import { AiOutlineMenu } from "react-icons/ai";
+import { useState } from "react";
 
 export default function Navbar() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  
+  //for the burger & drawer
+  const [opened, setOpened] = useState(false);
+  const title = opened ? 'Close navigation' : 'Open navigation';
+  
   const LinkElements = (
     <>
       <Link href="/" passHref>
@@ -23,7 +18,7 @@ export default function Navbar() {
 
       <Link href="/projects" passHref>
         <p className="px-2 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
-          Project
+          Projects
         </p>
       </Link>
       <Link href="#contact" passHref>
@@ -35,47 +30,72 @@ export default function Navbar() {
   );
 
   const Logo = (
-    <div className="flex items-center">
-      <p className="text-3xl font-bold">
-        <span className="text-gray-400">&#x0007B;</span>V
-        <span className="text-gray-400">&#x0007D;</span>
-      </p>
-    </div>
+    <Link href='/' passHref >
+      <div className="flex items-center hover:cursor-pointer">
+        <p className="text-3xl font-bold">
+          <span className="text-gray-400">&#x0007B;</span>V
+          <span className="text-gray-400">&#x0007D;</span>
+        </p>
+      </div>
+    </Link>
   );
 
   const NavbarDrawer = (
     <div>
-      <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay />
-        <DrawerContent bg="black" className="flex justify-center ">
-          <DrawerHeader className="border-b-[1px] border-gray-800 flex items-center">
-            <div className="">{Logo}</div>
-            <DrawerCloseButton />
-          </DrawerHeader>
-
-          <DrawerBody onClick={onClose}>
-            <div className="text-2xl space-y-4">{LinkElements}</div>
-          </DrawerBody>
-        </DrawerContent>
+      <Drawer
+        className="pt-4 px-2 bg-black"
+        onClick={() => setOpened(false)}
+        opened={opened}
+        position="top"
+        size="100vh"
+        onClose={() => setOpened(false)}
+        overlayOpacity={0.55}
+        overlayBlur={3}
+        withCloseButton={false}
+        zIndex={20}
+      >
+        <div className="text-2xl pt-16 space-y-4">
+        {LinkElements}
+        </div>
       </Drawer>
+     
     </div>
   );
 
-  return (
-    <>
-      <div className="px-6 border-b-[1px] border-gray-800 w-screen h-16 bg-black fixed top-0 flex justify-between items-center ">
-        {Logo}
 
-        <div className="sm:hidden">
-          <Button colorScheme onClick={onOpen}>
-            <AiOutlineMenu className="w-7 h-7" />
-          </Button>
+  return (
+    <div>
+      <div className="px-6 border-b-[1px] border-gray-800 w-screen h-16 bg-black fixed top-0 flex justify-between items-center z-50 ">
+        {Logo}
+        <div className="sm:hidden" >
+          <Burger
+            color="#45f50d"
+            opened={opened}
+            onClick={() => setOpened((o) => !o)}
+            title={title}
+          />
         </div>
-        <div className="text-gray-300 text-lg font-medium hidden xl:gap-8 sm:flex gap-8">
+
+        {/* so that the burger icon remains in the case--- you open the burger icon then increases the size */}
+        { opened && (<div className="hidden sm:flex">
+          <Burger
+            color="#45f50d"
+            opened={opened}
+            onClick={() => setOpened((o) => !o)}
+            title={title}
+          />
+        </div>)}
+        {
+          !opened && 
+          (<div className="text-gray-300 text-lg font-medium hidden xl:gap-8 sm:flex gap-8">
           {LinkElements}
-        </div>
+        </div>)
+        }
       </div>
-      {NavbarDrawer}
-    </>
+
+      <div className="absolute top-10">
+        {NavbarDrawer}
+      </div>
+    </div>
   );
 }

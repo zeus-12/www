@@ -2,7 +2,7 @@ import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { IoIosMail } from "react-icons/io";
 import LinkBox from "../components/LinkBox";
-import { Image } from "@chakra-ui/react";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -48,9 +48,9 @@ const Hero = () => {
           </div>
         </SlideUpWhenVisible>
       </div>
-      <div className="rounded-md self-end w-full mt-4 lg:mt-0 lg:w-1/2">
+      <div className="rounded-xl self-end w-full mt-4 lg:mt-0 lg:w-1/2">
         <SlideUpWhenVisible>
-          <Image className="rounded-xl" src="/me2.png" alt="Vishnu Vinod" />
+          <img className="rounded-xl" src="/me2.png" alt="Vishnu Vinod" />
         </SlideUpWhenVisible>
       </div>
     </div>

@@ -17,8 +17,8 @@ export default function Home() {
       <Hero />
       <Animation />
 
-      {/* <About /> */}
-      {/* <Projects /> */}
+      <About />
+      <Projects />
       {/* blogs ? */}
       <Contact />
       {/* github, linkedIn, Email */}
