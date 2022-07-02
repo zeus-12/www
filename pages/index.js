@@ -18,10 +18,33 @@ export default function Home() {
       <Animation />
 
       {/* <About /> */}
-      <Projects />
+      {/* <Projects /> */}
       {/* blogs ? */}
       <Contact />
       {/* github, linkedIn, Email */}
     </div>
   );
 }
+// put this somewhere
+
+// When I'm not coding I play games with my friends, binge
+//               shows/movies, sit down for a good game of chess, or if the
+//               weather's good, play basketball! 🏀 I also love listening to
+// Hip - Hop, Pop & Lo - Fi music.
+
+// I've been close to a computer since an early age, and been
+//               passionate about it ever since. I started out building websites
+//               using no-code tools back in 2012, infact i still remember
+//               deploying my{" "}
+//               <a
+//                 className="text-blue-300"
+//                 href="https://speedcubing3.weebly.com"
+//               >
+//                 first website
+//               </a>{" "}
+//               on{" "}
+//               <a className="text-blue-300" href="https://www.weebly.com">
+//                 Weebly
+//               </a>{" "}
+//               ,though it was just a really basic one, it still got a special
+//               place in my ❤️.
