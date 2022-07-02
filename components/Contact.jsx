@@ -1,7 +1,7 @@
 import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
 import LinkBox from "./LinkBox";
-import { SiLinkedin } from "react-icons/Si";
-import { IoIosMail, IoIosPaper } from "react-icons/Io";
+import { SiLinkedin } from "react-icons/si";
+import { IoIosMail, IoIosPaper } from "react-icons/io";
 
 const Contact = () => {
   return (

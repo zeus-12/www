@@ -1,6 +1,6 @@
 import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
-import { SiGithub, SiLinkedin } from "react-icons/Si";
-import { IoIosMail } from "react-icons/Io";
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { IoIosMail } from "react-icons/io";
 import LinkBox from "../components/LinkBox";
 import { Image } from "@chakra-ui/react";
 
