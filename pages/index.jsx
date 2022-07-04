@@ -1,13 +1,31 @@
-import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
-import Image from "next/image";
-const OldAbout = () => {
+import Head from "next/head";
+import AboutMe from "../components/AboutMe";
+import Contact from "../components/Contact";
+import Hero from "../components/Hero";
+import ProjectsSection from "../components/ProjectsSection";
+
+export default function Home() {
   return (
-    <div className="mt-48">
-      <SlideUpWhenVisible>
-        <p className="text-2xl">⚡️About Me</p>
-        <div className="flex flex-col md:flex-row gap-4 mt-2 justify-between">
-          <div className="text-neutral-400 flex flex-col gap-3 md:w-2/3 md:max-w-2xl">
-            <p>
+    <div className="p-4 mt-6 sm:mx-4 md:p-8 lg:px-12 lg:pt-16">
+      <Head>
+        <title>Vishnu Vinod - Software Engineer</title>
+        <meta name="description" content="Portfolio Website" />
+        {/* TODO change  */}
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Hero />
+      <AboutMe />
+
+      {/* <ProjectsSection /> */}
+      {/* blogs ? */}
+      <Contact />
+      {/* github, linkedIn, Email -- footer */}
+    </div>
+  );
+}
+// put this somewhere
+{
+  /* <p>
               I've been close to a computer since an early age, and been
               passionate about it ever since. I started out building websites
               using no-code tools back in 2012, infact i still remember
@@ -32,19 +50,5 @@ const OldAbout = () => {
               shows/movies, sit down for a good game of chess, or if the
               weather's good, play basketball! 🏀 I also love listening to
               Hip-Hop, Pop & Lo-Fi music.
-            </p>
-          </div>
-          <div className="rounded-md w-full md:w-1/3">
-            <SlideUpWhenVisible>
-              <div className="rounded-xl">
-                {/* <Image layout="intrinsic" src="/me2.png" alt="Vishnu Vinod" /> */}
-              </div>
-            </SlideUpWhenVisible>
-          </div>
-        </div>
-      </SlideUpWhenVisible>
-    </div>
-  );
-};
-
-export default OldAbout;
+            </p> */
+}
