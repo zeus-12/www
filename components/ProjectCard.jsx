@@ -1,14 +1,7 @@
 import { SiGithub } from "react-icons/si";
 import { MdPreview } from "react-icons/md";
-import {
-  Card,
-  Image,
-  Text,
-  Badge,
-  Button,
-  Group,
-  useMantineTheme,
-} from "@mantine/core";
+import { Card, Text, Badge, Button, Group } from "@mantine/core";
+import Image from "next/image";
 
 const ProjectCard = () => {
   return (
@@ -16,17 +9,27 @@ const ProjectCard = () => {
       className="bg-slate-900 border-[1px] border-gray-800 p-0 text-white"
       shadow="sm"
     >
-      <Image
+      <div className="group relative aspect-[45/22] rounded-lg">
+        {/* todo : remove domain from nextconfig */}
+        <Image
+          src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
+          layout="fill"
+          // width={160}
+          // height={90}
+          className="rounded-lg"
+        />
+      </div>
+      {/* <Image
         src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
         height={160}
         alt="Norway"
-      />
+      /> */}
 
       <div className="p-1 md:p-2 flex justify-between">
         <p>Opiniometer</p>
         <div className="flex items-center gap-x-2">
-          <SiGithub className="w-5 h-5" />
-          <MdPreview className="w-6 h-6" />
+          <SiGithub className="w-5 hover:cursor-pointer h-5" />
+          <MdPreview className="w-6 hover:cursor-pointer h-6" />
         </div>
       </div>
       <div className="mb-2 px-1 md:px-2">
