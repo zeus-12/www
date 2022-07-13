@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <AboutMe />
 
-      {/* <ProjectsSection /> */}
+      <ProjectsSection />
       {/* blogs ? */}
       <Contact />
       {/* github, linkedIn, Email -- footer */}
