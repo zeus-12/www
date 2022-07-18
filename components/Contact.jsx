@@ -33,10 +33,13 @@ const Contact = () => {
           </LinkBox>
 
           <LinkBox title="Email" link="mailto:writetovishnuvinod@gmail.com">
-            <IoIosMail className="fill-cyan-400" />
+            <IoIosMail className="fill-cyan-400 h-5 w-5" />
           </LinkBox>
           {/* todo */}
-          <LinkBox title="Resume" link="/">
+          <LinkBox
+            title="Resume"
+            link="https://drive.google.com/file/d/1aNXtbkgUGUPiPhkFgH1n8j0dRdik7V7q/view?usp=sharing"
+          >
             <IoIosPaper className="fill-cyan-400" />
           </LinkBox>
         </div>
