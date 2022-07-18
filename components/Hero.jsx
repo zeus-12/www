@@ -48,7 +48,7 @@ const Hero = () => {
           </div>
         </SlideUpWhenVisible>
       </div>
-      <div className="rounded-xl self-end w-full mt-4 lg:mt-0 lg:w-1/2">
+      <div className="rounded-xl self-end mr-auto mt-4 lg:mt-0">
         <SlideUpWhenVisible>
           {/* <img className="rounded-xl" src="/me2.png" alt="Vishnu Vinod" /> */}
           <Image
