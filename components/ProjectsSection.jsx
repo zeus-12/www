@@ -6,12 +6,12 @@ const ProjectsSection = () => {
   return (
     <>
       <SlideUpWhenVisible>
-        <div className="md:flex gap-4 space-y-4 block">
-          <div className="space-y-16">
-            <div>
+        <div className="md:flex p-8 sm:gap-14 block space-y-6 sm:space-y-0">
+          <div className="space-y-6 sm:space-y-12">
+            <div className="">
               <p className="text-2xl mt-16">💪Projects</p>
               <p className="text-gray-400 mt-2">
-                Here are some of the projects that I have worked on.
+                Here are some of my favourite projects that I have worked on.
               </p>
               <Link href="/projects" passHref={true}>
                 <p className="text-cyan-400 hover:cursor-pointer">
@@ -23,7 +23,7 @@ const ProjectsSection = () => {
             <ProjectCard />
           </div>
 
-          <div>
+          <div className="space-y-6">
             <ProjectCard />
             <ProjectCard />
           </div>
