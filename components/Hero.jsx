@@ -43,14 +43,21 @@ const Hero = () => {
             </LinkBox>
 
             <LinkBox title="Email" link="mailto:writetovishnuvinod@gmail.com">
-              <IoIosMail className="fill-cyan-400" />
+              <IoIosMail className="fill-cyan-400 h-5 w-5" />
             </LinkBox>
           </div>
         </SlideUpWhenVisible>
       </div>
       <div className="rounded-xl self-end w-full mt-4 lg:mt-0 lg:w-1/2">
         <SlideUpWhenVisible>
-          <img className="rounded-xl" src="/me2.png" alt="Vishnu Vinod" />
+          {/* <img className="rounded-xl" src="/me2.png" alt="Vishnu Vinod" /> */}
+          <Image
+            className="rounded-xl"
+            width="500px"
+            height="390px"
+            src="/me2.png"
+            alt="Vishnu Vinod"
+          />
         </SlideUpWhenVisible>
       </div>
     </div>
