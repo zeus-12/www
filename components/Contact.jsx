@@ -2,6 +2,7 @@ import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
 import LinkBox from "./LinkBox";
 import { SiLinkedin } from "react-icons/si";
 import { IoIosMail, IoIosPaper } from "react-icons/io";
+import Link from "next/link";
 
 const Contact = () => {
   return (
@@ -31,17 +32,27 @@ const Contact = () => {
           >
             <SiLinkedin className="fill-cyan-400" />
           </LinkBox>
-
           <LinkBox title="Email" link="mailto:writetovishnuvinod@gmail.com">
             <IoIosMail className="fill-cyan-400 h-5 w-5" />
           </LinkBox>
-          {/* todo */}
-          <LinkBox
+
+          <div className="cursor-pointer inline-flex gap-1 items-center px-2 py-1 rounded-md bg-gray-900 hover:bg-gray-700">
+            <IoIosPaper className="fill-cyan-400" />
+            <Link
+              href="/resume.pdf"
+              alt="resume"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Resume
+            </Link>
+          </div>
+          {/* <LinkBox
             title="Resume"
             link="https://drive.google.com/file/d/1aNXtbkgUGUPiPhkFgH1n8j0dRdik7V7q/view?usp=sharing"
           >
             <IoIosPaper className="fill-cyan-400" />
-          </LinkBox>
+          </LinkBox> */}
         </div>
       </SlideUpWhenVisible>
     </div>
