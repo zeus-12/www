@@ -48,16 +48,31 @@ const Hero = () => {
           </div>
         </SlideUpWhenVisible>
       </div>
-      <div className="rounded-xl self-end mr-auto mt-4 lg:mt-0">
+      <div className="rounded-xl self-end  mx-auto lg:mr-auto mt-4 lg:mt-0">
         <SlideUpWhenVisible>
           {/* <img className="rounded-xl" src="/me2.png" alt="Vishnu Vinod" /> */}
-          <Image
-            className="rounded-xl"
-            width="500px"
-            height="390px"
-            src="/me2.png"
-            alt="Vishnu Vinod"
-          />
+          <div className="hidden lg:flex">
+            <Image
+              className="rounded-xl"
+              width="500px"
+              height="390px"
+              src="/me2.png"
+              alt="Vishnu Vinod"
+              priority
+            />
+          </div>
+
+          <div className="lg:hidden">
+            <Image
+              className="rounded-xl"
+              layout=""
+              width="750px"
+              height="585px"
+              src="/me2.png"
+              alt="Vishnu Vinod"
+              priority
+            />
+          </div>
         </SlideUpWhenVisible>
       </div>
     </div>
