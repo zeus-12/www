@@ -2,20 +2,23 @@ import Head from "next/head";
 import AboutMe from "../components/AboutMe";
 import Contact from "../components/Contact";
 import Hero from "../components/Hero";
-import ProjectsSection from "../components/ProjectsSection";
+import Projects from "../components/Projects";
 
 export default function Home() {
   return (
-    <div className="p-4 mt-6 sm:mx-4 md:p-8 lg:px-12 lg:pt-16">
+    <div className="py-4 mt-6 md:py-8 lg:pt-16">
       <Head>
         <title>Vishnu Vinod - Software Engineer</title>
         <meta name="description" content="Portfolio Website" />
         {/* TODO change  */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
-      <AboutMe />
 
+      <div className="px-4 sm:mx-4 lg:px-12 md:px-8">
+        <Hero />
+        <AboutMe />
+      </div>
+      <Projects />
       {/* <ProjectsSection /> */}
       {/* blogs ? */}
       <Contact />

@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react";
-import { ScrollContext } from "./ScrollObserver";
 import s from "../styles/skills.module.css";
+import { ScrollContext } from "../utils/ScrollObserver";
 
 const opacityForBlock = (sectionProgress, blockNo) => {
   const progress = sectionProgress - blockNo;
@@ -33,7 +33,7 @@ const AboutMe = () => {
 
   return (
     <div ref={refContainer} className="bg-black text-white">
-      <div className="min-h-screen max-w-5xl mx-auto px-4 lg:px-8 py-24 md:py-28 lg:py-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold">
+      <div className="min-h-screen max-w-5xl mx-auto px-4 lg:px-8 pt-24 pb-4 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold">
         <div className="leading-[1.15] space-y-4">
           <p className="mb-2 text-gray-300">⚡️</p>
           <div
@@ -67,6 +67,8 @@ const AboutMe = () => {
               Web & Mobile Full-Stack Development.
             </span>
           </span>
+          {/* emoji for the next section */}
+          <p className="pt-32 text-gray-300">💪</p>
         </div>
       </div>
     </div>
