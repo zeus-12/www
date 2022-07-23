@@ -68,7 +68,12 @@ const AboutMe = () => {
             </span>
           </span>
           {/* emoji for the next section */}
-          <p className="pt-32 text-gray-300">💪</p>
+          <p id="projects" className="pt-32 text-gray-300">
+            💪{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fdd819] to-[#e80505] ">
+              Favourite Projects
+            </span>
+          </p>
         </div>
       </div>
     </div>

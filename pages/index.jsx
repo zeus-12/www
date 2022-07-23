@@ -11,7 +11,7 @@ export default function Home() {
         <title>Vishnu Vinod - Software Engineer</title>
         <meta name="description" content="Portfolio Website" />
         {/* TODO change  */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
       </Head>
 
       <div className="px-4 sm:mx-4 lg:px-12 md:px-8">
