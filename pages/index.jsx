@@ -10,7 +10,6 @@ export default function Home() {
       <Head>
         <title>Vishnu Vinod - Software Engineer</title>
         <meta name="description" content="Portfolio Website" />
-        {/* TODO change  */}
         <link rel="icon" href="/icon.ico" />
       </Head>
 
@@ -19,10 +18,7 @@ export default function Home() {
         <AboutMe />
       </div>
       <Projects />
-      {/* <ProjectsSection /> */}
-      {/* blogs ? */}
       <Contact />
-      {/* github, linkedIn, Email -- footer */}
     </div>
   );
 }
