@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import { MantineProvider } from "@mantine/core";
-import ScrollObserver from "../components/ScrollObserver";
+import ScrollObserver from "../utils/ScrollObserver";
 
 function MyApp({ Component, pageProps }) {
   return (
