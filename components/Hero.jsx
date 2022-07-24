@@ -18,7 +18,7 @@ const Hero = () => {
             👋 Hey there!, I'm-
           </p>
           <p className="text-7xl font-bold md:text-8xl lg:text-9xl block">
-            Vishnu Vinod.
+            Vishnu Vinod
           </p>
           <p className="text-xl mt-4 font-medium sm:text-3xl sm:w-5/6 md:w-3/4 xl:w-2/3">
             Software Engineer.
