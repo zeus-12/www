@@ -4,7 +4,6 @@ import { BiSearch } from "react-icons/bi";
 const Projects = () => {
   const [value, setValue] = useState("");
 
-  //projects
   const projectData = [
     {
       title: "",
