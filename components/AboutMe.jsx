@@ -67,6 +67,7 @@ const AboutMe = () => {
               Web & Mobile Full-Stack Development.
             </span>
           </span>
+
           {/* emoji for the next section */}
           <p id="projects" className="pt-32 text-gray-300">
             💪{" "}
