@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 function Document() {
   return (
-    <Html className="scroll-smooth">
+    <Html className="scroll-smooth scroll-mt-6">
       <Head />
       <body>
         <Main />
