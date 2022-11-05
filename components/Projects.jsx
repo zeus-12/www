@@ -2,7 +2,7 @@ import { TileWrapper, TileBackground, Tile } from "./Tile";
 import { ProjectBackground, ProjectLeft, ProjectRight } from "./Project";
 import Image from "next/image";
 import { Tooltip } from "@mantine/core";
-// import Link from "next/link";
+
 const Projects = () => {
   return (
     <TileWrapper numOfPages={3}>
@@ -29,11 +29,11 @@ const Projects = () => {
               </ProjectLeft>
 
               <ProjectRight progress={progress}>
-                <div className="hover:scale-105 hover:cursor-pointer transition transform duration-100 ease-out">
+                <div className="hover:scale-[102%] hover:cursor-pointer transition transform duration-100 ease-out">
                   <Image
-                    className="rounded-sm"
-                    width="2880px"
-                    height="1800px"
+                    className="w-screen h-auto mx-auto md:w-[95vw] lg:w-[50vw] rounded-md"
+                    width={500}
+                    height={500}
                     src="/atmora.png"
                     alt="Atmora"
                   />
@@ -54,12 +54,12 @@ const Projects = () => {
                 </a>
               </ProjectLeft>
               <ProjectRight progress={progress}>
-                <div className="hover:scale-105 hover:cursor-pointer transition transform duration-100 ease-out">
+                <div className="hover:scale-[102%] hover:cursor-pointer transition transform duration-100 ease-out">
                   <a href="https://www.freemediaheckyeah.ml">
                     <Image
-                      className="rounded-sm"
-                      width="2880px"
-                      height="1800px"
+                      className="w-screen h-auto mx-auto md:w-[95vw] lg:w-[50vw] rounded-md"
+                      width={500}
+                      height={500}
                       src="/fmhy.png"
                       alt="fmhy"
                     />
@@ -81,12 +81,12 @@ const Projects = () => {
                 </a>
               </ProjectLeft>
               <ProjectRight progress={progress}>
-                <div className="hover:scale-105 hover:cursor-pointer transition transform duration-100 ease-out">
+                <div className="hover:scale-[102%] hover:cursor-pointer transition transform duration-100 ease-out">
                   <a href="https://www.deankuriakose.in">
                     <Image
-                      className="rounded-sm"
-                      width="2880px"
-                      height="1800px"
+                      className="w-screen h-auto mx-auto md:w-[95vw] lg:w-[50vw] rounded-md"
+                      width={500}
+                      height={500}
                       src="/mpportal.png"
                       alt="mp portal"
                     />
