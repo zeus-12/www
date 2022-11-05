@@ -2,29 +2,45 @@ import { SiGithub } from "react-icons/si";
 import { MdPreview } from "react-icons/md";
 import { Card, Text, Badge, Button, Group } from "@mantine/core";
 import Image from "next/image";
+import Link from "next/link";
 
-const ProjectCard = () => {
+const ProjectCard = ({
+  deployedLink,
+  githubLink,
+  description,
+  title,
+  imageSrc,
+}) => {
   return (
     <Card
-      className="bg-slate-900 border-[1px] border-gray-800 p-0 text-white"
+      className="bg-slate-900 border-[1px] border-gray-800 p-0 text-white hover:scale-[102%] transition-all duration-200"
       shadow="sm"
     >
       <div className="group relative aspect-[45/22] rounded-lg">
-        {/* todo : remove domain from nextconfig */}
-        {/* <Image
-          src="https://images.unsplash.com/photo-1527004013197-933c4bb611b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=720&q=80"
+        <Image
+          src={imageSrc}
+          loader={<div className="bg-blue-400 ">asdf</div>}
           layout="fill"
           // width={160}
           // height={90}
           className="rounded-lg"
-        /> */}
+        />
       </div>
 
       <div className="p-1 md:p-2 flex justify-between">
-        <p>Opiniometer</p>
+        <p>{title}</p>
         <div className="flex items-center gap-x-2">
-          <SiGithub className="w-5 hover:cursor-pointer h-5" />
-          <MdPreview className="w-6 hover:cursor-pointer h-6" />
+          {githubLink && (
+            <Link href={githubLink}>
+              <SiGithub className="w-5 hover:cursor-pointer h-5" />
+            </Link>
+          )}
+
+          {deployedLink && (
+            <Link href={deployedLink}>
+              <MdPreview className="w-6 hover:cursor-pointer h-5" />
+            </Link>
+          )}
         </div>
       </div>
       <div className="mb-2 px-1 md:px-2">
@@ -33,10 +49,7 @@ const ProjectCard = () => {
         </Badge>
       </div>
 
-      <p className="text-gray-400 p-1 md:p-2">
-        With Fjord Tours you can explore more of the magical fjord landscapes
-        with tours and activities on and around the fjords of Norway
-      </p>
+      <p className="text-gray-400 p-1 md:p-2 text-ellipsis">{description}</p>
     </Card>
 
     // <div className="min-h-[320px] max-h-[520px]">

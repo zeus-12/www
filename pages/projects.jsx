@@ -1,6 +1,7 @@
 import { TextInput } from "@mantine/core";
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
+import ProjectCard from "../components/ProjectCard";
 const Projects = () => {
   const [value, setValue] = useState("");
 
@@ -9,7 +10,15 @@ const Projects = () => {
       title: "",
       description: "",
       techStack: [],
-      githubLink: "",
+      githubLink: "asdf",
+      deployedLink: "asdfas",
+      imageSrc: "",
+    },
+    {
+      title: "",
+      description: "",
+      techStack: [],
+      githubLink: "asdfsa",
       deployedLink: "",
       imageSrc: "",
     },
@@ -18,15 +27,7 @@ const Projects = () => {
       description: "",
       techStack: [],
       githubLink: "",
-      deployedLink: "",
-      imageSrc: "",
-    },
-    {
-      title: "",
-      description: "",
-      techStack: [],
-      githubLink: "",
-      deployedLink: "",
+      deployedLink: "asdf",
       imageSrc: "",
     },
     {
@@ -40,7 +41,7 @@ const Projects = () => {
   ];
   return (
     <div className="pt-8 px-8">
-      <p className="text-2xl md:text-3xl lg:text-4xl font-semibold ">
+      <p className="text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight">
         Projects
       </p>
       <p className="text-gray-400">
@@ -56,6 +57,17 @@ const Projects = () => {
         value={value}
         onChange={(event) => setValue(event.currentTarget.value)}
       />
+
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 mt-4">
+        {projectData.map((project) => (
+          <ProjectCard
+            deployedLink={project.deployedLink}
+            githubLink={project.githubLink}
+            description={project.description}
+            title={project.title}
+          />
+        ))}
+      </div>
     </div>
   );
 };
