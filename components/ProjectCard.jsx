@@ -19,7 +19,7 @@ const ProjectCard = ({
       <div className="group relative aspect-[45/22] rounded-lg">
         <Image
           src={imageSrc}
-          loader={<div className="bg-blue-400 ">asdf</div>}
+          // loader={<div className="bg-blue-400 ">asdf</div>}
           layout="fill"
           // width={160}
           // height={90}
