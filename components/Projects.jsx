@@ -2,100 +2,97 @@ import { TileWrapper, TileBackground, Tile } from "./Tile";
 import { ProjectBackground, ProjectLeft, ProjectRight } from "./Project";
 import Image from "next/image";
 import { Tooltip } from "@mantine/core";
-// import Link from "next/link";
+import Link from "next/link";
+
 const Projects = () => {
+  const projects = [
+    {
+      title: "Mentora",
+      description:
+        "Built an All-in-one Academics app for students of the campus, where they could ask doubts, upload notes, apply for a study-buddy (or tutor), and also a detailed course page scraped from institute department websites.",
+      src: "mentora",
+      wip: false,
+      deployedUrl: "https://mentora.cf",
+    },
+
+    {
+      title: "Comportal",
+      description:
+        "Built a complaint portal app which could potentially replace the current institute complaint portal",
+      src: "comportal",
+      wip: false,
+      deployedUrl: "https://comportal.vercel.app",
+    },
+    {
+      title: "FMHY",
+      description:
+        "Developed a full-stack website for a popular reddit community.",
+      src: "fmhy",
+      wip: false,
+      deployedUrl: "https://freemediaheckyeah.ml",
+    },
+    {
+      title: "MP Portal",
+      description:
+        "Built a grievance portal for an MP5 (Web & mobile) serving Idukki Constituency, benefiting 12 Lakhs+ citizens with their needs.",
+      src: "mpportal",
+      wip: false,
+      deployedUrl: "",
+    },
+  ];
+
   return (
-    <TileWrapper numOfPages={3}>
+    <TileWrapper numOfPages={projects.length}>
       <TileBackground>
         <ProjectBackground />
       </TileBackground>
       <div className="sticky top-0 h-screen overflow-hidden">
-        <Tile
-          page={0}
-          renderContent={({ progress }) => (
-            <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
-              <ProjectLeft progress={progress}>
-                <div>
-                  <span className="text-cyan-400 ">#1</span> Atmora{" "}
-                  <Tooltip
-                    label="Work in Progress"
-                    // color="black"
-                    position="bottom"
-                    withArrow
-                  >
-                    <span className="text-orange-300 text-3xl">WIP</span>
-                  </Tooltip>
-                </div>
-              </ProjectLeft>
+        {projects.map((project, i) => (
+          <Link href={project.deployedUrl}>
+            <Tile
+              page={i}
+              renderContent={({ progress }) => (
+                <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
+                  <ProjectLeft progress={progress}>
+                    <div>
+                      <p className="capitalize text-4xl">
+                        <span className="text-cyan-400 ">#{i + 1}</span>{" "}
+                        {project.title}{" "}
+                        {project.wip && (
+                          <Tooltip
+                            label="Work in Progress"
+                            // color="black"
+                            position="bottom"
+                            withArrow
+                          >
+                            <span className="text-orange-300 text-3xl">
+                              WIP
+                            </span>
+                          </Tooltip>
+                        )}
+                      </p>
+                      <p className="text-base text-gray-400">
+                        {project.description}
+                      </p>
+                    </div>
+                  </ProjectLeft>
 
-              <ProjectRight progress={progress}>
-                <div className="hover:scale-105 hover:cursor-pointer transition transform duration-100 ease-out">
-                  <Image
-                    className="rounded-sm"
-                    width="2880px"
-                    height="1800px"
-                    src="/atmora.png"
-                    alt="Atmora"
-                  />
+                  <ProjectRight progress={progress}>
+                    <div className="hover:scale-[102%] hover:cursor-pointer transition transform duration-100 ease-out">
+                      <Image
+                        className="w-screen h-auto mx-auto md:w-[95vw] lg:w-[50vw] rounded-md"
+                        width={500}
+                        height={500}
+                        src={`/${project.src}.png`}
+                        alt={project.title}
+                      />
+                    </div>
+                  </ProjectRight>
                 </div>
-              </ProjectRight>
-            </div>
-          )}
-        />
-        <Tile
-          page={1}
-          renderContent={({ progress }) => (
-            <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
-              <ProjectLeft progress={progress}>
-                <a href="https://www.freemediaheckyeah.ml">
-                  <p>
-                    <span className="text-cyan-400">#2 </span>FMHY
-                  </p>
-                </a>
-              </ProjectLeft>
-              <ProjectRight progress={progress}>
-                <div className="hover:scale-105 hover:cursor-pointer transition transform duration-100 ease-out">
-                  <a href="https://www.freemediaheckyeah.ml">
-                    <Image
-                      className="rounded-sm"
-                      width="2880px"
-                      height="1800px"
-                      src="/fmhy.png"
-                      alt="fmhy"
-                    />
-                  </a>
-                </div>
-              </ProjectRight>
-            </div>
-          )}
-        />
-        <Tile
-          page={2}
-          renderContent={({ progress }) => (
-            <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
-              <ProjectLeft progress={progress}>
-                <a href="https://www.deankuriakose.in">
-                  <p>
-                    <span className="text-cyan-400">#3 </span>MP Portal
-                  </p>
-                </a>
-              </ProjectLeft>
-              <ProjectRight progress={progress}>
-                <div className="hover:scale-105 hover:cursor-pointer transition transform duration-100 ease-out">
-                  <a href="https://www.deankuriakose.in">
-                    <Image
-                      className="rounded-sm"
-                      width="2880px"
-                      height="1800px"
-                      src="/mpportal.png"
-                      alt="mp portal"
-                    />
-                  </a>
-                </div>
-              </ProjectRight>
-            </div>
-          )}
-        />
+              )}
+            />
+          </Link>
+        ))}
       </div>
     </TileWrapper>
   );

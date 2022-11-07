@@ -16,7 +16,7 @@ const Hero = () => {
           <p className="text-cyan-400 text-lg font-medium md:text-3xl">
             👋 Hey there!, I'm-
           </p>
-          <p className="text-7xl font-bold md:text-8xl lg:text-9xl block">
+          <p className="text-7xl font-bold md:text-8xl lg:text-9xl">
             Vishnu Vinod
           </p>
           <p className="text-xl mt-4 font-medium sm:text-3xl sm:w-5/6 md:w-3/4 xl:w-2/3 max-w-xl">
@@ -46,32 +46,19 @@ const Hero = () => {
                 <IoIosMail className="fill-cyan-400 h-5 w-5" />
               </LinkBox>
             </div>
-            <div className="hidden lg:flex">
-              <SlideUpWhenVisible>
-                <Image
-                  className="rounded-xl"
-                  width="500px"
-                  height="390px"
-                  src="/me.png"
-                  alt="Vishnu Vinod"
-                  priority
-                />
-              </SlideUpWhenVisible>
-            </div>
-            <div className="lg:hidden self-center">
+
+            <SlideUpWhenVisible>
               <Image
-                className="rounded-xl"
-                layout=""
-                width="750px"
-                height="585px"
+                className="rounded-xl self-center lg:self-start w-screen sm:w-[85vw] lg:w-[500px] h-auto"
+                width={500}
+                height={500}
                 src="/me.png"
                 alt="Vishnu Vinod"
                 priority
               />
-            </div>
+            </SlideUpWhenVisible>
           </div>
         </SlideUpWhenVisible>
-        <SlideUpWhenVisible></SlideUpWhenVisible>
       </div>
     </div>
   );
