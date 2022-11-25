@@ -61,6 +61,7 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 mt-4">
         {projectData.map((project) => (
           <ProjectCard
+            key={project.title}
             deployedLink={project.deployedLink}
             githubLink={project.githubLink}
             description={project.description}
