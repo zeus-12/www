@@ -9,7 +9,7 @@ const Projects = () => {
     {
       title: "Mentora",
       description:
-        "Built an All-in-one Academics app for students of the campus, where they could ask doubts, upload notes, apply for a study-buddy (or tutor), and also a detailed course page scraped from institute department websites.",
+        "The All-in-one Academics app for students of the campus, where they could ask doubts, upload notes, apply for a study-buddy (or tutor), and also a detailed course page scraped from the Institute Department Websites.",
       src: "mentora",
       wip: false,
       deployedUrl: "https://mentora.cf",
@@ -18,15 +18,14 @@ const Projects = () => {
     {
       title: "Comportal",
       description:
-        "Built a complaint portal app which could potentially replace the current institute complaint portal",
+        "Complaint portal app which could potentially replace the current institute complaint portal",
       src: "comportal",
       wip: false,
       deployedUrl: "https://comportal.vercel.app",
     },
     {
       title: "FMHY",
-      description:
-        "Developed a full-stack website for a popular reddit community.",
+      description: "Official website for the reddit community, FMHY.",
       src: "fmhy",
       wip: false,
       deployedUrl: "https://freemediaheckyeah.ml",
@@ -34,7 +33,7 @@ const Projects = () => {
     {
       title: "MP Portal",
       description:
-        "Built a grievance portal for an MP5 (Web & mobile) serving Idukki Constituency, benefiting 12 Lakhs+ citizens with their needs.",
+        "Grievance portal for an MP serving Idukki Constituency, benefiting 12 Lakhs+ citizens with their needs.",
       src: "mpportal",
       wip: false,
       deployedUrl: "",
