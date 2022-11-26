@@ -1,3 +1,5 @@
+import { Button } from "@mantine/core";
+import Link from "next/link";
 import { useContext, useRef } from "react";
 import s from "../styles/skills.module.css";
 import { ScrollContext } from "../utils/ScrollObserver";
@@ -70,15 +72,29 @@ const AboutMe = () => {
         </div>
         {/* emoji for the next section */}
       </div>
-      <p
-        id="projects"
-        className="text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold pt-32 text-gray-300"
-      >
-        💪{" "}
-        <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#fdd819] to-[#e80505] ">
-          Favourite Projects
-        </span>
-      </p>
+
+      <div className="flex mb-2 pt-32 justify-between items-center">
+        <p
+          id="projects"
+          className="text-4xl md:text-5xl lg:text-5xl tracking-tight font-semibold text-gray-300"
+        >
+          💪{" "}
+          <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#fdd819] to-[#e80505] ">
+            Favourite Projects
+          </span>
+        </p>
+        <Link href="/projects">
+          <Button
+            variant="light"
+            color="dark"
+            className="hover:border-orange-400"
+          >
+            <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#ed6ea0] to-[#efbdaa] ">
+              Show All
+            </p>
+          </Button>
+        </Link>
+      </div>
     </div>
   );
 };
