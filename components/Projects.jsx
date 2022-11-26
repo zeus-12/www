@@ -14,22 +14,6 @@ const Projects = () => {
       wip: false,
       deployedUrl: "https://mentora.cf",
     },
-
-    {
-      title: "Comportal",
-      description:
-        "Complaint portal app which could potentially replace the current institute complaint portal",
-      src: "comportal",
-      wip: false,
-      deployedUrl: "https://comportal.vercel.app",
-    },
-    {
-      title: "FMHY",
-      description: "Official website for the reddit community, FMHY.",
-      src: "fmhy",
-      wip: false,
-      deployedUrl: "https://freemediaheckyeah.ml",
-    },
     {
       title: "MP Portal",
       description:
@@ -37,6 +21,13 @@ const Projects = () => {
       src: "mpportal",
       wip: false,
       deployedUrl: "",
+    },
+    {
+      title: "FMHY",
+      description: "Official website for the reddit community, FMHY.",
+      src: "fmhy",
+      wip: false,
+      deployedUrl: "https://freemediaheckyeah.ml",
     },
   ];
 
