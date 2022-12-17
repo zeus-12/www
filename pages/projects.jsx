@@ -1,10 +1,11 @@
 import { TextInput } from "@mantine/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import ProjectCard from "../components/ProjectCard";
 const Projects = () => {
-  const [value, setValue] = useState("");
-
+  const [query, setQuery] = useState("");
+  
+  
   const projectData = [
     {
       title: "Mentora",
@@ -35,6 +36,18 @@ const Projects = () => {
       imageSrc: "/mpportal.png",
     },
   ];
+
+  const [projects,setProjects] = useState(projectData)
+
+  useEffect(() => {
+    if (query.trim().length > 0) {
+      const newProjectData = projectData.filter(item => item.title.toUpperCase().includes(query.toUpperCase()))
+      setProjects(newProjectData)
+    } else {
+      setProjects(projectData)
+    }
+  },[query])
+
   return (
     <div className="pt-8 px-8 lg:px-24 lg:py-16">
       <p className="text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight">
@@ -50,12 +63,12 @@ const Projects = () => {
         placeholder="Search projects"
         rightSection={<BiSearch />}
         type="text"
-        value={value}
-        onChange={(event) => setValue(event.currentTarget.value)}
+        value={query}
+        onChange={(event) => setQuery(event.currentTarget.value)}
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 mt-4">
-        {projectData.map((project) => (
+        {projects.length>0 ? projects.map((project) => (
           <ProjectCard
             imageSrc={project.imageSrc}
             techStack={project.techStack}
@@ -65,7 +78,9 @@ const Projects = () => {
             description={project.description}
             title={project.title}
           />
-        ))}
+        )) :
+        (<p className="text-gray-400">No projects matching the entered keyword.</p>)
+        }
       </div>
     </div>
   );
