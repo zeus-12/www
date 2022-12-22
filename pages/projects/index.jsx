@@ -1,7 +1,7 @@
 import { TextInput } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
-import ProjectCard from "../components/ProjectCard";
+import ProjectCard from "../../components/ProjectCard";
 const Projects = () => {
   const [query, setQuery] = useState("");
   
