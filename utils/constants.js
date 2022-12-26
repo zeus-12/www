@@ -5,4 +5,5 @@ export const techStackColourMappings = {
   NodeJs: "red",
   Express: "yellow",
   PostgreSQL: "pink",
+  "React Native":"cyan"
 };
