@@ -18,6 +18,16 @@ const Projects = () => {
       imageSrc: "/mentora.png",
     },
     {
+      title: "Ping",
+      description:
+        "Security app for IITM. It allows users to send their location to their contacts in case of an emergency. Enabling the security to track the user's location, access and record nearby cameras.",
+      techStack: ["React", "NextJs", "MongoDB","React Native"],
+
+      githubLink: "",
+      deployedLink: "",
+      imageSrc: "/ping.png",
+    },
+    {
       title: "Comportal",
       description:
         "Complaint portal app which could potentially replace the current institute complaint portal",
