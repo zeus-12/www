@@ -10,7 +10,7 @@ const LinkElements = () => (
       </p>
     </Link>
 
-    <Link href="/#projects" passHref>
+    <Link href="/projects" passHref>
       <p className="px-2 py-1 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
         Projects
       </p>
