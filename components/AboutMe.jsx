@@ -70,7 +70,6 @@ const AboutMe = () => {
             </span>
           </span>
         </div>
-        {/* emoji for the next section */}
       </div>
 
       <div className="flex mb-2 pt-32 justify-between items-center">

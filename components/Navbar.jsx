@@ -13,7 +13,7 @@ const linkElements = [
   },
   {
     name: "Contact",
-    href: "#contact",
+    href: "/#contact",
   },
 ];
 
