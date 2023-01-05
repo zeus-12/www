@@ -47,12 +47,6 @@ const Contact = () => {
               Resume
             </Link>
           </div>
-          {/* <LinkBox
-            title="Resume"
-            link="https://drive.google.com/file/d/1aNXtbkgUGUPiPhkFgH1n8j0dRdik7V7q/view?usp=sharing"
-          >
-            <IoIosPaper className="fill-cyan-400" />
-          </LinkBox> */}
         </div>
       </SlideUpWhenVisible>
     </div>

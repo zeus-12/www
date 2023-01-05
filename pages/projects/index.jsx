@@ -2,59 +2,20 @@ import { TextInput } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import ProjectCard from "../../components/ProjectCard";
+import { PROJECTS_DATA } from "../../utils/constants"
+
 const Projects = () => {
   const [query, setQuery] = useState("");
   
-  
-  const projectData = [
-    {
-      title: "Mentora",
-      description:
-        "The All-in-one Academics app for students of the campus, where they could ask doubts, upload notes, apply for a study-buddy (or tutor), and also a detailed course page scraped from the Institute Department Websites.",
-      techStack: ["React", "NextJs", "MongoDB"],
 
-      githubLink: "https://github.com/zeus-12/mentora",
-      deployedLink: "https://mentora.cf",
-      imageSrc: "/mentora.png",
-    },
-    {
-      title: "Ping",
-      description:
-        "Security app for IITM. It allows users to send their location to their contacts in case of an emergency. Enabling the security to track the user's location, access and record nearby cameras.",
-      techStack: ["React", "NextJs", "MongoDB","React Native"],
-
-      githubLink: "",
-      deployedLink: "",
-      imageSrc: "/ping.png",
-    },
-    {
-      title: "Comportal",
-      description:
-        "Complaint portal app which could potentially replace the current institute complaint portal",
-      techStack: ["React", "NextJs", "MongoDB"],
-
-      githubLink: "https://github.com/zeus-12/comportal",
-      deployedLink: "https://comportal.vercel.app",
-      imageSrc: "/comportal.png",
-    },
-    {
-      title: "Grievance Portal",
-      description:
-        "Grievance portal for an MP serving Idukki Constituency, benefiting 12 Lakhs+ citizens with their needs.",
-      techStack: ["React", "NextJs", "Express", "PostgreSQL"],
-      deployedLink: "https://deankuriakose.in",
-      imageSrc: "/mpportal.png",
-    },
-  ];
-
-  const [projects,setProjects] = useState(projectData)
+  const [projects,setProjects] = useState(PROJECTS_DATA)
 
   useEffect(() => {
     if (query.trim().length > 0) {
-      const newProjectData = projectData.filter(item => item.title.toUpperCase().includes(query.toUpperCase()))
+      const newProjectData = PROJECTS_DATA.filter(item => item.title.toUpperCase().includes(query.toUpperCase()))
       setProjects(newProjectData)
     } else {
-      setProjects(projectData)
+      setProjects(PROJECTS_DATA)
     }
   },[query])
 
