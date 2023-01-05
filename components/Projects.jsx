@@ -1,44 +1,18 @@
 import { TileWrapper, TileBackground, Tile } from "./Tile";
 import { ProjectBackground, ProjectLeft, ProjectRight } from "./Project";
 import Image from "next/image";
-import { Tooltip } from "@mantine/core";
 import Link from "next/link";
+import { FAVOURITE_PROJECTS } from "../utils/constants"
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "Mentora",
-      description:
-        "The All-in-one Academics app for students of the campus, where they could ask doubts, upload notes, apply for a study-buddy (or tutor), and also a detailed course page scraped from the Institute Department Websites.",
-      src: "mentora",
-      wip: false,
-      deployedUrl: "https://mentora.cf",
-    },
-    {
-      title: "MP Portal",
-      description:
-        "Grievance portal for an MP serving Idukki Constituency, benefiting 12 Lakhs+ citizens with their needs.",
-      src: "mpportal",
-      wip: false,
-      deployedUrl: "",
-    },
-    {
-      title: "FMHY",
-      description: "Official website for the reddit community, FMHY.",
-      src: "fmhy",
-      wip: false,
-      deployedUrl: "https://freemediaheckyeah.ml",
-    },
-  ];
-
   return (
-    <TileWrapper numOfPages={projects.length}>
+    <TileWrapper numOfPages={FAVOURITE_PROJECTS.length}>
       <TileBackground>
         <ProjectBackground />
       </TileBackground>
       <div className="sticky top-0 h-screen overflow-hidden">
-        {projects.map((project, i) => (
-          <Link key={i} href={project.deployedUrl}>
+        {FAVOURITE_PROJECTS.map((project, i) => (
+          <Link key={i} href={project.deployedLink}>
             <Tile
               page={i}
               renderContent={({ progress }) => (
@@ -47,19 +21,7 @@ const Projects = () => {
                     <div>
                       <p className="capitalize text-4xl">
                         <span className="text-cyan-400 ">#{i + 1}</span>{" "}
-                        {project.title}{" "}
-                        {project.wip && (
-                          <Tooltip
-                            label="Work in Progress"
-                            // color="black"
-                            position="bottom"
-                            withArrow
-                          >
-                            <span className="text-orange-300 text-3xl">
-                              WIP
-                            </span>
-                          </Tooltip>
-                        )}
+                        {project.title}
                       </p>
                       <p className="text-base text-gray-400">
                         {project.description}
@@ -73,7 +35,7 @@ const Projects = () => {
                         className="w-screen h-auto mx-auto md:w-[95vw] lg:w-[50vw] rounded-md"
                         width={500}
                         height={500}
-                        src={`/${project.src}.png`}
+                        src={project.imageSrc}
                         alt={project.title}
                       />
                     </div>
