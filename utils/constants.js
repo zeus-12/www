@@ -49,7 +49,7 @@ export const PROJECTS_DATA = [
     techStack: ["NextJS", "Sheets API"],
 
     githubLink: "https://github.com/zeus-12/jmt-shaastra-22",
-    deployedLink: "https://www.jmt.shaastra.org",
+    deployedLink: "https://jmt23.vercel.app/",
     imageSrc: "/jmt.png",
     isFavourite: false, 
   },
