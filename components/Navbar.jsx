@@ -2,24 +2,30 @@ import { Burger, Drawer } from "@mantine/core";
 import Link from "next/link";
 import { useState } from "react";
 
+const linkElements = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Projects",
+    href: "/projects",
+  },
+  {
+    name: "Contact",
+    href: "#contact",
+  },
+];
+
 const LinkElements = () => (
   <>
-    <Link href="/" passHref>
-      <p className="px-2 py-1 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
-        Home
-      </p>
-    </Link>
-
-    <Link href="/projects" passHref>
-      <p className="px-2 py-1 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
-        Projects
-      </p>
-    </Link>
-    <Link href="#contact" passHref>
-      <p className="px-2 py-1 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
-        Contact
-      </p>
-    </Link>
+    {linkElements.map((link) => (
+      <Link key={link.name} href={link.href} passHref>
+        <p className="px-2 py-1 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
+          {link.name}
+        </p>
+      </Link>
+    ))}
   </>
 );
 

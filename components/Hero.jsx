@@ -26,25 +26,40 @@ const Hero = () => {
               A self-taught developer with an interest in Computer Science.
             </span>
           </p>
-          <p className="mt-8 text-sm text-neutral-400 md:text-lg font-light">
-            🚀 Exploring oppurtunities & side projects.
-          </p>
+          <div className="space-y-1 mt-8">
+            {[
+              "🚀 Exploring oppurtunities & side projects.",
+              "💻 Currently specializing in Back-end Development.",
+            ].map((item) => (
+              <p className="text-sm text-neutral-400 md:text-lg font-light">
+                {item}
+              </p>
+            ))}
+          </div>
+
           <div className="flex flex-col lg:flex-row justify-between items-start">
             <div className="flex gap-2 mt-8 mb-4">
-              <LinkBox title="Github" link="https://github.com/zeus-12">
-                <SiGithub className="fill-cyan-400" />
-              </LinkBox>
-
-              <LinkBox
-                title="LinkedIn"
-                link="https://www.linkedin.com/in/vishnu-vinod-362ab2230/"
-              >
-                <SiLinkedin className="fill-cyan-400" />
-              </LinkBox>
-
-              <LinkBox title="Email" link="mailto:writetovishnuvinod@gmail.com">
-                <IoIosMail className="fill-cyan-400 h-5 w-5" />
-              </LinkBox>
+              {[
+                {
+                  icon: <SiGithub className="fill-cyan-400" />,
+                  title: "Github",
+                  link: "https://github.com/zeus-12",
+                },
+                {
+                  icon: <SiLinkedin className="fill-cyan-400" />,
+                  title: "LinkedIn",
+                  link: "https://www.linkedin.com/in/vishnu-vinod-362ab2230/",
+                },
+                {
+                  icon: <IoIosMail className="fill-cyan-400 h-5 w-5" />,
+                  title: "Email",
+                  link: "mailto:writetovishnuvinod@gmail.com",
+                },
+              ].map((item) => (
+                <LinkBox key={item.title} title={item.title} link={item.link}>
+                  {item.icon}
+                </LinkBox>
+              ))}
             </div>
 
             <SlideUpWhenVisible>
