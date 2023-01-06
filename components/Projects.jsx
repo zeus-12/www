@@ -20,7 +20,7 @@ const Projects = () => {
                   <ProjectLeft progress={progress}>
                     <div>
                       <p className="capitalize text-4xl">
-                        <span className="text-cyan-400 ">#{i + 1}</span>{" "}
+                        {/* <span className="text-cyan-400 ">#{i + 1}</span>{" "} */}
                         {project.title}
                       </p>
                       <p className="text-base text-gray-400">

@@ -32,6 +32,17 @@ export const PROJECTS_DATA = [
     isFavourite: true, 
   },
   {
+    title: "Coursepanel",
+    description:
+      "Landing page for a startup we built.",
+    techStack: ["NextJS"],
+
+    githubLink: "",
+    deployedLink: "https://coursepanel.in",
+    imageSrc: "/coursepanel.png",
+    isFavourite: false, 
+  },
+  {
     title: "FMHY",
     description:
       "A full-stack website for a popular reddit community, FMHY built using. Built a service which periodically scrapes and cleans the data from their GitHub page.",

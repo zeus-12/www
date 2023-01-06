@@ -1,6 +1,6 @@
 import { SiGithub } from "react-icons/si";
 import { MdPreview, MdTableView } from "react-icons/md";
-import { Card, Text, Badge, Button, Group } from "@mantine/core";
+import { Card, Badge, Tooltip } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
 import { techStackColourMappings } from "../utils/constants";
@@ -33,13 +33,29 @@ const ProjectCard = ({
         <div className="flex items-center gap-x-2">
           {githubLink && (
             <Link href={githubLink}>
-              <SiGithub className="w-5 hover:cursor-pointer h-5" />
+              <Tooltip
+                label="View source code"
+                color="dark"
+                position="bottom"
+                transition="scale-y"
+                withArrow
+              >
+                <SiGithub className="w-5 hover:cursor-pointer h-5" />
+              </Tooltip>
             </Link>
           )}
 
           {deployedLink && (
             <Link href={deployedLink}>
-              <MdPreview className="w-6 hover:cursor-pointer h-5" />
+              <Tooltip
+                color="dark"
+                position="bottom"
+                withArrow
+                transition="scale-y"
+                label="View deployed"
+              >
+                <MdPreview className="w-6 hover:cursor-pointer h-6" />
+              </Tooltip>
             </Link>
           )}
         </div>

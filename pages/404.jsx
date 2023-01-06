@@ -8,7 +8,7 @@ const PageDoesntExist = () => {
         minHeight: `calc(100vh - 4rem)`,
       }}
     >
-      <Image src="/404.svg" width="600px" height="500px" />
+      <Image src="/404.svg" width="600" height="500" />
     </div>
   );
 };
