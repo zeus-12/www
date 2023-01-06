@@ -2,3 +2,4 @@
 - move all project details to one place
 - Fix portfolio navbar drawer, hover for project animation smooth, image rounded, 404svg on mobile look trash
 - fix the meta tags for everypage, use the template ankit gave
+- add coursepanel landing page to projects

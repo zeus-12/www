@@ -31,7 +31,7 @@ const Hero = () => {
               "🚀 Exploring oppurtunities & side projects.",
               "💻 Currently specializing in Back-end Development.",
             ].map((item) => (
-              <p className="text-sm text-neutral-400 md:text-lg font-light">
+              <p key={item} className="text-sm text-neutral-400 md:text-lg font-light">
                 {item}
               </p>
             ))}
