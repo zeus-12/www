@@ -3,7 +3,7 @@ import { MdPreview, MdTableView } from "react-icons/md";
 import { Card, Badge, Tooltip } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
-import { techStackColourMappings } from "../utils/constants";
+import { TECHSTACK_COLOUR_MAPPING } from "../utils/constants";
 
 const ProjectCard = ({
   deployedLink,
@@ -27,52 +27,53 @@ const ProjectCard = ({
           height={400}
         />
       </div>
+      <div className="px-2">
+        <div className="p-1 font-semibold md:p-2 flex justify-between">
+          <p>{title}</p>
+          <div className="flex items-center gap-x-2">
+            {githubLink && (
+              <Link href={githubLink}>
+                <Tooltip
+                  label="View source code"
+                  color="dark"
+                  position="bottom"
+                  transition="scale-y"
+                  withArrow
+                >
+                  <SiGithub className="w-5 hover:cursor-pointer h-5" />
+                </Tooltip>
+              </Link>
+            )}
 
-      <div className="p-1 font-semibold md:p-2 flex justify-between">
-        <p>{title}</p>
-        <div className="flex items-center gap-x-2">
-          {githubLink && (
-            <Link href={githubLink}>
-              <Tooltip
-                label="View source code"
-                color="dark"
-                position="bottom"
-                transition="scale-y"
-                withArrow
-              >
-                <SiGithub className="w-5 hover:cursor-pointer h-5" />
-              </Tooltip>
-            </Link>
-          )}
-
-          {deployedLink && (
-            <Link href={deployedLink}>
-              <Tooltip
-                color="dark"
-                position="bottom"
-                withArrow
-                transition="scale-y"
-                label="View deployed"
-              >
-                <MdPreview className="w-6 hover:cursor-pointer h-6" />
-              </Tooltip>
-            </Link>
-          )}
+            {deployedLink && (
+              <Link href={deployedLink}>
+                <Tooltip
+                  color="dark"
+                  position="bottom"
+                  withArrow
+                  transition="scale-y"
+                  label="View deployed"
+                >
+                  <MdPreview className="w-6 hover:cursor-pointer h-6" />
+                </Tooltip>
+              </Link>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="mb-2 px-1 flex gap-2 md:px-2">
-        {techStack?.map((stack) => (
-          <Badge
-            color={techStackColourMappings[stack]}
-            variant="light"
-            key={stack}
-          >
-            {stack}
-          </Badge>
-        ))}
-      </div>
+        <div className="mb-2 px-1 flex gap-2 flex-wrap md:px-2">
+          {techStack?.map((stack) => (
+            <Badge
+              color={TECHSTACK_COLOUR_MAPPING[stack]}
+              variant="light"
+              key={stack}
+            >
+              {stack}
+            </Badge>
+          ))}
+        </div>
 
-      <p className="text-gray-400 p-1 md:p-2 text-ellipsis">{description}</p>
+        <p className="text-gray-400 p-1 md:p-2 text-ellipsis">{description}</p>
+      </div>
     </Card>
   );
 };

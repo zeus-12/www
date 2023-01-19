@@ -89,7 +89,7 @@ const AboutMe = () => {
             className="hover:border-orange-400"
           >
             <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#ed6ea0] to-[#efbdaa] ">
-              Show All
+              See All
             </p>
           </Button>
         </Link>
