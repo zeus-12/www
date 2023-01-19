@@ -19,7 +19,7 @@ const Projects = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
                   <ProjectLeft progress={progress}>
                     <div>
-                      <p className="capitalize text-4xl">
+                      <p className="capitalize text-4xl text-cyan-300">
                         {/* <span className="text-cyan-400 ">#{i + 1}</span>{" "} */}
                         {project.title}
                       </p>

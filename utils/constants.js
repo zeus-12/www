@@ -1,4 +1,4 @@
-export const techStackColourMappings = {
+export const TECHSTACK_COLOUR_MAPPING = {
   React: "blue",
   NextJS: "orange",
   MongoDB: "green",
