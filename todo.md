@@ -2,3 +2,4 @@
 - show a meaningful message next to 404 page
 - fix the meta tags for everypage, use the template ankit gave
 - change logo ?? to <V />
+- add exit and show animations for project cards in /projects using framer motion
