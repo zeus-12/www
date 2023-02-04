@@ -5,6 +5,14 @@
     {
       "source": "/resume",
       "destination": "/resume.pdf"
+    },
+    {
+      "source": "/college",
+      "destination": "https://www.iitm.ac.in/"
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/zeus-12"
     }
   ]
 }
