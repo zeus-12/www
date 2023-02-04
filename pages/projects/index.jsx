@@ -2,22 +2,23 @@ import { TextInput } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import ProjectCard from "../../components/ProjectCard";
-import { PROJECTS_DATA } from "../../utils/constants"
+import { PROJECTS_DATA } from "../../utils/constants";
 
 const Projects = () => {
   const [query, setQuery] = useState("");
-  
 
-  const [projects,setProjects] = useState(PROJECTS_DATA)
+  const [projects, setProjects] = useState(PROJECTS_DATA);
 
   useEffect(() => {
     if (query.trim().length > 0) {
-      const newProjectData = PROJECTS_DATA.filter(item => item.title.toUpperCase().includes(query.toUpperCase()))
-      setProjects(newProjectData)
+      const newProjectData = PROJECTS_DATA.filter((item) =>
+        item.title.toUpperCase().includes(query.toUpperCase())
+      );
+      setProjects(newProjectData);
     } else {
-      setProjects(PROJECTS_DATA)
+      setProjects(PROJECTS_DATA);
     }
-  },[query])
+  }, [query]);
 
   return (
     <div className="pt-8 px-8 lg:px-24 lg:py-16">
@@ -37,21 +38,24 @@ const Projects = () => {
         value={query}
         onChange={(event) => setQuery(event.currentTarget.value)}
       />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-4">
-        {projects.length>0 ? projects.map((project) => (
-          <ProjectCard
-            imageSrc={project.imageSrc}
-            techStack={project.techStack}
-            key={project.title}
-            deployedLink={project.deployedLink}
-            githubLink={project.githubLink}
-            description={project.description}
-            title={project.title}
-          />
-        )) :
-        (<p className="text-gray-400">No projects matching the entered keyword.</p>)
-        }
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 my-4">
+        {projects.length > 0 ? (
+          projects.map((project) => (
+            <ProjectCard
+              imageSrc={project.imageSrc}
+              techStack={project.techStack}
+              key={project.title}
+              deployedLink={project.deployedLink}
+              githubLink={project.githubLink}
+              description={project.description}
+              title={project.title}
+            />
+          ))
+        ) : (
+          <p className="text-gray-400">
+            No projects matching the entered keyword.
+          </p>
+        )}
       </div>
     </div>
   );

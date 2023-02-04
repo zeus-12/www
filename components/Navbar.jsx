@@ -17,8 +17,10 @@ const linkElements = [
   },
 ];
 
-const LinkElements = () => (
-  <>
+const LinkElements = ({ isDrawer }) => (
+  <div
+    className={`flex gap-8 ${isDrawer ? "flex flex-col gap-8" : "flex gap-8"}`}
+  >
     {linkElements.map((link) => (
       <Link key={link.name} href={link.href} passHref>
         <p className="px-2 py-1 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
@@ -26,7 +28,7 @@ const LinkElements = () => (
         </p>
       </Link>
     ))}
-  </>
+  </div>
 );
 
 const Logo = ({ setOpened }) => (
@@ -57,8 +59,8 @@ const NavbarDrawer = ({ opened, setOpened }) => (
       withCloseButton={false}
       zIndex={20}
     >
-      <div className="text-2xl pt-16 space-y-4">
-        <LinkElements />
+      <div className="text-3xl pt-16">
+        <LinkElements isDrawer={true} />
       </div>
     </Drawer>
   </div>
