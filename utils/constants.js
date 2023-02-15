@@ -30,7 +30,7 @@ export const PROJECTS_DATA = [
     githubLink: "https://github.com/zeus-12/mentora",
     deployedLink: "https://mentora.cf",
     imageSrc: "/projects/mentora.png",
-    isFavourite: true,
+    isFeatured: true,
   },
   {
     title: "Ping",
@@ -45,7 +45,7 @@ export const PROJECTS_DATA = [
     githubLink: "",
     deployedLink: "",
     imageSrc: "/projects/ping.png",
-    isFavourite: true,
+    isFeatured: true,
   },
   {
     title: "Coursepanel",
@@ -54,7 +54,7 @@ export const PROJECTS_DATA = [
     githubLink: "",
     deployedLink: "https://coursepanel.in",
     imageSrc: "/projects/coursepanel.png",
-    isFavourite: false,
+    isFeatured: false,
   },
   {
     title: "FMHY",
@@ -70,7 +70,7 @@ export const PROJECTS_DATA = [
     githubLink: "https://github.com/zeus-12/fmhy-ui",
     deployedLink: "https://www.fmhy.ml",
     imageSrc: "/projects/fmhy.png",
-    isFavourite: false,
+    isFeatured: false,
   },
   {
     title: "JMT Shaastra",
@@ -80,7 +80,7 @@ export const PROJECTS_DATA = [
     githubLink: "https://github.com/zeus-12/jmt-shaastra-22",
     deployedLink: "https://jmt23.vercel.app/",
     imageSrc: "/projects/jmt.png",
-    isFavourite: false,
+    isFeatured: false,
   },
   {
     title: "Comportal",
@@ -90,7 +90,7 @@ export const PROJECTS_DATA = [
     githubLink: "https://github.com/zeus-12/comportal",
     deployedLink: "https://comportal.vercel.app",
     imageSrc: "/projects/comportal.png",
-    isFavourite: false,
+    isFeatured: false,
   },
   {
     title: "Grievance Portal",
@@ -99,10 +99,10 @@ export const PROJECTS_DATA = [
     techStack: [TECH_STACK.NEXTJS, TECH_STACK.EXPRESS, TECH_STACK.POSTGRESQL],
     deployedLink: "https://deankuriakose.in",
     imageSrc: "/projects/mpportal.png",
-    isFavourite: true,
+    isFeatured: true,
   },
 ];
 
-export const FAVOURITE_PROJECTS = PROJECTS_DATA.filter(
-  (project) => project.isFavourite
+export const FEATURED_PROJECTS = PROJECTS_DATA.filter(
+  (project) => project.isFeatured
 );
