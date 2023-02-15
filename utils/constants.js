@@ -5,7 +5,7 @@ export const TECHSTACK_COLOUR_MAPPING = {
   NodeJS: "red",
   Express: "yellow",
   PostgreSQL: "pink",
-  "React Native":"cyan"
+  "React Native": "cyan",
 };
 
 const TECH_STACK = {
@@ -19,8 +19,7 @@ const TECH_STACK = {
   MYSQL: "MySQL",
   PRISMA: "Prisma",
   SHEETS_API: "Sheets API",
-
-}  
+};
 
 export const PROJECTS_DATA = [
   {
@@ -30,38 +29,48 @@ export const PROJECTS_DATA = [
     techStack: [TECH_STACK.NEXTJS, TECH_STACK.MONGODB],
     githubLink: "https://github.com/zeus-12/mentora",
     deployedLink: "https://mentora.cf",
-    imageSrc: "/mentora.png",
-    isFavourite: true, 
+    imageSrc: "/projects/mentora.png",
+    isFavourite: true,
   },
   {
     title: "Ping",
     description:
       "Security app for IITM allowing users to send their location to their contacts in case of an emergency. Enabling the security to track the user's location, access and record nearby cameras.",
-    techStack: [TECH_STACK.NEXTJS, TECH_STACK.EXPRESS, TECH_STACK.MONGODB,TECH_STACK.REACT_NATIVE],
+    techStack: [
+      TECH_STACK.NEXTJS,
+      TECH_STACK.EXPRESS,
+      TECH_STACK.MONGODB,
+      TECH_STACK.REACT_NATIVE,
+    ],
     githubLink: "",
     deployedLink: "",
-    imageSrc: "/ping.png",
-    isFavourite: true, 
+    imageSrc: "/projects/ping.png",
+    isFavourite: true,
   },
   {
     title: "Coursepanel",
-    description:
-      "Landing page for a startup we built.",
+    description: "Landing page for a startup we built.",
     techStack: [TECH_STACK.NEXTJS],
     githubLink: "",
     deployedLink: "https://coursepanel.in",
-    imageSrc: "/coursepanel.png",
-    isFavourite: false, 
+    imageSrc: "/projects/coursepanel.png",
+    isFavourite: false,
   },
   {
     title: "FMHY",
     description:
       "A full-stack website for a popular reddit community, FMHY built using. Built a service which periodically scrapes and cleans the data from their GitHub page.",
-    techStack: [TECH_STACK.REACT, TECH_STACK.MYSQL, TECH_STACK.PRISMA,TECH_STACK.MONGODB, TECH_STACK.EXPRESS],
+    techStack: [
+      TECH_STACK.REACT,
+      TECH_STACK.MYSQL,
+      TECH_STACK.PRISMA,
+      TECH_STACK.MONGODB,
+      TECH_STACK.EXPRESS,
+    ],
     githubLink: "https://github.com/zeus-12/fmhy-ui",
     deployedLink: "https://www.fmhy.ml",
-    imageSrc: "/fmhy.png",
-    isFavourite: false, 
+    imageSrc: "/projects/fmhy.png",
+    isFavourite: false,
   },
   {
     title: "JMT Shaastra",
@@ -70,8 +79,8 @@ export const PROJECTS_DATA = [
     techStack: [TECH_STACK.NEXTJS, TECH_STACK.SHEETS_API],
     githubLink: "https://github.com/zeus-12/jmt-shaastra-22",
     deployedLink: "https://jmt23.vercel.app/",
-    imageSrc: "/jmt.png",
-    isFavourite: false, 
+    imageSrc: "/projects/jmt.png",
+    isFavourite: false,
   },
   {
     title: "Comportal",
@@ -80,8 +89,8 @@ export const PROJECTS_DATA = [
     techStack: [TECH_STACK.NEXTJS, TECH_STACK.MONGODB],
     githubLink: "https://github.com/zeus-12/comportal",
     deployedLink: "https://comportal.vercel.app",
-    imageSrc: "/comportal.png",
-    isFavourite: false, 
+    imageSrc: "/projects/comportal.png",
+    isFavourite: false,
   },
   {
     title: "Grievance Portal",
@@ -89,8 +98,8 @@ export const PROJECTS_DATA = [
       "Grievance portal for an MP serving Idukki Constituency, benefiting 12 Lakhs+ citizens with their needs.",
     techStack: [TECH_STACK.NEXTJS, TECH_STACK.EXPRESS, TECH_STACK.POSTGRESQL],
     deployedLink: "https://deankuriakose.in",
-    imageSrc: "/mpportal.png",
-    isFavourite: true, 
+    imageSrc: "/projects/mpportal.png",
+    isFavourite: true,
   },
 ];
 
