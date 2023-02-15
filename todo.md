@@ -3,3 +3,5 @@
 - change logo ?? to "<V />"
 - add exit and show animations for project cards in /projects using framer motion
 - migrate to typescript
+- check project.jsx and tile.jsx seems theyre the same
+- build a project page. showing details about the project
