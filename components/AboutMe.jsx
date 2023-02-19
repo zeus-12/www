@@ -75,11 +75,11 @@ const AboutMe = () => {
       <div className="flex mb-2 pt-32 justify-between items-center">
         <p
           id="projects"
-          className="text-4xl md:text-5xl lg:text-5xl tracking-tight font-semibold text-gray-300"
+          className="text-4xl md:text-4xl lg:text-5xl tracking-tight font-semibold text-gray-300"
         >
           💪{" "}
           <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#fdd819] to-[#e80505] ">
-            Favourite Projects
+            Featured Projects
           </span>
         </p>
         <Link href="/projects">
