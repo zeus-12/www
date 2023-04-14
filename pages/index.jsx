@@ -39,9 +39,8 @@ export default function Home() {
               <a className="text-blue-300" href="https://www.weebly.com">
                 Weebly
               </a>{" "}
-              ,though it was just a really basic one, it still got a special
-              place in my ❤️.And later on, I taught myself how to code,
-              fast-forward to today,
+              And later on, I taught myself how to code,
+fast-forward to today,
             </p>
 
             <p>
