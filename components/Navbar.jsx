@@ -1,6 +1,7 @@
 import { Burger, Drawer } from "@mantine/core";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 const linkElements = [
   {
@@ -17,19 +18,29 @@ const linkElements = [
   },
 ];
 
-const LinkElements = ({ isDrawer }) => (
-  <div
-    className={`flex gap-8 ${isDrawer ? "flex flex-col gap-8" : "flex gap-8"}`}
-  >
-    {linkElements.map((link) => (
-      <Link key={link.name} href={link.href} passHref>
-        <p className="px-2 py-1 text-gray-300 rounded-md hover:text-white cursor-pointer text-center hover:bg-gray-900">
-          {link.name}
-        </p>
-      </Link>
-    ))}
-  </div>
-);
+const LinkElements = ({ isDrawer }) => {
+  const { asPath: path } = useRouter();
+
+  return (
+    <div
+      className={`flex gap-8 ${
+        isDrawer ? "flex flex-col gap-8" : "flex gap-8"
+      }`}
+    >
+      {linkElements.map((link) => (
+        <Link key={link.name} href={link.href} passHref>
+          <p
+            className={`px-2 py-1 rounded-md cursor-pointer text-center hover:bg-gray-900 
+            ${path === link.href ? "text-gray-300" : "text-gray-600"}
+          `}
+          >
+            {link.name}
+          </p>
+        </Link>
+      ))}
+    </div>
+  );
+};
 
 const Logo = ({ setOpened }) => (
   <Link href="/" passHref>
