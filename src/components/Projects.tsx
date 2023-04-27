@@ -15,7 +15,7 @@ const Projects = () => {
           <Link key={i} href={project.deployedLink}>
             <Tile
               page={i}
-              renderContent={({ progress }) => (
+              renderContent={({ progress }: { progress: number }) => (
                 <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
                   <ProjectLeft progress={progress}>
                     <div>

@@ -1,28 +1,28 @@
 import SlideUpWhenVisible from "../hooks/SlideUpWhenVisible";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { IoIosMail } from "react-icons/io";
-import LinkBox from "../components/LinkBox";
+import LinkBox from "./LinkBox";
 import Image from "next/image";
 
-const Hero = () => {
-  const heroLinkElements = [
-    {
-      icon: <SiGithub className="fill-cyan-400" />,
-      title: "Github",
-      link: "https://github.com/zeus-12",
-    },
-    {
-      icon: <SiLinkedin className="fill-cyan-400" />,
-      title: "LinkedIn",
-      link: "https://www.linkedin.com/in/vishnu-vinod-362ab2230/",
-    },
-    {
-      icon: <IoIosMail className="fill-cyan-400 h-5 w-5" />,
-      title: "Email",
-      link: "mailto:writetovishnuvinod@gmail.com",
-    },
-  ];
+const heroLinkElements = [
+  {
+    icon: <SiGithub className="fill-cyan-400" />,
+    title: "Github",
+    link: "https://github.com/zeus-12",
+  },
+  {
+    icon: <SiLinkedin className="fill-cyan-400" />,
+    title: "LinkedIn",
+    link: "https://www.linkedin.com/in/vishnu-vinod-362ab2230/",
+  },
+  {
+    icon: <IoIosMail className="fill-cyan-400 h-5 w-5" />,
+    title: "Email",
+    link: "mailto:writetovishnuvinod@gmail.com",
+  },
+];
 
+const Hero = () => {
   return (
     <div
       style={{
@@ -31,7 +31,7 @@ const Hero = () => {
     >
       <SlideUpWhenVisible>
         <p className="text-cyan-400 text-lg font-medium md:text-3xl">
-          👋 Hey there!, I'm-
+          👋 Hey there!, I&apos;m-
         </p>
         <p className="text-7xl font-bold md:text-8xl lg:text-9xl">
           Vishnu Vinod

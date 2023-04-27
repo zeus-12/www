@@ -1,10 +1,10 @@
 import { Button } from "@mantine/core";
 import Link from "next/link";
 import { useContext, useRef } from "react";
-import s from "../styles/skills.module.css";
-import { ScrollContext } from "../utils/ScrollObserver";
+import s from "@/styles/skills.module.css";
+import { ScrollContext } from "@/utils/ScrollObserver";
 
-const opacityForBlock = (sectionProgress, blockNo) => {
+const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   const progress = sectionProgress - blockNo;
   if (progress >= 0 && progress < 1) return 1;
   //tweak this for changing the opacity of text
@@ -63,8 +63,8 @@ const AboutMe = () => {
             className={`${s.skillText} inline-block`}
             style={{ opacity: opacityForBlock(progress, 2) }}
           >
-            I'm interested in building something awesome or automate tasks with
-            code, currently focused on{" "}
+            I&apos;m interested in building something awesome or automate tasks
+            with code, currently focused on{" "}
             <span className="text-cyan-300">
               Web & Mobile Full-Stack Development.
             </span>
