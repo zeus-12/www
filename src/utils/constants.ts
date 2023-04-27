@@ -15,13 +15,32 @@ const TECH_STACK = {
   NODEJS: "NodeJS",
   EXPRESS: "Express",
   POSTGRESQL: "PostgreSQL",
+  EXPO: "Expo",
   REACT_NATIVE: "React Native",
   MYSQL: "MySQL",
   PRISMA: "Prisma",
   SHEETS_API: "Sheets API",
+  FIREBASE: "Firebase",
+  CHAT_GPT: "Chat-GPT",
 };
 
 export const PROJECTS_DATA = [
+  {
+    title: "FMHY",
+    description:
+      "A full-stack website for a popular reddit community, FMHY built using. Built a service which periodically scrapes and cleans the data from their GitHub page.",
+    techStack: [
+      TECH_STACK.REACT,
+      TECH_STACK.PRISMA,
+      TECH_STACK.EXPRESS,
+      TECH_STACK.MYSQL,
+      TECH_STACK.MONGODB,
+    ],
+    githubLink: "https://github.com/zeus-12/fmhy-ui",
+    deployedLink: "https://www.fmhy.ml",
+    imageSrc: "/projects/fmhy.png",
+    isFeatured: true,
+  },
   {
     title: "Mentora",
     description:
@@ -33,6 +52,22 @@ export const PROJECTS_DATA = [
     isFeatured: true,
   },
   {
+    title: "Everhealth",
+    description:
+      "mobile app that motivates patients to adhere to treatment plans and manage chronic conditions through the use of gamification techniques, with streak & level system, Health Feed AI doctor, leaderboards, and darkmode.",
+    techStack: [
+      TECH_STACK.REACT_NATIVE,
+      TECH_STACK.FIREBASE,
+      TECH_STACK.CHAT_GPT,
+      TECH_STACK.EXPO,
+    ],
+    githubLink: "https://github.com/zeus-12/Everhealth",
+    deployedLink:
+      "https://expo.dev/@vishnu_v12/gfg-hackathon?serviceType=classic&distribution=expo-go",
+    imageSrc: "/projects/everhealth.jpeg",
+    isFeatured: true,
+  },
+  {
     title: "Ping",
     description:
       "Security app for IITM allowing users to send their location to their contacts in case of an emergency. Enabling the security to track the user's location, access and record nearby cameras.",
@@ -41,6 +76,7 @@ export const PROJECTS_DATA = [
       TECH_STACK.EXPRESS,
       TECH_STACK.MONGODB,
       TECH_STACK.REACT_NATIVE,
+      TECH_STACK.EXPO,
     ],
     githubLink: "",
     deployedLink: "",
@@ -56,22 +92,7 @@ export const PROJECTS_DATA = [
     imageSrc: "/projects/coursepanel.png",
     isFeatured: false,
   },
-  {
-    title: "FMHY",
-    description:
-      "A full-stack website for a popular reddit community, FMHY built using. Built a service which periodically scrapes and cleans the data from their GitHub page.",
-    techStack: [
-      TECH_STACK.REACT,
-      TECH_STACK.MYSQL,
-      TECH_STACK.PRISMA,
-      TECH_STACK.MONGODB,
-      TECH_STACK.EXPRESS,
-    ],
-    githubLink: "https://github.com/zeus-12/fmhy-ui",
-    deployedLink: "https://www.fmhy.ml",
-    imageSrc: "/projects/fmhy.png",
-    isFeatured: false,
-  },
+
   {
     title: "JMT Shaastra",
     description:
@@ -99,7 +120,17 @@ export const PROJECTS_DATA = [
     techStack: [TECH_STACK.NEXTJS, TECH_STACK.EXPRESS, TECH_STACK.POSTGRESQL],
     deployedLink: "https://deankuriakose.in",
     imageSrc: "/projects/mpportal.png",
-    isFeatured: true,
+    isFeatured: false,
+  },
+  {
+    title: "IITM Mess Menu",
+    description:
+      "Mess Menu app for students of IITM, which automatically updates based on day and week number.",
+    techStack: [TECH_STACK.NEXTJS],
+    deployedLink: "https://foodentha.vercel.app",
+    githubLink: "https://github.com/zeus-12/iitmess",
+    imageSrc: "/projects/iitmess.png",
+    isFeatured: false,
   },
 ];
 
