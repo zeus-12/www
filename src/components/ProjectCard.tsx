@@ -53,7 +53,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   }}
                   withArrow
                 >
-                  <SiGithub className="w-5 hover:cursor-pointer h-5" />
+                  <div>
+                    <SiGithub className="w-5 hover:cursor-pointer h-5" />
+                  </div>
                 </Tooltip>
               </Link>
             )}
@@ -69,7 +71,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   }}
                   label="View deployed"
                 >
-                  <MdPreview className="w-6 hover:cursor-pointer h-6" />
+                  <div>
+                    <MdPreview className="w-6 hover:cursor-pointer h-6" />
+                  </div>
                 </Tooltip>
               </Link>
             )}
