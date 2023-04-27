@@ -69,7 +69,7 @@ const NavbarDrawer = ({
 }) => (
   <div>
     <Drawer
-      className="pt-4 px-2 bg-black"
+      className="pt-4 bg-black"
       onClick={() => setOpened(false)}
       opened={opened}
       position="top"

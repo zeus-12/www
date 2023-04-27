@@ -21,7 +21,7 @@ const Projects = () => {
   }, [query]);
 
   return (
-    <div className="pt-8 px-8 lg:px-24 lg:py-16">
+    <div className="pt-8 px-4 lg:px-24 lg:py-16">
       <p className="text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight">
         Projects
       </p>
