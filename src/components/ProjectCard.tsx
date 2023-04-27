@@ -5,7 +5,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { TECHSTACK_COLOUR_MAPPING } from "../utils/constants";
 
-const ProjectCard = ({
+interface ProjectCardProps {
+  deployedLink?: string;
+  githubLink?: string;
+  description: string;
+  title: string;
+  imageSrc: string;
+  techStack?: string[];
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({
   deployedLink,
   githubLink,
   description,
@@ -63,7 +72,11 @@ const ProjectCard = ({
         <div className="mb-2 px-1 flex gap-2 flex-wrap md:px-2">
           {techStack?.map((stack) => (
             <Badge
-              color={TECHSTACK_COLOUR_MAPPING[stack]}
+              color={
+                TECHSTACK_COLOUR_MAPPING[
+                  stack as keyof typeof TECHSTACK_COLOUR_MAPPING
+                ]
+              }
               variant="light"
               key={stack}
             >

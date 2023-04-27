@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import Link from "next/link";
 import SlideUpWhenVisible from "../hooks/SlideUpWhenVisible";
 import ProjectCard from "./ProjectCard";

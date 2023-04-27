@@ -6,7 +6,15 @@ export const TileContext = React.createContext({
   currentPage: 0,
 });
 
-export const TileWrapper = ({ children, numOfPages }) => {
+interface TileWrapperProps {
+  children: React.ReactNode;
+  numOfPages: number;
+}
+
+export const TileWrapper: React.FC<TileWrapperProps> = ({
+  children,
+  numOfPages,
+}) => {
   const { scrollY } = useContext(ScrollContext);
   const refContainer = useRef(null);
 
@@ -41,15 +49,22 @@ export const TileWrapper = ({ children, numOfPages }) => {
   );
 };
 
-export const TileBackground = ({ children }) => {
-  <div className="absolute h-full w-full">{children}</div>;
+export const TileBackground = ({ children }: { children: React.ReactNode }) => {
+  return <div className="absolute h-full w-full">{children}</div>;
 };
 
-export const TileContent = ({ children }) => {
-  <div className="sticky top-0 h-screen overflow-hidden">{children}</div>;
+export const TileContent = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="sticky top-0 h-screen overflow-hidden">{children}</div>
+  );
 };
 
-export const Tile = ({ page, renderContent }) => {
+interface TileProps {
+  page: number;
+  renderContent: ({ progress }: { progress: number }) => React.ReactNode;
+}
+
+export const Tile: React.FC<TileProps> = ({ page, renderContent }) => {
   const { currentPage, numOfPages } = useContext(TileContext);
   const refContainer = useRef(null);
   const progress = Math.max(0, currentPage - page);

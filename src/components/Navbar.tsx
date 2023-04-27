@@ -18,7 +18,7 @@ const linkElements = [
   },
 ];
 
-const LinkElements = ({ isDrawer }) => {
+const LinkElements = ({ isDrawer }: { isDrawer?: boolean }) => {
   const { asPath: path } = useRouter();
 
   return (
@@ -42,7 +42,11 @@ const LinkElements = ({ isDrawer }) => {
   );
 };
 
-const Logo = ({ setOpened }) => (
+const Logo = ({
+  setOpened,
+}: {
+  setOpened: React.Dispatch<React.SetStateAction<boolean>>;
+}) => (
   <Link href="/" passHref>
     <div
       onClick={() => setOpened(false)}
@@ -56,7 +60,13 @@ const Logo = ({ setOpened }) => (
   </Link>
 );
 
-const NavbarDrawer = ({ opened, setOpened }) => (
+const NavbarDrawer = ({
+  opened,
+  setOpened,
+}: {
+  opened: boolean;
+  setOpened: React.Dispatch<React.SetStateAction<boolean>>;
+}) => (
   <div>
     <Drawer
       className="pt-4 px-2 bg-black"
