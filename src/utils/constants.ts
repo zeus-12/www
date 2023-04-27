@@ -1,27 +1,19 @@
-export const TECHSTACK_COLOUR_MAPPING = {
-  React: "blue",
-  NextJS: "orange",
-  MongoDB: "green",
-  NodeJS: "red",
-  Express: "yellow",
-  PostgreSQL: "pink",
-  "React Native": "cyan",
-};
-
-const TECH_STACK = {
-  REACT: "React",
-  NEXTJS: "NextJS",
-  MONGODB: "MongoDB",
-  NODEJS: "NodeJS",
-  EXPRESS: "Express",
-  POSTGRESQL: "PostgreSQL",
-  EXPO: "Expo",
-  REACT_NATIVE: "React Native",
-  MYSQL: "MySQL",
-  PRISMA: "Prisma",
-  SHEETS_API: "Sheets API",
-  FIREBASE: "Firebase",
-  CHAT_GPT: "Chat-GPT",
+const TECH_STACK: {
+  [key: string]: { title: string; color: string };
+} = {
+  REACT: { title: "React", color: "blue" },
+  NEXTJS: { title: "NextJS", color: "orange" },
+  MONGODB: { title: "MongoDB", color: "green" },
+  NODEJS: { title: "NodeJS", color: "red" },
+  EXPRESS: { title: "Express", color: "yellow" },
+  POSTGRESQL: { title: "PostgreSQL", color: "pink" },
+  EXPO: { title: "Expo", color: "green" },
+  REACT_NATIVE: { title: "React Native", color: "cyan" },
+  MYSQL: { title: "MySQL", color: "pink" },
+  PRISMA: { title: "Prisma", color: "green" },
+  SHEETS_API: { title: "Sheets API", color: "blue" },
+  FIREBASE: { title: "Firebase", color: "green" },
+  CHAT_GPT: { title: "Chat-GPT", color: "blue" },
 };
 
 export const PROJECTS_DATA = [
