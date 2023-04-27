@@ -27,10 +27,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       className="bg-slate-900 border-[1px] border-gray-800 p-0 text-white hover:scale-[102%] transition-all duration-200"
       shadow="sm"
     >
-      <div className="relative aspect-[45/22] rounded-lg">
+      <div className="relative rounded-md">
         <Image
           src={imageSrc}
-          className="w-full rounded-lg"
+          className="w-full rounded-lg object-contain max-h-96"
           alt={title}
           width={400}
           height={400}
