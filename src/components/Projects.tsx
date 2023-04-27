@@ -15,12 +15,11 @@ const Projects = () => {
           <Link key={i} href={project.deployedLink}>
             <Tile
               page={i}
-              renderContent={({ progress }) => (
+              renderContent={({ progress }: { progress: number }) => (
                 <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
                   <ProjectLeft progress={progress}>
                     <div>
                       <p className="capitalize text-4xl text-cyan-300 font-semibold tracking-tight">
-                        {/* <span className="text-cyan-400 ">#{i + 1}</span>{" "} */}
                         {project.title}
                       </p>
                       <p className="text-base text-gray-400">
@@ -30,9 +29,9 @@ const Projects = () => {
                   </ProjectLeft>
 
                   <ProjectRight progress={progress}>
-                    <div className="hover:scale-[102%] hover:cursor-pointer transition transform duration-100 ease-out">
+                    <div className="hover:scale-[101%] hover:cursor-pointer transition transform duration-200 ease-in-out">
                       <Image
-                        className="w-screen h-auto mx-auto md:w-[95vw] lg:w-[50vw] rounded-md"
+                        className="w-full md:w-[95vw] lg:w-[50vw] rounded-md object-contain mx-auto max-h-[80vh] lg:max-h-screen"
                         width={500}
                         height={500}
                         src={project.imageSrc}

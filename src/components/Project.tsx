@@ -1,16 +1,27 @@
-export const ProjectContainer = ({ children }) => {
+export const ProjectContainer = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
     {children}
   </div>;
 };
 
 export const ProjectBackground = () => {
-  <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen top-0 sticky">
-    <div className="bg-black h-[30vh] lg:h-auto"></div>
-    <div className="bg-white h-[70vh] lg:min-h-screen"></div>
-  </div>;
+  return (
+    <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen top-0 sticky">
+      <div className="bg-black h-[30vh] lg:h-auto"></div>
+      <div className="bg-white h-[70vh] lg:min-h-screen"></div>
+    </div>
+  );
 };
-export const ProjectLeft = ({ children, progress }) => {
+
+interface ProjectProps {
+  children: React.ReactNode;
+  progress: number;
+}
+export const ProjectLeft: React.FC<ProjectProps> = ({ children, progress }) => {
   let translateY = Math.max(0, 50 - progress * 3 * 50);
   if (progress > 0.85) translateY = Math.max(-50, -(progress - 0.85) * 2 * 50);
   return (
@@ -23,7 +34,10 @@ export const ProjectLeft = ({ children, progress }) => {
   );
 };
 
-export const ProjectRight = ({ children, progress }) => {
+export const ProjectRight: React.FC<ProjectProps> = ({
+  children,
+  progress,
+}) => {
   let translateY = Math.max(-50, -(progress - 0.5) * 50);
   return (
     <div
