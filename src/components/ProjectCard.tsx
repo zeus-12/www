@@ -3,7 +3,6 @@ import { MdPreview, MdTableView } from "react-icons/md";
 import { Card, Badge, Tooltip } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
-import { TECHSTACK_COLOUR_MAPPING } from "../utils/constants";
 
 interface ProjectCardProps {
   deployedLink?: string;
@@ -11,7 +10,10 @@ interface ProjectCardProps {
   description: string;
   title: string;
   imageSrc: string;
-  techStack?: string[];
+  techStack?: {
+    title: string;
+    color: string;
+  }[];
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -75,16 +77,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
         <div className="mb-2 px-1 flex gap-2 flex-wrap md:px-2">
           {techStack?.map((stack) => (
-            <Badge
-              color={
-                TECHSTACK_COLOUR_MAPPING[
-                  stack as keyof typeof TECHSTACK_COLOUR_MAPPING
-                ]
-              }
-              variant="light"
-              key={stack}
-            >
-              {stack}
+            <Badge color={stack.color} variant="light" key={stack.title}>
+              {stack.title}
             </Badge>
           ))}
         </div>
