@@ -46,7 +46,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   label="View source code"
                   color="dark"
                   position="bottom"
-                  transition="scale-y"
+                  transitionProps={{
+                    transition: "scale-y",
+                  }}
                   withArrow
                 >
                   <SiGithub className="w-5 hover:cursor-pointer h-5" />
@@ -60,7 +62,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                   color="dark"
                   position="bottom"
                   withArrow
-                  transition="scale-y"
+                  transitionProps={{
+                    transition: "scale-y",
+                  }}
                   label="View deployed"
                 >
                   <MdPreview className="w-6 hover:cursor-pointer h-6" />
