@@ -1,4 +1,4 @@
-import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
+import SlideUpWhenVisible from "../hooks/SlideUpWhenVisible";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 import { IoIosMail } from "react-icons/io";
 import LinkBox from "../components/LinkBox";

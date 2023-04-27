@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
+import SlideUpWhenVisible from "../hooks/SlideUpWhenVisible";
 import ProjectCard from "./ProjectCard";
 
 const ProjectsSection = () => {

@@ -1,4 +1,4 @@
-import SlideUpWhenVisible from "../hook/SlideUpWhenVisible";
+import SlideUpWhenVisible from "../hooks/SlideUpWhenVisible";
 import LinkBox from "./LinkBox";
 import { SiLinkedin } from "react-icons/si";
 import { IoIosMail, IoIosPaper } from "react-icons/io";
@@ -18,7 +18,7 @@ const Contact = () => {
           Keep in Touch!
         </p>
         <p className="text-center mt-6 text-neutral-400">
-          I'm currently specialising in{" "}
+          I&apos;m currently specialising in{" "}
           <span className="text-cyan-400">Full Stack Development</span>.
         </p>
 
