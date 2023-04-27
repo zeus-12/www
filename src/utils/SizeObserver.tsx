@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from "react";
 
 export const SizeContext = React.createContext({ innerWidth: 0 });
 
-const SizeObserver = ({ children }) => {
+const SizeObserver = ({ children }: { children: React.ReactNode }) => {
   const [innerWidth, setInnerWidth] = useState(0);
   const handleResize = useCallback(() => {
     setInnerWidth(window.innerWidth);

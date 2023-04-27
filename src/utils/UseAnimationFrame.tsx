@@ -1,7 +1,7 @@
 import { useCallback, useRef, useEffect } from "react";
 
-const UseAnimationFrame = (enabled, callback) => {
-  const requestRef = useRef();
+const UseAnimationFrame = (enabled: boolean, callback: () => void) => {
+  const requestRef = useRef<number>();
 
   const animate = useCallback(() => {
     callback();

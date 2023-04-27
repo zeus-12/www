@@ -26,8 +26,8 @@ const Projects = () => {
         Projects
       </p>
       <p className="text-gray-400">
-        I love building projects and practice my coding skills. Here's an
-        archive of things that I've worked on.
+        I love building projects and practice my coding skills. Here&apos;s an
+        archive of things that I&apos;ve worked on.
       </p>
 
       <TextInput

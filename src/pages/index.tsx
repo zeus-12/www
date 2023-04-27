@@ -6,20 +6,21 @@ import Projects from "../components/Projects";
 
 export default function Home() {
   return (
-    <div className="py-4 mt-6 md:py-8 lg:pt-16">
+    <>
       <Head>
         <title>Vishnu Vinod - Software Engineer</title>
         <meta name="description" content="Portfolio Website" />
         <link rel="icon" href="/icon.ico" />
       </Head>
-
-      <div className="px-4 sm:mx-4 lg:px-12 md:px-8">
-        <Hero />
-        <AboutMe />
+      <div className="py-4 mt-6 md:py-8 lg:pt-16">
+        <div className="px-4 sm:mx-4 lg:px-12 md:px-8">
+          <Hero />
+          <AboutMe />
+        </div>
+        <Projects />
+        <Contact />
       </div>
-      <Projects />
-      <Contact />
-    </div>
+    </>
   );
 }
 // put this somewhere
