@@ -75,8 +75,10 @@ const NavbarDrawer = ({
       position="top"
       size="100vh"
       onClose={() => setOpened(false)}
-      overlayOpacity={0.55}
-      overlayBlur={3}
+      overlayProps={{
+        opacity: 0.55,
+        blur: 3,
+      }}
       withCloseButton={false}
       zIndex={20}
     >
