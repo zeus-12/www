@@ -6,3 +6,4 @@
 - check project.jsx and tile.jsx seems theyre the same
 - build a project page. showing details about the project -> or maybe just even a large modal
 - link shortener kinda thing
+- change image on hero, and increase padding
