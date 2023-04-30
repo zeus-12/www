@@ -3,11 +3,15 @@ import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import ProjectCard from "@/components/ProjectCard";
 import { PROJECTS_DATA } from "@/utils/constants";
+import { InferGetStaticPropsType, NextPage } from "next";
+import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
 
-const Projects = () => {
+const Projects: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  projects_data,
+}) => {
   const [query, setQuery] = useState("");
 
-  const [projects, setProjects] = useState(PROJECTS_DATA);
+  const [projects, setProjects] = useState(projects_data);
 
   useEffect(() => {
     if (query.trim().length > 0) {
@@ -63,3 +67,9 @@ const Projects = () => {
 };
 
 export default Projects;
+
+export const getStaticProps = ({ params }) => ({
+  props: {
+    projects_data: PROJECTS_DATA,
+  },
+});
