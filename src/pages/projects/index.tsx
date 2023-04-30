@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import ProjectCard from "@/components/ProjectCard";
 import { PROJECTS_DATA } from "@/utils/constants";
-import { InferGetStaticPropsType, NextPage } from "next";
+import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from "next";
 import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
 
 const Projects: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -68,7 +68,7 @@ const Projects: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
 export default Projects;
 
-export const getStaticProps = ({ params }) => ({
+export const getStaticProps = ({ params }: GetStaticPropsContext) => ({
   props: {
     projects_data: PROJECTS_DATA,
   },
