@@ -7,3 +7,4 @@
 - build a project page. showing details about the project -> or maybe just even a large modal
 - link shortener kinda thing
 - change image on hero, and increase padding
+- replace all techstack names with their logos

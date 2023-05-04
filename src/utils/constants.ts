@@ -1,4 +1,4 @@
-const TECH_STACK: {
+export const TECH_STACK: {
   [key: string]: { title: string; color: string };
 } = {
   REACT: { title: "React", color: "blue" },
