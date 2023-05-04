@@ -10,6 +10,14 @@ export const Snippets = defineDocumentType(() => ({
       description: "The title of the snippet",
       required: true,
     },
+    techStack: {
+      type: "list",
+      of: {
+        type: "string",
+      },
+      description: "The tech stacks used in the snippet",
+      required: false,
+    },
     description: {
       type: "string",
       description: "The description of the snippet",

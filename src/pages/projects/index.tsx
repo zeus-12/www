@@ -45,17 +45,15 @@ const Projects = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-4 mt-8">
         {projects.length > 0 ? (
           projects.map((project) => (
-            <SlideUpWhenVisible key={project.title}>
-              <ProjectCard
-                imageSrc={project.imageSrc}
-                techStack={project.techStack}
-                key={project.title}
-                deployedLink={project.deployedLink}
-                githubLink={project.githubLink}
-                description={project.description}
-                title={project.title}
-              />
-            </SlideUpWhenVisible>
+            <ProjectCard
+              imageSrc={project.imageSrc}
+              techStack={project.techStack}
+              key={project.title}
+              deployedLink={project.deployedLink}
+              githubLink={project.githubLink}
+              description={project.description}
+              title={project.title}
+            />
           ))
         ) : (
           <p className="text-gray-400">
