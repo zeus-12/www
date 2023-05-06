@@ -46,7 +46,7 @@ export const PROJECTS_DATA = [
   {
     title: "Everhealth",
     description:
-      "mobile app that motivates patients to adhere to treatment plans and manage chronic conditions through the use of gamification techniques, with streak & level system, Health Feed AI doctor, leaderboards, and darkmode.",
+      "Mobile app that motivates patients to adhere to treatment plans and manage chronic conditions through the use of gamification techniques, with streak & level system, Health Feed AI doctor, leaderboards, and darkmode.",
     techStack: [
       TECH_STACK.REACT_NATIVE,
       TECH_STACK.FIREBASE,
