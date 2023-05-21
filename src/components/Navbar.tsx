@@ -69,11 +69,11 @@ const NavbarDrawer = ({
 }) => (
   <div>
     <Drawer
-      className='pt-4 bg-black'
-      onClick={() => setOpened(false)}
+      className='bg-black'
       opened={opened}
       position='top'
       size='100vh'
+      onClick={() => setOpened(false)}
       onClose={() => setOpened(false)}
       overlayProps={{
         opacity: 0.55,
