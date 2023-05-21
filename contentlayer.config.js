@@ -28,14 +28,19 @@ export const Snippet = defineDocumentType(() => ({
       description: 'The date of the post',
       required: true,
     },
+    slug: {
+      type: 'string',
+      description: 'The slug of the post',
+      required: true,
+    },
   },
-  computedFields,
 }));
 
 const computedFields = {
   slug: {
     type: 'string',
-    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+
+    resolve: (doc) => `/${doc._raw.flattenedPath.split('/').at(-1)}`,
   },
   slugAsParams: {
     type: 'string',
