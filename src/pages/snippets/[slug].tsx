@@ -38,9 +38,6 @@ export async function getStaticProps({
 > {
   const snippet = allSnippets.find((snippet) => snippet.slug === params?.slug);
 
-  console.log(snippet, 'snippet');
-  console.log('here');
-
   return typeof snippet === 'undefined'
     ? {
         redirect: {
