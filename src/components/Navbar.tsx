@@ -54,7 +54,7 @@ const Logo = ({
       onClick={() => setOpened(false)}
       className='flex items-center hover:cursor-pointer'
     >
-      <p className='text-3xl font-bold text-white'>
+      <p className='text-3xl font-bold'>
         <span className='text-gray-400'>&#x0007B;</span>V
         <span className='text-gray-400'>&#x0007D;</span>
       </p>
