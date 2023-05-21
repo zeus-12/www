@@ -1,43 +1,49 @@
-import { defineDocumentType, makeSource } from "contentlayer/source-files";
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 
-export const Snippets = defineDocumentType(() => ({
-  name: "Snippets",
+export const Snippet = defineDocumentType(() => ({
+  name: 'Snippets',
   filePathPattern: `snippets/**/*.mdx`,
-  contentType: "mdx",
+  contentType: 'mdx',
   fields: {
     title: {
-      type: "string",
-      description: "The title of the snippet",
+      type: 'string',
+      description: 'The title of the snippet',
       required: true,
     },
     techStack: {
-      type: "list",
+      type: 'list',
       of: {
-        type: "string",
+        type: 'string',
       },
-      description: "The tech stacks used in the snippet",
+      description: 'The tech stacks used in the snippet',
       required: false,
     },
     description: {
-      type: "string",
-      description: "The description of the snippet",
+      type: 'string',
+      description: 'The description of the snippet',
       required: true,
     },
     date: {
-      type: "date",
-      description: "The date of the post",
+      type: 'date',
+      description: 'The date of the post',
       required: true,
     },
   },
-  computedFields: {
-    url: {
-      type: "string",
-      resolve: (post) => `/library/${post._raw.flattenedPath}`,
-    },
-  },
+  computedFields,
 }));
 
+const computedFields = {
+  slug: {
+    type: 'string',
+    resolve: (doc) => `/${doc._raw.flattenedPath}`,
+  },
+  slugAsParams: {
+    type: 'string',
+    resolve: (doc) => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+  },
+};
+
 export default makeSource({
-  contentDirPath: "./content",
-  documentTypes: [Snippets],
+  contentDirPath: './content',
+  documentTypes: [Snippet],
 });

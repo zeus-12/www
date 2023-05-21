@@ -1,11 +1,11 @@
-import { Snippets, allSnippets } from "contentlayer/generated";
+import { Snippets, allSnippets } from 'contentlayer/generated';
 import {
   GetStaticPropsContext,
   GetStaticPropsResult,
   InferGetStaticPropsType,
   NextPage,
-} from "next";
-import { getMDXComponent } from "next-contentlayer/hooks";
+} from 'next';
+import { getMDXComponent } from 'next-contentlayer/hooks';
 
 const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   snippet,
@@ -22,11 +22,11 @@ const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 export default CodeSnippet;
 
 export async function getStaticPaths() {
-  const paths = allSnippets.map((snippet) => snippet.url);
+  const paths = allSnippets.map((snippet) => snippet.slug);
   console.log(paths);
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -39,10 +39,10 @@ export async function getStaticProps({
     (snippet) => snippet._raw.flattenedPath === params?.slug
   );
 
-  return typeof snippet === "undefined"
+  return typeof snippet === 'undefined'
     ? {
         redirect: {
-          destination: "/",
+          destination: '/',
           permanent: false,
         },
       }

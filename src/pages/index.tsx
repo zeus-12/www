@@ -1,19 +1,19 @@
-import Head from "next/head";
-import AboutMe from "../components/AboutMe";
-import Contact from "../components/Contact";
-import Hero from "../components/Hero";
-import Projects from "../components/Projects";
+import Head from 'next/head';
+import AboutMe from '../components/AboutMe';
+import Contact from '../components/Contact';
+import Hero from '../components/Hero';
+import Projects from '../components/Projects';
 
 export default function Home() {
   return (
     <>
       <Head>
         <title>Vishnu Vinod - Software Engineer</title>
-        <meta name="description" content="Portfolio Website" />
-        <link rel="icon" href="/icon.ico" />
+        <meta name='description' content='Portfolio Website' />
+        <link rel='icon' href='/icon.ico' />
       </Head>
-      <div className="py-4 mt-6 md:py-8 lg:pt-16">
-        <div className="px-4 sm:mx-4 lg:px-12 md:px-8">
+      <div className='py-4 mt-6 md:py-8 lg:pt-16'>
+        <div className='px-4 sm:mx-4 lg:px-12 md:px-8'>
           <Hero />
           <AboutMe />
         </div>
