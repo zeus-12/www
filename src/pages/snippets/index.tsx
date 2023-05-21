@@ -3,6 +3,7 @@ import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
 import { allSnippets } from 'contentlayer/generated';
 
 const Library = () => {
+  console.log(allSnippets);
   return (
     <SlideUpWhenVisible>
       <div className='pt-8 px-8 lg:px-24 lg:py-16'>
@@ -15,15 +16,22 @@ const Library = () => {
           to reuse!
         </p>
 
-        {allSnippets?.map((snippet) => (
-          <SlideUpWhenVisible key={snippet.title}>
+        <div
+          className='grid gap-2 w-full'
+          style={{
+            gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))',
+          }}
+        >
+          {allSnippets?.map((snippet) => (
             <LibraryCard
+              slug={snippet.slug}
+              key={snippet.title}
               techStack={snippet.techStack}
               title={snippet.title}
               description={snippet.description}
             />
-          </SlideUpWhenVisible>
-        ))}
+          ))}
+        </div>
       </div>
     </SlideUpWhenVisible>
   );
