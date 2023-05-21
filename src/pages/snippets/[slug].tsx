@@ -10,8 +10,7 @@ import { getMDXComponent } from 'next-contentlayer/hooks';
 const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   snippet,
 }) => {
-  console.log(snippet);
-  const Content = getMDXComponent(snippet.body.code);
+  const Content = getMDXComponent(snippet?.body?.code);
 
   return (
     <div>
@@ -26,9 +25,8 @@ export async function getStaticPaths() {
   const snippetSlugs = allSnippets.map((snippet) => snippet.slug);
   const paths = snippetSlugs.map((slug) => ({ params: { slug } }));
 
-  console.log(paths);
   return {
-    paths: [{ params: { slug: 'test1' } }],
+    paths,
     fallback: true,
   };
 }
