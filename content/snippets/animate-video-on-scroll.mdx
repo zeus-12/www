@@ -41,8 +41,6 @@ function App() {
 
 ```
 
-<br />
-
 ```tsx:ImageSequence.tsx
 import { CSSProperties } from "react";
 import { clamp, MotionValue, useMotionValueEvent } from "framer-motion";
@@ -110,8 +108,6 @@ export default ImageSequence;
 
 ```
 
-<br />
-
 Now it can be called using:
 
 ```tsx
@@ -123,7 +119,8 @@ Now it can be called using:
 />
 ```
 
-<br />
-
 To convert a video to a sequence of images you can use ffmpeg:
-`ffmpeg -¡ "airpods.mp4" "frames/%04d.jpg"`
+
+```bash
+ffmpeg -¡ "airpods.mp4" "frames/%04d.jpg"
+```
