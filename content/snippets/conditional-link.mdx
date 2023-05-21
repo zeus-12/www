@@ -1,3 +1,10 @@
+---
+title: Conditional Link
+description: Conditionally render Next/Link or a tag based on the link
+date: 2021-12-24
+---
+
+```tsx:Link.tsx
 import React, { DetailedHTMLProps, AnchorHTMLAttributes, Ref } from 'react';
 import NextLink from 'next/link';
 
@@ -37,3 +44,5 @@ const Link = ({ href, className, children, ...rest }: LinkProps) => {
 };
 
 export default Link;
+
+```

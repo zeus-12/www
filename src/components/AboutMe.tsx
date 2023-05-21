@@ -1,7 +1,6 @@
 import { Button } from '@mantine/core';
 import Link from 'next/link';
 import { useContext, useRef } from 'react';
-import s from '@/styles/skills.module.css';
 import { ScrollContext } from '@/utils/ScrollObserver';
 
 const opacityForBlock = (sectionProgress: number, blockNo: number) => {
@@ -39,7 +38,7 @@ const AboutMe = () => {
         <div className='leading-[1.15] space-y-4'>
           <p className='mb-2 text-gray-300'>⚡️</p>
           <div
-            className={s.skillText}
+            className='transition-opacity duration-500'
             style={{ opacity: opacityForBlock(progress, 0) }}
           >
             A 20-year-old based in India, currently pursuing Engineering Design
@@ -49,7 +48,7 @@ const AboutMe = () => {
             </a>
           </div>
           <span
-            className={`${s.skillText} inline-block after:content-['_']`}
+            className={`transition-opacity duration-500 inline-block after:content-['_']`}
             style={{ opacity: opacityForBlock(progress, 1) }}
           >
             I started out building websites using no-code tools. And later on, I{' '}
@@ -60,7 +59,7 @@ const AboutMe = () => {
             </span>
           </span>
           <span
-            className={`${s.skillText} inline-block`}
+            className={`transition-opacity duration-500 inline-block`}
             style={{ opacity: opacityForBlock(progress, 2) }}
           >
             I&apos;m interested in building something awesome or automate tasks

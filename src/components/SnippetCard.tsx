@@ -1,14 +1,14 @@
 import { Badge } from '@mantine/core';
 import { TECH_STACK } from '@/utils/constants';
 import Link from 'next/link';
-interface LibraryCardProps {
+interface SnippetCardProps {
   techStack?: string[];
   title: string;
   description: string;
   slug: string;
 }
 
-const LibraryCard: React.FC<LibraryCardProps> = ({
+const SnippetCard: React.FC<SnippetCardProps> = ({
   techStack,
   title,
   description,
@@ -16,18 +16,18 @@ const LibraryCard: React.FC<LibraryCardProps> = ({
 }) => {
   return (
     <Link href={`/snippets/${slug}`}>
-      <div className='bg-gray-900 rounded-md p-4 w-full inline-flex'>
+      <div className='bg-gray-900 rounded-md p-4 w-full inline-flex h-full hover:scale-[102%] ease-in-out transition duration-200'>
         {techStack?.map((stack) => (
           <Badge color={TECH_STACK[stack].color} variant='light' key={stack}>
             {TECH_STACK[stack].title}
           </Badge>
         ))}
         <div>
-          <p>{title}</p>
-          <p>{description}</p>
+          <p className='text-xl font-semibold'>{title}</p>
+          <p className='text-gray-400'>{description}</p>
         </div>
       </div>
     </Link>
   );
 };
-export default LibraryCard;
+export default SnippetCard;
