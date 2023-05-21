@@ -15,7 +15,7 @@ interface MdxProps {
 const Mdx = ({ code, components }: MdxProps) => {
   const MDXContent = useMDXComponent(code);
   return (
-    <article className='prose dark:prose-invert text-gray-300 mb-8'>
+    <article className='prose dark:prose-invert text-gray-300git mb-8'>
       <MDXContent components={{ ...MDXComponents, ...components }} />
     </article>
   );
