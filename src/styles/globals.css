@@ -46,7 +46,3 @@ code[class*='language-'],
 pre[class*='language-'] {
   font-size: 0.85rem !important;
 }
-
-article li {
-  margin-top: 10px;
-}

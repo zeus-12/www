@@ -6,6 +6,8 @@ date: 2021-12-24
 
 Avoid error if window has not loaded
 
+## Code
+
 ```tsx:getFromLocalStorage.tsx
 export function getFromLocalStorage(key) {
   if (typeof localStorage !== 'undefined') {
@@ -15,7 +17,7 @@ export function getFromLocalStorage(key) {
 }
 ```
 
-# Usage
+## Usage
 
 ```js
 const [token, setToken] = useState(() => getFromLocalStorage('token') || null);
