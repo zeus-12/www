@@ -6,7 +6,6 @@ import {
 import remarkGfm from 'remark-gfm';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypePrism from 'rehype-prism-plus';
-import { Document } from 'contentlayer/core';
 
 export const Snippet = defineDocumentType(() => ({
   name: 'Snippets',
