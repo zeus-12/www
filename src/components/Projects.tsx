@@ -1,4 +1,4 @@
-import { TileWrapper, TileBackground, Tile } from './Tile';
+import { TileWrapper, TileBackground, Tile } from './ProjectTile';
 import { ProjectBackground, ProjectLeft, ProjectRight } from './Project';
 import Image from 'next/image';
 import Link from 'next/link';

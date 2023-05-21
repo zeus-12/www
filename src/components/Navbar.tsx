@@ -13,6 +13,10 @@ const linkElements = [
     href: '/projects',
   },
   {
+    name: 'Snippets',
+    href: '/snippets',
+  },
+  {
     name: 'Contact',
     href: '/#contact',
   },
@@ -22,16 +26,14 @@ const LinkElements = ({ isDrawer }: { isDrawer?: boolean }) => {
   const { asPath: path } = useRouter();
 
   return (
-    <div
-      className={`flex gap-8 ${
-        isDrawer ? 'flex flex-col gap-8' : 'flex gap-8'
-      }`}
-    >
+    <div className={`flex ${isDrawer ? 'flex flex-col gap-2' : 'flex gap-8'}`}>
       {linkElements.map((link) => (
         <Link key={link.name} href={link.href} passHref>
           <p
             className={`px-2 py-1 rounded-md cursor-pointer text-center hover:bg-gray-900 
-            ${path === link.href ? 'text-gray-300' : 'text-gray-600'}
+            ${path === link.href ? 'text-gray-300' : 'text-gray-600'} ${
+              isDrawer ? 'py-3' : 'py-1'
+            }
           `}
           >
             {link.name}
@@ -81,6 +83,9 @@ const NavbarDrawer = ({
       }}
       withCloseButton={false}
       zIndex={20}
+      classNames={{
+        body: 'bg-black h-screen',
+      }}
     >
       <div className='text-3xl pt-16'>
         <LinkElements isDrawer={true} />

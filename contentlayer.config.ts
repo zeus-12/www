@@ -46,12 +46,21 @@ export const Snippet = defineDocumentType(() => ({
   },
 }));
 
+export const Other = defineDocumentType(() => ({
+  name: 'Other',
+  filePathPattern: `other/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: {
+      type: 'string',
+      description: 'The title of the snippet',
+      required: true,
+    },
+  },
+  computedFields,
+}));
+
 export const computedFields: ComputedFields = {
-  // readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
-  // wordCount: {
-  //   type: 'number',
-  //   resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
-  // },
   slug: {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
@@ -60,7 +69,7 @@ export const computedFields: ComputedFields = {
 
 export default makeSource({
   contentDirPath: './content',
-  documentTypes: [Snippet],
+  documentTypes: [Snippet, Other],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypeCodeTitles, rehypePrism],

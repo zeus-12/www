@@ -12,8 +12,7 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  @apply text-gray-400 hover:text-blue-400 !important;
 }
 
 * {
@@ -46,4 +45,8 @@ a {
 code[class*='language-'],
 pre[class*='language-'] {
   font-size: 0.85rem !important;
+}
+
+article li {
+  margin-top: 10px;
 }
