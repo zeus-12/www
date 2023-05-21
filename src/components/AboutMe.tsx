@@ -1,8 +1,8 @@
-import { Button } from "@mantine/core";
-import Link from "next/link";
-import { useContext, useRef } from "react";
-import s from "@/styles/skills.module.css";
-import { ScrollContext } from "@/utils/ScrollObserver";
+import { Button } from '@mantine/core';
+import Link from 'next/link';
+import { useContext, useRef } from 'react';
+import s from '@/styles/skills.module.css';
+import { ScrollContext } from '@/utils/ScrollObserver';
 
 const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   const progress = sectionProgress - blockNo;
@@ -34,17 +34,17 @@ const AboutMe = () => {
   }
 
   return (
-    <div ref={refContainer} className="bg-black text-white">
-      <div className="min-h-screen max-w-5xl mx-auto px-4 lg:px-8 pt-24 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold">
-        <div className="leading-[1.15] space-y-4">
-          <p className="mb-2 text-gray-300">⚡️</p>
+    <div ref={refContainer} className='bg-black text-white'>
+      <div className='min-h-screen max-w-5xl mx-auto px-4 lg:px-8 pt-24 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold'>
+        <div className='leading-[1.15] space-y-4'>
+          <p className='mb-2 text-gray-300'>⚡️</p>
           <div
             className={s.skillText}
             style={{ opacity: opacityForBlock(progress, 0) }}
           >
             A 20-year-old based in India, currently pursuing Engineering Design
-            from{" "}
-            <a className="text-cyan-300" href="https://www.iitm.ac.in/">
+            from{' '}
+            <a className='text-cyan-300' href='https://www.iitm.ac.in/'>
               IIT Madras
             </a>
           </div>
@@ -52,10 +52,10 @@ const AboutMe = () => {
             className={`${s.skillText} inline-block after:content-['_']`}
             style={{ opacity: opacityForBlock(progress, 1) }}
           >
-            I started out building websites using no-code tools. And later on, I{" "}
-            <span className="text-cyan-300">taught myself</span> how to code,
-            fast-forward to today, I do programming in{" "}
-            <span className="text-cyan-300">
+            I started out building websites using no-code tools. And later on, I{' '}
+            <span className='text-cyan-300'>taught myself</span> how to code,
+            fast-forward to today, I do programming in{' '}
+            <span className='text-cyan-300'>
               various languages and technologies.
             </span>
           </span>
@@ -64,31 +64,31 @@ const AboutMe = () => {
             style={{ opacity: opacityForBlock(progress, 2) }}
           >
             I&apos;m interested in building something awesome or automate tasks
-            with code, currently focused on{" "}
-            <span className="text-cyan-300">
+            with code, currently focused on{' '}
+            <span className='text-cyan-300'>
               Web & Mobile Full-Stack Development.
             </span>
           </span>
         </div>
       </div>
 
-      <div className="flex mb-2 pt-32 justify-between items-center">
+      <div className='flex mb-2 pt-32 justify-between items-center'>
         <p
-          id="projects"
-          className="text-4xl md:text-4xl lg:text-5xl tracking-tight font-semibold text-gray-300"
+          id='projects'
+          className='text-4xl md:text-4xl lg:text-5xl tracking-tight font-semibold text-gray-300'
         >
-          💪{" "}
-          <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#fdd819] to-[#e80505] ">
+          💪{' '}
+          <span className=' text-transparent bg-clip-text bg-gradient-to-r from-[#fdd819] to-[#e80505] '>
             Featured Projects
           </span>
         </p>
-        <Link href="/projects">
+        <Link href='/projects'>
           <Button
-            variant="light"
-            color="dark"
-            className="hover:border-orange-400"
+            variant='light'
+            color='dark'
+            className='hover:border-orange-400'
           >
-            <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#ed6ea0] to-[#efbdaa] ">
+            <p className='text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#ed6ea0] to-[#efbdaa] '>
               See All
             </p>
           </Button>
