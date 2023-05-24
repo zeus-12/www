@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from 'react';
 
 export const ScrollContext = React.createContext({ scrollY: 0 });
 
@@ -9,8 +9,8 @@ const ScrollObserver = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   useEffect(() => {
-    document.addEventListener("scroll", handleScroll, { passive: true });
-    return () => document.removeEventListener("scroll", handleScroll);
+    document.addEventListener('scroll', handleScroll, { passive: true });
+    return () => document.removeEventListener('scroll', handleScroll);
   }, [handleScroll]);
 
   return (

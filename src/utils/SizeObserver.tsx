@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from 'react';
 
 export const SizeContext = React.createContext({ innerWidth: 0 });
 
@@ -10,8 +10,8 @@ const SizeObserver = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     handleResize();
-    window.addEventListener("resize", handleResize, { passive: true });
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
+    return () => window.removeEventListener('resize', handleResize);
   }, [handleResize]);
 
   return (

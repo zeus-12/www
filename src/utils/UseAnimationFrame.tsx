@@ -1,4 +1,4 @@
-import { useCallback, useRef, useEffect } from "react";
+import { useCallback, useRef, useEffect } from 'react';
 
 const UseAnimationFrame = (enabled: boolean, callback: () => void) => {
   const requestRef = useRef<number>();
