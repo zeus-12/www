@@ -1,0 +1,45 @@
+---
+title: Next Themes
+description: Library to manage themes
+date: 2021-12-24
+---
+
+## Installation
+
+```bash
+yarn add next-themes
+```
+
+## Setup
+
+```jsx:_app.jsx
+
+import { ThemeProvider } from 'next-themes';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <ThemeProvider attribute='class' defaultTheme='system'>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
+}
+
+export default MyApp;
+```
+
+## Usage
+
+```jsx:components/ThemeChanger.jsx
+import { useTheme } from 'next-themes';
+import { FiSun, FiMoon } from 'react-icons/fi';
+
+export default function ThemeChanger() {
+  const { theme, setTheme } = useTheme();
+  <button
+    className='border-thin dark:hover:border-green-200 dark:hover:text-green-200 hover:border-green-200 hover:text-green-200 rounded-md p-2.5 focus:outline-none'
+    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+  >
+    {theme === 'light' ? <FiMoon size={20} /> : <FiSun size={20} />}
+  </button>;
+}
+```

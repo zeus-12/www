@@ -1,0 +1,126 @@
+---
+title: Animate video on Scroll
+description: Animate bunch of images generated from video on scroll using framer-motion
+date: 2021-12-24
+---
+
+credits: [Asutin Malerba](https://twitter.com/austin_malerba/status/1657412560356884485)
+
+```tsx:App.tsx
+import { Box, ChakraProvider } from "@chakra-ui/react";
+import { useViewportScroll } from "framer-motion";
+import ImageSequence from "./ImageSequence";
+import range from "lodash.range";
+
+const images = Array(55).map((i) => {
+  const paddedIndex = i.toString().padStart(4, "0");
+  return `https://www.apple.com/105/media/us/airpods-3rd-generation/2021/3c0b27aa-a5fe-4365-a9ae-83c28d10fa21/anim/battery/large/${paddedIndex}.jpg`;
+});
+
+function App() {
+  const { scrollYProgress } = useViewportScroll();
+  return (
+    <Box h="1000vh">
+      <Box pos="sticky" top={0} h="100vh">
+        <ImageSequence
+          progress={scrollYProgress}
+          images={images}
+          width={1464}
+          height={824}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+          }}
+        />
+      </Box>
+    </Box>
+  );
+}
+
+```
+
+```tsx:ImageSequence.tsx
+import { CSSProperties } from "react";
+import { clamp, MotionValue, useMotionValueEvent } from "framer-motion";
+import React, { useEffect, useRef } from "react";
+
+interface ImageSequenceProps {
+  progress: MotionValue<number>;
+  images: string[];
+  height: number;
+  width: number;
+  style?: CSSProperties;
+  className?: string;
+}
+
+const ImageSequence = ({
+  progress,
+  images,
+  width,
+  height,
+  style,
+  className,
+}: ImageSequenceProps) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const imgRefs = useRef<HTMLImageElement[]>([]);
+  const contextRef = useRef<CanvasRenderingContext2D | null | undefined>(null);
+  const frameRef = useRef<number>();
+
+  const setFrame = (rawFrame: number) => {
+    const frame = clamp(0, images.length - 1, Math.floor(rawFrame));
+    if (frameRef.current !== frame && contextRef.current) {
+      frameRef.current = frame;
+      contextRef.current.drawImage(imgRefs.current[frame], 0, 0);
+    }
+  };
+
+  useMotionValueEvent(progress, "change", (val) => {
+    const frame = clamp(0, images.length - 1, Math.floor(val * images.length));
+    setFrame(frame);
+  });
+
+  useEffect(() => {
+    contextRef.current = canvasRef.current?.getContext("2d");
+    imgRefs.current = images.map((src) => {
+      const img = new Image();
+      img.src = src;
+      return img;
+    });
+    imgRefs.current[0].onload = () => {
+      setFrame(0);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className={className}
+      style={style}
+      width={width}
+      height={height}
+    />
+  );
+};
+
+export default ImageSequence;
+
+```
+
+Now it can be called using:
+
+```tsx
+<ImageSequence
+  images={images}
+  width={1464}
+  height={824}
+  progress={scrollYProgress}
+/>
+```
+
+To convert a video to a sequence of images you can use ffmpeg:
+
+```bash
+ffmpeg -¡ "airpods.mp4" "frames/%04d.jpg"
+```

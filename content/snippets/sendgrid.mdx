@@ -1,0 +1,26 @@
+---
+title: Sendgrid
+description: Send email with Sendgrid
+date: 2023-05-21
+---
+
+```ts:EmailHelper.ts
+import sendgrid from "@sendgrid/mail";
+
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+
+export default async (req:Request, res:Response) => {
+  try {
+    await sendgrid.send({
+      to: "you@email.com",
+      from: "me@email.com",
+      subject: "subject",
+      text: "body",
+    });
+  } catch (error:any) {
+    return res.status(error.statusCode || 500).json({ error: error.message });
+  }
+
+  return res.status(200).json({ error: "" });
+};
+```

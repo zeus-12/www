@@ -1,5 +1,5 @@
-import React, { useContext, useRef } from "react";
-import { ScrollContext } from "../utils/ScrollObserver";
+import React, { useContext, useRef } from 'react';
+import { ScrollContext } from '../utils/ScrollObserver';
 
 export const TileContext = React.createContext({
   numOfPages: 0,
@@ -38,9 +38,9 @@ export const TileWrapper: React.FC<TileWrapperProps> = ({
     <TileContext.Provider value={{ numOfPages, currentPage }}>
       <div
         ref={refContainer}
-        className="relative bg-black text-white "
+        className='relative bg-black text-white '
         style={{
-          height: numOfPages * 100 + "vh",
+          height: numOfPages * 100 + 'vh',
         }}
       >
         {children}
@@ -50,12 +50,12 @@ export const TileWrapper: React.FC<TileWrapperProps> = ({
 };
 
 export const TileBackground = ({ children }: { children: React.ReactNode }) => {
-  return <div className="absolute h-full w-full">{children}</div>;
+  return <div className='absolute h-full w-full'>{children}</div>;
 };
 
 export const TileContent = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="sticky top-0 h-screen overflow-hidden">{children}</div>
+    <div className='sticky top-0 h-screen overflow-hidden'>{children}</div>
   );
 };
 
@@ -78,10 +78,10 @@ export const Tile: React.FC<TileProps> = ({ page, renderContent }) => {
     <div
       ref={refContainer}
       style={{
-        pointerEvents: progress <= 0 || progress >= 1 ? "none" : undefined,
+        pointerEvents: progress <= 0 || progress >= 1 ? 'none' : undefined,
         opacity: opacity,
       }}
-      className="absolute top-0 w-full"
+      className='absolute top-0 w-full'
     >
       {renderContent({ progress })}
     </div>
