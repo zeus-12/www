@@ -34,7 +34,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className='relative rounded-md'>
           <Image
             src={imageSrc}
-            className='w-full rounded-lg object-contain max-h-96'
+            className='w-full rounded-sm object-contain max-h-96'
             alt={title}
             width={400}
             height={400}
@@ -89,7 +89,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             ))}
           </div>
 
-          <p className='text-gray-400 p-1 md:p-2 text-ellipsis'>
+          <p className='font-mono text-sm text-gray-400 p-1 md:p-2 text-ellipsis'>
             {description}
           </p>
         </div>
