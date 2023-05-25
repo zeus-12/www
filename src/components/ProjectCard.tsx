@@ -40,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             height={400}
           />
         </div>
-        <div className='px-2'>
+        <div className='px-2 pb-2'>
           <div className='p-1 font-semibold md:p-2 flex justify-between'>
             <p>{title}</p>
             <div className='flex items-center gap-x-2'>
