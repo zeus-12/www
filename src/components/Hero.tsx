@@ -25,6 +25,7 @@ const heroLinkElements = [
 const Hero = () => {
   return (
     <div
+      // className='min-h-[100vh_-_10rem]'
       style={{
         minHeight: `calc(100vh - 10rem)`,
       }}
