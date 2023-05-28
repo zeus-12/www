@@ -8,7 +8,6 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [require('@tailwindcss/typography')],
   future: {
     hoverOnlyWhenSupported: true,
   },
