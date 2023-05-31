@@ -5,7 +5,7 @@ import { allSnippets } from 'contentlayer/generated';
 const Library = () => {
   return (
     <SlideUpWhenVisible>
-      <div className='pt-8 px-8 lg:px-24 lg:py-16'>
+      <div className='pt-8 pb-8 px-8 lg:px-24 lg:py-16'>
         <p className='text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight'>
           Snippets
         </p>
@@ -15,7 +15,7 @@ const Library = () => {
         </p>
 
         <div
-          className='grid gap-2 w-full mt-4'
+          className='grid gap-4 w-full mt-4'
           style={{
             gridTemplateColumns:
               'repeat(auto-fill, minmax(min(400px, 100%), 1fr))',
