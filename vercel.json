@@ -13,6 +13,14 @@
     {
       "source": "/github",
       "destination": "https://github.com/zeus-12"
+    },
+    {
+      "source": "/proofs",
+      "destination": "https://drive.google.com/drive/folders/1lgPnXXhr_a41V-9Dvo9Ez8bbfByqou3h?usp=sharing"
+    },
+    {
+      "source": "/proof",
+      "destination": "https://drive.google.com/drive/folders/1lgPnXXhr_a41V-9Dvo9Ez8bbfByqou3h?usp=sharing"
     }
   ]
 }
