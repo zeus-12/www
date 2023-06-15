@@ -6,7 +6,7 @@ const defaultMeta = {
   siteName: 'vishnuvinod.ml',
   description: 'Portfolio Website. ',
   url: 'https://vishnuvinod.ml',
-  image: 'https://vishnuvinod.ml/favicon/large-og.jpg',
+  image: 'https://vishnuvinod.ml/me.png',
   type: 'website',
   robots: 'follow, index',
 };

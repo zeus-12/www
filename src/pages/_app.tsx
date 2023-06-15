@@ -4,6 +4,7 @@ import ScrollObserver from '@/utils/ScrollObserver';
 import { AppProps } from 'next/app';
 import 'prism-themes/themes/prism-night-owl.css';
 import Navbar from '@/components/Navbar';
+import Seo from '@/components/Seo';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -14,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       >
         <main>
+          <Seo />
           <Navbar />
           <div className='mt-16'>
             <Component {...pageProps} />

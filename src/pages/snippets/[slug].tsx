@@ -1,4 +1,5 @@
 import Mdx from '@/components/Mdx';
+import Seo from '@/components/Seo';
 import { Snippets, allSnippets } from 'contentlayer/generated';
 import {
   GetStaticPropsContext,
@@ -11,15 +12,18 @@ const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   snippet,
 }) => {
   return (
-    <div className='max-w-3xl mx-auto px-6 sm:px-8'>
-      <h1 className='text-4xl font-semibold mt-24'>{snippet?.title}</h1>
-      <p className='text-gray-400 mt-1'>{snippet?.description}</p>
+    <>
+      <Seo title={snippet?.title} description={snippet?.description} />
+      <div className='max-w-3xl mx-auto px-6 sm:px-8'>
+        <h1 className='text-4xl font-semibold mt-24'>{snippet?.title}</h1>
+        <p className='text-gray-400 mt-1'>{snippet?.description}</p>
 
-      <hr className='border-gray-700 my-3' />
-      <div className='text-gray-300'>
-        <Mdx code={snippet?.body?.code} />
+        <hr className='border-gray-700 my-3' />
+        <div className='text-gray-300'>
+          <Mdx code={snippet?.body?.code} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 export default CodeSnippet;
