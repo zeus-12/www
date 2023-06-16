@@ -35,11 +35,6 @@ export const Snippet = defineDocumentType(() => ({
       description: 'The date of the post',
       required: true,
     },
-    // slug: {
-    //   type: 'string',
-    //   description: 'The slug of the post',
-    //   required: true,
-    // },
   },
   computedFields: {
     slug: computedFields.slug,

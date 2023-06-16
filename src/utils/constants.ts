@@ -14,6 +14,7 @@ export const TECH_STACK: {
   SHEETS_API: { title: 'Sheets API', color: 'blue' },
   FIREBASE: { title: 'Firebase', color: 'green' },
   CHAT_GPT: { title: 'Chat-GPT', color: 'blue' },
+  PUSHER: { title: 'Pusher', color: 'violet' },
 };
 
 export const PROJECTS_DATA = [
@@ -60,6 +61,21 @@ export const PROJECTS_DATA = [
     isFeatured: true,
   },
   {
+    title: 'msngr',
+    description:
+      'Messenger clone built with Nextjs App dir, Pusher, Prisma. implemented read receipts, user status, group, one-on-one messaging, message attachments, file sharing.',
+    techStack: [
+      TECH_STACK.NEXTJS,
+      TECH_STACK.PUSHER,
+      TECH_STACK.PRISMA,
+      TECH_STACK.POSTGRESQL,
+    ],
+    githubLink: '',
+    deployedLink: '',
+    imageSrc: '/projects/msngr.png',
+    isFeatured: false,
+  },
+  {
     title: 'Ping',
     description:
       "Security app for IITM allowing users to send their location to their contacts in case of an emergency. Enabling the security to track the user's location, access and record nearby cameras.",
@@ -70,7 +86,7 @@ export const PROJECTS_DATA = [
       TECH_STACK.REACT_NATIVE,
       TECH_STACK.EXPO,
     ],
-    githubLink: '',
+    githubLink: 'https://github.com/zeus-12/ping-dashboard',
     deployedLink: '',
     imageSrc: '/projects/ping.png',
     isFeatured: true,
