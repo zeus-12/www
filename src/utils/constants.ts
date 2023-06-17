@@ -7,7 +7,7 @@ export const TECH_STACK: {
   NODEJS: { title: 'NodeJS', color: 'red' },
   EXPRESS: { title: 'Express', color: 'yellow' },
   POSTGRESQL: { title: 'PostgreSQL', color: 'pink' },
-  EXPO: { title: 'Expo', color: 'green' },
+  EXPO: { title: 'Expo', color: 'violet' },
   REACT_NATIVE: { title: 'React Native', color: 'cyan' },
   MYSQL: { title: 'MySQL', color: 'pink' },
   PRISMA: { title: 'Prisma', color: 'green' },
