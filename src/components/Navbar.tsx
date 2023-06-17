@@ -17,6 +17,10 @@ const linkElements = [
     href: '/snippets',
   },
   {
+    name: 'Now',
+    href: '/now',
+  },
+  {
     name: 'Contact',
     href: '/#contact',
   },
@@ -30,10 +34,13 @@ const LinkElements = ({ isDrawer }: { isDrawer?: boolean }) => {
       {linkElements.map((link) => (
         <Link key={link.name} href={link.href} passHref>
           <p
-            className={`px-2 py-1 rounded-md cursor-pointer text-center hover:bg-gray-900 
-            ${path === link.href ? 'text-gray-300' : 'text-gray-600'} ${
-              isDrawer ? 'py-3' : 'py-1'
-            }
+            className={`lg:px-2 py-1 rounded-md cursor-pointer text-center hover:bg-gray-900 
+            ${
+              (link.name === 'Home' && path === '/') ||
+              (link.name !== 'Home' && path.startsWith(link.href))
+                ? 'text-gray-300'
+                : 'text-gray-600'
+            } ${isDrawer ? 'py-3' : 'py-1'}
           `}
           >
             {link.name}

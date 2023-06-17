@@ -63,7 +63,7 @@ export const PROJECTS_DATA = [
   {
     title: 'msngr',
     description:
-      'Messenger clone built with Nextjs App dir, Pusher, Prisma. implemented read receipts, user status, group, one-on-one messaging, message attachments, file sharing.',
+      'Messenger clone built with Nextjs App dir, Pusher, Prisma. Implemented read receipts, user status, group, one-on-one messaging, message attachments, file sharing.',
     techStack: [
       TECH_STACK.NEXTJS,
       TECH_STACK.PUSHER,
