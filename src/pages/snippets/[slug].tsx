@@ -7,6 +7,8 @@ import {
   InferGetStaticPropsType,
   NextPage,
 } from 'next';
+import Link from 'next/link';
+import { AiOutlineSwapLeft } from 'react-icons/ai';
 
 const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   snippet,
@@ -22,6 +24,13 @@ const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <div className='text-gray-300'>
           <Mdx code={snippet?.body?.code} />
         </div>
+        <div className='border-gray-700 border-[0.2px]' />
+        <Link href='/snippets' className='flex justify-center mt-12 mb-16'>
+          <div className='flex gap-2 hover:bg-gray-800 px-4 py-2 rounded-md hover:cursor-pointer'>
+            <AiOutlineSwapLeft className='w-5 h-5' />
+            <p className='text-sm'>See all posts</p>
+          </div>
+        </Link>
       </div>
     </>
   );
