@@ -16,16 +16,14 @@ const SnippetCard: React.FC<SnippetCardProps> = ({
 }) => {
   return (
     <Link href={`/snippets/${slug}`}>
-      <div className='bg-gray-900 rounded-md p-4 w-full inline-flex h-full hover:scale-[102%] ease-in-out transition duration-200 group'>
+      <div className='bg-gray-900 rounded-md p-4 w-full inline-flex h-full hover:scale-[102%] ease-in-out transition duration-200'>
         {techStack?.map((stack) => (
           <Badge color={TECH_STACK[stack].color} variant='light' key={stack}>
             {TECH_STACK[stack].title}
           </Badge>
         ))}
         <div>
-          <p className='text-xl font-semibold group-hover:text-pink-400 text-pink-300 '>
-            {title}
-          </p>
+          <p className='text-xl font-semibold text-pink-400'>{title}</p>
           <p className='font-mono text-gray-400'>{description}</p>
         </div>
       </div>
