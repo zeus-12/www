@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const { withContentlayer } = require('next-contentlayer');
+const { withPlausibleProxy } = require('next-plausible');
 
 const nextConfig = {
   reactStrictMode: true,
@@ -64,4 +65,8 @@ const securityHeaders = [
   },
 ];
 
-module.exports = withContentlayer(nextConfig);
+module.exports = module.exports = withPlausibleProxy({
+  subdirectory: 'meowlytics',
+  scriptName: 'script',
+  customDomain: 'https://meowlytics.bignutty.xyz',
+})(withContentlayer(nextConfig));
