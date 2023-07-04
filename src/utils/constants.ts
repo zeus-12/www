@@ -15,6 +15,7 @@ export const TECH_STACK: {
   FIREBASE: { title: 'Firebase', color: 'green' },
   CHAT_GPT: { title: 'Chat-GPT', color: 'blue' },
   PUSHER: { title: 'Pusher', color: 'violet' },
+  REDIS: { title: 'Redis', color: 'red' },
 };
 
 export const PROJECTS_DATA = [
@@ -75,6 +76,21 @@ export const PROJECTS_DATA = [
     imageSrc: '/projects/msngr.png',
     isFeatured: false,
   },
+  // {
+  //   title: 'Redora',
+  //   description:
+  //     'Reddit clone integrating post editor, nested replies, and subreddits, also Incorporated advanced post caching using Redis.',
+  //   techStack: [
+  //     TECH_STACK.NEXTJS,
+  //     TECH_STACK.REDIS,
+  //     TECH_STACK.PRISMA,
+  //     TECH_STACK.POSTGRESQL,
+  //   ],
+  //   githubLink: '',
+  //   deployedLink: '',
+  //   imageSrc: '/projects/redora.png',
+  //   isFeatured: false,
+  // },
   {
     title: 'Ping',
     description:
