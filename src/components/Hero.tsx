@@ -37,7 +37,7 @@ const Hero = () => {
         <p className='text-7xl font-bold md:text-8xl lg:text-9xl'>
           Vishnu Vinod
         </p>
-        <p className='text-xl mt-8 font-medium sm:text-3xl sm:w-5/6 md:w-3/4 xl:w-2/3 '>
+        <p className='text-xl mt-8 font-medium sm:text-3xl sm:w-5/6 md:w-3/4 xl:w-2/3 text-slate-100'>
           Software Engineer.
           <span className='text-neutral-400'>
             {' '}
