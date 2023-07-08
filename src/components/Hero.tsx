@@ -37,25 +37,20 @@ const Hero = () => {
         <p className='text-7xl font-bold md:text-8xl lg:text-9xl'>
           Vishnu Vinod
         </p>
-        <p className='text-xl mt-4 font-medium sm:text-3xl sm:w-5/6 md:w-3/4 xl:w-2/3 max-w-xl'>
+        <p className='text-xl mt-8 font-medium sm:text-3xl sm:w-5/6 md:w-3/4 xl:w-2/3 '>
           Software Engineer.
           <span className='text-neutral-400'>
             {' '}
             A self-taught developer with an interest in Computer Science.
           </span>
         </p>
-        <div className='space-y-1 mt-8'>
-          {[
-            '🚀 Exploring oppurtunities & side projects.',
-            '💻 Currently specializing in Back-end Development.',
-          ].map((item) => (
-            <p
-              key={item}
-              className='text-sm text-neutral-400 md:text-lg font-light'
-            >
-              {item}
-            </p>
-          ))}
+
+        <div className='space-y-1 mt-8 text-sm text-neutral-400 md:text-xl font-light'>
+          <p>🚀 Exploring oppurtunities & side projects.</p>
+          <p>
+            💻 Currently specializing in{' '}
+            <span className='text-cyan-300'> Full-stack Development.</span>
+          </p>
         </div>
 
         <div className='flex flex-col lg:flex-row justify-between items-start'>
