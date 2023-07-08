@@ -46,9 +46,9 @@ const Hero = () => {
         </p>
 
         <div className='space-y-1 mt-8 text-sm text-neutral-400 md:text-xl font-light'>
-          <p>🚀 Exploring oppurtunities & side projects.</p>
+          <p>🚀 &nbsp;Exploring oppurtunities & side projects.</p>
           <p>
-            💻 Currently specializing in{' '}
+            💻 &nbsp;Currently specializing in{' '}
             <span className='text-cyan-300'> Full-stack Development.</span>
           </p>
         </div>
