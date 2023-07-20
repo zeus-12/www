@@ -66,7 +66,7 @@ const securityHeaders = [
 ];
 
 module.exports = module.exports = withPlausibleProxy({
-  subdirectory: 'meowlytics',
+  subdirectory: 'analytics',
   scriptName: 'script',
-  customDomain: 'https://meowlytics.bignutty.xyz',
+  customDomain: 'https://a.bignutty.xyz',
 })(withContentlayer(nextConfig));
