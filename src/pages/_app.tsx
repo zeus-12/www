@@ -10,9 +10,9 @@ import PlausibleProvider from 'next-plausible';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <PlausibleProvider
-      domain='vishnuvinod.ml'
+      domain='vishnuu.me'
       selfHosted={true}
-      customDomain='https://meowlytics.bignutty.xyz'
+      customDomain='https://a.bignutty.xyz'
     >
       <ScrollObserver>
         <MantineProvider
