@@ -41,7 +41,7 @@ const AboutMe = () => {
             className='transition-opacity duration-500'
             style={{ opacity: opacityForBlock(progress, 0) }}
           >
-            A 20-year-old based in India, currently pursuing Engineering Design
+            A 21-year-old based in India, currently pursuing Engineering Design
             from{' '}
             <a className='text-cyan-300' href='https://www.iitm.ac.in/'>
               IIT Madras
