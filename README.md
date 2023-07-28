@@ -10,7 +10,9 @@ This site is built with
 - [MDX](https://mdxjs.com/)
 - [Prism themes](https://github.com/PrismJS/prism-themes)
 - [Contentlayer](https://www.contentlayer.dev)
-- [unified](https://github.com/unifiedjs/unified)
+- [Framer Motion](https://github.com/framer/motion)
+- [Unified](https://github.com/unifiedjs/unified)
+- [Plausible](https://github.com/plausible/analytics)
 - [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app)
 
 ## Getting Started
