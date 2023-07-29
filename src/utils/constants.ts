@@ -22,7 +22,7 @@ export const PROJECTS_DATA = [
   {
     title: 'FMHY',
     description:
-      'A full-stack website for a popular reddit community, FMHY built using. Built a service which periodically scrapes and cleans the data from their GitHub page.',
+      'A full-stack website for a popular reddit community FMHY, including a comprehensive Wiki, Search and Guides. Built a service which periodically scrapes and cleans the data from their GitHub page.',
     techStack: [
       TECH_STACK.NEXTJS,
       TECH_STACK.PRISMA,
@@ -160,3 +160,12 @@ export const PROJECTS_DATA = [
 export const FEATURED_PROJECTS = PROJECTS_DATA.filter(
   (project) => project.isFeatured
 );
+
+// export const WORK_EXPERIENCE = [
+//   {
+//     title: 'Software Engineer Intern',
+//     company: 'CRED',
+//     duration: 'May 2021 - July 2021',
+//     description: <p>GOOD STUFF</p>,
+//   },
+// ];
