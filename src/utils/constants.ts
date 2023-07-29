@@ -24,14 +24,13 @@ export const PROJECTS_DATA = [
     description:
       'A full-stack website for a popular reddit community, FMHY built using. Built a service which periodically scrapes and cleans the data from their GitHub page.',
     techStack: [
-      TECH_STACK.REACT,
+      TECH_STACK.NEXTJS,
       TECH_STACK.PRISMA,
       TECH_STACK.EXPRESS,
       TECH_STACK.MYSQL,
-      TECH_STACK.MONGODB,
     ],
-    githubLink: 'https://github.com/zeus-12/fmhy-ui',
-    deployedLink: 'https://www.fmhy.ml',
+    githubLink: 'https://github.com/zeus-12/fmhy',
+    deployedLink: 'https://www.fmhy.net',
     imageSrc: '/projects/fmhy.png',
     isFeatured: true,
   },
