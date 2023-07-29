@@ -23,7 +23,7 @@ const SnippetCard: React.FC<SnippetCardProps> = ({
           </Badge>
         ))}
         <div>
-          <p className='text-xl font-semibold text-rose-200'>{title}</p>
+          <p className='text-xl font-semibold text-emerald-300'>{title}</p>
           <p className='font-mono text-gray-400'>{description}</p>
         </div>
       </div>
