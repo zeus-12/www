@@ -21,9 +21,7 @@ const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <p className='text-gray-400 mt-1'>{snippet?.description}</p>
 
         <hr className='border-gray-700 my-3' />
-        <div className='text-gray-300'>
-          <Mdx code={snippet?.body?.code} />
-        </div>
+        <Mdx code={snippet?.body?.code} />
         <div className='border-gray-700 border-[0.2px]' />
         <Link href='/snippets' className='flex justify-center mt-12 mb-16'>
           <div className='flex gap-2 hover:bg-gray-800 px-4 py-2 rounded-md hover:cursor-pointer'>

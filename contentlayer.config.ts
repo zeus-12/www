@@ -48,7 +48,7 @@ export const Other = defineDocumentType(() => ({
   fields: {
     title: {
       type: 'string',
-      description: 'The title of the snippet',
+      description: 'Title',
       required: true,
     },
   },
