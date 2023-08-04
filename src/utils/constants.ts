@@ -164,7 +164,7 @@ export const FEATURED_PROJECTS = PROJECTS_DATA.filter(
 // export const WORK_EXPERIENCE = [
 //   {
 //     title: 'Software Engineer Intern',
-//     company: 'CRED',
+//     company: 'Commenda',
 //     duration: 'May 2021 - July 2021',
 //     description: <p>GOOD STUFF</p>,
 //   },
