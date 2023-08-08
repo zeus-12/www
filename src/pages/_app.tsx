@@ -6,6 +6,7 @@ import 'prism-themes/themes/prism-night-owl.css';
 import Navbar from '@/components/Navbar';
 import Seo from '@/components/Seo';
 import PlausibleProvider from 'next-plausible';
+import { fontMono, fontSans } from '@/lib/fonts';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -20,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
             colorScheme: 'dark',
           }}
         >
-          <main>
+          <main className={fontSans.className}>
             <Seo />
             <Navbar />
             <div className='mt-16'>
