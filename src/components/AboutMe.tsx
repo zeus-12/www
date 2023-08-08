@@ -1,7 +1,7 @@
 import { Button } from '@mantine/core';
 import Link from 'next/link';
 import { useContext, useRef } from 'react';
-import { ScrollContext } from '@/utils/ScrollObserver';
+import { ScrollContext } from '@/lib/ScrollObserver';
 
 const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   const progress = sectionProgress - blockNo;

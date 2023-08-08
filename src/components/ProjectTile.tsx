@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import { ScrollContext } from '../utils/ScrollObserver';
+import { ScrollContext } from '../lib/ScrollObserver';
 
 export const TileContext = React.createContext({
   numOfPages: 0,

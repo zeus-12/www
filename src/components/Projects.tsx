@@ -2,7 +2,7 @@ import { TileWrapper, TileBackground, Tile } from './ProjectTile';
 import { ProjectBackground, ProjectLeft, ProjectRight } from './Project';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FEATURED_PROJECTS } from '../utils/constants';
+import { FEATURED_PROJECTS } from '../lib/constants';
 
 const Projects = () => {
   return (

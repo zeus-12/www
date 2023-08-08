@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import { MantineProvider } from '@mantine/core';
-import ScrollObserver from '@/utils/ScrollObserver';
+import ScrollObserver from '@/lib/ScrollObserver';
 import { AppProps } from 'next/app';
 import 'prism-themes/themes/prism-night-owl.css';
 import Navbar from '@/components/Navbar';
