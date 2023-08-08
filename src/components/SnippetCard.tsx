@@ -1,5 +1,5 @@
 import { Badge } from '@mantine/core';
-import { TECH_STACK } from '@/utils/constants';
+import { TECH_STACK } from '@/lib/constants';
 import Link from 'next/link';
 interface SnippetCardProps {
   techStack?: string[];

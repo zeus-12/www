@@ -2,7 +2,7 @@ import { TextInput } from '@mantine/core';
 import { useEffect, useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import ProjectCard from '@/components/ProjectCard';
-import { PROJECTS_DATA } from '@/utils/constants';
+import { PROJECTS_DATA } from '@/lib/constants';
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
 import Seo from '@/components/Seo';
 
