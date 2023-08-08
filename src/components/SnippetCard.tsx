@@ -1,6 +1,8 @@
 import { Badge } from '@mantine/core';
 import { TECH_STACK } from '@/lib/constants';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import { fontSans } from '@/lib/fonts';
 interface SnippetCardProps {
   techStack?: string[];
   title: string;
@@ -24,7 +26,9 @@ const SnippetCard: React.FC<SnippetCardProps> = ({
         ))}
         <div>
           <p className='text-xl font-semibold text-emerald-300'>{title}</p>
-          <p className='font-mono text-gray-400'>{description}</p>
+          <p className={cn('text-gray-400', fontSans.className)}>
+            {description}
+          </p>
         </div>
       </div>
     </Link>
