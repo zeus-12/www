@@ -1,9 +1,11 @@
 import { SiGithub } from 'react-icons/si';
-import { MdPreview, MdTableView } from 'react-icons/md';
+import { MdPreview } from 'react-icons/md';
 import { Card, Badge, Tooltip } from '@mantine/core';
 import Image from 'next/image';
 import Link from 'next/link';
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
+import { fontMono } from '@/lib/fonts';
+import { cn } from '@/lib/utils';
 
 interface ProjectCardProps {
   deployedLink?: string;
@@ -89,7 +91,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             ))}
           </div>
 
-          <p className='font-mono text-sm text-gray-400 p-1 md:p-2 text-ellipsis'>
+          <p
+            className={cn(
+              'text-sm text-gray-400 p-1 md:p-2 text-ellipsis',
+              fontMono.className
+            )}
+          >
             {description}
           </p>
         </div>
