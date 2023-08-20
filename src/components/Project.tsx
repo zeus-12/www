@@ -26,7 +26,7 @@ export const ProjectLeft: React.FC<ProjectProps> = ({ children, progress }) => {
   if (progress > 0.85) translateY = Math.max(-50, -(progress - 0.85) * 2 * 50);
   return (
     <div
-      className='flex flex-col justify-center text-3xl lg:text-3xl h-[40vh] sm:h-[40vh] lg:h-screen'
+      className='flex flex-col justify-center text-3xl lg:text-3xl h-[40vh] lg:h-screen my-2'
       style={{ transform: `translateY(${translateY}px)` }}
     >
       <div className='leading-10 text-4xl lg:text-6xl p-8'>{children}</div>
