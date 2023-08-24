@@ -16,7 +16,6 @@
     "@mantine/core": "^6.0.9",
     "@mantine/hooks": "^6.0.9",
     "@mantine/next": "^6.0.9",
-    "@next/font": "^13.4.13",
     "clsx": "^2.0.0",
     "contentlayer": "^0.3.2",
     "framer-motion": "^10.12.4",

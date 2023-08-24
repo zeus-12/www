@@ -35,7 +35,7 @@ const Projects = () => {
           </p>
           <p className='text-gray-400'>
             I love building projects and practice my coding skills. Here&apos;s
-            an archive of things that I&apos;ve worked on.
+            a collection of things I&apos;ve built.
           </p>
 
           <TextInput
