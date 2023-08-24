@@ -1,7 +1,7 @@
 import SlideUpWhenVisible from '../hooks/SlideUpWhenVisible';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosMail } from 'react-icons/io';
-import LinkBox from './LinkBox';
+import LinkBox from './LinkCard';
 import Image from 'next/image';
 
 const heroLinkElements = [
