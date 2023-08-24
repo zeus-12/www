@@ -51,7 +51,8 @@ const AboutMe = () => {
             className={`transition-opacity duration-500 inline-block after:content-['_']`}
             style={{ opacity: opacityForBlock(progress, 1) }}
           >
-            I started out building websites using no-code tools. And later on, I{' '}
+            I started out automating tasks, building websites using no-code
+            tools. And later on, I{' '}
             <span className='text-cyan-300'>taught myself</span> how to code,
             fast-forward to today, I do programming in{' '}
             <span className='text-cyan-300'>
