@@ -23,7 +23,7 @@ const Now: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <Link href='https://nownownow.com/about'>nownownow.com</Link>
           </h2>
 
-          <div className='mt-4 text-xl'>
+          <div className='mt-4'>
             <Mdx code={md?.body?.code} />
           </div>
         </div>
