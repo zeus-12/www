@@ -1,5 +1,5 @@
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
-import LinkBox from '@/components/LinkBox';
+import LinkBox from '@/components/LinkCard';
 import { SiLinkedin } from 'react-icons/si';
 import { IoIosMail, IoIosPaper } from 'react-icons/io';
 import Link from 'next/link';
