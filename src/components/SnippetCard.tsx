@@ -27,7 +27,7 @@ const SnippetCard: React.FC<SnippetCardProps> = ({
         ))}
         <div>
           {/* text-[#46D279] */}
-          <p className='text-xl font-semibold text-cyan-400'>{title}</p>
+          <p className='text-xl font-semibold text-sky-200'>{title}</p>
           <p className={cn('text-gray-400', fontSans.className)}>
             {description}
           </p>
