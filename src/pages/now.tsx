@@ -14,16 +14,18 @@ const Now: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <SlideUpWhenVisible>
-      <div className='max-w-3xl mx-auto px-6 sm:px-8'>
-        <h1 className='text-4xl font-bold mt-24'>Now</h1>
+      <div className='flex justify-center'>
+        <div className='max-w-3xl mx-auto px-6 sm:px-8'>
+          <h1 className='text-4xl font-bold mt-24'>Now</h1>
 
-        <h2 className='text-gray-400'>
-          Inspired by{' '}
-          <Link href='https://nownownow.com/about'>nownownow.com</Link>
-        </h2>
+          <h2 className='text-gray-400'>
+            Inspired by{' '}
+            <Link href='https://nownownow.com/about'>nownownow.com</Link>
+          </h2>
 
-        <div className='mt-4 text-xl'>
-          <Mdx code={md?.body?.code} />
+          <div className='mt-4'>
+            <Mdx code={md?.body?.code} />
+          </div>
         </div>
       </div>
     </SlideUpWhenVisible>
