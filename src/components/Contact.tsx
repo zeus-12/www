@@ -1,5 +1,5 @@
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
-import LinkBox from '@/components/LinkCard';
+import LinkCard from '@/components/LinkCard';
 import { SiLinkedin } from 'react-icons/si';
 import { IoIosMail, IoIosPaper } from 'react-icons/io';
 import Link from 'next/link';
@@ -26,15 +26,15 @@ const Contact = () => {
           Feel free to get in touch and talk more about your projects.
         </p>
         <div className='flex gap-2 mt-8 justify-center'>
-          <LinkBox
+          <LinkCard
             title='LinkedIn'
             link='https://www.linkedin.com/in/vishnu-vinod-362ab2230/'
           >
             <SiLinkedin className='fill-cyan-400' />
-          </LinkBox>
-          <LinkBox title='Email' link='mailto:writetovishnuvinod@gmail.com'>
+          </LinkCard>
+          <LinkCard title='Email' link='mailto:writetovishnuvinod@gmail.com'>
             <IoIosMail className='fill-cyan-400 h-5 w-5' />
-          </LinkBox>
+          </LinkCard>
 
           <div className='cursor-pointer inline-flex gap-1 items-center px-2 py-1 rounded-md bg-gray-900 hover:bg-gray-700'>
             <IoIosPaper className='fill-cyan-400' />

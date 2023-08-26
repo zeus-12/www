@@ -1,7 +1,7 @@
 import SlideUpWhenVisible from '../hooks/SlideUpWhenVisible';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosMail } from 'react-icons/io';
-import LinkBox from './LinkCard';
+import LinkCard from './LinkCard';
 import Image from 'next/image';
 
 const heroLinkElements = [
@@ -65,9 +65,9 @@ const Hero = () => {
           <div className='flex flex-col lg:flex-row justify-between items-start'>
             <div className='flex gap-2 mt-8 mb-4'>
               {heroLinkElements.map((item) => (
-                <LinkBox key={item.title} title={item.title} link={item.link}>
+                <LinkCard key={item.title} title={item.title} link={item.link}>
                   {item.icon}
-                </LinkBox>
+                </LinkCard>
               ))}
             </div>
 
