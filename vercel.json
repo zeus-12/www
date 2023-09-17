@@ -21,10 +21,6 @@
     {
       "source": "/proof",
       "destination": "https://drive.google.com/drive/folders/1lgPnXXhr_a41V-9Dvo9Ez8bbfByqou3h?usp=sharing"
-    },
-    {
-      "source": "/collab",
-      "destination": "https://colab.research.google.com/drive/119oR-Sdcv5J143CphEbdfq6qvThLfkp-?usp=sharing"
     }
   ]
 }
