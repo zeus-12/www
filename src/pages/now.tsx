@@ -15,8 +15,8 @@ const Now: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <SlideUpWhenVisible>
       <div className='flex justify-center'>
-        <div className='max-w-3xl mx-auto px-6 sm:px-8'>
-          <h1 className='text-4xl font-bold mt-24'>Now</h1>
+        <div className='max-w-3xl mx-auto px-6 sm:px-8 pt-8'>
+          <h1 className='text-4xl font-bold'>Now</h1>
 
           <h2 className='text-gray-400'>
             Inspired by{' '}
