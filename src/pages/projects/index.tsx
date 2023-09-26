@@ -51,20 +51,32 @@ const Projects = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-4 mt-8'>
           {projects.length > 0 ? (
             projects.map((project, idx) => {
-              const evenIndexedProjects = projects.filter(
-                (_, index) => index % 2 === 0
-              );
-
-              const oddIndexedProjects = projects.filter(
-                (_, index) => index % 2 !== 0
-              );
-
               return (
-                <div key={idx}>
-                  <ProjectCol projects={evenIndexedProjects} />
-                  <ProjectCol projects={oddIndexedProjects} />
-                </div>
+                <ProjectCard
+                  isFeatured={project.isFeatured}
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  imageSrc={project.imageSrc}
+                  deployedLink={project.deployedLink}
+                  githubLink={project.githubLink}
+                  techStack={project.techStack}
+                />
               );
+              // const evenIndexedProjects = projects.filter(
+              //   (_, index) => index % 2 === 0
+              // );
+
+              // const oddIndexedProjects = projects.filter(
+              //   (_, index) => index % 2 !== 0
+              // );
+
+              // return (
+              //   <div key={idx}>
+              //     <ProjectCol projects={evenIndexedProjects} />
+              //     <ProjectCol projects={oddIndexedProjects} />
+              //   </div>
+              // );
             })
           ) : (
             <p className='text-gray-400'>
