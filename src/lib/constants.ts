@@ -1,6 +1,4 @@
-export const TECH_STACK: {
-  [key: string]: { title: string; color: string };
-} = {
+export const TECH_STACK: { [key: string]: techStack } = {
   REACT: { title: 'React', color: 'blue' },
   NEXTJS: { title: 'NextJS', color: 'orange' },
   MONGODB: { title: 'MongoDB', color: 'green' },
@@ -18,7 +16,20 @@ export const TECH_STACK: {
   REDIS: { title: 'Redis', color: 'red' },
 };
 
-export const PROJECTS_DATA = [
+interface techStack {
+  title: string;
+  color: string;
+}
+
+export const PROJECTS_DATA: {
+  title: string;
+  description: string;
+  techStack: techStack[];
+  githubLink?: string;
+  deployedLink?: string;
+  imageSrc: string;
+  isFeatured: boolean;
+}[] = [
   {
     title: 'FMHY',
     description:
@@ -70,8 +81,6 @@ export const PROJECTS_DATA = [
       TECH_STACK.PRISMA,
       TECH_STACK.POSTGRESQL,
     ],
-    githubLink: '',
-    deployedLink: '',
     imageSrc: '/projects/msngr.png',
     isFeatured: false,
   },
@@ -85,8 +94,6 @@ export const PROJECTS_DATA = [
   //     TECH_STACK.PRISMA,
   //     TECH_STACK.POSTGRESQL,
   //   ],
-  //   githubLink: '',
-  //   deployedLink: '',
   //   imageSrc: '/projects/redora.png',
   //   isFeatured: false,
   // },
@@ -102,7 +109,6 @@ export const PROJECTS_DATA = [
       TECH_STACK.EXPO,
     ],
     githubLink: 'https://github.com/zeus-12/ping-dashboard',
-    deployedLink: '',
     imageSrc: '/projects/ping.png',
     isFeatured: true,
   },
@@ -110,7 +116,6 @@ export const PROJECTS_DATA = [
     title: 'Coursepanel',
     description: 'Landing page for a startup we built.',
     techStack: [TECH_STACK.NEXTJS],
-    githubLink: '',
     deployedLink: 'https://coursepanel.in',
     imageSrc: '/projects/coursepanel.png',
     isFeatured: false,

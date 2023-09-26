@@ -6,20 +6,12 @@ import Link from 'next/link';
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
 import { fontMono } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
+import { PROJECTS_DATA } from '@/lib/constants';
+import { FC } from 'react';
 
-interface ProjectCardProps {
-  deployedLink?: string;
-  githubLink?: string;
-  description: string;
-  title: string;
-  imageSrc: string;
-  techStack?: {
-    title: string;
-    color: string;
-  }[];
-}
+type ProjectCardProps = (typeof PROJECTS_DATA)[number];
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectCard: FC<ProjectCardProps> = ({
   deployedLink,
   githubLink,
   description,

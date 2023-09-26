@@ -12,7 +12,7 @@ const Projects = () => {
       </TileBackground>
       <div className='sticky top-0 h-screen overflow-hidden'>
         {FEATURED_PROJECTS.map((project, i) => (
-          <Link key={i} href={project.deployedLink}>
+          <Link key={i} href={project.deployedLink ?? ''}>
             <Tile
               page={i}
               renderContent={({ progress }: { progress: number }) => (
