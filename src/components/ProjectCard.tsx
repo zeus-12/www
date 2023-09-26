@@ -15,6 +15,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   deployedLink,
   githubLink,
   description,
+  shortDescription,
   title,
   imageSrc,
   techStack,
@@ -89,7 +90,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
               fontMono.className
             )}
           >
-            {description}
+            {shortDescription}
           </p>
         </div>
       </SlideUpWhenVisible>
