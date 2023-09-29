@@ -50,7 +50,7 @@ export const PROJECTS_DATA: {
   {
     title: 'Mentora',
     shortDescription:
-      'A student-centered portal with features for asking questions, sharing notes, finding study buddies, and accessing detailed course information from Institute Department Websites.',
+      'Ask doubts, share notes, find study buddy, access course details for students of IIT Madras',
     description:
       'An Academic portal for students of the campus, where they could ask doubts, upload notes, apply for a study-buddy, along with a detailed course page scraped from the Institute Department Websites.',
     techStack: [TECH_STACK.NEXTJS, TECH_STACK.MONGODB],
@@ -106,7 +106,7 @@ export const PROJECTS_DATA: {
   {
     title: 'Ping',
     shortDescription:
-      'Security app for live location accessing, nearby camera access.',
+      "Security app allowing users share their live location with security during emergencies, also allowing security personnel to track the user's location and access nearby cameras.",
     description:
       "Security app for IITM allowing users to send their location to their contacts in case of an emergency. Enabling the security to track the user's location, access and record nearby cameras.",
     techStack: [
