@@ -11,7 +11,7 @@ export const TECH_STACK: { [key: string]: techStack } = {
   PRISMA: { title: 'Prisma', color: 'green' },
   SHEETS_API: { title: 'Sheets API', color: 'blue' },
   FIREBASE: { title: 'Firebase', color: 'green' },
-  CHAT_GPT: { title: 'Chat-GPT', color: 'blue' },
+  GPT: { title: 'GPT', color: 'blue' },
   PUSHER: { title: 'Pusher', color: 'violet' },
   REDIS: { title: 'Redis', color: 'red' },
 };
@@ -68,7 +68,7 @@ export const PROJECTS_DATA: {
     techStack: [
       TECH_STACK.REACT_NATIVE,
       TECH_STACK.FIREBASE,
-      TECH_STACK.CHAT_GPT,
+      TECH_STACK.GPT,
       TECH_STACK.EXPO,
     ],
     githubLink: 'https://github.com/zeus-12/Everhealth',
