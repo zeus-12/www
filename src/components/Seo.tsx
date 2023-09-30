@@ -28,6 +28,7 @@ export default function Seo(props: SeoProps) {
       <title>{meta.title}</title>
       <meta name='robots' content={meta.robots} />
       <meta content={meta.description} name='description' />
+
       <meta property='og:url' content={`${meta.url}${router.asPath}`} />
       <link
         rel='canonical'
@@ -70,12 +71,12 @@ export default function Seo(props: SeoProps) {
       {/* {favicons.map((linkProps) => (
         <link key={linkProps.href} {...linkProps} />
       ))} */}
-      <meta name='msapplication-TileColor' content='#ffffff' />
-      <meta
+      <meta name='msapplication-TileColor' content='#000000' />
+      {/* <meta
         name='msapplication-TileImage'
         content='/favicon/ms-icon-144x144.png'
-      />
-      <meta name='theme-color' content='#ffffff' />
+      /> */}
+      <meta name='theme-color' content='#000000' />
     </Head>
   );
 }
