@@ -10,26 +10,26 @@ import { fontMono, fontSans } from '@/lib/fonts';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <PlausibleProvider
-      domain='vishnuu.me'
-      selfHosted={true}
-      customDomain='https://a.bignutty.xyz'
-    >
-      <ScrollObserver>
-        <MantineProvider
-          theme={{
-            colorScheme: 'dark',
-          }}
-        >
-          <main className={fontSans.className}>
-            <Seo />
-            <Navbar />
-            <div className='mt-16'>
-              <Component {...pageProps} />
-            </div>
-          </main>
-        </MantineProvider>
-      </ScrollObserver>
-    </PlausibleProvider>
+    // <PlausibleProvider
+    //   domain='vishnuu.me'
+    //   selfHosted={true}
+    //   customDomain='https://a.bignutty.xyz'
+    // >
+    <ScrollObserver>
+      <MantineProvider
+        theme={{
+          colorScheme: 'dark',
+        }}
+      >
+        <main className={fontSans.className}>
+          <Seo />
+          <Navbar />
+          <div className='mt-16'>
+            <Component {...pageProps} />
+          </div>
+        </main>
+      </MantineProvider>
+    </ScrollObserver>
+    // </PlausibleProvider>
   );
 }
