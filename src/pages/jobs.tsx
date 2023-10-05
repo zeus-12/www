@@ -20,9 +20,9 @@ const Jobs = () => {
           <div className='mt-4'>
             {/* <WorkCard
               title='Software Engineer'
-              company='Sage'
+              company='ugh'
               date='July 2021 - Present'
-              description='Working on the Sage 300cloud product as a full-stack developer.'
+              description='Working on the ugh product as a full-stack developer.'
             /> */}
           </div>
         </SlideUpWhenVisible>
