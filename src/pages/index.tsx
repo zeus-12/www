@@ -1,7 +1,7 @@
-import AboutMe from '../components/AboutMe';
-import Contact from '../components/Contact';
-import Hero from '../components/Hero';
-import Projects from '../components/Projects';
+import AboutMe from '@/components/AboutMe';
+import Contact from '@/components/Contact';
+import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
 import Seo from '@/components/Seo';
 
 export default function Home() {
