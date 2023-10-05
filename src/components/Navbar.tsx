@@ -158,12 +158,12 @@ let navItems = [
     href: '/projects',
   },
   {
-    name: 'Now',
-    href: '/now',
-  },
-  {
     name: 'Snippets',
     href: '/snippets',
+  },
+  {
+    name: 'Now',
+    href: '/now',
   },
 ];
 
