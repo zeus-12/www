@@ -23,7 +23,7 @@ const Projects = () => {
                         {project.title}
                       </p>
                       <p className='text-base text-gray-400'>
-                        {project.description}
+                        {project.shortDescription}
                       </p>
                     </div>
                   </ProjectLeft>
