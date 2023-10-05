@@ -106,7 +106,8 @@ export const PROJECTS_DATA: {
   {
     title: 'Ping',
     shortDescription:
-      "Security app allowing users share their live location with security during emergencies, also allowing security personnel to track the user's location and access nearby cameras.",
+      'Security app allowing Users can send live location requests during distress, allowing security to instantly access nearby cameras for monitoring.',
+
     description:
       "Security app for IITM allowing users to send their location to their contacts in case of an emergency. Enabling the security to track the user's location, access and record nearby cameras.",
     techStack: [
