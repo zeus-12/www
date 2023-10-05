@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <main className={fontSans.className}>
           <Seo />
           <Navbar />
-          <div className='mt-8'>
+          <div className=''>
             <Component {...pageProps} />
           </div>
         </main>

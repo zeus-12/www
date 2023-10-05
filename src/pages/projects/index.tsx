@@ -28,7 +28,7 @@ const Projects = () => {
         title='Projects'
         description="A collection of projects that I've worked on."
       />
-      <div className='pt-8 px-4 lg:px-24 lg:py-16'>
+      <div className='pt-8 px-4 lg:px-24 lg:py-16 pb-8'>
         <SlideUpWhenVisible>
           <p className='text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight'>
             Projects

@@ -1,3 +1,4 @@
+import Layout from '@/components/Layout';
 import Link from '@/components/Link';
 import Mdx from '@/components/Mdx';
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
@@ -14,20 +15,24 @@ const Now: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <SlideUpWhenVisible>
-      <div className='flex justify-center'>
-        <div className='max-w-3xl mx-auto px-6 sm:px-8 pt-8'>
-          <h1 className='text-4xl font-bold'>Now</h1>
+      {/* <div className='flex justify-center'> */}
+      {/* <Layout className='max-w-3xl mx-auto'> */}
+      <Layout className='max-w-3xl mx-auto'>
+        {/* <h1 className='text-4xl font-bold'>Now</h1> */}
+        <p className='text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight'>
+          Now
+        </p>
 
-          <h2 className='text-gray-400'>
-            Inspired by{' '}
-            <Link href='https://nownownow.com/about'>nownownow.com</Link>
-          </h2>
+        <h2 className='text-gray-400'>
+          Inspired by{' '}
+          <Link href='https://nownownow.com/about'>nownownow.com</Link>
+        </h2>
 
-          <div className='mt-4'>
-            <Mdx code={md?.body?.code} />
-          </div>
+        <div className='mt-4'>
+          <Mdx code={md?.body?.code} />
         </div>
-      </div>
+      </Layout>
+      {/* </div> */}
     </SlideUpWhenVisible>
   );
 };
