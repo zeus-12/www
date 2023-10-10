@@ -118,7 +118,7 @@ const ContentSecurityPolicy = `
 //   },
 // ];
 
-module.exports = module.exports = withPlausibleProxy({
+module.exports = withPlausibleProxy({
   subdirectory: 'analytics',
   scriptName: 'script',
   customDomain: 'https://i-totally-love-easylist.swmg.top',
