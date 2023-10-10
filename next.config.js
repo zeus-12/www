@@ -13,6 +13,53 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/analytics/js/script.js',
+        destination: 'https://i-totally-love-easylist.swmg.top/js/script.js',
+        permanent: true,
+      },
+      {
+        source: '/api/event',
+        destination: 'https://i-totally-love-easylist.swmg.top/api/event',
+        permanent: true,
+      },
+      {
+        source: '/resume',
+        destination: '/resume.pdf',
+        permanent: true,
+      },
+      {
+        source: '/college',
+        destination: 'https://www.iitm.ac.in/',
+        permanent: true,
+      },
+      {
+        source: '/github',
+        destination: 'https://github.com/zeus-12',
+        permanent: true,
+      },
+      {
+        source: '/proofs',
+        destination:
+          'https://drive.google.com/drive/folders/1lgPnXXhr_a41V-9Dvo9Ez8bbfByqou3h?usp=sharing',
+        permanent: true,
+      },
+      {
+        source: '/proof',
+        destination:
+          'https://drive.google.com/drive/folders/1lgPnXXhr_a41V-9Dvo9Ez8bbfByqou3h?usp=sharing',
+        permanent: true,
+      },
+      {
+        source: '/assignment',
+        destination:
+          'https://docs.google.com/document/d/1-2kO0kpDOdXoQxVLrngh0E42HTXAEmCQTDfCAsu2700/edit?usp=sharing',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 // https://nextjs.org/docs/advanced-features/security-headers
