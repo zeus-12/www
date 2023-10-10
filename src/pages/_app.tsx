@@ -14,8 +14,11 @@ export default function App({ Component, pageProps }: AppProps) {
       domain='vishnuu.me'
       selfHosted={true}
       customDomain='https://i-totally-love-easylist.swmg.top'
-      trackOutboundLinks={true}
-      taggedEvents={true}
+      // trackOutboundLinks={true}
+      // taggedEvents={true}
+      // trackFileDownloads={true}
+      // trackLocalhost={true}
+      // enabled={true}
     >
       <ScrollObserver>
         <MantineProvider
