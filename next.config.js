@@ -27,7 +27,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/api/event',
+        source: '/analytics/api/event',
         destination: 'https://i-totally-love-easylist.swmg.top/api/event',
         permanent: true,
       },
