@@ -21,6 +21,12 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/analytics/js/script.local.js',
+        destination:
+          'https://i-totally-love-easylist.swmg.top/js/script.local.js',
+        permanent: true,
+      },
+      {
         source: '/api/event',
         destination: 'https://i-totally-love-easylist.swmg.top/api/event',
         permanent: true,
