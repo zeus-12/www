@@ -32,6 +32,22 @@ export const PROJECTS_DATA: {
   shortDescription: string;
 }[] = [
   {
+    title: 'Uxie',
+    shortDescription:
+      'Pdf reader with note taking, annotations, multi-people collaboration support and LLM integration',
+    description:
+      'A pdf reader with notion-like note taking, annotations, multi-people collaboration support and LLM integration.',
+    techStack: [
+      TECH_STACK.NEXTJS,
+      TECH_STACK.GPT,
+      TECH_STACK.POSTGRESQL,
+      TECH_STACK.PRISMA,
+    ],
+    deployedLink: 'https://www.uxie.vercel.app',
+    imageSrc: '/projects/uxie.png',
+    isFeatured: true,
+  },
+  {
     title: 'FMHY',
     shortDescription: 'Wiki, Search, Guides for FMHY',
     description:
@@ -57,7 +73,7 @@ export const PROJECTS_DATA: {
     githubLink: 'https://github.com/zeus-12/mentora',
     deployedLink: 'https://mentora.cf',
     imageSrc: '/projects/mentora.png',
-    isFeatured: true,
+    isFeatured: false,
   },
   {
     title: 'Everhealth',
@@ -106,7 +122,7 @@ export const PROJECTS_DATA: {
   {
     title: 'Ping',
     shortDescription:
-      'Security app allowing Users can send live location requests during distress, allowing security to instantly access nearby cameras for monitoring.',
+      'Security app for IITM, where users can send live location requests during distress, allowing security to instantly access nearby cameras for monitoring.',
 
     description:
       "Security app for IITM allowing users to send their location to their contacts in case of an emergency. Enabling the security to track the user's location, access and record nearby cameras.",
