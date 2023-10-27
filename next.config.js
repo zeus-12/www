@@ -103,7 +103,5 @@ const ContentSecurityPolicy = `
 // ];
 
 module.exports = withPlausibleProxy({
-  subdirectory: 'analytics',
-  scriptName: 'script',
   customDomain: 'https://i-totally-love-easylist.swmg.top',
 })(withContentlayer(nextConfig));
