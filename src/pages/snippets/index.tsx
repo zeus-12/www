@@ -1,12 +1,12 @@
-import Seo from '@/components/Seo';
 import SnippetCard from '@/components/SnippetCard';
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
 import { allSnippets } from 'contentlayer/generated';
+import { NextSeo } from 'next-seo';
 
 const Library = () => {
   return (
     <>
-      <Seo
+      <NextSeo
         title='Snippets'
         description='A collection of code snippets that I put for easy access. Feel free to reuse!'
       />

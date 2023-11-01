@@ -2,12 +2,12 @@ import AboutMe from '@/components/AboutMe';
 import Contact from '@/components/Contact';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
-import Seo from '@/components/Seo';
+import { NextSeo } from 'next-seo';
 
 export default function Home() {
   return (
     <>
-      <Seo />
+      <NextSeo />
       <div className='py-4 mt-6 md:py-8 lg:pt-16'>
         <div className='px-4 sm:mx-4 lg:px-12 md:px-8 xl:px-24 xl:pt-10'>
           <Hero />
