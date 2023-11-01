@@ -4,9 +4,10 @@ import ScrollObserver from '@/lib/ScrollObserver';
 import { AppProps } from 'next/app';
 import 'prism-themes/themes/prism-night-owl.css';
 import Navbar from '@/components/Navbar';
-import Seo from '@/components/Seo';
-import PlausibleProvider from 'next-plausible';
+// import PlausibleProvider from 'next-plausible';
 import { fontSans } from '@/lib/fonts';
+import { DefaultSeo } from 'next-seo';
+import { SEO } from '../../next-seo.config';
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -27,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       >
         <main className={fontSans.className}>
-          <Seo />
+          <DefaultSeo {...SEO} />
           <Navbar />
           <div className=''>
             <Component {...pageProps} />

@@ -1,10 +1,10 @@
-import Seo from '@/components/Seo';
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
+import { NextSeo } from 'next-seo';
 
 const Work = () => {
   return (
     <>
-      <Seo
+      <NextSeo
         title='Projects'
         description="A collection of projects that I've worked on."
       />

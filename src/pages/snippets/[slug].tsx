@@ -1,5 +1,4 @@
 import Mdx from '@/components/Mdx';
-import Seo from '@/components/Seo';
 import { Snippets, allSnippets } from 'contentlayer/generated';
 import {
   GetStaticPropsContext,
@@ -9,13 +8,14 @@ import {
 } from 'next';
 import Link from 'next/link';
 import { AiOutlineSwapLeft } from 'react-icons/ai';
+import { NextSeo } from 'next-seo';
 
 const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   snippet,
 }) => {
   return (
     <>
-      <Seo title={snippet?.title} description={snippet?.description} />
+      <NextSeo title={snippet?.title} description={snippet?.description} />
       <div className='max-w-3xl mx-auto px-6 sm:px-8 mb-24'>
         <h1 className='text-4xl font-semibold mt-24'>{snippet?.title}</h1>
         <p className='text-gray-400 mt-1'>{snippet?.description}</p>

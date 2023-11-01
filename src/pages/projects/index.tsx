@@ -4,7 +4,7 @@ import { BiSearch } from 'react-icons/bi';
 import ProjectCard from '@/components/ProjectCard';
 import { PROJECTS_DATA } from '@/lib/constants';
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
-import Seo from '@/components/Seo';
+import { NextSeo } from 'next-seo';
 
 const Projects = () => {
   const [query, setQuery] = useState('');
@@ -24,7 +24,7 @@ const Projects = () => {
 
   return (
     <>
-      <Seo
+      <NextSeo
         title='Projects'
         description="A collection of projects that I've worked on."
       />
