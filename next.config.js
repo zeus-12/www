@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const { withContentlayer } = require('next-contentlayer');
-const { withPlausibleProxy } = require('next-plausible');
+// const { withPlausibleProxy } = require('next-plausible');
 
 const nextConfig = {
   reactStrictMode: true,
@@ -102,6 +102,9 @@ const ContentSecurityPolicy = `
 //   },
 // ];
 
-module.exports = withPlausibleProxy({
-  customDomain: 'https://i-totally-love-easylist.swmg.top',
-})(withContentlayer(nextConfig));
+module.exports = withContentlayer(nextConfig);
+// = withPlausibleProxy({
+//   customDomain: 'https://i-totally-love-easylist.swmg.top',
+// })(
+// withContentlayer(nextConfig);
+// );
