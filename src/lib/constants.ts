@@ -43,7 +43,8 @@ export const PROJECTS_DATA: {
       TECH_STACK.POSTGRESQL,
       TECH_STACK.PRISMA,
     ],
-    deployedLink: 'https://www.uxie.vercel.app',
+    deployedLink: 'https://uxie.vercel.app',
+    githubLink: 'https://github.com/zeus-12/uxie',
     imageSrc: '/projects/uxie.png',
     isFeatured: true,
   },
@@ -93,32 +94,6 @@ export const PROJECTS_DATA: {
     imageSrc: '/projects/everhealth.jpeg',
     isFeatured: true,
   },
-  // {
-  //   title: 'msngr',
-  //   description:
-  //     'Messenger clone built with Nextjs App dir, Pusher, Prisma. Implemented read receipts, user status, group, one-on-one messaging, message attachments, file sharing.',
-  //   techStack: [
-  //     TECH_STACK.NEXTJS,
-  //     TECH_STACK.PUSHER,
-  //     TECH_STACK.PRISMA,
-  //     TECH_STACK.POSTGRESQL,
-  //   ],
-  //   imageSrc: '/projects/msngr.png',
-  //   isFeatured: false,
-  // },
-  // {
-  //   title: 'Redora',
-  //   description:
-  //     'Reddit clone integrating post editor, nested replies, and subreddits, also Incorporated advanced post caching using Redis.',
-  //   techStack: [
-  //     TECH_STACK.NEXTJS,
-  //     TECH_STACK.REDIS,
-  //     TECH_STACK.PRISMA,
-  //     TECH_STACK.POSTGRESQL,
-  //   ],
-  //   imageSrc: '/projects/redora.png',
-  //   isFeatured: false,
-  // },
   {
     title: 'Ping',
     shortDescription:
