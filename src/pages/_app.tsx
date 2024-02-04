@@ -30,9 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <main className={fontSans.className}>
           <DefaultSeo {...SEO} />
           <Navbar />
-          <div className=''>
-            <Component {...pageProps} />
-          </div>
+          <Component {...pageProps} />
         </main>
       </MantineProvider>
     </ScrollObserver>
