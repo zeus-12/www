@@ -44,3 +44,11 @@ to start production server
 #### `yarn build`
 
 to generate production build. The built assets will be in under `/.next` directory.
+
+## Todos
+
+- show a meaningful message next to 404 page
+- build a project page. showing details about the project -> or maybe just even a large modal
+- replace all techstack names with their logos
+- link shortener, fileupload kinda thing : maybe a separate proj (for self use)
+- replace mantine w. shadcn-ui
