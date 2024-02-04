@@ -1,5 +1,5 @@
 import { Badge } from '@mantine/core';
-import { TECH_STACK } from '@/lib/constants';
+import { TECH_STACK } from '@/configs/projects';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 import { fontSans } from '@/lib/fonts';

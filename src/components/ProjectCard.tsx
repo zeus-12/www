@@ -6,7 +6,7 @@ import Link from 'next/link';
 import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
 import { fontMono } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
-import { PROJECTS_DATA } from '@/lib/constants';
+import { PROJECTS_DATA } from '@/configs/projects';
 import { FC } from 'react';
 
 type ProjectCardProps = (typeof PROJECTS_DATA)[number];
