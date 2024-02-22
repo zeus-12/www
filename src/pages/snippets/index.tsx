@@ -20,13 +20,7 @@ const Library = () => {
             to reuse!
           </p>
 
-          <div
-            className='grid gap-4 w-full mt-4'
-            style={{
-              gridTemplateColumns:
-                'repeat(auto-fill, minmax(min(400px, 100%), 1fr))',
-            }}
-          >
+          <div className='grid gap-4 w-full mt-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
             {allSnippets?.map((snippet) => (
               <SnippetCard
                 slug={snippet.slug}
