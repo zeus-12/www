@@ -15,10 +15,7 @@ const Now: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <SlideUpWhenVisible>
-      {/* <div className='flex justify-center'> */}
-      {/* <Layout className='max-w-3xl mx-auto'> */}
       <Layout className='max-w-3xl mx-auto'>
-        {/* <h1 className='text-4xl font-bold'>Now</h1> */}
         <p className='text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight'>
           Now
         </p>
@@ -32,7 +29,6 @@ const Now: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Mdx code={md?.body?.code} />
         </div>
       </Layout>
-      {/* </div> */}
     </SlideUpWhenVisible>
   );
 };
