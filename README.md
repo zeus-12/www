@@ -20,34 +20,33 @@ This site is built with
 First, install the dependencies
 
 ```bash
-yarn
+pnpm install
 ```
 
 and run the development server:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Available Scripts
 
-#### `yarn dev`
+#### `pnpm dev`
 
 to start development server
 
-#### `yarn start`
+#### `pnpm start`
 
 to start production server
 
-#### `yarn build`
+#### `pnpm build`
 
 to generate production build. The built assets will be in under `/.next` directory.
 
 ## Todos
 
-- show a meaningful message next to 404 page
 - build a project page. showing details about the project -> or maybe just even a large modal
 - replace all techstack names with their logos
 - link shortener, fileupload kinda thing : maybe a separate proj (for self use)
