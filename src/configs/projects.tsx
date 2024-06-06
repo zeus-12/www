@@ -60,7 +60,7 @@ export const PROJECTS_DATA: {
       TECH_STACK.MYSQL,
     ],
     githubLink: 'https://github.com/zeus-12/fmhy',
-    deployedLink: 'https://www.fmhy.tk',
+    deployedLink: 'https://fmhy.vercel.app',
     imageSrc: '/projects/fmhy.png',
     isFeatured: true,
   },
