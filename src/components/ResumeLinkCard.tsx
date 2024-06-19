@@ -7,7 +7,7 @@ const ResumeLinkCard = () => {
       href='/resume.pdf'
       target='_blank'
       rel='noopener noreferrer'
-      className='cursor-pointer inline-flex gap-1 items-center px-2 py-1 rounded-md bg-gray-900 hover:bg-gray-700'
+      className='cursor-pointer inline-flex gap-1 items-center px-2 py-1 rounded-md bg-gray-900 hover:bg-gray-800 text-sm text-gray-300 md:text-md'
     >
       <IoIosPaper className='fill-cyan-400' />
       Resume

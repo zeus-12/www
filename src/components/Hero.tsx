@@ -43,7 +43,7 @@ const Hero = () => {
           </div>
 
           <div className='flex flex-col lg:flex-row justify-between items-start'>
-            <div className='flex gap-2 mt-8 mb-4'>
+            <div className='flex gap-2 mt-8 mb-4 flex-wrap'>
               {heroLinkElements.map((item) => (
                 <LinkCard key={item.title} title={item.title} link={item.link}>
                   <item.icon className={item.tw} />
