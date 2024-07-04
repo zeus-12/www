@@ -32,6 +32,12 @@ const AboutMe = () => {
     progress = Math.min(numOfPages - 0.5, Math.max(0.5, percentY * numOfPages));
   }
 
+  // prob an overkill ik :)
+  const dob = new Date('2002-04-12');
+  const age = Math.floor(
+    (new Date().getTime() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365)
+  );
+
   return (
     <div ref={refContainer} className='bg-black text-white'>
       <div className='min-h-screen max-w-5xl mx-auto px-4 lg:px-8 pt-24 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold'>
@@ -41,8 +47,8 @@ const AboutMe = () => {
             className='transition-opacity duration-500'
             style={{ opacity: opacityForBlock(progress, 0) }}
           >
-            A 21-year-old based in India, currently pursuing Engineering Design
-            from{' '}
+            A {age}-year-old based in India, currently pursuing Engineering
+            Design from{' '}
             <a className='text-cyan-300' href='https://www.iitm.ac.in/'>
               IIT Madras
             </a>
