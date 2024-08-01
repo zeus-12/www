@@ -1,6 +1,6 @@
 import { allSnippets } from 'contentlayer/generated';
 
-const URL = 'https://vishnuu.me';
+const URL = 'https://vishnuu.com';
 
 function generateSiteMap() {
   return `<?xml version="1.0" encoding="UTF-8"?>
