@@ -4,9 +4,9 @@ export const SEO = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://vishnuu.me',
-    siteName: 'vishnuu.me',
-    images: [{ url: 'https://vishnuu.me/me.png' }],
+    url: 'https://vishnuu.com',
+    siteName: 'vishnuu.com',
+    images: [{ url: 'https://vishnuu.com/me.png' }],
   },
   themeColor: 'black',
   additionalMetaTags: [
@@ -23,7 +23,7 @@ export const SEO = {
   additionalLinkTags: [
     {
       rel: 'icon',
-      href: 'https://www.vishnuu.me/favicon.ico',
+      href: 'https://www.vishnuu.com/favicon.ico',
     },
   ],
 };
