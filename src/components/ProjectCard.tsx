@@ -21,10 +21,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   techStack,
 }) => {
   return (
-    <Card
-      className='bg-slate-900 border-[1px] border-gray-800 p-0 text-white hover:scale-[102%] transition-all duration-200'
-      shadow='sm'
-    >
+    <div className='bg-slate-900 border-[1px] border-gray-800 p-0 text-white hover:scale-[102%] transition-all duration-200'>
       <SlideUpWhenVisible>
         <div className='relative rounded-md'>
           <Image
@@ -94,7 +91,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
           </p>
         </div>
       </SlideUpWhenVisible>
-    </Card>
+    </div>
   );
 };
 
