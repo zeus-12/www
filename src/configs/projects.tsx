@@ -72,7 +72,7 @@ export const PROJECTS_DATA: {
       'An Academic portal for students of the campus, where they could ask doubts, upload notes, apply for a study-buddy, along with a detailed course page scraped from the Institute Department Websites.',
     techStack: [TECH_STACK.NEXTJS, TECH_STACK.MONGODB],
     githubLink: 'https://github.com/zeus-12/mentora',
-    deployedLink: 'https://mentora.cf',
+    deployedLink: 'https://mentoraa.vercel.app',
     imageSrc: '/projects/mentora.png',
     isFeatured: false,
   },
