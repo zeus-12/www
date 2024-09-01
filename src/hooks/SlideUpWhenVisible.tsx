@@ -1,6 +1,6 @@
-import { motion, useAnimation } from 'framer-motion';
-import { useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { motion, useAnimation } from "framer-motion";
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 interface SlideUpWhenVisibleProps {
   threshold?: number;
@@ -16,14 +16,14 @@ const SlideUpWhenVisible: React.FC<SlideUpWhenVisibleProps> = ({
 
   useEffect(() => {
     if (inView) {
-      controls.start('visible');
+      controls.start("visible");
     }
   }, [controls, inView]);
   return (
     <motion.div
       ref={ref}
       animate={controls}
-      initial='hidden'
+      initial="hidden"
       transition={{ duration: 0.4 }}
       variants={{
         visible: { opacity: 1, y: 0 },

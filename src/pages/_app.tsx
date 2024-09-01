@@ -1,13 +1,13 @@
-import '@/styles/globals.css';
-import { MantineProvider } from '@mantine/core';
-import ScrollObserver from '@/lib/ScrollObserver';
-import { AppProps } from 'next/app';
-import 'prism-themes/themes/prism-night-owl.css';
-import Navbar from '@/components/Navbar';
+import "@/styles/globals.css";
+import { MantineProvider } from "@mantine/core";
+import ScrollObserver from "@/lib/ScrollObserver";
+import { AppProps } from "next/app";
+import "prism-themes/themes/prism-night-owl.css";
+import Navbar from "@/components/Navbar";
 // import PlausibleProvider from 'next-plausible';
-import { fontSans } from '@/lib/fonts';
-import { DefaultSeo } from 'next-seo';
-import { SEO } from '../../next-seo.config';
+import { fontSans } from "@/lib/fonts";
+import { DefaultSeo } from "next-seo";
+import { SEO } from "../../next-seo.config";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -24,7 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ScrollObserver>
       <MantineProvider
         theme={{
-          colorScheme: 'dark',
+          colorScheme: "dark",
         }}
       >
         <main className={fontSans.className}>

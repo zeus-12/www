@@ -2,37 +2,37 @@ import {
   ComputedFields,
   defineDocumentType,
   makeSource,
-} from 'contentlayer/source-files';
-import remarkGfm from 'remark-gfm';
-import rehypeCodeTitles from 'rehype-code-titles';
-import rehypePrism from 'rehype-prism-plus';
+} from "contentlayer/source-files";
+import remarkGfm from "remark-gfm";
+import rehypeCodeTitles from "rehype-code-titles";
+import rehypePrism from "rehype-prism-plus";
 
 export const Snippet = defineDocumentType(() => ({
-  name: 'Snippets',
+  name: "Snippets",
   filePathPattern: `snippets/**/*.mdx`,
-  contentType: 'mdx',
+  contentType: "mdx",
   fields: {
     title: {
-      type: 'string',
-      description: 'The title of the snippet',
+      type: "string",
+      description: "The title of the snippet",
       required: true,
     },
     techStack: {
-      type: 'list',
+      type: "list",
       of: {
-        type: 'string',
+        type: "string",
       },
-      description: 'The tech stacks used in the snippet',
+      description: "The tech stacks used in the snippet",
       required: false,
     },
     description: {
-      type: 'string',
-      description: 'The description of the snippet',
+      type: "string",
+      description: "The description of the snippet",
       required: true,
     },
     date: {
-      type: 'date',
-      description: 'The date of the post',
+      type: "date",
+      description: "The date of the post",
       required: true,
     },
   },
@@ -42,13 +42,13 @@ export const Snippet = defineDocumentType(() => ({
 }));
 
 export const Other = defineDocumentType(() => ({
-  name: 'Other',
+  name: "Other",
   filePathPattern: `other/**/*.mdx`,
-  contentType: 'mdx',
+  contentType: "mdx",
   fields: {
     title: {
-      type: 'string',
-      description: 'Title',
+      type: "string",
+      description: "Title",
       required: true,
     },
   },
@@ -57,13 +57,13 @@ export const Other = defineDocumentType(() => ({
 
 export const computedFields: ComputedFields = {
   slug: {
-    type: 'string',
-    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    type: "string",
+    resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ""),
   },
 };
 
 export default makeSource({
-  contentDirPath: './content',
+  contentDirPath: "./content",
   documentTypes: [Snippet, Other],
   mdx: {
     remarkPlugins: [remarkGfm],

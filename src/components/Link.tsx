@@ -1,5 +1,5 @@
-import React, { DetailedHTMLProps, AnchorHTMLAttributes, Ref } from 'react';
-import NextLink from 'next/link';
+import React, { DetailedHTMLProps, AnchorHTMLAttributes, Ref } from "react";
+import NextLink from "next/link";
 
 type LinkProps = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -9,7 +9,7 @@ type LinkProps = DetailedHTMLProps<
 };
 
 const Link = ({ href, className, children, ...rest }: LinkProps) => {
-  const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+  const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
 
   if (isInternalLink) {
     return (
@@ -26,8 +26,8 @@ const Link = ({ href, className, children, ...rest }: LinkProps) => {
   return (
     <a
       className={`text-blue-400 hover:text-blue-500 focus:text-blue-500 active:text-blue-500 underline transition-colors duration-150 ease-in ${className}`}
-      target='_blank'
-      rel='noopener noreferrer'
+      target="_blank"
+      rel="noopener noreferrer"
       href={href}
       {...rest}
     >

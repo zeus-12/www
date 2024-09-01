@@ -1,6 +1,6 @@
-import { allSnippets } from 'contentlayer/generated';
+import { allSnippets } from "contentlayer/generated";
 
-const URL = 'https://vishnuu.com';
+const URL = "https://vishnuu.com";
 
 function generateSiteMap() {
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -20,7 +20,7 @@ function generateSiteMap() {
        </url>
      `;
        })
-       .join('')}
+       .join("")}
        
     
    </urlset>
@@ -33,7 +33,7 @@ function SiteMap() {
 
 export async function getServerSideProps({ res }: { res: any }) {
   const sitemap = generateSiteMap();
-  res.setHeader('Content-Type', 'text/xml');
+  res.setHeader("Content-Type", "text/xml");
   res.write(sitemap);
   res.end();
 
