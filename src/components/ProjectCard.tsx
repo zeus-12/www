@@ -21,7 +21,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
   techStack,
 }) => {
   return (
-    <div className='bg-slate-900 border-[1px] border-gray-800 p-0 text-white hover:scale-[102%] transition-all duration-200'>
+    <div className='bg-slate-900 border-[1px] border-gray-800 p-0 mb-3 text-white hover:scale-[102%] transition-all duration-200'>
       <SlideUpWhenVisible>
         <div className='relative rounded-md'>
           <Image
