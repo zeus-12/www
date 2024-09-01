@@ -1,13 +1,13 @@
-import { TextInput } from '@mantine/core';
-import { useEffect, useState } from 'react';
-import { BiSearch } from 'react-icons/bi';
-import ProjectCard from '@/components/ProjectCard';
-import { PROJECTS_DATA } from '@/configs/projects';
-import SlideUpWhenVisible from '@/hooks/SlideUpWhenVisible';
-import { NextSeo } from 'next-seo';
+import { TextInput } from "@mantine/core";
+import { useEffect, useState } from "react";
+import { BiSearch } from "react-icons/bi";
+import ProjectCard from "@/components/ProjectCard";
+import { PROJECTS_DATA } from "@/configs/projects";
+import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
+import { NextSeo } from "next-seo";
 
 const Projects = () => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const [projects, setProjects] = useState(PROJECTS_DATA);
 
@@ -25,32 +25,32 @@ const Projects = () => {
   return (
     <>
       <NextSeo
-        title='Projects'
+        title="Projects"
         description="A collection of projects that I've worked on."
       />
-      <div className='pt-8 px-4 lg:px-24 lg:py-16 pb-8'>
+      <div className="pt-8 px-4 lg:px-24 lg:py-16 pb-8">
         <SlideUpWhenVisible>
-          <p className='text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight'>
+          <p className="text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight">
             Projects
           </p>
-          <p className='text-gray-400'>
+          <p className="text-gray-400">
             I love building projects and practice my coding skills. Here&apos;s
             a collection of things I&apos;ve built.
           </p>
 
           <TextInput
-            className='mt-3 max-w-md'
-            placeholder='Search projects'
+            className="mt-3 max-w-md"
+            placeholder="Search projects"
             rightSection={<BiSearch />}
-            type='text'
+            type="text"
             value={query}
             onChange={(event) => setQuery(event.currentTarget.value)}
           />
         </SlideUpWhenVisible>
 
-        <div className='mb-4 mt-8'>
+        <div className="mb-4 mt-8">
           {projects.length > 0 ? (
-            <div className='lg:columns-3 sm:columns-2 gap-4 mb-2'>
+            <div className="lg:columns-3 sm:columns-2 gap-4 mb-2">
               {projects.map((project) => (
                 <div key={project.title}>
                   <ProjectCard
@@ -67,7 +67,7 @@ const Projects = () => {
               ))}
             </div>
           ) : (
-            <p className='text-gray-400'>
+            <p className="text-gray-400">
               No projects matching the entered keyword.
             </p>
           )}

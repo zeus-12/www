@@ -1,7 +1,7 @@
 export const SOCIAL_IDS = {
-  github: 'zeus-12',
-  linkedin: 'vishnu-v12',
-  email: 'writetovishnuvinod@gmail.com',
+  github: "zeus-12",
+  linkedin: "vishnu-v12",
+  email: "writetovishnuvinod@gmail.com",
 };
 
 export const SOCIALS = {
@@ -10,26 +10,26 @@ export const SOCIALS = {
   email: `mailto:${SOCIAL_IDS.email}`,
 };
 
-import { SiGithub, SiLinkedin } from 'react-icons/si';
-import { IoIosMail } from 'react-icons/io';
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { IoIosMail } from "react-icons/io";
 
 export const heroLinkElements = [
   {
     icon: SiGithub,
-    tw: 'text-cyan-400',
-    title: 'Github',
+    tw: "text-cyan-400",
+    title: "Github",
     link: SOCIALS.github,
   },
   {
     icon: SiLinkedin,
-    tw: 'text-cyan-400',
-    title: 'LinkedIn',
+    tw: "text-cyan-400",
+    title: "LinkedIn",
     link: SOCIALS.linkedin,
   },
   {
     icon: IoIosMail,
-    tw: 'text-cyan-400 h-5 w-5',
-    title: 'Email',
+    tw: "text-cyan-400 h-5 w-5",
+    title: "Email",
     link: SOCIALS.email,
   },
 ];
