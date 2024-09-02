@@ -97,7 +97,7 @@ export const PROJECTS_DATA: {
   {
     title: "Ping",
     shortDescription:
-      "Security app for IITM, where users can send live location requests during distress, allowing security to instantly access nearby cameras for monitoring.",
+      "Security app for IITM, where users can send live location requests during distress, allowing security to instantly access nearby cameras.",
 
     description:
       "Security app for IITM allowing users to send their location to their contacts in case of an emergency. Enabling the security to track the user's location, access and record nearby cameras.",
