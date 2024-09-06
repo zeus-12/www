@@ -50,9 +50,12 @@ const Projects = () => {
 
         <div className="mb-4 mt-8">
           {projects.length > 0 ? (
-            <div className="lg:columns-3 sm:columns-2 gap-4 mb-2">
+            <div className="lg:columns-3 sm:columns-2 gap-3 mb-2">
               {projects.map((project) => (
-                <div key={project.title}>
+                <div
+                  className="break-inside-avoid-column mb-3"
+                  key={project.title}
+                >
                   <ProjectCard
                     shortDescription={project.shortDescription}
                     isFeatured={project.isFeatured}
