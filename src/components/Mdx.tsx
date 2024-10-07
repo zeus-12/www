@@ -4,9 +4,7 @@ import Image from "next/image";
 
 const MDXComponents = {
   img: (props: any) => <Image {...props} alt={props.alt} />,
-  a: (props: any) => (
-    <Link target="_blank" rel="noopener noreferrer" {...props} />
-  ),
+  Link: (props: any) => <Link {...props} />,
   h1: (props: any) => (
     <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
       {props.children}
@@ -28,7 +26,7 @@ const MDXComponents = {
     </p>
   ),
   li: (props: any) => (
-    <li className="leading-7 text-gray-300">{props.children}</li>
+    <li className="leading-7 md:list-disc text-gray-300">{props.children}</li>
   ),
 };
 
