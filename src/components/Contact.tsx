@@ -1,9 +1,7 @@
 import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
 import LinkCard from "@/components/LinkCard";
-import { SiLinkedin } from "react-icons/si";
-import { IoIosMail } from "react-icons/io";
-import ResumeLinkCard from "@/components/ResumeLinkCard";
-import { SOCIALS } from "@/lib/constants";
+import { CONTACT_LINK_ELEMENTS } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 const Contact = () => {
   return (
@@ -17,22 +15,18 @@ const Contact = () => {
         </p>
         <p className="text-center mt-6 text-neutral-400">
           I&apos;m currently specialising in{" "}
-          <span className="text-cyan-400">Full Stack Development</span>.
+          <span className="text-primary">Full Stack Development</span>.
         </p>
 
         <p className="text-center text-neutral-400">
           Feel free to get in touch and talk more about your projects.
         </p>
         <div className="flex gap-2 mt-8 justify-center">
-          <LinkCard title="LinkedIn" link={SOCIALS.linkedin}>
-            <SiLinkedin className="fill-cyan-400" />
-          </LinkCard>
-
-          <LinkCard title="Email" link={SOCIALS.email}>
-            <IoIosMail className="fill-cyan-400 h-5 w-5" />
-          </LinkCard>
-
-          <ResumeLinkCard />
+          {CONTACT_LINK_ELEMENTS.map((item) => (
+            <LinkCard key={item.title} title={item.title} link={item.link}>
+              <item.icon className={cn("fill-primary", item.tw)} />
+            </LinkCard>
+          ))}
         </div>
       </SlideUpWhenVisible>
     </div>

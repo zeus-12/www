@@ -1,7 +1,7 @@
 import { Button } from "@mantine/core";
-import Link from "next/link";
 import { useContext, useRef } from "react";
 import { ScrollContext } from "@/lib/ScrollObserver";
+import Link from "@/components/Link";
 
 const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   const progress = sectionProgress - blockNo;
@@ -49,9 +49,12 @@ const AboutMe = () => {
           >
             A {age}-year-old based in India, currently pursuing Engineering
             Design from{" "}
-            <a className="text-cyan-300" href="https://www.iitm.ac.in/">
+            <Link
+              className="underline decoration-primary hover:bg-primary hover:text-black transition-colors duration-150 ease-in-out"
+              href="https://www.iitm.ac.in/"
+            >
               IIT Madras
-            </a>
+            </Link>
           </div>
           <span
             className={`transition-opacity duration-500 inline-block after:content-['_']`}
@@ -59,9 +62,11 @@ const AboutMe = () => {
           >
             I started out automating tasks, building websites using no-code
             tools. And later on, I{" "}
-            <span className="text-cyan-300">taught myself</span> how to code,
-            fast-forward to today, I do programming in{" "}
-            <span className="text-cyan-300">
+            <span className="underline decoration-primary hover:bg-primary hover:text-black transition-colors duration-150 ease-in-out">
+              taught myself
+            </span>{" "}
+            how to code, fast-forward to today, I do programming in{" "}
+            <span className="underline decoration-primary hover:bg-primary hover:text-black transition-colors duration-150 ease-in-out">
               various languages and technologies.
             </span>
           </span>
@@ -71,7 +76,7 @@ const AboutMe = () => {
           >
             I&apos;m interested in building something awesome or automate tasks
             with code, currently focused on{" "}
-            <span className="text-cyan-300">
+            <span className="underline decoration-primary hover:bg-primary hover:text-black transition-colors duration-150 ease-in-out">
               Web & Mobile Full-Stack Development.
             </span>
           </span>
