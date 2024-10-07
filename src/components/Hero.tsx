@@ -1,15 +1,15 @@
 import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
 import LinkCard from "./LinkCard";
 import Image from "next/image";
-import { heroLinkElements } from "@/lib/constants";
-import ResumeLinkCard from "@/components/ResumeLinkCard";
+import { HERO_LINK_ELEMENTS } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 const Hero = () => {
   return (
     <div>
       <div className="min-h-screen">
         <SlideUpWhenVisible>
-          <p className="text-cyan-500 text-lg sm:text-xl font-medium md:text-3xl">
+          <p className="text-primary text-lg sm:text-xl font-medium md:text-3xl">
             {/* 👋 */}
             Hey there!, I&apos;m-
           </p>
@@ -38,19 +38,17 @@ const Hero = () => {
             <p>🚀 &nbsp;Exploring oppurtunities & side projects.</p>
             <p>
               💻 &nbsp;Currently specializing in{" "}
-              <span className="text-cyan-300"> Full-stack Development.</span>
+              <span className="text-primary"> Full-stack Development.</span>
             </p>
           </div>
 
           <div className="flex flex-col lg:flex-row justify-between items-start">
             <div className="flex gap-2 mt-8 mb-4 flex-wrap">
-              {heroLinkElements.map((item) => (
+              {HERO_LINK_ELEMENTS.map((item) => (
                 <LinkCard key={item.title} title={item.title} link={item.link}>
-                  <item.icon className={item.tw} />
+                  <item.icon className={cn("text-primary", item.tw)} />
                 </LinkCard>
               ))}
-
-              <ResumeLinkCard />
             </div>
 
             <SlideUpWhenVisible>
