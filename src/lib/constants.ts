@@ -1,3 +1,6 @@
+import { SiGithub, SiLinkedin } from "react-icons/si";
+import { IoIosMail, IoIosPaper } from "react-icons/io";
+
 export const SOCIAL_IDS = {
   github: "zeus-12",
   linkedin: "vishnu-v12",
@@ -10,27 +13,43 @@ export const SOCIALS = {
   email: `mailto:${SOCIAL_IDS.email}`,
 };
 
-import { SiGithub, SiLinkedin } from "react-icons/si";
-import { IoIosMail } from "react-icons/io";
+const LINKEDIN_DETAILS = {
+  icon: SiLinkedin,
+  title: "LinkedIn",
+  link: SOCIALS.linkedin,
+};
 
-export const heroLinkElements = [
+const EMAIL_DETAILS = {
+  icon: IoIosMail,
+  tw: "h-5 w-5",
+  title: "Email",
+  link: SOCIALS.email,
+};
+
+interface LinkElement {
+  icon: any;
+  title: string;
+  link: string;
+  tw?: string;
+}
+
+export const CONTACT_LINK_ELEMENTS: LinkElement[] = [
+  LINKEDIN_DETAILS,
+  EMAIL_DETAILS,
+];
+
+export const HERO_LINK_ELEMENTS: LinkElement[] = [
   {
     icon: SiGithub,
-    tw: "text-cyan-400",
     title: "Github",
     link: SOCIALS.github,
   },
+  LINKEDIN_DETAILS,
+  EMAIL_DETAILS,
   {
-    icon: SiLinkedin,
-    tw: "text-cyan-400",
-    title: "LinkedIn",
-    link: SOCIALS.linkedin,
-  },
-  {
-    icon: IoIosMail,
-    tw: "text-cyan-400 h-5 w-5",
-    title: "Email",
-    link: SOCIALS.email,
+    icon: IoIosPaper,
+    title: "Resume",
+    link: "/resume.pdf",
   },
 ];
 
