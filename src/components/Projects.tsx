@@ -19,10 +19,10 @@ const Projects = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
                   <ProjectLeft progress={progress}>
                     <div>
-                      <p className="capitalize text-4xl text-cyan-300 font-semibold tracking-tight mb-2">
+                      <p className="capitalize text-4xl text-primary font-semibold tracking-tight mb-2">
                         {project.title}
                       </p>
-                      <p className="text-3xl font-medium text-gray-200 tracking-tight">
+                      <p className="text-3xl font-medium text-gray-300 tracking-tight">
                         {project.shortDescription}
                       </p>
                     </div>
