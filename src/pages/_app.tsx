@@ -29,6 +29,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider
         attribute="class"
         forcedTheme={isRootPage ? "light" : "dark"}
+        enableColorScheme={true}
       >
         <main className={fontSans.className}>
           <DefaultSeo {...SEO} />
