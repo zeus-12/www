@@ -26,7 +26,7 @@ const Link = ({
         className={cn(
           monochrome
             ? "hover:text-gray-400"
-            : "hover:text-black focus:text-secondary active:text-secondary hover:bg-secondary underline decoration-secondary transition-colors duration-150 ease-in-out",
+            : "hover:text-black focus:text-cyan active:text-cyan hover:bg-cyan underline decoration-cyan transition-colors duration-150 ease-in-out",
           className
         )}
         {...rest}
@@ -40,7 +40,7 @@ const Link = ({
       className={cn(
         monochrome
           ? "hover:text-gray-400"
-          : "hover:text-black focus:text-secondary active:text-secondary hover:bg-secondary underline decoration-secondary transition-colors duration-150 ease-in-out",
+          : "hover:text-black focus:text-cyan active:text-cyan hover:bg-cyan underline decoration-cyan transition-colors duration-150 ease-in-out",
         className
       )}
       target="_blank"
