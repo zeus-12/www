@@ -1,10 +1,11 @@
-import { TextInput } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import ProjectCard from "@/components/project-card";
 import { PROJECTS_DATA } from "@/lib/projects";
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { NextSeo } from "next-seo";
+import { SearchIcon } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 const Projects = () => {
   const [query, setQuery] = useState("");
@@ -38,14 +39,16 @@ const Projects = () => {
             a collection of things I&apos;ve built.
           </p>
 
-          <TextInput
-            className="mt-3 max-w-md"
-            placeholder="Search projects"
-            rightSection={<BiSearch />}
-            type="text"
-            value={query}
-            onChange={(event) => setQuery(event.currentTarget.value)}
-          />
+          <div className="relative my-4">
+            <SearchIcon className="absolute left-3 top-[50%] h-4 w-4 -translate-y-[50%] text-muted-foreground" />
+            <Input
+              className="pl-9 border-gray-500 bg-muted mt-3 max-w-md"
+              type="search"
+              placeholder="Search for a document"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+            />
+          </div>
         </SlideUpWhenVisible>
 
         <div className="mb-4 mt-8">

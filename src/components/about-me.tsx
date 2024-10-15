@@ -1,7 +1,7 @@
-import { Button } from "@mantine/core";
 import { useContext, useRef } from "react";
 import { ScrollContext } from "@/lib/scroll-observer";
 import Link from "@/components/link";
+import { Button } from "@/components/ui/button";
 
 const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   const progress = sectionProgress - blockNo;
@@ -50,7 +50,7 @@ const AboutMe = () => {
             A {age}-year-old based in India, currently pursuing Engineering
             Design from{" "}
             <Link
-              className="underline decoration-secondary hover:bg-secondary hover:text-black transition-colors duration-150 ease-in-out"
+              className="underline decoration-cyan hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out"
               href="https://www.iitm.ac.in/"
             >
               IIT Madras
@@ -62,11 +62,11 @@ const AboutMe = () => {
           >
             I started out automating tasks, building websites using no-code
             tools. And later on, I{" "}
-            <span className="underline decoration-secondary hover:bg-secondary hover:text-black transition-colors duration-150 ease-in-out">
+            <span className="underline decoration-cyan hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
               taught myself
             </span>{" "}
             how to code, fast-forward to today, I do programming in{" "}
-            <span className="underline decoration-secondary hover:bg-secondary hover:text-black transition-colors duration-150 ease-in-out">
+            <span className="underline decoration-cyan hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
               various languages and technologies.
             </span>
           </span>
@@ -76,7 +76,7 @@ const AboutMe = () => {
           >
             I&apos;m interested in building something awesome or automate tasks
             with code, currently focused on{" "}
-            <span className="underline decoration-secondary hover:bg-secondary hover:text-black transition-colors duration-150 ease-in-out">
+            <span className="underline decoration-cyan hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
               Web & Mobile Full-Stack Development.
             </span>
           </span>
@@ -93,12 +93,8 @@ const AboutMe = () => {
             Featured Projects
           </span>
         </p>
-        <Link href="/projects">
-          <Button
-            variant="light"
-            color="dark"
-            className="hover:border-orange-400"
-          >
+        <Link monochrome={true} href="/projects">
+          <Button variant="ghost" className="hover:border-orange-400">
             <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#ed6ea0] to-[#efbdaa] ">
               See All
             </p>
