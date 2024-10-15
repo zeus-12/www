@@ -7,7 +7,7 @@ export const SOCIAL_IDS = {
   email: "writetovishnuvinod@gmail.com",
   twitter: "vishnuu122",
   instagram: "vishnu_v12",
-};
+} as const;
 
 export const SOCIALS = {
   github: `https://github.com/${SOCIAL_IDS.github}`,
@@ -15,13 +15,13 @@ export const SOCIALS = {
   email: `mailto:${SOCIAL_IDS.email}`,
   twitter: `https://twitter.com/${SOCIAL_IDS.twitter}`,
   instagram: `https://www.instagram.com/${SOCIAL_IDS.instagram}/`,
-};
+} as const;
 
 const LINKEDIN_DETAILS = {
   icon: SiLinkedin,
   title: "LinkedIn",
   link: SOCIALS.linkedin,
-};
+} as const;
 
 const EMAIL_DETAILS = {
   icon: IoIosMail,
