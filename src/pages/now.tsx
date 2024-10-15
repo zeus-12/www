@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import Link from "@/components/Link";
 import Mdx from "@/components/Mdx";
-import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
+import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { Other, allOthers } from "contentlayer/generated";
 import {
   GetStaticPropsContext,

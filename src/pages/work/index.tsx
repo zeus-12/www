@@ -1,4 +1,4 @@
-import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
+import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { NextSeo } from "next-seo";
 
 const Work = () => {
