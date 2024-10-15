@@ -5,12 +5,16 @@ export const SOCIAL_IDS = {
   github: "zeus-12",
   linkedin: "vishnu-v12",
   email: "writetovishnuvinod@gmail.com",
+  twitter: "vishnuu122",
+  instagram: "vishnu_v12",
 };
 
 export const SOCIALS = {
   github: `https://github.com/${SOCIAL_IDS.github}`,
   linkedin: `https://www.linkedin.com/in/${SOCIAL_IDS.linkedin}/`,
   email: `mailto:${SOCIAL_IDS.email}`,
+  twitter: `https://twitter.com/${SOCIAL_IDS.twitter}`,
+  instagram: `https://www.instagram.com/${SOCIAL_IDS.instagram}/`,
 };
 
 const LINKEDIN_DETAILS = {
