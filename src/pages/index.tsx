@@ -124,10 +124,9 @@ const Landing = () => {
         >
           <div className=" md:max-w-lg mx-auto space-y-8">
             <p className="text-base tracking-tight">
-              Vishnu Vinod is a product designer helping founders realize
-              solutions through design. Interested in ideas surrounding
-              fullstack, mobile development, automations, & artificial
-              intelligence.
+              Vishnu Vinod is a self-taught developer with an interest in
+              Computer Science. Interested in building fullstack, mobile app,
+              automations.
             </p>
 
             {WORKS.map((item, id) => (
