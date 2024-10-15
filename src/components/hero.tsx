@@ -9,7 +9,7 @@ const Hero = () => {
     <div>
       <div className="min-h-screen">
         <SlideUpWhenVisible>
-          <p className="text-primary text-lg sm:text-xl font-medium md:text-3xl">
+          <p className="text-secondary text-lg sm:text-xl font-medium md:text-3xl">
             {/* 👋 */}
             Hey there!, I&apos;m-
           </p>
@@ -38,7 +38,7 @@ const Hero = () => {
             <p>🚀 &nbsp;Exploring oppurtunities & side projects.</p>
             <p>
               💻 &nbsp;Currently specializing in{" "}
-              <span className="text-primary"> Full-stack Development.</span>
+              <span className="text-secondary"> Full-stack Development.</span>
             </p>
           </div>
 
@@ -46,7 +46,7 @@ const Hero = () => {
             <div className="flex gap-2 mt-8 mb-4 flex-wrap">
               {HERO_LINK_ELEMENTS.map((item) => (
                 <LinkCard key={item.title} title={item.title} link={item.link}>
-                  <item.icon className={cn("text-primary", item.tw)} />
+                  <item.icon className={cn("text-secondary", item.tw)} />
                 </LinkCard>
               ))}
             </div>
