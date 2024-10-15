@@ -1,39 +1,44 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import {
+  BriefcaseIcon,
+  ClockIcon,
+  HouseIcon,
+  TextQuoteIcon,
+} from "lucide-react";
 
 let navItems = [
   {
     name: "Home",
-    href: "/",
+    href: "/home",
+    icon: <HouseIcon size={18} />,
   },
   {
     name: "Projects",
     href: "/projects",
+    icon: <BriefcaseIcon size={18} />,
   },
   {
     name: "Snippets",
     href: "/snippets",
+    icon: <TextQuoteIcon size={18} />,
   },
   {
     name: "Now",
     href: "/now",
+    icon: <ClockIcon size={18} />,
   },
 ];
 
 const Navbar = () => {
-  // const { theme, setTheme } = useTheme();
-  // const [isMounted, setIsMounted] = useState(false);
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
   const [activeTabIndex, setActiveTabIndex] = useState<number | null>(null);
   const [tabUnderlineWidth, setTabUnderlineWidth] = useState(0);
   const [tabUnderlineLeft, setTabUnderlineLeft] = useState(0);
   const router = useRouter();
-  // const [effect, setEffect] = useState(false);
 
   useEffect(() => {
-    // setIsMounted(true);
-
     const path = window.location.pathname;
     const currentPath = path.split("/")[1];
     const currentTab = navItems.findIndex(
@@ -68,19 +73,17 @@ const Navbar = () => {
         >
           <span className="h-full w-full rounded-xl bg-neutral-200 backdrop-blur-xl dark:bg-neutral-800" />
         </span>
-        {navItems.map((tab, index) => {
-          return (
-            <Link
-              key={index}
-              href={tab.href as string}
-              ref={(el) => (tabsRef.current[index] = el)}
-              className="font-base inline-flex cursor-pointer items-center justify-center rounded-full px-4 text-center text-sm transition hover:text-black/80 dark:hover:text-white/80 sm:text-base"
-              onClick={() => setActiveTabIndex(index)}
-            >
-              {tab.name}
-            </Link>
-          );
-        })}
+        {navItems.map((tab, index) => (
+          <Link
+            key={index}
+            href={tab.href as string}
+            ref={(el) => (tabsRef.current[index] = el)}
+            className="font-base inline-flex cursor-pointer items-center justify-center rounded-full px-4 text-center text-sm transition hover:text-black/80 dark:hover:text-white/80 sm:text-base"
+            onClick={() => setActiveTabIndex(index)}
+          >
+            {tab.icon}
+          </Link>
+        ))}
       </div>
     </div>
   );
