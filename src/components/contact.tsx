@@ -15,7 +15,7 @@ const Contact = () => {
         </p>
         <p className="text-center mt-6 text-neutral-400">
           I&apos;m currently specialising in{" "}
-          <span className="text-secondary">Full Stack Development</span>.
+          <span className="text-cyan">Full Stack Development</span>.
         </p>
 
         <p className="text-center text-neutral-400">
@@ -24,7 +24,7 @@ const Contact = () => {
         <div className="flex gap-2 mt-8 justify-center">
           {CONTACT_LINK_ELEMENTS.map((item) => (
             <LinkCard key={item.title} title={item.title} link={item.link}>
-              <item.icon className={cn("fill-secondary", item.tw)} />
+              <item.icon className={cn("fill-cyan", item.tw)} />
             </LinkCard>
           ))}
         </div>
