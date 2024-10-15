@@ -142,19 +142,21 @@ const Landing = () => {
           key={item.text}
         />
       ))}
+
       <SlideUpWhenVisible>
         <div
           className={cn(
             "px-5 py-12 md:flex md:items-center md:justify-between min-h-screen h-full text-sm text-[0.9rem]"
           )}
         >
-          <div className=" md:max-w-lg mx-auto space-y-8">
+          <div className="md:max-w-lg mx-auto space-y-8">
             <Logo />
 
             <p className="text-base tracking-tight">
-              Vishnu Vinod is a self-taught developer with an interest in
-              Computer Science. Interested in building fullstack, mobile app,
-              automations.
+              <span className="bg-green-200 font-medium">Vishnu Vinod</span> is
+              a self-taught software developer with an interest in Computer
+              Science. Interested in building fullstack apps, desktop apps,
+              mobile apps, automations. Final year student at IIT Madras.
             </p>
 
             {WORKS.map((item, id) => (
@@ -178,49 +180,14 @@ const Landing = () => {
             ))}
 
             <div className="md:flex-row flex-col flex gap-2">
-              <Button className="rounded-3xl w-fit">Say Hello</Button>
-              <div className="flex gap-2 group">
-                <Button
-                  variant="ghost"
-                  className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500 hidden md:flex"
-                >
-                  Socials
-                </Button>
-                <div className="contents md:hidden group-hover:contents">
-                  {SOCIAL_LINKS.map((link) => (
-                    <Link href={link.link} key={link.title} monochrome={true}>
-                      <Button
-                        variant="ghost"
-                        className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500"
-                      >
-                        {link.title}
-                      </Button>
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              <Link monochrome={true} href={SOCIALS.email}>
+                <Button className="rounded-3xl w-fit">Say Hello</Button>
+              </Link>
+
+              <SocialsSection />
             </div>
 
-            <div className="group flex gap-2">
-              <div className="hidden md:flex items-center gap-2  group-hover:hidden">
-                <div className="bg-gray-100 w-5 h-5 items-center justify-center flex text-gray-400 rounded-sm">
-                  ?
-                </div>
-                <p className="text-gray-400">Where is everything?</p>
-              </div>
-
-              <div className="md:hidden md:group-hover:contents space-y-4 md:space-y-0">
-                {KEYS.map((key) => (
-                  <Key
-                    tw="flex gap-1"
-                    href={key.href}
-                    text={key.text}
-                    key={key.text}
-                    fullText={key.fullText}
-                  />
-                ))}
-              </div>
-            </div>
+            <OtherLinksSection />
           </div>
         </div>
       </SlideUpWhenVisible>
@@ -255,8 +222,59 @@ const Key = ({
 
 const Logo = () => {
   return (
-    <div className="text-white aspect-square w-fit items-center flex bg-black p-1 rounded-full md:mx-auto">
+    <div className="md:text-lg text-white aspect-square w-fit items-center flex bg-black p-1 rounded-full md:mx-auto">
       &#123;V&#125;
+    </div>
+  );
+};
+
+const SocialsSection = () => {
+  return (
+    <div className="flex gap-2 group">
+      <Button
+        variant="ghost"
+        className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500 hidden md:flex"
+      >
+        Socials
+      </Button>
+
+      <div className="contents md:hidden group-hover:contents">
+        {SOCIAL_LINKS.map((link) => (
+          <Link href={link.link} key={link.title} monochrome={true}>
+            <Button
+              variant="ghost"
+              className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500"
+            >
+              {link.title}
+            </Button>
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const OtherLinksSection = () => {
+  return (
+    <div className="group flex gap-2 md:py-3">
+      <div className="hidden md:flex items-center gap-2 group-hover:hidden">
+        <div className="bg-gray-100 w-5 h-5 items-center justify-center flex text-gray-400 rounded-sm">
+          ?
+        </div>
+        <p className="text-gray-400">Where is everything?</p>
+      </div>
+
+      <div className="md:hidden md:group-hover:contents space-y-4 md:space-y-0 ">
+        {KEYS.map((key) => (
+          <Key
+            tw="flex gap-1"
+            href={key.href}
+            text={key.text}
+            key={key.text}
+            fullText={key.fullText}
+          />
+        ))}
+      </div>
     </div>
   );
 };
