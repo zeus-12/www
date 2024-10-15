@@ -1,21 +1,34 @@
 import React, { DetailedHTMLProps, AnchorHTMLAttributes, Ref } from "react";
 import NextLink from "next/link";
+import { cn } from "@/lib/utils";
 
 type LinkProps = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
 > & {
   ref?: Ref<HTMLAnchorElement>;
+  monochrome?: boolean;
 };
 
-const Link = ({ href, className, children, ...rest }: LinkProps) => {
+const Link = ({
+  href,
+  className,
+  children,
+  monochrome,
+  ...rest
+}: LinkProps) => {
   const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
 
   if (isInternalLink) {
     return (
       <NextLink
         href={href}
-        className={`hover:text-black focus:text-primary active:text-primary hover:bg-primary underline decoration-primary transition-colors duration-150 ease-in-out ${className}`}
+        className={cn(
+          monochrome
+            ? "hover:text-gray-400"
+            : "hover:text-black focus:text-secondary active:text-secondary hover:bg-secondary underline decoration-secondary transition-colors duration-150 ease-in-out",
+          className
+        )}
         {...rest}
       >
         {children}
@@ -24,7 +37,12 @@ const Link = ({ href, className, children, ...rest }: LinkProps) => {
   }
   return (
     <a
-      className={`hover:text-black focus:text-primary active:text-primary hover:bg-primary underline decoration-primary transition-colors duration-150 ease-in-out ${className}`}
+      className={cn(
+        monochrome
+          ? "hover:text-gray-400"
+          : "hover:text-black focus:text-secondary active:text-secondary hover:bg-secondary underline decoration-secondary transition-colors duration-150 ease-in-out",
+        className
+      )}
       target="_blank"
       rel="noopener noreferrer"
       href={href}
