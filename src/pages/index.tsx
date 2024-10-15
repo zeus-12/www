@@ -1,10 +1,10 @@
 import Link from "@/components/link";
-import SlideUpWhenVisible from "@/components/slide-up-when-visible";
-import { Button } from "@/components/ui/button";
 import { SOCIALS } from "@/lib/constants";
+import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/router";
 import { useHotkeys } from "react-hotkeys-hook";
+import { Button } from "@/components/ui/button";
 
 const WORKS = [
   {
