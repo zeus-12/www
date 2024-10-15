@@ -8,8 +8,8 @@ function generateSiteMap() {
      <!--We manually set the two URLs we know already-->
      <url>
        <loc>${URL}</loc>
+       <loc>${URL}/home</loc>
        <loc>${`${URL}/projects`}</loc>
-       <loc>${`${URL}/now`}</loc>
        <loc>${`${URL}/snippets`}</loc>
      </url>
      ${allSnippets
