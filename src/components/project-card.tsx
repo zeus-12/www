@@ -3,7 +3,7 @@ import { MdPreview } from "react-icons/md";
 import { Card, Badge, Tooltip } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
-import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
+import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { fontMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { PROJECTS_DATA } from "@/configs/projects";

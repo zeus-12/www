@@ -1,9 +1,9 @@
 import { TextInput } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCard from "@/components/project-card";
 import { PROJECTS_DATA } from "@/configs/projects";
-import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
+import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { NextSeo } from "next-seo";
 
 const Projects = () => {

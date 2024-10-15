@@ -1,5 +1,5 @@
-import SnippetCard from "@/components/SnippetCard";
-import SlideUpWhenVisible from "@/hooks/SlideUpWhenVisible";
+import SnippetCard from "@/components/snippet-card";
+import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { allSnippets } from "contentlayer/generated";
 import { NextSeo } from "next-seo";
 
