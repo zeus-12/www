@@ -1,6 +1,5 @@
 import { SiGithub } from "react-icons/si";
 import { MdPreview } from "react-icons/md";
-import { Card, Badge, Tooltip } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
@@ -8,6 +7,8 @@ import { fontMono } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import { PROJECTS_DATA } from "@/lib/projects";
 import { FC } from "react";
+import { CustomTooltip } from "@/components/ui/tooltip";
+import { Badge } from "@/components/ui/badge";
 
 type ProjectCardProps = (typeof PROJECTS_DATA)[number];
 
@@ -38,44 +39,36 @@ const ProjectCard: FC<ProjectCardProps> = ({
             <div className="flex items-center gap-x-2">
               {githubLink && (
                 <Link href={githubLink}>
-                  <Tooltip
-                    label="View source code"
-                    color="dark"
-                    position="bottom"
-                    transitionProps={{
-                      transition: "scale-y",
-                    }}
-                    withArrow
-                  >
+                  <CustomTooltip content="View source code">
                     <div>
                       <SiGithub className="w-5 hover:cursor-pointer h-5" />
                     </div>
-                  </Tooltip>
+                  </CustomTooltip>
                 </Link>
               )}
 
               {deployedLink && (
                 <Link href={deployedLink}>
-                  <Tooltip
-                    color="dark"
-                    position="bottom"
-                    withArrow
-                    transitionProps={{
-                      transition: "scale-y",
-                    }}
-                    label="View deployed"
-                  >
+                  <CustomTooltip content="View deployed">
                     <div>
                       <MdPreview className="w-6 hover:cursor-pointer h-6" />
                     </div>
-                  </Tooltip>
+                  </CustomTooltip>
                 </Link>
               )}
             </div>
           </div>
           <div className="mb-2 px-1 flex gap-2 flex-wrap md:px-2">
             {techStack?.map((stack) => (
-              <Badge color={stack.color} variant="light" key={stack.title}>
+              <Badge
+                key={stack.title}
+                variant="secondary"
+                className="text-[--color]"
+                style={{
+                  // @ts-ignore
+                  "--color": stack.color,
+                }}
+              >
                 {stack.title}
               </Badge>
             ))}
