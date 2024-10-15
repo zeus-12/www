@@ -50,7 +50,7 @@ const AboutMe = () => {
             A {age}-year-old based in India, currently pursuing Engineering
             Design from{" "}
             <Link
-              className="underline decoration-cyan hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out"
+              className="underline decoration-cyan underline-offset-4 hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out"
               href="https://www.iitm.ac.in/"
             >
               IIT Madras
@@ -62,11 +62,11 @@ const AboutMe = () => {
           >
             I started out automating tasks, building websites using no-code
             tools. And later on, I{" "}
-            <span className="underline decoration-cyan hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
+            <span className="underline decoration-cyan underline-offset-4 hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
               taught myself
             </span>{" "}
             how to code, fast-forward to today, I do programming in{" "}
-            <span className="underline decoration-cyan hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
+            <span className="underline decoration-cyan underline-offset-4 hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
               various languages and technologies.
             </span>
           </span>
@@ -76,7 +76,7 @@ const AboutMe = () => {
           >
             I&apos;m interested in building something awesome or automate tasks
             with code, currently focused on{" "}
-            <span className="underline decoration-cyan hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
+            <span className="underline decoration-cyan underline-offset-4 hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
               Web & Mobile Full-Stack Development.
             </span>
           </span>
