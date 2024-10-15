@@ -3,16 +3,21 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import {
   BriefcaseIcon,
-  ClockIcon,
   HouseIcon,
+  PresentationIcon,
   TextQuoteIcon,
 } from "lucide-react";
 
 let navItems = [
   {
     name: "Home",
-    href: "/home",
+    href: "/",
     icon: <HouseIcon size={18} />,
+  },
+  {
+    name: "Portfolio",
+    href: "/home",
+    icon: <PresentationIcon size={18} />,
   },
   {
     name: "Projects",
@@ -23,11 +28,6 @@ let navItems = [
     name: "Snippets",
     href: "/snippets",
     icon: <TextQuoteIcon size={18} />,
-  },
-  {
-    name: "Now",
-    href: "/now",
-    icon: <ClockIcon size={18} />,
   },
 ];
 
