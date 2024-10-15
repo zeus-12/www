@@ -3,7 +3,7 @@ import { MantineProvider } from "@mantine/core";
 import ScrollObserver from "@/lib/scroll-observer";
 import { AppProps } from "next/app";
 import "prism-themes/themes/prism-night-owl.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar";
 // import PlausibleProvider from 'next-plausible';
 import { fontSans } from "@/lib/fonts";
 import { DefaultSeo } from "next-seo";
