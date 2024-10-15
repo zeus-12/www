@@ -39,7 +39,7 @@ const AboutMe = () => {
   );
 
   return (
-    <div ref={refContainer} className="bg-black text-white">
+    <div ref={refContainer}>
       <div className="min-h-screen max-w-5xl mx-auto px-4 lg:px-8 pt-24 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold">
         <div className="leading-[1.15] space-y-4">
           <p className="mb-2 text-gray-300">⚡️</p>
@@ -50,7 +50,7 @@ const AboutMe = () => {
             A {age}-year-old based in India, currently pursuing Engineering
             Design from{" "}
             <Link
-              className="underline decoration-primary hover:bg-primary hover:text-black transition-colors duration-150 ease-in-out"
+              className="underline decoration-secondary hover:bg-secondary hover:text-black transition-colors duration-150 ease-in-out"
               href="https://www.iitm.ac.in/"
             >
               IIT Madras
@@ -62,11 +62,11 @@ const AboutMe = () => {
           >
             I started out automating tasks, building websites using no-code
             tools. And later on, I{" "}
-            <span className="underline decoration-primary hover:bg-primary hover:text-black transition-colors duration-150 ease-in-out">
+            <span className="underline decoration-secondary hover:bg-secondary hover:text-black transition-colors duration-150 ease-in-out">
               taught myself
             </span>{" "}
             how to code, fast-forward to today, I do programming in{" "}
-            <span className="underline decoration-primary hover:bg-primary hover:text-black transition-colors duration-150 ease-in-out">
+            <span className="underline decoration-secondary hover:bg-secondary hover:text-black transition-colors duration-150 ease-in-out">
               various languages and technologies.
             </span>
           </span>
@@ -76,7 +76,7 @@ const AboutMe = () => {
           >
             I&apos;m interested in building something awesome or automate tasks
             with code, currently focused on{" "}
-            <span className="underline decoration-primary hover:bg-primary hover:text-black transition-colors duration-150 ease-in-out">
+            <span className="underline decoration-secondary hover:bg-secondary hover:text-black transition-colors duration-150 ease-in-out">
               Web & Mobile Full-Stack Development.
             </span>
           </span>
