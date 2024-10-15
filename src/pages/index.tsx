@@ -3,6 +3,8 @@ import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { Button } from "@/components/ui/button";
 import { SOCIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/router";
+import { useHotkeys } from "react-hotkeys-hook";
 
 const WORKS = [
   {
@@ -25,7 +27,7 @@ const WORKS = [
       },
     ],
     text: "Currently",
-    tw: "bg-green-300 animate-pulse",
+    tw: "bg-green-400 animate-pulse",
   },
   {
     items: [
@@ -34,6 +36,31 @@ const WORKS = [
         end: (
           <Link monochrome={true} href="https://www.natwestgroup.com/">
             NatWest
+          </Link>
+        ),
+      },
+
+      {
+        start: "Backend intern at",
+        end: (
+          <Link monochrome={true} href="https://vimaan.ai">
+            Vimaan
+          </Link>
+        ),
+      },
+      {
+        start: "Full stack intern at",
+        end: (
+          <Link monochrome={true} href="https://commenda.io">
+            Commenda
+          </Link>
+        ),
+      },
+      {
+        start: "Frontend intern at",
+        end: (
+          <Link monochrome={true} href="https://viak.io">
+            Viak
           </Link>
         ),
       },
@@ -46,24 +73,28 @@ const WORKS = [
 const KEYS = [
   {
     tw: "top-5 left-1/2",
-    href: "/",
+    href: "/home",
     text: "P",
+    fullText: "Portfolio",
   },
 
   {
     tw: "right-5 top-1/2",
-    href: "/",
-    text: "M",
+    href: "/snippets",
+    text: "S",
+    fullText: "Snippets",
   },
   {
     tw: "bottom-5 left-1/2",
-    href: "/",
+    href: "/resume.pdf",
     text: "R",
+    fullText: "Resume",
   },
   {
     tw: "left-5 top-1/2",
-    href: "/",
+    href: "/projects",
     text: "W",
+    fullText: "Projects",
   },
 ];
 
@@ -82,39 +113,33 @@ const SOCIAL_LINKS = [
   },
 ];
 
-// const inter = Inter({
-//   subsets: ["latin"],
-//   display: "swap",
-// });
-
-const Key = ({
-  tw,
-  href,
-  text,
-}: {
-  tw: string;
-  href: string;
-  text: string;
-}) => {
-  return (
-    <Link
-      monochrome={true}
-      className={cn(
-        "hidden md:flex w-5 h-5 items-center justify-center text-sm bg-gray-100 text-gray-300 rounded-sm absolute hover:text-black",
-        tw
-      )}
-      href={href}
-    >
-      {text}
-    </Link>
-  );
-};
-
 const Landing = () => {
+  const router = useRouter();
+
+  useHotkeys(
+    KEYS.map((key) => key.text),
+    (_, handler) => {
+      const keyPressed = handler.keys?.join("").toUpperCase();
+      if (!keyPressed) {
+        return;
+      }
+      const href = KEYS.find((key) => key.text === keyPressed)?.href;
+
+      if (href) {
+        router.push(href);
+      }
+    }
+  );
+
   return (
     <>
       {KEYS.map((item) => (
-        <Key tw={item.tw} href={item.href} text={item.text} key={item.text} />
+        <Key
+          tw={cn(item.tw, "hidden md:flex absolute")}
+          href={item.href}
+          text={item.text}
+          key={item.text}
+        />
       ))}
       <SlideUpWhenVisible>
         <div
@@ -123,6 +148,8 @@ const Landing = () => {
           )}
         >
           <div className=" md:max-w-lg mx-auto space-y-8">
+            <Logo />
+
             <p className="text-base tracking-tight">
               Vishnu Vinod is a self-taught developer with an interest in
               Computer Science. Interested in building fullstack, mobile app,
@@ -134,14 +161,14 @@ const Landing = () => {
                 <div className="flex items-center relative">
                   <div
                     className={cn(
-                      "w-[0.35rem] h-[0.35rem] rounded-full absolute -left-3",
+                      "w-[0.35rem] h-[0.35rem] rounded-full",
                       item.tw
                     )}
                   />
-                  <p>{item.text}</p>
+                  <p className="ml-2">{item.text}</p>
                 </div>
                 {item.items.map((item, idx) => (
-                  <li className="list-none" key={idx}>
+                  <li className="list-none ml-3" key={idx}>
                     <span className="text-gray-400">{item.start}</span>{" "}
                     {item.end}
                   </li>
@@ -151,32 +178,47 @@ const Landing = () => {
 
             <div className="md:flex-row flex-col flex gap-2">
               <Button className="rounded-3xl w-fit">Say Hello</Button>
-              <div className="flex gap-2">
+              <div className="flex gap-2 group">
                 <Button
                   variant="ghost"
                   className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500 hidden md:flex"
                 >
                   Socials
                 </Button>
-
-                {SOCIAL_LINKS.map((link) => (
-                  <Link href={link.link} key={link.title} monochrome={true}>
-                    <Button
-                      variant="ghost"
-                      className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500"
-                    >
-                      {link.title}
-                    </Button>
-                  </Link>
-                ))}
+                <div className="contents md:hidden group-hover:contents">
+                  {SOCIAL_LINKS.map((link) => (
+                    <Link href={link.link} key={link.title} monochrome={true}>
+                      <Button
+                        variant="ghost"
+                        className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500"
+                      >
+                        {link.title}
+                      </Button>
+                    </Link>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
-              <div className="bg-gray-100 w-5 h-5 items-center justify-center flex text-gray-400 rounded-sm">
-                ?
+            <div className="group flex gap-2">
+              <div className="hidden md:flex items-center gap-2  group-hover:hidden">
+                <div className="bg-gray-100 w-5 h-5 items-center justify-center flex text-gray-400 rounded-sm">
+                  ?
+                </div>
+                <p className="text-gray-400">Where is everything?</p>
               </div>
-              <p className="text-gray-400">Where is everything?</p>
+
+              <div className="md:hidden md:group-hover:contents space-y-4 md:space-y-0">
+                {KEYS.map((key) => (
+                  <Key
+                    tw="flex gap-1"
+                    href={key.href}
+                    text={key.text}
+                    key={key.text}
+                    fullText={key.fullText}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -186,3 +228,34 @@ const Landing = () => {
 };
 
 export default Landing;
+
+const Key = ({
+  tw,
+  href,
+  text,
+  fullText,
+}: {
+  tw?: string;
+  href: string;
+  text: string;
+  fullText?: string;
+}) => {
+  return (
+    <Link monochrome={true} className={tw} href={href}>
+      <div className="w-5 h-5 flex justify-center items-center text-sm bg-gray-100 text-gray-300 rounded-sm hover:text-black ">
+        <span className="text-sm bg-gray-100 text-gray-300 rounded-sm hover:text-black">
+          {text}
+        </span>
+      </div>
+      <span>{fullText}</span>
+    </Link>
+  );
+};
+
+const Logo = () => {
+  return (
+    <div className="text-white aspect-square w-fit items-center flex bg-black p-1 rounded-full md:mx-auto">
+      &#123;V&#125;
+    </div>
+  );
+};
