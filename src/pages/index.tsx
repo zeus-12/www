@@ -1,7 +1,7 @@
 import AboutMe from "@/components/about-me";
-import Contact from "@/components/Contact";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
+import Contact from "@/components/contact";
+import Hero from "@/components/hero";
+import Projects from "@/components/projects";
 import { NextSeo } from "next-seo";
 
 export default function Home() {

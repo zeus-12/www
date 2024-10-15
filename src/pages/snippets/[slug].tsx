@@ -1,4 +1,4 @@
-import Mdx from "@/components/Mdx";
+import Mdx from "@/components/mdx";
 import { Snippets, allSnippets } from "contentlayer/generated";
 import {
   GetStaticPropsContext,

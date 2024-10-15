@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout";
-import Link from "@/components/Link";
-import Mdx from "@/components/Mdx";
+import Layout from "@/components/layout";
+import Link from "@/components/link";
+import Mdx from "@/components/mdx";
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { Other, allOthers } from "contentlayer/generated";
 import {
