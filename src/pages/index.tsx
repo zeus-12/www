@@ -77,24 +77,25 @@ const KEYS = [
     text: "P",
     fullText: "Portfolio",
   },
-
   {
-    tw: "right-5 top-1/2",
-    href: "/snippets",
-    text: "S",
-    fullText: "Snippets",
+    tw: "left-5 top-1/2",
+    href: "/projects",
+    text: "W",
+    fullText: "Projects",
   },
+
   {
     tw: "bottom-5 left-1/2",
     href: "/resume.pdf",
     text: "R",
     fullText: "Resume",
   },
+
   {
-    tw: "left-5 top-1/2",
-    href: "/projects",
-    text: "W",
-    fullText: "Projects",
+    tw: "right-5 top-1/2",
+    href: "/snippets",
+    text: "S",
+    fullText: "Snippets",
   },
 ];
 
