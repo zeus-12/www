@@ -1,8 +1,8 @@
 import Link from "@/components/link";
+import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { Button } from "@/components/ui/button";
 import { SOCIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-// import { Inter } from "next/font/google";
 
 const WORKS = [
   {
@@ -100,7 +100,7 @@ const Key = ({
     <Link
       monochrome={true}
       className={cn(
-        "w-5 h-5 flex items-center justify-center text-sm bg-gray-100 text-gray-300 rounded-sm absolute hover:text-black",
+        "hidden md:flex w-5 h-5 items-center justify-center text-sm bg-gray-100 text-gray-300 rounded-sm absolute hover:text-black",
         tw
       )}
       href={href}
@@ -116,70 +116,72 @@ const Landing = () => {
       {KEYS.map((item) => (
         <Key tw={item.tw} href={item.href} text={item.text} key={item.text} />
       ))}
+      <SlideUpWhenVisible>
+        <div
+          className={cn(
+            "px-5 py-12 md:flex md:items-center md:justify-between min-h-screen h-full text-sm text-[0.9rem]"
+          )}
+        >
+          <div className=" md:max-w-lg mx-auto space-y-8">
+            <p className="text-base tracking-tight">
+              Vishnu Vinod is a product designer helping founders realize
+              solutions through design. Interested in ideas surrounding
+              fullstack, mobile development, automations, & artificial
+              intelligence.
+            </p>
 
-      <div
-        className={cn(
-          "px-4 py-12 md:flex md:items-center md:justify-between min-h-screen h-full text-sm text-[0.9rem]"
-          // inter.className
-        )}
-      >
-        <div className=" md:max-w-lg mx-auto space-y-8">
-          <p className="text-base tracking-tight">
-            Vishnu Vinod is a product designer helping founders realize
-            solutions through design. Interested in ideas surrounding fullstack,
-            mobile development, automations, & artificial intelligence.
-          </p>
-
-          {WORKS.map((item, id) => (
-            <div key={id} className="space-y-2">
-              <div className="flex items-center relative">
-                <div
-                  className={cn(
-                    "w-[0.35rem] h-[0.35rem] rounded-full absolute -left-3",
-                    item.tw
-                  )}
-                />
-                <p>{item.text}</p>
+            {WORKS.map((item, id) => (
+              <div key={id} className="space-y-2">
+                <div className="flex items-center relative">
+                  <div
+                    className={cn(
+                      "w-[0.35rem] h-[0.35rem] rounded-full absolute -left-3",
+                      item.tw
+                    )}
+                  />
+                  <p>{item.text}</p>
+                </div>
+                {item.items.map((item, idx) => (
+                  <li className="list-none" key={idx}>
+                    <span className="text-gray-400">{item.start}</span>{" "}
+                    {item.end}
+                  </li>
+                ))}
               </div>
-              {item.items.map((item, idx) => (
-                <li className="list-none" key={idx}>
-                  <span className="text-gray-400">{item.start}</span> {item.end}
-                </li>
-              ))}
-            </div>
-          ))}
+            ))}
 
-          <div className="md:flex-row flex-col flex gap-2">
-            <Button className="rounded-3xl w-fit">Say Hello</Button>
-            <div className="flex gap-2">
-              <Button
-                variant="ghost"
-                className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500 hidden md:flex"
-              >
-                Socials
-              </Button>
+            <div className="md:flex-row flex-col flex gap-2">
+              <Button className="rounded-3xl w-fit">Say Hello</Button>
+              <div className="flex gap-2">
+                <Button
+                  variant="ghost"
+                  className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500 hidden md:flex"
+                >
+                  Socials
+                </Button>
 
-              {SOCIAL_LINKS.map((link) => (
-                <Link href={link.link} key={link.title} monochrome={true}>
-                  <Button
-                    variant="ghost"
-                    className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500"
-                  >
-                    {link.title}
-                  </Button>
-                </Link>
-              ))}
+                {SOCIAL_LINKS.map((link) => (
+                  <Link href={link.link} key={link.title} monochrome={true}>
+                    <Button
+                      variant="ghost"
+                      className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500"
+                    >
+                      {link.title}
+                    </Button>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="flex items-center gap-2">
-            <div className="bg-gray-100 w-5 h-5 items-center justify-center flex text-gray-400 rounded-sm">
-              ?
+            <div className="flex items-center gap-2">
+              <div className="bg-gray-100 w-5 h-5 items-center justify-center flex text-gray-400 rounded-sm">
+                ?
+              </div>
+              <p className="text-gray-400">Where is everything?</p>
             </div>
-            <p className="text-gray-400">Where is everything?</p>
           </div>
         </div>
-      </div>
+      </SlideUpWhenVisible>
     </>
   );
 };
