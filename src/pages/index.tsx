@@ -1,10 +1,10 @@
 import Link from "@/components/link";
-import { SOCIALS } from "@/lib/constants";
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
+import { Button } from "@/components/ui/button";
+import { SOCIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useRouter } from "next/router";
 import { useHotkeys } from "react-hotkeys-hook";
-import { Button } from "@/components/ui/button";
 
 const WORKS = [
   {
@@ -129,14 +129,14 @@ const Landing = () => {
       if (href) {
         router.push(href);
       }
-    }
+    },
   );
 
   return (
     <>
       {KEYS.map((item) => (
         <Key
-          tw={cn(item.tw, "hidden md:flex absolute")}
+          tw={cn(item.tw, "hidden md:flex fixed")}
           href={item.href}
           text={item.text}
           key={item.text}
@@ -146,7 +146,7 @@ const Landing = () => {
       <SlideUpWhenVisible>
         <div
           className={cn(
-            "px-5 py-12 md:flex md:items-center md:justify-between min-h-screen h-full text-sm text-[0.9rem]"
+            "px-5 py-12 md:flex md:items-center md:justify-between min-h-screen h-full text-sm text-[0.9rem]",
           )}
         >
           <div className="md:max-w-lg mx-auto space-y-8">
@@ -165,7 +165,7 @@ const Landing = () => {
                   <div
                     className={cn(
                       "w-[0.35rem] h-[0.35rem] rounded-full",
-                      item.tw
+                      item.tw,
                     )}
                   />
                   <p className="ml-2">{item.text}</p>
@@ -222,7 +222,7 @@ const Key = ({
 
 const Logo = () => {
   return (
-    <div className="md:text-lg text-white aspect-square w-fit items-center flex bg-black p-1 rounded-full md:mx-auto">
+    <div className="md:text-lg text-white aspect-square w-fit h-auto items-center flex bg-black p-1 rounded-full md:mx-auto">
       &#123;V&#125;
     </div>
   );
