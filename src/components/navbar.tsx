@@ -1,12 +1,12 @@
-import Link from "next/link";
-import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/router";
 import {
   BriefcaseIcon,
   HouseIcon,
   PresentationIcon,
   TextQuoteIcon,
 } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
 
 let navItems = [
   {
@@ -42,7 +42,7 @@ const Navbar = () => {
     const path = window.location.pathname;
     const currentPath = path.split("/")[1];
     const currentTab = navItems.findIndex(
-      (tab) => tab.href === `/${currentPath}`
+      (tab) => tab.href === `/${currentPath}`,
     );
     setActiveTabIndex(currentTab);
   }, [router.pathname]);

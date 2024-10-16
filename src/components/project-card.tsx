@@ -1,14 +1,14 @@
-import { SiGithub } from "react-icons/si";
-import { MdPreview } from "react-icons/md";
+import SlideUpWhenVisible from "@/components/slide-up-when-visible";
+import { Badge } from "@/components/ui/badge";
+import { CustomTooltip } from "@/components/ui/tooltip";
+import { fontMono } from "@/lib/fonts";
+import { PROJECTS_DATA } from "@/lib/projects";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import SlideUpWhenVisible from "@/components/slide-up-when-visible";
-import { fontMono } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
-import { PROJECTS_DATA } from "@/lib/projects";
 import { FC } from "react";
-import { CustomTooltip } from "@/components/ui/tooltip";
-import { Badge } from "@/components/ui/badge";
+import { MdPreview } from "react-icons/md";
+import { SiGithub } from "react-icons/si";
 
 type ProjectCardProps = (typeof PROJECTS_DATA)[number];
 
@@ -77,7 +77,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
           <p
             className={cn(
               "text-sm text-gray-400 p-1 md:p-2 text-ellipsis",
-              fontMono.className
+              fontMono.className,
             )}
           >
             {shortDescription}

@@ -3,9 +3,9 @@ import {
   defineDocumentType,
   makeSource,
 } from "contentlayer/source-files";
-import remarkGfm from "remark-gfm";
 import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
+import remarkGfm from "remark-gfm";
 
 export const Snippet = defineDocumentType(() => ({
   name: "Snippets",

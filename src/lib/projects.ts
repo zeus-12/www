@@ -179,5 +179,5 @@ export const PROJECTS_DATA: {
 ];
 
 export const FEATURED_PROJECTS = PROJECTS_DATA.filter(
-  (project) => project.isFeatured
+  (project) => project.isFeatured,
 );

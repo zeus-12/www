@@ -1,8 +1,8 @@
-import { TECH_STACK } from "@/lib/projects";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { fontSans } from "@/lib/fonts";
 import { Badge } from "@/components/ui/badge";
+import { fontSans } from "@/lib/fonts";
+import { TECH_STACK } from "@/lib/projects";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 interface SnippetCardProps {
   techStack?: string[];

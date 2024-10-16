@@ -1,6 +1,6 @@
-import React, { DetailedHTMLProps, AnchorHTMLAttributes, Ref } from "react";
-import NextLink from "next/link";
 import { cn } from "@/lib/utils";
+import NextLink from "next/link";
+import { AnchorHTMLAttributes, DetailedHTMLProps, Ref } from "react";
 
 type LinkProps = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
@@ -27,7 +27,7 @@ const Link = ({
           monochrome
             ? "hover:text-gray-400"
             : "hover:text-black focus:text-cyan active:text-cyan hover:bg-cyan underline decoration-cyan underline-offset-4 transition-colors duration-150 ease-in-out",
-          className
+          className,
         )}
         {...rest}
       >
@@ -41,7 +41,7 @@ const Link = ({
         monochrome
           ? "hover:text-gray-400"
           : "hover:text-black focus:text-cyan active:text-cyan hover:bg-cyan underline decoration-cyan underline-offset-4 transition-colors duration-150 ease-in-out",
-        className
+        className,
       )}
       target="_blank"
       rel="noopener noreferrer"

@@ -1,5 +1,5 @@
-import React, { useContext, useRef } from "react";
 import { ScrollContext } from "@/lib/scroll-observer";
+import React, { useContext, useRef } from "react";
 
 export const TileContext = React.createContext({
   numOfPages: 0,
@@ -28,7 +28,7 @@ export const TileWrapper: React.FC<TileWrapperProps> = ({
     const percentY =
       Math.min(
         clientHeight + halfH,
-        Math.max(-screenH, scrollY - offsetTop) + halfH
+        Math.max(-screenH, scrollY - offsetTop) + halfH,
       ) / clientHeight;
 
     currentPage = percentY * numOfPages;
