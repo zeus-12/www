@@ -1,5 +1,5 @@
-import { SiGithub, SiLinkedin } from "react-icons/si";
 import { IoIosMail, IoIosPaper } from "react-icons/io";
+import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export const SOCIAL_IDS = {
   github: "zeus-12",

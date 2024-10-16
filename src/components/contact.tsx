@@ -1,5 +1,5 @@
-import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import LinkCard from "@/components/link-card";
+import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { CONTACT_LINK_ELEMENTS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 

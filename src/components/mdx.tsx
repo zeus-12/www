@@ -1,5 +1,5 @@
-import { useMDXComponent } from "next-contentlayer/hooks";
 import Link from "@/components/link";
+import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 
 const MDXComponents = {

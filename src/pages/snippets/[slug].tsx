@@ -6,9 +6,9 @@ import {
   InferGetStaticPropsType,
   NextPage,
 } from "next";
+import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { AiOutlineSwapLeft } from "react-icons/ai";
-import { NextSeo } from "next-seo";
 
 const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   snippet,

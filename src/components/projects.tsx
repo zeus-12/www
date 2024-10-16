@@ -1,8 +1,8 @@
-import { TileWrapper, TileBackground, Tile } from "./project-tile";
-import { ProjectBackground, ProjectLeft, ProjectRight } from "./project";
+import { FEATURED_PROJECTS } from "@/lib/projects";
 import Image from "next/image";
 import Link from "next/link";
-import { FEATURED_PROJECTS } from "@/lib/projects";
+import { ProjectBackground, ProjectLeft, ProjectRight } from "./project";
+import { Tile, TileBackground, TileWrapper } from "./project-tile";
 
 const Projects = () => {
   return (

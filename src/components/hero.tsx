@@ -1,8 +1,8 @@
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
-import LinkCard from "./link-card";
-import Image from "next/image";
 import { HERO_LINK_ELEMENTS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import LinkCard from "./link-card";
 
 const Hero = () => {
   return (

@@ -1,7 +1,7 @@
-import { useContext, useRef } from "react";
-import { ScrollContext } from "@/lib/scroll-observer";
 import Link from "@/components/link";
 import { Button } from "@/components/ui/button";
+import { ScrollContext } from "@/lib/scroll-observer";
+import { useContext, useRef } from "react";
 
 const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   const progress = sectionProgress - blockNo;
@@ -27,7 +27,7 @@ const AboutMe = () => {
     const percentY =
       Math.min(
         clientHeight + halfH,
-        Math.max(-screenH, scrollY - offsetTop) + halfH
+        Math.max(-screenH, scrollY - offsetTop) + halfH,
       ) / clientHeight;
     progress = Math.min(numOfPages - 0.5, Math.max(0.5, percentY * numOfPages));
   }
@@ -35,7 +35,7 @@ const AboutMe = () => {
   // prob an overkill ik :)
   const dob = new Date("2002-04-12");
   const age = Math.floor(
-    (new Date().getTime() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365)
+    (new Date().getTime() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365),
   );
 
   return (

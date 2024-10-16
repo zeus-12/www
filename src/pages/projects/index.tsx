@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-import { BiSearch } from "react-icons/bi";
 import ProjectCard from "@/components/project-card";
-import { PROJECTS_DATA } from "@/lib/projects";
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
-import { NextSeo } from "next-seo";
-import { SearchIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import { PROJECTS_DATA } from "@/lib/projects";
+import { SearchIcon } from "lucide-react";
+import { NextSeo } from "next-seo";
+import { useEffect, useState } from "react";
 
 const Projects = () => {
   const [query, setQuery] = useState("");
@@ -15,7 +14,7 @@ const Projects = () => {
   useEffect(() => {
     if (query.trim().length > 0) {
       const newProjectData = PROJECTS_DATA.filter((item) =>
-        item.title.toUpperCase().includes(query.toUpperCase())
+        item.title.toUpperCase().includes(query.toUpperCase()),
       );
       setProjects(newProjectData);
     } else {
