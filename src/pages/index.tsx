@@ -13,7 +13,7 @@ const WORKS = [
         start: "Dual Degree in Engineering Design at",
         end: (
           <Link monochrome={true} href="https://www.iitm.ac.in/">
-            IIT Madras
+            🎓 IIT Madras
           </Link>
         ),
       },
@@ -21,7 +21,7 @@ const WORKS = [
         start: "Building",
         end: (
           <Link monochrome={true} href="https://uxie.vercel.app">
-            uxie
+            🔨 Uxie
           </Link>
         ),
       },
@@ -153,10 +153,11 @@ const Landing = () => {
             <Logo />
 
             <p className="text-base tracking-tight">
-              <span className="bg-green-200 font-medium">Vishnu Vinod</span> is
-              a self-taught software developer with an interest in Computer
-              Science. Interested in building fullstack apps, desktop apps,
-              mobile apps, automations. Final year student at IIT Madras.
+              <span className="bg-green-200 font-medium">Vishnu Vinod</span> - A
+              final-year Engineering student, self-taught developer, and design
+              enthusiast. I enjoy building web, desktop, and mobile apps, as
+              well as creating automations. This is my little corner of the web
+              where I share my work with y&apos;all :)
             </p>
 
             {WORKS.map((item, id) => (
