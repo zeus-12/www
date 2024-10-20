@@ -155,9 +155,9 @@ const Landing = () => {
             <p className="text-base tracking-tight">
               <span className="bg-green-200 font-medium">Vishnu Vinod</span> - A
               final-year Engineering student, self-taught developer, and design
-              enthusiast. I enjoy building web, desktop, and mobile apps, as
-              well as creating automations. This is my little corner of the web
-              where I share my work with y&apos;all :)
+              enthusiast. I enjoy building web, desktop, mobile apps,
+              automations. This is my little corner of the web where I share my
+              work with y&apos;all :)
             </p>
 
             {WORKS.map((item, id) => (
