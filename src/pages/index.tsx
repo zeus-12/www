@@ -149,15 +149,16 @@ const Landing = () => {
             "px-5 py-12 md:flex md:items-center md:justify-between min-h-screen h-full text-sm text-[0.9rem]",
           )}
         >
-          <div className="md:max-w-lg mx-auto space-y-8">
+          <div className="md:max-w-lg mx-auto space-y-6">
             <Logo />
 
             <p className="text-base tracking-tight">
-              <span className="bg-green-200 font-medium">Vishnu Vinod</span> - A
-              final-year Engineering student, self-taught developer, and design
-              enthusiast. I enjoy building web, desktop, mobile apps,
-              automations. This is my little corner of the web where I share my
-              work with y&apos;all :)
+              hey, i&apos;m{" "}
+              <span className="bg-green-200 font-medium">vishnu</span>, a
+              final-year engineering student, self-taught developer, and design
+              enthusiast. i enjoy building web, desktop, mobile apps,
+              automations. this is my little corner of the web where i share my
+              journey, and experiments with y&apos;all :)
             </p>
 
             {WORKS.map((item, id) => (
@@ -224,7 +225,7 @@ const Key = ({
 const Logo = () => {
   return (
     <div className="md:text-lg text-white aspect-square w-fit h-auto items-center flex bg-black p-1 rounded-full md:mx-auto">
-      &#123;V&#125;
+      <p className="text-sm">&#123;V&#125;</p>
     </div>
   );
 };
@@ -234,7 +235,7 @@ const SocialsSection = () => {
     <div className="flex gap-2 group">
       <Button
         variant="ghost"
-        className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500 hidden md:flex"
+        className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500 hidden md:flex"
       >
         Socials
       </Button>
@@ -244,7 +245,7 @@ const SocialsSection = () => {
           <Link href={link.link} key={link.title} monochrome={true}>
             <Button
               variant="ghost"
-              className="bg-gray-100 text-gray-300 rounded-3xl hover:text-gray-500"
+              className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500"
             >
               {link.title}
             </Button>
