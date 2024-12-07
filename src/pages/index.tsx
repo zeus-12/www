@@ -243,7 +243,7 @@ const OtherLinksSection = () => {
           <OtherLinks animate={true} />
         </motion.div>
       </motion.div>
-      <div className="flex md:hidden">
+      <div className="flex md:hidden gap-1">
         <OtherLinks animate={false} />
       </div>
     </>
