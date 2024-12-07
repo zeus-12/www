@@ -28,8 +28,8 @@ const CONTENTS = [
     />
   </>,
   <>
-    Hey, I'm a {age}-year-old based in India, currently pursuing Engineering
-    Design from{" "}
+    Hey, I&apos;m a {age}-year-old based in India, currently pursuing
+    Engineering Design from{" "}
     <Link className="bg-cyan text-black" href="https://www.iitm.ac.in/">
       IIT Madras
     </Link>
