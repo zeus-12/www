@@ -1,4 +1,4 @@
-import { allSnippets } from "contentlayer/generated";
+import { allContents } from "contentlayer/generated";
 
 const URL = "https://vishnuu.com";
 
@@ -8,15 +8,15 @@ function generateSiteMap() {
      <!--We manually set the two URLs we know already-->
      <url>
        <loc>${URL}</loc>
-       <loc>${URL}/home</loc>
+       <loc>${URL}/about</loc>
        <loc>${`${URL}/projects`}</loc>
-       <loc>${`${URL}/snippets`}</loc>
+       <loc>${`${URL}/library`}</loc>
      </url>
-     ${allSnippets
+     ${allContents
        .map((snippet) => {
          return `
        <url>
-           <loc>${`${URL}/snippets/${snippet.slug}`}</loc>
+           <loc>${`${URL}/library/${snippet.slug}`}</loc>
        </url>
      `;
        })
