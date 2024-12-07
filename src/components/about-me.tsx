@@ -1,5 +1,6 @@
 import Link from "@/components/link";
 import { ScrollContext } from "@/lib/scroll-observer";
+import Image from "next/image";
 import { useContext, useRef } from "react";
 import SlideUpWhenVisible from "./slide-up-when-visible";
 
@@ -16,6 +17,16 @@ const age = Math.floor(
 );
 
 const CONTENTS = [
+  <>
+    <Image
+      className="rounded-xl self-center lg:self-start w-screen sm:w-[85vw] lg:w-[500px] h-auto"
+      width={500}
+      height={500}
+      src="/me.png"
+      alt="Vishnu Vinod"
+      priority
+    />
+  </>,
   <>
     Hey, I'm a {age}-year-old based in India, currently pursuing Engineering
     Design from{" "}
