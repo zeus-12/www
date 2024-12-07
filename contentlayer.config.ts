@@ -7,23 +7,15 @@ import rehypeCodeTitles from "rehype-code-titles";
 import rehypePrism from "rehype-prism-plus";
 import remarkGfm from "remark-gfm";
 
-export const Snippet = defineDocumentType(() => ({
-  name: "Snippets",
-  filePathPattern: `snippets/**/*.mdx`,
+export const Content = defineDocumentType(() => ({
+  name: "Content",
+  filePathPattern: `**/*.mdx`,
   contentType: "mdx",
   fields: {
     title: {
       type: "string",
-      description: "The title of the snippet",
+      description: "Title",
       required: true,
-    },
-    techStack: {
-      type: "list",
-      of: {
-        type: "string",
-      },
-      description: "The tech stacks used in the snippet",
-      required: false,
     },
     description: {
       type: "string",
@@ -31,24 +23,8 @@ export const Snippet = defineDocumentType(() => ({
       required: true,
     },
     date: {
-      type: "date",
-      description: "The date of the post",
-      required: true,
-    },
-  },
-  computedFields: {
-    slug: computedFields.slug,
-  },
-}));
-
-export const Other = defineDocumentType(() => ({
-  name: "Other",
-  filePathPattern: `other/**/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: {
       type: "string",
-      description: "Title",
+      description: "Date of the snippet",
       required: true,
     },
   },
@@ -64,7 +40,7 @@ export const computedFields: ComputedFields = {
 
 export default makeSource({
   contentDirPath: "./content",
-  documentTypes: [Snippet, Other],
+  documentTypes: [Content],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [rehypeCodeTitles, rehypePrism],
