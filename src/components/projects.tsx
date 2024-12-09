@@ -30,13 +30,13 @@ const Projects = () => {
         <TileBackground>
           <ProjectBackground />
         </TileBackground>
-        <div className="sticky top-0 h-screen overflow-hidden">
+        <div className="sticky top-0 hd-screen overflow-hidden">
           {FEATURED_PROJECTS.map((project, i) => (
             <Link key={i} href={project.deployedLink ?? ""}>
               <Tile
                 page={i}
                 renderContent={({ progress }: { progress: number }) => (
-                  <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-dscreen">
                     <ProjectLeft progress={progress}>
                       <div>
                         <p className="capitalize text-4xl text-cyan font-semibold tracking-tight mb-2">
@@ -51,7 +51,7 @@ const Projects = () => {
                     <ProjectRight progress={progress}>
                       <div className="hover:scale-[101%] hover:cursor-pointer transition transform duration-200 ease-in-out">
                         <Image
-                          className="w-full md:w-[95vw] lg:w-[50vw] rounded-md object-contain mx-auto max-h-[80vh] lg:max-h-screen"
+                          className="w-full md:w-[95vw] lg:w-[50vw] rounded-md object-contain mx-auto max-h-[80vh] lg:max-hd-screen"
                           width={500}
                           height={500}
                           src={project.imageSrc}

@@ -3,16 +3,16 @@ export const ProjectContainer = ({
 }: {
   children: React.ReactNode;
 }) => {
-  <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen">
+  <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-dscreen">
     {children}
   </div>;
 };
 
 export const ProjectBackground = () => {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-screen top-0 sticky">
+    <div className="grid grid-cols-1 lg:grid-cols-2 w-full min-h-dscreen top-0 sticky">
       <div className="bg-black h-[40vh] lg:h-auto"></div>
-      <div className="bg-white h-[60vh] lg:min-h-screen"></div>
+      <div className="bg-white h-[60vh] lg:min-h-dscreen"></div>
     </div>
   );
 };
@@ -26,7 +26,7 @@ export const ProjectLeft: React.FC<ProjectProps> = ({ children, progress }) => {
   if (progress > 0.85) translateY = Math.max(-50, -(progress - 0.85) * 2 * 50);
   return (
     <div
-      className="flex flex-col justify-center text-3xl lg:text-3xl h-[40vh] lg:h-screen my-4"
+      className="flex flex-col justify-center text-3xl lg:text-3xl h-[40vh] lg:hd-screen my-4"
       style={{ transform: `translateY(${translateY}px)` }}
     >
       <div className="leading-10 text-4xl lg:text-6xl p-8">{children}</div>
@@ -41,7 +41,7 @@ export const ProjectRight: React.FC<ProjectProps> = ({
   let translateY = Math.max(-50, -(progress - 0.5) * 50);
   return (
     <div
-      className="flex flex-1 lg:items-center justify-center lg:h-screen bg-white"
+      className="flex flex-1 lg:items-center justify-center lg:hd-screen bg-white"
       style={{
         transform: `translateY(${translateY}px)`,
       }}

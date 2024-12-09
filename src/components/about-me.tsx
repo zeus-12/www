@@ -76,7 +76,7 @@ const AboutMe = () => {
   return (
     <SlideUpWhenVisible>
       <div ref={refContainer}>
-        <div className="min-h-screen max-w-5xl mx-auto px-4 lg:px-8 pt-24 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold">
+        <div className="min-h-dscreen max-w-5xl mx-auto px-4 lg:px-8 pt-24 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold">
           <div className="leading-[1.15] space-y-4">
             <p className="mb-2 text-gray-300">⚡️</p>
             {CONTENTS.map((content, i) => (
