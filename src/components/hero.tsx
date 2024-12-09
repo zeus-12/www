@@ -7,7 +7,7 @@ import LinkCard from "./link-card";
 const Hero = () => {
   return (
     <div>
-      <div className="min-h-screen">
+      <div className="min-h-dscreen">
         <SlideUpWhenVisible>
           <p className="text-cyan text-lg sm:text-xl font-medium md:text-3xl">
             {/* 👋 */}

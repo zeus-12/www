@@ -141,7 +141,7 @@ const Landing = () => {
 
       <div
         className={cn(
-          "px-5 py-12 flex items-center justify-between min-h-screen h-full text-sm text-[0.9rem]",
+          "px-5 py-12 flex items-center justify-between min-h-dscreen h-full text-sm text-[0.9rem]",
         )}
       >
         <FloatingWithImages>
@@ -170,7 +170,7 @@ const Landing = () => {
             </div>
 
             <div className="flex gap-2 flex-col md:flex-row">
-              <Link monochrome={true} href={SOCIALS.email}>
+              <Link monochrome={true} href={SOCIALS.email} className="w-fit">
                 <Button className="rounded-3xl w-fit">Say Hello</Button>
               </Link>
 
