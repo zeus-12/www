@@ -59,7 +59,6 @@ const CURRENT_SECTION = [
     ),
   },
 ];
-// ];
 
 const HOTKEYS = [
   {
