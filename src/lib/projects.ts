@@ -60,7 +60,7 @@ export const PROJECTS_DATA: {
   },
   {
     title: "FMHY",
-    shortDescription: "Wiki, Search, Guides for FMHY",
+    shortDescription: "Wiki, Search, Guides for r/FMHY",
     description:
       "A full-stack website for a popular reddit community FMHY, including a comprehensive Wiki, Search and Guides. Built a service which periodically scrapes and cleans the data from their GitHub page.",
     techStack: [
