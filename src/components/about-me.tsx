@@ -1,7 +1,8 @@
 import Link from "@/components/link";
-import { Button } from "@/components/ui/button";
 import { ScrollContext } from "@/lib/scroll-observer";
+import Image from "next/image";
 import { useContext, useRef } from "react";
+import SlideUpWhenVisible from "./slide-up-when-visible";
 
 const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   const progress = sectionProgress - blockNo;
@@ -10,13 +11,53 @@ const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   return 0.2;
 };
 
+const dob = new Date("2002-04-12");
+const age = Math.floor(
+  (new Date().getTime() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365),
+);
+
+const CONTENTS = [
+  <>
+    <Image
+      className="rounded-xl self-center lg:self-start w-screen sm:w-[85vw] lg:w-[500px] h-auto"
+      width={500}
+      height={500}
+      src="/me.png"
+      alt="Vishnu Vinod"
+      priority
+    />
+  </>,
+  <>
+    Hey, I&apos;m a {age}-year-old based in India, currently pursuing
+    Engineering Design from{" "}
+    <Link className="bg-cyan text-black" href="https://www.iitm.ac.in/">
+      IIT Madras
+    </Link>
+  </>,
+
+  <>
+    I started out automating tasks, experimenting with building websites. Later
+    on, I <span className="bg-cyan text-black">taught myself</span> how to code.
+    Today, I do programming in{" "}
+    <span className="bg-cyan text-black">
+      various languages and technologies.
+    </span>
+  </>,
+  <>
+    My interests lie in building something awesome or automating tasks with
+    code, currently focused on{" "}
+    <span className="bg-cyan text-black">
+      Web & Mobile Full-Stack Development.
+    </span>
+  </>,
+];
+
 const AboutMe = () => {
   const { scrollY } = useContext(ScrollContext);
 
   const refContainer = useRef(null);
 
-  //change this for adding more opacityBlocks
-  const numOfPages = 3;
+  const numOfPages = CONTENTS.length;
   let progress = 0;
 
   const { current: elContainer } = refContainer;
@@ -32,76 +73,25 @@ const AboutMe = () => {
     progress = Math.min(numOfPages - 0.5, Math.max(0.5, percentY * numOfPages));
   }
 
-  // prob an overkill ik :)
-  const dob = new Date("2002-04-12");
-  const age = Math.floor(
-    (new Date().getTime() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365),
-  );
-
   return (
-    <div ref={refContainer}>
-      <div className="min-h-screen max-w-5xl mx-auto px-4 lg:px-8 pt-24 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold">
-        <div className="leading-[1.15] space-y-4">
-          <p className="mb-2 text-gray-300">⚡️</p>
-          <div
-            className="transition-opacity duration-500"
-            style={{ opacity: opacityForBlock(progress, 0) }}
-          >
-            A {age}-year-old based in India, currently pursuing Engineering
-            Design from{" "}
-            <Link
-              className="underline decoration-cyan underline-offset-4 hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out"
-              href="https://www.iitm.ac.in/"
-            >
-              IIT Madras
-            </Link>
+    <SlideUpWhenVisible>
+      <div ref={refContainer}>
+        <div className="min-h-dscreen max-w-5xl mx-auto px-4 lg:px-8 pt-24 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold">
+          <div className="leading-[1.15] space-y-4">
+            <p className="mb-2 text-gray-300">⚡️</p>
+            {CONTENTS.map((content, i) => (
+              <div
+                key={i}
+                className={`transition-opacity duration-500 inline-block`}
+                style={{ opacity: opacityForBlock(progress, i) }}
+              >
+                {content}
+              </div>
+            ))}
           </div>
-          <span
-            className={`transition-opacity duration-500 inline-block after:content-['_']`}
-            style={{ opacity: opacityForBlock(progress, 1) }}
-          >
-            I started out automating tasks, building websites using no-code
-            tools. And later on, I{" "}
-            <span className="underline decoration-cyan underline-offset-4 hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
-              taught myself
-            </span>{" "}
-            how to code, fast-forward to today, I do programming in{" "}
-            <span className="underline decoration-cyan underline-offset-4 hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
-              various languages and technologies.
-            </span>
-          </span>
-          <span
-            className={`transition-opacity duration-500 inline-block`}
-            style={{ opacity: opacityForBlock(progress, 2) }}
-          >
-            I&apos;m interested in building something awesome or automate tasks
-            with code, currently focused on{" "}
-            <span className="underline decoration-cyan underline-offset-4 hover:bg-cyan hover:text-black transition-colors duration-150 ease-in-out">
-              Web & Mobile Full-Stack Development.
-            </span>
-          </span>
         </div>
       </div>
-
-      <div className="flex mb-2 pt-32 justify-between items-center">
-        <p
-          id="projects"
-          className="text-4xl md:text-4xl lg:text-5xl tracking-tight font-semibold text-gray-300"
-        >
-          💪{" "}
-          <span className=" text-transparent bg-clip-text bg-gradient-to-r from-[#fdd819] to-[#e80505] ">
-            Featured Projects
-          </span>
-        </p>
-        <Link monochrome={true} href="/projects">
-          <Button variant="ghost" className="hover:border-orange-400">
-            <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#ed6ea0] to-[#efbdaa] ">
-              See All
-            </p>
-          </Button>
-        </Link>
-      </div>
-    </div>
+    </SlideUpWhenVisible>
   );
 };
 

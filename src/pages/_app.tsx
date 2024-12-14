@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
       >
         <main className={fontSans.className}>
           <DefaultSeo {...SEO} />
-          {!isRootPage && <Navbar />}
+          <Navbar />
           <Component {...pageProps} />
         </main>
       </ThemeProvider>

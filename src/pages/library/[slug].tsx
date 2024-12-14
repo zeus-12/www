@@ -1,5 +1,5 @@
 import Mdx from "@/components/mdx";
-import { Snippets, allSnippets } from "contentlayer/generated";
+import { allContents, Content } from "contentlayer/generated";
 import {
   GetStaticPropsContext,
   GetStaticPropsResult,
@@ -23,7 +23,7 @@ const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <hr className="border-gray-700 my-3" />
         <Mdx code={snippet?.body?.code} />
         <div className="border-gray-700 border-[0.2px]" />
-        <Link href="/snippets" className="flex justify-center mt-12 mb-16">
+        <Link href="/library" className="flex justify-center mt-12 mb-16">
           <div className="flex gap-2 hover:bg-gray-800 px-4 py-2 rounded-md hover:cursor-pointer">
             <AiOutlineSwapLeft className="w-5 h-5" />
             <p className="text-sm">See all posts</p>
@@ -36,8 +36,9 @@ const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 export default CodeSnippet;
 
 export async function getStaticPaths() {
-  const snippetSlugs = allSnippets.map((snippet) => snippet.slug);
-  const paths = snippetSlugs.map((slug) => ({ params: { slug } }));
+  const paths = allContents.map((snippet) => ({
+    params: { slug: snippet.slug },
+  }));
 
   return {
     paths,
@@ -47,10 +48,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({
   params,
-}: GetStaticPropsContext): Promise<
-  GetStaticPropsResult<{ snippet: Snippets }>
-> {
-  const snippet = allSnippets.find((snippet) => snippet.slug === params?.slug);
+}: GetStaticPropsContext): Promise<GetStaticPropsResult<{ snippet: Content }>> {
+  const snippet = allContents.find((snippet) => snippet.slug === params?.slug);
 
   if (!snippet) return { notFound: true };
 
