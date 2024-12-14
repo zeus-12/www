@@ -1,116 +1,106 @@
+import FloatingWithImages from "@/components/floating-with-images";
 import Link from "@/components/link";
-import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { Button } from "@/components/ui/button";
 import { SOCIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useHotkeys } from "react-hotkeys-hook";
 
-const WORKS = [
+// {
+//       start: "Quant Analyst intern at",
+//       end: (
+//         <Link monochrome={true} href="https://www.natwestgroup.com/">
+//           NatWest
+//         </Link>
+//       ),
+//     },
+
+//     {
+//       start: "Backend intern at",
+//       end: (
+//         <Link monochrome={true} href="https://vimaan.ai">
+//           Vimaan
+//         </Link>
+//       ),
+//     },
+//     {
+//       start: "Full stack intern at",
+//       end: (
+//         <Link monochrome={true} href="https://commenda.io">
+//           Commenda
+//         </Link>
+//       ),
+//     },
+//     {
+//       start: "Frontend intern at",
+//       end: (
+//         <Link monochrome={true} href="https://viak.io">
+//           Viak
+//         </Link>
+//       ),
+//     },
+
+const CURRENT_SECTION = [
   {
-    items: [
-      {
-        start: "Dual Degree in Engineering Design at",
-        end: (
-          <Link monochrome={true} href="https://www.iitm.ac.in/">
-            🎓 IIT Madras
-          </Link>
-        ),
-      },
-      {
-        start: "Building",
-        end: (
-          <Link monochrome={true} href="https://uxie.vercel.app">
-            🔨 Uxie
-          </Link>
-        ),
-      },
-    ],
-    text: "Currently",
-    tw: "bg-green-400 animate-pulse",
+    start: "Dual Degree in Engineering Design at",
+    end: (
+      <Link monochrome={true} href="https://www.iitm.ac.in/">
+        🎓 IIT Madras
+      </Link>
+    ),
   },
   {
-    items: [
-      {
-        start: "Quant Analyst intern at",
-        end: (
-          <Link monochrome={true} href="https://www.natwestgroup.com/">
-            NatWest
-          </Link>
-        ),
-      },
-
-      {
-        start: "Backend intern at",
-        end: (
-          <Link monochrome={true} href="https://vimaan.ai">
-            Vimaan
-          </Link>
-        ),
-      },
-      {
-        start: "Full stack intern at",
-        end: (
-          <Link monochrome={true} href="https://commenda.io">
-            Commenda
-          </Link>
-        ),
-      },
-      {
-        start: "Frontend intern at",
-        end: (
-          <Link monochrome={true} href="https://viak.io">
-            Viak
-          </Link>
-        ),
-      },
-    ],
-    tw: "bg-black",
-    text: "Previously",
+    start: "Building",
+    end: (
+      <Link monochrome={true} href="https://uxie.vercel.app">
+        🔨 Uxie
+      </Link>
+    ),
   },
 ];
+// ];
 
-const KEYS = [
+const HOTKEYS = [
   {
     tw: "top-5 left-1/2",
-    href: "/home",
-    text: "P",
-    fullText: "Portfolio",
+    href: "/about",
+    text: "A",
+    fullText: "About",
   },
   {
     tw: "left-5 top-1/2",
     href: "/projects",
-    text: "W",
+    text: "P",
     fullText: "Projects",
   },
-
   {
     tw: "bottom-5 left-1/2",
     href: "/resume.pdf",
     text: "R",
     fullText: "Resume",
+    hide: true,
   },
-
   {
     tw: "right-5 top-1/2",
-    href: "/snippets",
-    text: "S",
-    fullText: "Snippets",
+    href: "/library",
+    text: "L",
+    fullText: "Library",
   },
 ];
 
-const SOCIAL_LINKS = [
+const LINKS = [
   {
-    title: "X",
-    link: SOCIALS.twitter,
+    title: "Resume",
+    link: "/resume.pdf",
   },
   {
-    title: "LinkedIn",
-    link: SOCIALS.linkedin,
+    title: "GitHub",
+    link: SOCIALS.github,
   },
   {
-    title: "Instagram",
-    link: SOCIALS.instagram,
+    title: "Projects",
+    link: "/projects",
   },
 ];
 
@@ -118,13 +108,13 @@ const Landing = () => {
   const router = useRouter();
 
   useHotkeys(
-    KEYS.map((key) => key.text),
+    HOTKEYS.map((key) => key.text),
     (_, handler) => {
       const keyPressed = handler.keys?.join("").toUpperCase();
       if (!keyPressed) {
         return;
       }
-      const href = KEYS.find((key) => key.text === keyPressed)?.href;
+      const href = HOTKEYS.find((key) => key.text === keyPressed)?.href;
 
       if (href) {
         router.push(href);
@@ -134,21 +124,27 @@ const Landing = () => {
 
   return (
     <>
-      {KEYS.map((item) => (
-        <Key
-          tw={cn(item.tw, "hidden md:flex fixed")}
-          href={item.href}
-          text={item.text}
-          key={item.text}
-        />
-      ))}
+      {HOTKEYS.map((item) => {
+        if (item.hide) {
+          return null;
+        }
 
-      <SlideUpWhenVisible>
-        <div
-          className={cn(
-            "px-5 py-12 md:flex md:items-center md:justify-between min-h-screen h-full text-sm text-[0.9rem]",
-          )}
-        >
+        return (
+          <Key
+            tw={cn(item.tw, "hidden md:flex fixed z-50")}
+            href={item.href}
+            text={item.text}
+            key={item.text}
+          />
+        );
+      })}
+
+      <div
+        className={cn(
+          "px-5 py-12 flex items-center justify-between min-h-dscreen h-full text-sm text-[0.9rem]",
+        )}
+      >
+        <FloatingWithImages>
           <div className="md:max-w-lg mx-auto space-y-6">
             <Logo />
 
@@ -161,38 +157,28 @@ const Landing = () => {
               journey, and experiments with y&apos;all :)
             </p>
 
-            {WORKS.map((item, id) => (
-              <div key={id} className="space-y-2">
-                <div className="flex items-center relative">
-                  <div
-                    className={cn(
-                      "w-[0.35rem] h-[0.35rem] rounded-full",
-                      item.tw,
-                    )}
-                  />
-                  <p className="ml-2">{item.text}</p>
-                </div>
-                {item.items.map((item, idx) => (
-                  <li className="list-none ml-3" key={idx}>
-                    <span className="text-gray-400">{item.start}</span>{" "}
-                    {item.end}
-                  </li>
-                ))}
+            <div className="space-y-2">
+              <div className="flex items-center">
+                <div className="w-[0.35rem] h-[0.35rem] rounded-full bg-green-400 animate-pulse" />
+                <p className="ml-2">Currently</p>
               </div>
-            ))}
+              {CURRENT_SECTION.map((item, idx) => (
+                <li className="list-none ml-3 text-start" key={idx}>
+                  <span className="text-gray-400">{item.start}</span> {item.end}
+                </li>
+              ))}
+            </div>
 
-            <div className="md:flex-row flex-col flex gap-2">
-              <Link monochrome={true} href={SOCIALS.email}>
+            <div className="flex gap-2 flex-col md:flex-row">
+              <Link monochrome={true} href={SOCIALS.email} className="w-fit">
                 <Button className="rounded-3xl w-fit">Say Hello</Button>
               </Link>
 
-              <SocialsSection />
+              <OtherLinksSection />
             </div>
-
-            <OtherLinksSection />
           </div>
-        </div>
-      </SlideUpWhenVisible>
+        </FloatingWithImages>
+      </div>
     </>
   );
 };
@@ -225,24 +211,64 @@ const Key = ({
 const Logo = () => {
   return (
     <div className="md:text-lg text-white aspect-square w-fit h-auto items-center flex bg-black p-1 rounded-full md:mx-auto">
-      <p className="text-sm">&#123;V&#125;</p>
+      <p className="text-base">&#123;V&#125;</p>
     </div>
   );
 };
 
-const SocialsSection = () => {
+const OtherLinksSection = () => {
   return (
-    <div className="flex gap-2 group">
-      <Button
-        variant="ghost"
-        className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500 hidden md:flex"
+    <>
+      <motion.div
+        className="gap-2 group hidden md:flex"
+        whileHover="visible"
+        initial="hidden"
       >
-        Socials
-      </Button>
+        <motion.div>
+          <Button
+            variant="ghost"
+            className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500 flex"
+          >
+            Links
+          </Button>
+        </motion.div>
 
-      <div className="contents md:hidden group-hover:contents">
-        {SOCIAL_LINKS.map((link) => (
-          <Link href={link.link} key={link.title} monochrome={true}>
+        <motion.div
+          variants={variants}
+          transition={{
+            duration: 0.5,
+          }}
+          className="contents"
+        >
+          <OtherLinks animate={true} />
+        </motion.div>
+      </motion.div>
+      <div className="flex md:hidden gap-1">
+        <OtherLinks animate={false} />
+      </div>
+    </>
+  );
+};
+
+const variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+  exit: {
+    opacity: 0,
+  },
+};
+
+const OtherLinks = ({ animate }: { animate: boolean }) => {
+  return (
+    <>
+      {LINKS.map((link) => (
+        <motion.div key={link.title} variants={animate ? variants : {}}>
+          <Link href={link.link} monochrome={true}>
             <Button
               variant="ghost"
               className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500"
@@ -250,33 +276,8 @@ const SocialsSection = () => {
               {link.title}
             </Button>
           </Link>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const OtherLinksSection = () => {
-  return (
-    <div className="group flex gap-2 md:py-3">
-      <div className="hidden md:flex items-center gap-2 group-hover:hidden">
-        <div className="bg-gray-100 w-5 h-5 items-center justify-center flex text-gray-400 rounded-sm">
-          ?
-        </div>
-        <p className="text-gray-400">Where is everything?</p>
-      </div>
-
-      <div className="md:hidden md:group-hover:contents space-y-4 md:space-y-0 ">
-        {KEYS.map((key) => (
-          <Key
-            tw="flex gap-1"
-            href={key.href}
-            text={key.text}
-            key={key.text}
-            fullText={key.fullText}
-          />
-        ))}
-      </div>
-    </div>
+        </motion.div>
+      ))}
+    </>
   );
 };

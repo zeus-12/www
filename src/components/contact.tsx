@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="flex flex-col justify-center items-center min-h-screen"
+      className="flex flex-col justify-center items-center min-h-dscreen"
     >
       <SlideUpWhenVisible>
         <p className="text-4xl md:text-5xl font-bold text-center">

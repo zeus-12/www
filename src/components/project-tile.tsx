@@ -55,7 +55,7 @@ export const TileBackground = ({ children }: { children: React.ReactNode }) => {
 
 export const TileContent = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="sticky top-0 h-screen overflow-hidden">{children}</div>
+    <div className="sticky top-0 hd-screen overflow-hidden">{children}</div>
   );
 };
 

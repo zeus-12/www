@@ -1,8 +1,8 @@
 import {
-  BriefcaseIcon,
+  AtSignIcon,
+  FolderClosedIcon,
   HouseIcon,
-  PresentationIcon,
-  TextQuoteIcon,
+  TextIcon,
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -15,19 +15,19 @@ let navItems = [
     icon: <HouseIcon size={18} />,
   },
   {
-    name: "Portfolio",
-    href: "/home",
-    icon: <PresentationIcon size={18} />,
+    name: "About",
+    href: "/about",
+    icon: <AtSignIcon size={18} />,
   },
   {
     name: "Projects",
     href: "/projects",
-    icon: <BriefcaseIcon size={18} />,
+    icon: <FolderClosedIcon size={18} />,
   },
   {
-    name: "Snippets",
-    href: "/snippets",
-    icon: <TextQuoteIcon size={18} />,
+    name: "Library",
+    href: "/library",
+    icon: <TextIcon size={18} />,
   },
 ];
 
