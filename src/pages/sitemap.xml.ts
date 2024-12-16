@@ -1,17 +1,20 @@
 import { allContents } from "contentlayer/generated";
 
 const URL = "https://vishnuu.com";
+const PAGES = ["", "/about", "/projects", "/library"];
 
 function generateSiteMap() {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <!--We manually set the two URLs we know already-->
-     <url>
-       <loc>${URL}</loc>
-       <loc>${URL}/about</loc>
-       <loc>${`${URL}/projects`}</loc>
-       <loc>${`${URL}/library`}</loc>
-     </url>
+     ${pages
+       .map((page) => {
+         return `
+        <url>
+            <loc>${URL}${page}</loc>
+        </url>
+      `;
+       })
+       .join("")}
      ${allContents
        .map((snippet) => {
          return `
@@ -21,8 +24,6 @@ function generateSiteMap() {
      `;
        })
        .join("")}
-       
-    
    </urlset>
  `;
 }
