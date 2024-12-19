@@ -42,7 +42,7 @@ const Projects = () => {
                         <p className="capitalize text-4xl text-cyan font-semibold tracking-tight mb-2">
                           {project.title}
                         </p>
-                        <p className="text-3xl font-medium text-gray-300 tracking-tight">
+                        <p className="text-2xl sm:text-3xl font-medium text-gray-300 tracking-tight">
                           {project.shortDescription}
                         </p>
                       </div>
