@@ -12,7 +12,7 @@ const MDXComponents = {
     </h1>
   ),
   h2: (props: any) => (
-    <h2 className="scroll-m-20 pb-2 text-xl font-semibold tracking-tight transition-colors first:mt-0 mt-8">
+    <h2 className="scroll-m-20 pb-1 text-xl font-semibold tracking-tight transition-colors first:mt-0 mt-8">
       {props.children}
     </h2>
   ),
@@ -21,6 +21,12 @@ const MDXComponents = {
       {props.children}
     </h3>
   ),
+  h4: (props: any) => (
+    <h4 className="scroll-m-20 text-base tracking-tight text-gray-300 mb-4">
+      {props.children}
+    </h4>
+  ),
+
   p: (props: any) => (
     <p className="leading-7 [&:not(:first-child)]:mt-6 text-gray-200">
       {props.children}
@@ -29,6 +35,7 @@ const MDXComponents = {
   li: (props: any) => (
     <li className="leading-7 md:list-disc text-gray-300">{props.children}</li>
   ),
+  hr: (props: any) => <hr className="my-8 border-gray-800" />,
 };
 
 interface MdxProps {
