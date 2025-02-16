@@ -48,6 +48,5 @@ to generate production build. The built assets will be in under `/.next` directo
 ## Todos
 
 - build a project page. showing details about the project -> or maybe just even a large modal
-- replace all techstack names with their logos
 - link shortener, fileupload kinda thing : maybe a separate proj (for self use)
 - replace mantine w. shadcn-ui
