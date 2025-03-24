@@ -2,7 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 const defaultMeta = {
-  title: "Vishnu Vinod - Software Engineer",
+  title: "Vishnu Vinod",
   siteName: "vishnuu.com",
   description: "Portfolio Website. ",
   url: "https://vishnuu.com",
@@ -60,7 +60,7 @@ export default function Seo(props: SeoProps) {
           <meta
             name="author"
             property="article:author"
-            content="Vishnu Vinod - Software Engineer"
+            content="Vishnu Vinod"
           />
         </>
       )}
