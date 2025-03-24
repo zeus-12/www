@@ -1,5 +1,5 @@
 export const SEO = {
-  title: "Vishnu Vinod - Software Engineer",
+  title: "Vishnu",
   description: "Portfolio Website.",
   openGraph: {
     type: "website",
@@ -16,7 +16,7 @@ export const SEO = {
     },
     {
       name: "application-name",
-      content: "Vishnu Vinod - Software Engineer",
+      content: "Vishnu",
     },
   ],
 
