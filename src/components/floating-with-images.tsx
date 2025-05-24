@@ -48,7 +48,10 @@ const FloatingWithImages = ({ children }: { children: ReactNode }) => {
             className="w-16 h-16 md:w-24 md:h-24 object-cover hover:scale-105 duration-200 cursor-pointer transition-transform rounded-md"
           />
         </FloatingElement>
-        <FloatingElement depth={1} className="top-[10%] left-[32%]">
+        <FloatingElement
+          depth={1}
+          className="top-[10%] left-[32%] hidden md:block"
+        >
           <motion.img
             initial={{ opacity: 0 }}
             src={exampleImages[1]}
