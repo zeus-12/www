@@ -7,49 +7,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useHotkeys } from "react-hotkeys-hook";
 
-// {
-//       start: "Quant Analyst intern at",
-//       end: (
-//         <Link monochrome={true} href="https://www.natwestgroup.com/">
-//           NatWest
-//         </Link>
-//       ),
-//     },
-
-//     {
-//       start: "Backend intern at",
-//       end: (
-//         <Link monochrome={true} href="https://vimaan.ai">
-//           Vimaan
-//         </Link>
-//       ),
-//     },
-//     {
-//       start: "Full stack intern at",
-//       end: (
-//         <Link monochrome={true} href="https://commenda.io">
-//           Commenda
-//         </Link>
-//       ),
-//     },
-//     {
-//       start: "Frontend intern at",
-//       end: (
-//         <Link monochrome={true} href="https://viak.io">
-//           Viak
-//         </Link>
-//       ),
-//     },
-
 const CURRENT_SECTION = [
-  {
-    start: "Dual Degree in Engineering Design at",
-    end: (
-      <Link monochrome={true} href="https://www.iitm.ac.in/">
-        🎓 IIT Madras
-      </Link>
-    ),
-  },
   {
     start: "Building",
     end: (
@@ -123,7 +81,7 @@ const Landing = () => {
 
   return (
     <>
-      {HOTKEYS.map((item) => {
+      {/* {HOTKEYS.map((item) => {
         if (item.hide) {
           return null;
         }
@@ -136,7 +94,7 @@ const Landing = () => {
             key={item.text}
           />
         );
-      })}
+      })} */}
 
       <div
         className={cn(
@@ -150,10 +108,12 @@ const Landing = () => {
             <p className="text-base tracking-tight">
               hey, i&apos;m{" "}
               <span className="bg-green-200 font-medium">vishnu</span>, a
-              final-year engineering student, self-taught developer, and design
-              enthusiast. i enjoy building web, desktop, mobile apps,
-              automations. this is my little corner of the web where i share my
-              journey, and experiments with y&apos;all :)
+              new-grad from{" "}
+              <Link href="https://www.iitm.ac.in/">iit madras</Link>,
+              self-taught developer, and design enthusiast. i enjoy building
+              web, desktop, mobile apps, automations. this is my little corner
+              of the web where i share my journey, and experiments with
+              y&apos;all :)
             </p>
 
             <div className="space-y-2">

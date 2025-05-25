@@ -1,16 +1,16 @@
 ---
 title: Beating captchas and saving seconds
 description: A fun internship story about beating captchas and speeding things up.
-date: 2025-05-25
+date: 2024-04-01
 ---
 
-One of the hardest (and most fun) problems I’ve solved was during the second week of my internship at Commenda (summer '23). The product lead casually mentioned there was an ongoing bounty—one that had been open for a few months—and asked if I wanted to take a shot. I said sure, not really knowing what I was getting into.
+One of the hardest (and most fun) problems I’ve solved was during the second week of my internship at [Commenda](https://www.commenda.io/) (summer '23). The product lead casually mentioned there was an ongoing bounty—one that had been open for a few months—and asked if I wanted to take a shot. I said sure, not really knowing what I was getting into.
 
 The task was to check if a company name was already registered in Delaware. The previous engineer had written a script that scraped data from Stripe. It used fake cursor movements to dodge anti-bot systems and took around 25 seconds per request. To make things worse, Stripe would log out the account every 7 days, so someone had to manually log back in. Not ideal.
 
-I wrote a simple script using Puppeteer to fill the forms directly on the Delaware website—but of course, there was a captcha. I tried all sorts of image-to-text and OCR models I could find (this was before GPT-3.5 and actually good vision models). I even scraped a bunch of captcha images and trained a model using some of the top open-source OCR tools on GitHub, but no luck. (Funny enough, I later found out this is [totally possible (such a good read)](https://www.nullpt.rs/breaking-the-4chan-captcha))
+I wrote a simple script using Puppeteer to fill the forms directly on the Delaware website—but of course, there was a captcha. I tried all sorts of image-to-text and OCR models I could find (**this was before GPT-3.5 and there weren't any really good vision models**). I even scraped a bunch of captcha images and trained a model using some of the top open-source OCR tools on GitHub, but no luck. (Funny enough, I later found out this is [totally possible (such a good read)](https://www.nullpt.rs/breaking-the-4chan-captcha))
 
-Out of curiosity (and a bit of desperation), I right-clicked the captcha image and hit “Search image with Google.” Boom—Google got it right on the first try. So I sent the captcha image to the Google Cloud Vision API, and it worked really well. But the whole thing still took around 17–18 seconds per request. Way too slow.
+Out of curiosity (and a bit of desperation), I right-clicked the captcha image and hit “Search image with Google.” Boom—Google got it right on the first try. So I sent the captcha image to the [Google Cloud Vision API](https://cloud.google.com/vision?hl=en), and it worked really well. But the whole thing still took around 17–18 seconds per request. Way too slow.
 
 I noticed the Delaware site was just... slow, even in my browser. That’s when I realised: I didn’t need the full page—just the document data. So I blocked all the unnecessary stuff like images, styles, and fonts (thank God for Puppeteer), which brought the time down to 4–5 seconds. Progress, but not enough.
 
