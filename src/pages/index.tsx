@@ -11,7 +11,7 @@ const CURRENT_SECTION = [
   {
     start: "Building",
     end: (
-      <Link monochrome={true} href="https://uxie.vercel.app">
+      <Link underline href="https://uxie.vercel.app">
         🔨 Uxie
       </Link>
     ),
@@ -109,8 +109,10 @@ const Landing = () => {
               hey, i&apos;m{" "}
               <span className="bg-green-200 font-medium">vishnu</span>, a
               new-grad from{" "}
-              <Link href="https://www.iitm.ac.in/">iit madras</Link>,
-              self-taught developer, and design enthusiast. i enjoy building
+              <Link underline href="https://www.iitm.ac.in/">
+                iit madras
+              </Link>
+              , self-taught developer, and design enthusiast. i enjoy building
               web, desktop, mobile apps, automations. this is my little corner
               of the web where i share my journey, and experiments with
               y&apos;all :)
@@ -129,7 +131,7 @@ const Landing = () => {
             </div>
 
             <div className="flex gap-2 flex-col md:flex-row">
-              <Link monochrome={true} href={SOCIALS.email} className="w-fit">
+              <Link href={SOCIALS.email} className="w-fit">
                 <Button className="rounded-3xl w-fit">Say Hello</Button>
               </Link>
 
@@ -156,7 +158,7 @@ const Key = ({
   fullText?: string;
 }) => {
   return (
-    <Link monochrome={true} className={tw} href={href}>
+    <Link className={tw} href={href}>
       <div className="w-5 h-5 flex justify-center items-center text-sm bg-gray-100 text-gray-300 rounded-sm hover:text-black ">
         <span className="text-sm bg-gray-100 text-gray-300 rounded-sm hover:text-black">
           {text}
@@ -227,7 +229,7 @@ const OtherLinks = ({ animate }: { animate: boolean }) => {
     <>
       {LINKS.map((link) => (
         <motion.div key={link.title} variants={animate ? variants : {}}>
-          <Link href={link.link} monochrome={true}>
+          <Link href={link.link}>
             <Button
               variant="ghost"
               className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500"
