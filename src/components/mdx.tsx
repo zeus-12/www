@@ -5,7 +5,9 @@ import Image from "next/image";
 const MDXComponents = {
   img: (props: any) => <Image {...props} alt={props.alt} />,
   Link: (props: any) => <Link {...props} />,
-  a: (props: any) => <Link {...props} />,
+  a: (props: any) => (
+    <Link underline textColorClassName="text-cyan-500" {...props} />
+  ),
   h1: (props: any) => (
     <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
       {props.children}

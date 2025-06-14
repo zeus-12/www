@@ -18,7 +18,7 @@ const Projects = () => {
             Favourite Projects
           </span>
         </p>
-        <Link monochrome={true} href="/projects">
+        <Link href="/projects">
           <Button variant="ghost" className="hover:border-orange-400">
             <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#ed6ea0] to-[#efbdaa] ">
               See All

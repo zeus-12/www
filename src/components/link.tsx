@@ -1,46 +1,60 @@
 import { cn } from "@/lib/utils";
 import NextLink from "next/link";
 import { AnchorHTMLAttributes, DetailedHTMLProps, Ref } from "react";
+import UnderlineToBackground from "./ui/underline-to-background";
 
 type LinkProps = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,
   HTMLAnchorElement
 > & {
   ref?: Ref<HTMLAnchorElement>;
-  monochrome?: boolean;
+  underline?: boolean;
+  textColorClassName?: string;
 };
 
 const Link = ({
   href,
   className,
+  textColorClassName = "text-cyan-800",
   children,
-  monochrome,
+  underline,
   ...rest
 }: LinkProps) => {
   const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
+
+  const body = underline ? (
+    <UnderlineToBackground
+      className={textColorClassName}
+      targetTextColor="white"
+      underlineHeightRatio={0.1}
+      underlinePaddingRatio={0.01}
+    >
+      {children}
+    </UnderlineToBackground>
+  ) : (
+    children
+  );
 
   if (isInternalLink) {
     return (
       <NextLink
         href={href}
         className={cn(
-          monochrome
-            ? "hover:text-gray-400"
-            : "hover:text-black focus:text-cyan active:text-cyan hover:bg-cyan underline decoration-cyan underline-offset-4 transition-colors duration-150 ease-in-out",
+          "hover:text-gray-400",
+
           className,
         )}
         {...rest}
       >
-        {children}
+        {body}
       </NextLink>
     );
   }
   return (
     <a
       className={cn(
-        monochrome
-          ? "hover:text-gray-400"
-          : "hover:text-black focus:text-cyan active:text-cyan hover:bg-cyan underline decoration-cyan underline-offset-4 transition-colors duration-150 ease-in-out",
+        "hover:text-gray-400",
+
         className,
       )}
       target="_blank"
@@ -48,7 +62,7 @@ const Link = ({
       href={href}
       {...rest}
     >
-      {children}
+      {body}
     </a>
   );
 };
