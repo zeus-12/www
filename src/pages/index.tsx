@@ -1,11 +1,11 @@
+import AboutMe from "@/components/about-me";
 import FloatingWithImages from "@/components/floating-with-images";
 import Link from "@/components/link";
 import { Button } from "@/components/ui/button";
 import { SOCIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
-import { useRouter } from "next/router";
-import { useHotkeys } from "react-hotkeys-hook";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const CURRENT_SECTION = [
   {
@@ -15,34 +15,6 @@ const CURRENT_SECTION = [
         🔨 Uxie
       </Link>
     ),
-  },
-];
-
-const HOTKEYS = [
-  {
-    tw: "top-5 left-1/2",
-    href: "/about",
-    text: "A",
-    fullText: "About",
-  },
-  {
-    tw: "left-5 top-1/2",
-    href: "/projects",
-    text: "P",
-    fullText: "Projects",
-  },
-  {
-    tw: "bottom-5 left-1/2",
-    href: "/resume.pdf",
-    text: "R",
-    fullText: "Resume",
-    hide: true,
-  },
-  {
-    tw: "right-5 top-1/2",
-    href: "/library",
-    text: "L",
-    fullText: "Library",
   },
 ];
 
@@ -62,112 +34,92 @@ const LINKS = [
 ];
 
 const Landing = () => {
-  const router = useRouter();
-
-  useHotkeys(
-    HOTKEYS.map((key) => key.text),
-    (_, handler) => {
-      const keyPressed = handler.keys?.join("").toUpperCase();
-      if (!keyPressed) {
-        return;
-      }
-      const href = HOTKEYS.find((key) => key.text === keyPressed)?.href;
-
-      if (href) {
-        router.push(href);
-      }
-    },
-  );
-
   return (
     <>
-      {/* {HOTKEYS.map((item) => {
-        if (item.hide) {
-          return null;
-        }
-
-        return (
-          <Key
-            tw={cn(item.tw, "hidden md:flex fixed z-50")}
-            href={item.href}
-            text={item.text}
-            key={item.text}
-          />
-        );
-      })} */}
-
-      <div
-        className={cn(
-          "px-5 py-12 flex items-center justify-between min-h-dscreen h-full text-sm text-[0.9rem]",
-        )}
-      >
-        <FloatingWithImages>
-          <div className="md:max-w-lg mx-auto space-y-6">
-            <Logo />
-
-            <p className="text-base tracking-tight">
-              hey, i&apos;m{" "}
-              <span className="bg-green-200 font-medium">vishnu</span>, a
-              new-grad from{" "}
-              <Link underline href="https://www.iitm.ac.in/">
-                iit madras
-              </Link>
-              , self-taught developer, and design enthusiast. i enjoy building
-              web, desktop, mobile apps, automations. this is my little corner
-              of the web where i share my journey, and experiments with
-              y&apos;all :)
-            </p>
-
-            <div className="space-y-2">
-              <div className="flex items-center">
-                <div className="w-[0.35rem] h-[0.35rem] rounded-full bg-green-400 animate-pulse" />
-                <p className="ml-2">Currently</p>
-              </div>
-              {CURRENT_SECTION.map((item, idx) => (
-                <li className="list-none ml-3 text-start" key={idx}>
-                  <span className="text-gray-400">{item.start}</span> {item.end}
-                </li>
-              ))}
-            </div>
-
-            <div className="flex gap-2 flex-col md:flex-row">
-              <Link href={SOCIALS.email} className="w-fit">
-                <Button className="rounded-3xl w-fit">Say Hello</Button>
-              </Link>
-
-              <OtherLinksSection />
-            </div>
-          </div>
-        </FloatingWithImages>
-      </div>
+      <Intro />
+      <AboutMe />
     </>
   );
 };
 
-export default Landing;
+const dob = new Date("2002-04-12");
+const age = Math.floor(
+  (new Date().getTime() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365),
+);
 
-const Key = ({
-  tw,
-  href,
-  text,
-  fullText,
-}: {
-  tw?: string;
-  href: string;
-  text: string;
-  fullText?: string;
-}) => {
+const Intro = () => {
+  const container = useRef<HTMLElement | null>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"]);
+
   return (
-    <Link className={tw} href={href}>
-      <div className="w-5 h-5 flex justify-center items-center text-sm bg-gray-100 text-gray-300 rounded-sm hover:text-black ">
-        <span className="text-sm bg-gray-100 text-gray-300 rounded-sm hover:text-black">
-          {text}
-        </span>
-      </div>
-      <span>{fullText}</span>
-    </Link>
+    <div className="h-screen overflow-hidden">
+      <motion.div style={{ y }} className="h-full relative">
+        <div
+          className={cn(
+            "px-5 py-12 flex items-center justify-between min-h-dscreen h-full text-sm text-[0.9rem]",
+          )}
+        >
+          <FloatingWithImages>
+            <div className="md:max-w-lg mx-auto space-y-6">
+              <Logo />
+
+              <div className="text-base tracking-tight">
+                <p className="inline">
+                  hey, i&apos;m{" "}
+                  <span className="bg-green-200 font-medium">vishnu</span>, a{" "}
+                  {age} y/o new-grad from{" "}
+                </p>
+                <Link
+                  underline
+                  className="inlnie"
+                  href="https://www.iitm.ac.in/"
+                >
+                  iit madras
+                </Link>
+                <p className="inline">
+                  , self-taught developer, and design enthusiast. i enjoy
+                  building web, desktop, mobile apps, automations. this is my
+                  little corner of the web where i share my journey, and
+                  experiments with
+                  {" y'all :)"}
+                </p>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center">
+                  <div className="w-[0.35rem] h-[0.35rem] rounded-full bg-green-400 animate-pulse" />
+                  <p className="ml-2">Currently</p>
+                </div>
+
+                {CURRENT_SECTION.map((item, idx) => (
+                  <li className="list-none ml-3 text-start" key={idx}>
+                    <span className="text-gray-400">{item.start}</span>{" "}
+                    {item.end}
+                  </li>
+                ))}
+              </div>
+
+              <div className="flex gap-2 flex-col md:flex-row">
+                <Link href={SOCIALS.email} className="w-fit">
+                  <Button className="rounded-3xl w-fit">Say Hello</Button>
+                </Link>
+
+                <OtherLinksSection />
+              </div>
+            </div>
+          </FloatingWithImages>
+        </div>
+      </motion.div>
+    </div>
   );
 };
+
+export default Landing;
 
 const Logo = () => {
   return (
