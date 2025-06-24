@@ -1,9 +1,4 @@
-import {
-  AtSignIcon,
-  FolderClosedIcon,
-  HouseIcon,
-  TextIcon,
-} from "lucide-react";
+import { FolderClosedIcon, HouseIcon, TextIcon } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
@@ -13,11 +8,6 @@ let navItems = [
     name: "Home",
     href: "/",
     icon: <HouseIcon size={18} />,
-  },
-  {
-    name: "About",
-    href: "/about",
-    icon: <AtSignIcon size={18} />,
   },
   {
     name: "Projects",

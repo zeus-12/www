@@ -31,7 +31,7 @@ interface techStack {
   color: string;
 }
 
-export const PROJECTS_DATA: {
+export interface Project {
   title: string;
   description: string;
   techStack: techStack[];
@@ -40,7 +40,8 @@ export const PROJECTS_DATA: {
   imageSrc: string;
   isFeatured: boolean;
   shortDescription: string;
-}[] = [
+}
+export const PROJECTS_DATA: Project[] = [
   {
     title: "Uxie",
     shortDescription:

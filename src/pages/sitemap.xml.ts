@@ -1,7 +1,7 @@
 import { allContents } from "contentlayer/generated";
 
 const URL = "https://vishnuu.com";
-const PAGES = ["", "/about", "/projects", "/library"];
+const PAGES = ["", "/projects", "/library"];
 
 function generateSiteMap() {
   return `<?xml version="1.0" encoding="UTF-8"?>

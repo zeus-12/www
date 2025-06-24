@@ -1,4 +1,3 @@
-import Link from "@/components/link";
 import { ScrollContext } from "@/lib/scroll-observer";
 import Image from "next/image";
 import { useContext, useRef } from "react";
@@ -7,14 +6,9 @@ import SlideUpWhenVisible from "./slide-up-when-visible";
 const opacityForBlock = (sectionProgress: number, blockNo: number) => {
   const progress = sectionProgress - blockNo;
   if (progress >= 0 && progress < 1) return 1;
-  //tweak this for changing the opacity of text
+
   return 0.2;
 };
-
-const dob = new Date("2002-04-12");
-const age = Math.floor(
-  (new Date().getTime() - dob.getTime()) / (1000 * 60 * 60 * 24 * 365),
-);
 
 const CONTENTS = [
   <>
@@ -28,14 +22,6 @@ const CONTENTS = [
     />
   </>,
   <>
-    Hey, I&apos;m a {age}-year-old based in India, currently pursuing
-    Engineering Design from{" "}
-    <Link className="bg-cyan text-black" href="https://www.iitm.ac.in/">
-      IIT Madras
-    </Link>
-  </>,
-
-  <>
     I started out automating tasks, experimenting with building websites. Later
     on, I <span className="bg-cyan text-black">taught myself</span> how to code.
     Today, I do programming in{" "}
@@ -45,10 +31,7 @@ const CONTENTS = [
   </>,
   <>
     My interests lie in building something awesome or automating tasks with
-    code, currently focused on{" "}
-    <span className="bg-cyan text-black">
-      Web & Mobile Full-Stack Development.
-    </span>
+    code.
   </>,
 ];
 
@@ -75,7 +58,7 @@ const AboutMe = () => {
 
   return (
     <SlideUpWhenVisible>
-      <div ref={refContainer}>
+      <div ref={refContainer} className="pt-40 pb-60 bg-black text-[#F9FAFB]">
         <div className="min-h-dscreen max-w-5xl mx-auto px-4 lg:px-8 pt-24 md:pt-28 lg:pt-36 flex flex-col justify-center items-center text-4xl md:text-5xl lg:text-6xl tracking-tight font-semibold">
           <div className="leading-[1.15] space-y-4">
             <p className="mb-2 text-gray-300">⚡️</p>
