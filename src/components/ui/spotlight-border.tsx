@@ -1,4 +1,4 @@
-import { Spotlight } from "@/components/spotlight";
+import { Spotlight } from "@/components/ui/spotlight";
 import { cn } from "@/lib/utils";
 
 export function SpotlightBorder({

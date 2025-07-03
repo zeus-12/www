@@ -1,7 +1,7 @@
 import { allContents } from "contentlayer/generated";
 
 const URL = "https://vishnuu.com";
-const PAGES = ["", "/projects", "/library"];
+const PAGES = ["", "/projects", "/posts"];
 
 function generateSiteMap() {
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -17,7 +17,7 @@ function generateSiteMap() {
        .map((snippet) => {
          return `
        <url>
-           <loc>${`${URL}/library/${snippet.slug}`}</loc>
+           <loc>${`${URL}/posts/${snippet.slug}`}</loc>
        </url>
      `;
        })
