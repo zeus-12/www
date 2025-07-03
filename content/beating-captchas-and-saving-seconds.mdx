@@ -10,7 +10,7 @@ The task was to check if a company name was already registered in Delaware. The 
 
 I wrote a simple script using Puppeteer to fill the forms directly on the Delaware website, but of course, there was a captcha. I tried all sorts of image-to-text and OCR models I could find (**this was before GPT-3.5 and there weren't any really good vision models**). I even scraped a bunch of captcha images and trained a model using some of the top open-source OCR tools on GitHub, but no luck. (Funny enough, I later found out this is [totally possible (such a good read)](https://www.nullpt.rs/breaking-the-4chan-captcha))
 
-Out of curiosity (and a bit of desperation), I right-clicked the captcha image and hit “Search image with Google.” Boom Google got it right on the first try. So I sent the captcha image to the [Google Cloud Vision API](https://cloud.google.com/vision?hl=en), and it worked really well. But the whole thing still took around 17–18 seconds per request. Way too slow.
+Out of curiosity (and a bit of desperation), I right-clicked the captcha image and hit “Search image with Google”. Boom! Google got it right on the first try!! Then I sent the captchas to [Google Cloud Vision API](https://cloud.google.com/vision?hl=en), and got perfect results. But the whole thing still took around 17–18 seconds per request. Way too slow.
 
 I noticed the Delaware site was just... slow, even in my browser. That’s when I realised: I didn’t need the full page, just the document data type. So I blocked all the unnecessary stuff like images, styles, and fonts (thank God for Puppeteer), which brought the time down to 4–5 seconds. Progress, but not enough.
 
