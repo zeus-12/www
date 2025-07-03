@@ -1,4 +1,4 @@
-import Link from "@/components/link";
+import Link from "@/components/ui/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 

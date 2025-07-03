@@ -1,22 +1,18 @@
 import Link from "next/link";
-import { SpotlightBorder } from "./spotlight-border";
+import { SpotlightBorder } from "./ui/spotlight-border";
 
-interface LibraryCardProps {
+interface PostCardProps {
   techStack?: string[];
   title: string;
   description: string;
   slug: string;
 }
 
-const LibraryCard: React.FC<LibraryCardProps> = ({
-  title,
-  description,
-  slug,
-}) => {
+const PostCard: React.FC<PostCardProps> = ({ title, description, slug }) => {
   return (
     <SpotlightBorder>
       <Link
-        href={`/library/${slug}`}
+        href={`/posts/${slug}`}
         className="text-white inline-flex h-full rounded-md px-2 py-4 md:px-4 md:py-6 items-center w-full"
       >
         <div>
@@ -27,4 +23,4 @@ const LibraryCard: React.FC<LibraryCardProps> = ({
     </SpotlightBorder>
   );
 };
-export default LibraryCard;
+export default PostCard;

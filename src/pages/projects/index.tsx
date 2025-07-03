@@ -1,5 +1,5 @@
-import ProjectCard from "@/components/project-card";
-import ProjectsScroll from "@/components/projects";
+import ProjectCard from "@/components/project/project-card";
+import ProjectsScroll from "@/components/project/projects";
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";

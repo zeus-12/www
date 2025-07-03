@@ -1,4 +1,4 @@
-import Link from "@/components/link";
+import Link from "@/components/ui/link";
 import { Project } from "@/lib/projects";
 import Image from "next/image";
 import { ProjectBackground, ProjectLeft, ProjectRight } from "./project";

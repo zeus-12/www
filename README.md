@@ -19,27 +19,27 @@ This site is built with
 First, install the dependencies
 
 ```bash
-pnpm install
+bun install
 ```
 
 and run the development server:
 
 ```bash
-pnpm dev
+bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ## Available Scripts
 
-#### `pnpm dev`
+#### `bun dev`
 
 to start development server
 
-#### `pnpm start`
+#### `bun start`
 
 to start production server
 
-#### `pnpm build`
+#### `bun build`
 
 to generate production build. The built assets will be in under `/.next` directory.

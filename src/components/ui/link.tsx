@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import NextLink from "next/link";
 import { AnchorHTMLAttributes, DetailedHTMLProps, Ref } from "react";
-import UnderlineToBackground from "./ui/underline-to-background";
+import UnderlineToBackground from "./underline-to-background";
 
 type LinkProps = DetailedHTMLProps<
   AnchorHTMLAttributes<HTMLAnchorElement>,

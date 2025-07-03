@@ -1,7 +1,7 @@
 import AboutMe from "@/components/about-me";
 import FloatingWithImages from "@/components/floating-with-images";
-import Link from "@/components/link";
 import { Button } from "@/components/ui/button";
+import Link from "@/components/ui/link";
 import { SOCIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -41,6 +41,8 @@ const Landing = () => {
     </>
   );
 };
+
+export default Landing;
 
 const dob = new Date("2002-04-12");
 const age = Math.floor(
@@ -118,8 +120,6 @@ const Intro = () => {
     </div>
   );
 };
-
-export default Landing;
 
 const Logo = () => {
   return (
