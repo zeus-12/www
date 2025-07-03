@@ -43,3 +43,7 @@ to start production server
 #### `bun build`
 
 to generate production build. The built assets will be in under `/.next` directory.
+
+## Todo
+
+- move images in public/ to ut.
