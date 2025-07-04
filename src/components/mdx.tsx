@@ -1,43 +1,73 @@
 import Link from "@/components/ui/link";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
+import { ComponentPropsWithoutRef } from "react";
+
+type HeadingProps = ComponentPropsWithoutRef<"h1">;
+type ParagraphProps = ComponentPropsWithoutRef<"p">;
+type ListProps = ComponentPropsWithoutRef<"ul">;
+type ListItemProps = ComponentPropsWithoutRef<"li">;
+type AnchorProps = ComponentPropsWithoutRef<"a">;
+type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
+type HrProps = ComponentPropsWithoutRef<"hr">;
 
 const MDXComponents = {
   img: (props: any) => <Image {...props} alt={props.alt} />,
   Link: (props: any) => <Link {...props} />,
-  a: (props: any) => (
+  a: (props: AnchorProps) => (
     <Link underline textColorClassName="text-cyan-500" {...props} />
   ),
-  h1: (props: any) => (
+  h1: (props: HeadingProps) => (
     <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
       {props.children}
     </h1>
   ),
-  h2: (props: any) => (
+  h2: (props: HeadingProps) => (
     <h2 className="scroll-m-20 pb-1 text-xl font-semibold tracking-tight transition-colors first:mt-0 mt-8">
       {props.children}
     </h2>
   ),
-  h3: (props: any) => (
+  h3: (props: HeadingProps) => (
     <h3 className="scroll-m-20 text-xl font-semibold tracking-tight text-gray-100">
       {props.children}
     </h3>
   ),
-  h4: (props: any) => (
+  h4: (props: HeadingProps) => (
     <h4 className="scroll-m-20 text-base tracking-tight text-gray-300 mb-4">
       {props.children}
     </h4>
   ),
 
-  p: (props: any) => (
+  p: (props: ParagraphProps) => (
     <p className="leading-7 [&:not(:first-child)]:mt-6 text-gray-200">
       {props.children}
     </p>
   ),
-  li: (props: any) => (
+  ul: (props: ListProps) => (
+    <ul
+      className="text-gray-800 dark:text-zinc-300 list-disc pl-5 space-y-1"
+      {...props}
+    />
+  ),
+  li: (props: ListItemProps) => (
     <li className="leading-7 md:list-disc text-gray-300">{props.children}</li>
   ),
-  hr: (props: any) => <hr className="my-8 border-gray-800" />,
+  hr: (props: HrProps) => <hr className="my-8 border-gray-800" />,
+  blockquote: (props: BlockquoteProps) => (
+    <blockquote
+      className="ml-[0.075em] border-l-[3px] border-gray-300 dark:border-zinc-600 pl-4 text-gray-700 dark:text-zinc-300"
+      {...props}
+    />
+  ),
+  Youtube: ({ id }: { id: string }) => (
+    <iframe
+      className="w-full aspect-video"
+      src={`https://www.youtube.com/embed/${id}`}
+      title="YouTube Video"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    ></iframe>
+  ),
 };
 
 interface MdxProps {
