@@ -7,15 +7,15 @@ const Posts = () => {
   return (
     <>
       <NextSeo
-        title="Blogs, Snippets, and more | Vishnu"
-        description="A collection of my blog posts and snippets."
+        title="Blogs | Vishnu"
+        description="A collection of my blog posts."
       />
       <SlideUpWhenVisible>
         <div className="pt-8 pb-8 px-4 lg:px-24 lg:py-16">
           <p className="text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight">
             Posts
           </p>
-          <p className="text-gray-400">Blog posts and snippets.</p>
+          <p className="text-gray-400">Blog posts.</p>
           <div className="grid gap-4 w-full mt-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {allContents
               ?.sort(
