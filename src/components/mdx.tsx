@@ -68,6 +68,19 @@ const MDXComponents = {
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
     ></iframe>
   ),
+
+  Video: ({
+    src,
+    ...props
+  }: {
+    src: string;
+    props: React.VideoHTMLAttributes<HTMLVideoElement>;
+  }) => (
+    <video controls autoPlay muted {...props} className="max-w-full">
+      <source src={src} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  ),
 };
 
 interface MdxProps {
