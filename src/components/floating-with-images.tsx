@@ -1,7 +1,7 @@
 // CREDITS https://www.fancycomponents.dev/docs/components/image/floating
 
 import Floating, { FloatingElement } from "@/components/ui/floating";
-import { motion, stagger, useAnimate } from "framer-motion";
+import { motion, stagger, useAnimate } from "motion/react";
 import { ReactNode, useEffect } from "react";
 
 const IMAGES = [
