@@ -1,6 +1,6 @@
 import { useMousePosition } from "@/hooks/use-mouse-position";
 import { cn } from "@/lib/utils";
-import { useAnimationFrame } from "framer-motion";
+import { useAnimationFrame } from "motion/react";
 import {
   createContext,
   ReactNode,

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "@/components/ui/link";
 import { SOCIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const CURRENT_SECTION = [
