@@ -124,16 +124,6 @@ export const PROJECTS_DATA: Project[] = [
     isFeatured: true,
   },
   {
-    title: "Coursepanel",
-    shortDescription: "Landing page for a startup we built.",
-    description: "Landing page for a startup we built.",
-    techStack: [TECH_STACK.NEXTJS],
-    deployedLink: "https://coursepanel.vercel.app",
-    imageSrc: "/projects/coursepanel.png",
-    isFeatured: false,
-  },
-
-  {
     title: "JMT Shaastra",
     shortDescription: "IITM Junior Make-A-Thon event's website.",
     description:
