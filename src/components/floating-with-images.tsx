@@ -37,7 +37,7 @@ const FLOATING_CONFIGS = [
   {
     imgIdx: 3,
     depth: 1,
-    floatingClass: "top-[0%] left-[83%]",
+    floatingClass: "top-[0%] left-[83%] hidden md:block",
     imgClass: "w-24 h-24 md:w-32 md:h-32",
   },
   {
@@ -46,16 +46,11 @@ const FLOATING_CONFIGS = [
     floatingClass: "top-[40%] left-[2%] hidden md:block",
     imgClass: "w-28 h-28 md:w-36 md:h-36",
   },
-  {
-    imgIdx: 7,
-    depth: 2,
-    floatingClass: "top-[70%] left-[77%]",
-    imgClass: "w-28 h-28 md:w-36 md:h-48",
-  },
+
   {
     imgIdx: 5,
     depth: 4,
-    floatingClass: "top-[73%] left-[15%]",
+    floatingClass: "top-[73%] left-[15%]  hidden md:block",
     imgClass: "w-40 md:w-52 h-full",
   },
   {
@@ -63,6 +58,12 @@ const FLOATING_CONFIGS = [
     depth: 1,
     floatingClass: "top-[80%] left-[50%]",
     imgClass: "w-24 h-24 md:w-32 md:h-32",
+  },
+  {
+    imgIdx: 7,
+    depth: 2,
+    floatingClass: "top-[70%] left-[77%]",
+    imgClass: "w-28 h-28 md:w-36 md:h-48",
   },
 ];
 
