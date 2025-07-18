@@ -15,7 +15,7 @@ type LinkProps = DetailedHTMLProps<
 const Link = ({
   href,
   className,
-  textColorClassName = "text-cyan-800",
+  textColorClassName = "text-cyan-700",
   children,
   underline,
   ...rest
@@ -52,11 +52,7 @@ const Link = ({
   }
   return (
     <a
-      className={cn(
-        "hover:text-gray-400",
-
-        className,
-      )}
+      className={cn("hover:text-gray-400", className)}
       target="_blank"
       rel="noopener noreferrer"
       href={href}
