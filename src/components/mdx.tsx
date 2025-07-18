@@ -1,4 +1,5 @@
 import Link from "@/components/ui/link";
+import { cn } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 import { ComponentPropsWithoutRef } from "react";
@@ -40,7 +41,13 @@ const MDXComponents = {
   ),
 
   p: (props: ParagraphProps) => (
-    <p className="leading-7 [&:not(:first-child)]:mt-6 text-gray-200">
+    <p
+      {...props}
+      className={cn(
+        "leading-7 [&:not(:first-child)]:mt-6 text-gray-200 md:text-lg",
+        props.className,
+      )}
+    >
       {props.children}
     </p>
   ),
