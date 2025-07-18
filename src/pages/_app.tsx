@@ -4,8 +4,8 @@ import "@/styles/globals.css";
 import { AppProps } from "next/app";
 import "prism-themes/themes/prism-night-owl.css";
 // import PlausibleProvider from 'next-plausible';
-import { fontSans } from "@/lib/fonts";
 import { Analytics } from "@vercel/analytics/next";
+import { GeistSans } from "geist/font/sans";
 import Lenis from "lenis";
 import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
@@ -50,7 +50,7 @@ export default function App({ Component, pageProps }: AppProps) {
       enableColorScheme={true}
     >
       <ScrollObserver>
-        <main className={fontSans.className}>
+        <main className={GeistSans.className}>
           <DefaultSeo {...SEO} />
           <Navbar />
           <Component {...pageProps} />

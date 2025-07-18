@@ -1,7 +1,6 @@
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { Badge } from "@/components/ui/badge";
 import { CustomTooltip } from "@/components/ui/tooltip";
-import { fontMono } from "@/lib/fonts";
 import { PROJECTS_DATA } from "@/lib/projects";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -76,8 +75,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
 
           <p
             className={cn(
-              "text-sm text-gray-400 p-1 md:p-2 text-ellipsis",
-              fontMono.className,
+              "text-sm text-gray-400 p-1 md:p-2 text-ellipsis font-mono",
             )}
           >
             {shortDescription}
