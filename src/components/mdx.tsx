@@ -10,6 +10,7 @@ type ListItemProps = ComponentPropsWithoutRef<"li">;
 type AnchorProps = ComponentPropsWithoutRef<"a">;
 type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 type HrProps = ComponentPropsWithoutRef<"hr">;
+type SpanProps = ComponentPropsWithoutRef<"span">;
 
 const MDXComponents = {
   img: (props: any) => <Image {...props} alt={props.alt} />,
@@ -81,6 +82,9 @@ const MDXComponents = {
       Your browser does not support the video tag.
     </video>
   ),
+  span: (props: SpanProps) => (
+    <span {...props} />
+  )
 };
 
 interface MdxProps {
