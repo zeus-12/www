@@ -77,14 +77,19 @@ const MDXComponents = {
     src: string;
     props: React.VideoHTMLAttributes<HTMLVideoElement>;
   }) => (
-    <video controls autoPlay muted {...props} className="max-w-full">
+    <video
+      controls
+      autoPlay
+      muted
+      playsInline
+      {...props}
+      className="max-w-full"
+    >
       <source src={src} type="video/mp4" />
       Your browser does not support the video tag.
     </video>
   ),
-  span: (props: SpanProps) => (
-    <span {...props} />
-  )
+  span: (props: SpanProps) => <span {...props} />,
 };
 
 interface MdxProps {
