@@ -49,7 +49,7 @@ const Projects = () => {
                 checked={isScrollView}
                 onCheckedChange={(c) => setIsScrollView(c)}
               />
-              <p className="text-gray-300">Scroll view</p>
+              <p className="text-gray-300 text-xs font-mono tracking-tight">Scroll view</p>
             </div>
           </div>
 
