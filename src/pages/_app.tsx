@@ -26,6 +26,10 @@ export default function App({ Component, pageProps }: AppProps) {
     }
 
     requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return (
