@@ -44,7 +44,7 @@ const MDXComponents = {
     <p
       {...props}
       className={cn(
-        "leading-7 [&:not(:first-child)]:mt-6 text-gray-200 md:text-lg",
+        "leading-7 [&:not(:first-child)]:mt-6 text-gray-200 md:text-base",
         props.className,
       )}
     >
