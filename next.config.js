@@ -1,9 +1,12 @@
-/** @type {import('next').NextConfig} */
 const { withContentlayer } = require("next-contentlayer");
 // const { withPlausibleProxy } = require('next-plausible');
 
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ["3t8svmawgx.ufs.sh"],
+  },
   swcMinify: true,
   async headers() {
     return [
