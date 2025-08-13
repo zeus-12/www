@@ -121,7 +121,7 @@ const UnderlineToBackground = ({
       ref={textRef}
       {...props}
     >
-      <motion.div
+      <motion.span
         className="absolute bg-current w-full"
         style={{
           height: "var(--underline-height)",
