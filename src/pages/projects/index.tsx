@@ -1,5 +1,4 @@
 import ProjectCard from "@/components/project/project-card";
-import ProjectsScroll from "@/components/project/projects";
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { Input } from "@/components/ui/input";
 import { Switch } from "@/components/ui/switch";
@@ -24,7 +23,6 @@ const Projects = () => {
     }
   }, [query]);
 
-  const [isScrollView, setIsScrollView] = useState(false);
 
   return (
     <>
@@ -34,7 +32,6 @@ const Projects = () => {
       />
       <div className="pt-8 px-4 lg:px-24 lg:py-16 pb-8">
         <SlideUpWhenVisible>
-          <div className="flex items-center justify-between">
             <div>
               <p className="text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight">
                 Projects
@@ -44,19 +41,7 @@ const Projects = () => {
               </p>
             </div>
 
-            <div>
-              <Switch
-                checked={isScrollView}
-                onCheckedChange={(c) => setIsScrollView(c)}
-              />
-              <p className="text-gray-300 text-xs font-mono tracking-tight">
-                Scroll view
-              </p>
-            </div>
-          </div>
-
-          {!isScrollView && (
-            <div className="relative my-4">
+             <div className="relative my-4">
               <SearchIcon className="absolute left-3 top-[50%] h-4 w-4 -translate-y-[50%] text-muted-foreground" />
               <Input
                 className="pl-9 border-gray-500 bg-muted mt-3 max-w-md"
@@ -66,12 +51,10 @@ const Projects = () => {
                 onChange={(e) => setQuery(e.target.value)}
               />
             </div>
-          )}
         </SlideUpWhenVisible>
 
         <div className="mb-4 mt-8">
-          {!isScrollView &&
-            (projects.length > 0 ? (
+            {projects.length > 0 ? (
               <div className="lg:columns-3 sm:columns-2 gap-3 mb-2">
                 {projects.map((project) => (
                   <div
@@ -95,10 +78,9 @@ const Projects = () => {
               <p className="text-gray-400">
                 No projects matching the entered keyword.
               </p>
-            ))}
+            )}
         </div>
       </div>
-      {isScrollView && <ProjectsScroll projects={PROJECTS_DATA} />}
     </>
   );
 };
