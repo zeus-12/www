@@ -69,8 +69,6 @@ const Intro = () => {
         >
           <FloatingWithImages>
             <div className="md:max-w-lg mx-auto space-y-6">
-              <Logo />
-
               <div className="text-base tracking-tight">
                 <p className="inline">
                   hey, i&apos;m{" "}
@@ -121,13 +119,13 @@ const Intro = () => {
   );
 };
 
-const Logo = () => {
-  return (
-    <div className="md:text-lg text-white aspect-square w-fit h-auto items-center flex bg-black p-1 rounded-full md:mx-auto">
-      <p className="text-base">&#123;V&#125;</p>
-    </div>
-  );
-};
+// const Logo = () => {
+//   return (
+//     <div className="md:text-lg text-white aspect-square w-fit h-auto items-center flex bg-black p-1 rounded-full md:mx-auto">
+//       <p className="text-base">&#123;V&#125;</p>
+//     </div>
+//   );
+// };
 
 const OtherLinksSection = () => {
   return (
