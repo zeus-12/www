@@ -8,16 +8,16 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const CURRENT_SECTION = [
-  <p className="">
-    <span className="text-gray-400">founding eng</span> @{" "}
+  <p className="text-gray-400">
+    founding eng @{" "}
     <Link underline href="https://getunbound.ai/">
       unbound
     </Link>
   </p>,
   <p className="text-gray-400">
-    building{" "}
+    building 🔨{" "}
     <Link underline href="https://uxie.vercel.app">
-      🔨 uxie
+      uxie
     </Link>
   </p>,
   <p className="text-gray-400">
