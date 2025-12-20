@@ -1,5 +1,5 @@
 import Link from "@/components/ui/link";
-import { cn } from "@/lib/utils";
+import { cn, serifFont } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image, { ImageProps } from "next/image";
 import { ComponentPropsWithoutRef } from "react";
@@ -45,7 +45,7 @@ const MDXComponents = {
     <p
       {...props}
       className={cn(
-        "font-serif leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-base/7 md:text-lg/8",
+        `${serifFont.className} leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-base/7 md:text-lg/8`,
         props.className,
       )}
     >

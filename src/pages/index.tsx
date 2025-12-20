@@ -8,14 +8,24 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const CURRENT_SECTION = [
-  {
-    start: "Building",
-    end: (
-      <Link underline href="https://uxie.vercel.app">
-        🔨 Uxie
-      </Link>
-    ),
-  },
+  <p className="">
+    <span className="text-gray-400">founding eng</span> @{" "}
+    <Link underline href="https://getunbound.ai/">
+      unbound
+    </Link>
+  </p>,
+  <p className="text-gray-400">
+    building{" "}
+    <Link underline href="https://uxie.vercel.app">
+      🔨 uxie
+    </Link>
+  </p>,
+  <p className="text-gray-400">
+    prev: quant analyst intern @{" "}
+    <Link underline href="https://www.natwestgroup.com/">
+      natwest
+    </Link>
+  </p>,
 ];
 
 const LINKS = [
@@ -60,7 +70,7 @@ const Intro = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"]);
 
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-screen overflow-hidden bg-white text-black">
       <motion.div style={{ y }} className="h-full relative">
         <div
           className={cn(
@@ -90,6 +100,7 @@ const Intro = () => {
                   {" y'all :)"}
                 </p>
               </div>
+
               <div className="space-y-2">
                 <div className="flex items-center">
                   <div className="w-[0.35rem] h-[0.35rem] rounded-full bg-green-400 animate-pulse" />
@@ -97,16 +108,17 @@ const Intro = () => {
                 </div>
 
                 {CURRENT_SECTION.map((item, idx) => (
-                  <li className="list-none ml-3 text-start" key={idx}>
-                    <span className="text-gray-400">{item.start}</span>{" "}
-                    {item.end}
-                  </li>
+                  <div className="ml-3" key={idx}>
+                    {item}
+                  </div>
                 ))}
               </div>
 
               <div className="flex gap-2 flex-col md:flex-row">
                 <Link href={SOCIALS.email} className="w-fit">
-                  <Button className="rounded-3xl w-fit">Say Hello</Button>
+                  <Button className="rounded-3xl w-fit bg-black text-white hover:bg-gray-800">
+                    Say Hello
+                  </Button>
                 </Link>
 
                 <OtherLinksSection />
@@ -138,7 +150,7 @@ const OtherLinksSection = () => {
         <motion.div>
           <Button
             variant="ghost"
-            className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500 flex"
+            className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500 flex hover:bg-gray-200"
           >
             Links
           </Button>
@@ -182,7 +194,7 @@ const OtherLinks = ({ animate }: { animate: boolean }) => {
           <Link href={link.link}>
             <Button
               variant="ghost"
-              className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500"
+              className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500 hover:bg-gray-200"
             >
               {link.title}
             </Button>
