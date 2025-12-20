@@ -8,24 +8,24 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const CURRENT_SECTION = [
-  <p className="text-gray-400">
+  <>
     founding eng @{" "}
     <Link underline href="https://getunbound.ai/">
       unbound
     </Link>
-  </p>,
-  <p className="text-gray-400">
+  </>,
+  <>
     building 🔨{" "}
     <Link underline href="https://uxie.vercel.app">
       uxie
     </Link>
-  </p>,
-  <p className="text-gray-400">
+  </>,
+  <>
     prev: quant analyst intern @{" "}
     <Link underline href="https://www.natwestgroup.com/">
       natwest
     </Link>
-  </p>,
+  </>,
 ];
 
 const LINKS = [
@@ -108,7 +108,7 @@ const Intro = () => {
                 </div>
 
                 {CURRENT_SECTION.map((item, idx) => (
-                  <div className="ml-3" key={idx}>
+                  <div className="ml-3 text-gray-400" key={idx}>
                     {item}
                   </div>
                 ))}
