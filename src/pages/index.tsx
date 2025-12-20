@@ -101,7 +101,7 @@ const Intro = () => {
                 </p>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <div className="flex items-center">
                   <div className="w-[0.35rem] h-[0.35rem] rounded-full bg-green-400 animate-pulse" />
                   <p className="ml-2">Currently</p>
