@@ -9,4 +9,5 @@ export function cn(...inputs: ClassValue[]) {
 export const serifFont = STIX_Two_Text({
   subsets: ["latin"],
   display: "swap",
+  variable: "--font-stix-two",
 })

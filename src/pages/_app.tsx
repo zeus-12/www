@@ -10,6 +10,7 @@ import Lenis from "lenis";
 import { DefaultSeo } from "next-seo";
 import { useEffect } from "react";
 import { SEO } from "../../next-seo.config";
+import { serifFont } from "@/lib/utils";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ScrollObserver>
-      <main className={`${GeistSans.variable} ${GeistMono.variable} font-sans`}>
+      <main className={`${GeistSans.variable} ${GeistMono.variable} ${serifFont.variable} font-sans`}>
         <DefaultSeo {...SEO} />
         <Navbar />
         <Component {...pageProps} />
