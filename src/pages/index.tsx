@@ -108,7 +108,7 @@ const Intro = () => {
                 </div>
 
                 {CURRENT_SECTION.map((item, idx) => (
-                  <div className="ml-3 text-gray-400" key={idx}>
+                  <div className="ml-3 text-gray-500" key={idx}>
                     {item}
                   </div>
                 ))}
