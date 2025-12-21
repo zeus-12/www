@@ -10,14 +10,16 @@ import { NextSeo } from "next-seo";
 import Link from "next/link";
 import { AiOutlineSwapLeft } from "react-icons/ai";
 
-const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+const Post: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   snippet,
 }) => {
   return (
     <>
       <NextSeo title={snippet?.title} description={snippet?.description} />
       <div className="max-w-3xl mx-auto px-6 sm:px-8 mb-24">
-        <h1 className="text-4xl font-semibold mt-12 md:mt-20">{snippet?.title}</h1>
+        <h1 className="text-4xl font-semibold mt-12 md:mt-20">
+          {snippet?.title}
+        </h1>
         <p className="text-gray-400 mt-1">{snippet?.description}</p>
 
         <hr className="border-gray-700 my-3" />
@@ -33,7 +35,7 @@ const CodeSnippet: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     </>
   );
 };
-export default CodeSnippet;
+export default Post;
 
 export async function getStaticPaths() {
   const paths = allContents.map((snippet) => ({
