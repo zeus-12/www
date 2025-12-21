@@ -1,7 +1,7 @@
 "use client";
 
 import { ValueAnimationTransition, motion } from "motion/react";
-import { ElementType, useEffect, useMemo, useRef } from "react";
+import { ElementType, useEffect, useMemo, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -57,80 +57,66 @@ const UnderlineToBackground = ({
   onClick,
   className,
   transition = { type: "spring", damping: 30, stiffness: 300 },
-  underlineHeightRatio = 0.1, // Default to 10% of font size
-  underlinePaddingRatio = 0.01, // Default to 1% of font size
+  underlineHeightRatio = 0.1,
+  underlinePaddingRatio = 0.01,
   targetTextColor = "#fef",
   ...props
 }: UnderlineProps) => {
   const textRef = useRef<HTMLSpanElement>(null);
+  const [underlineHeight, setUnderlineHeight] = useState(2);
+  const [underlinePadding, setUnderlinePadding] = useState(0);
+  const [bgColor, setBgColor] = useState("currentColor");
 
-  // Create custom motion component based on the 'as' prop
   const MotionComponent = useMemo(() => motion.create(as ?? "span"), [as]);
 
-  // Update CSS custom properties based on font size
   useEffect(() => {
-    const updateUnderlineStyles = () => {
+    const updateStyles = () => {
       if (textRef.current) {
-        const fontSize = parseFloat(getComputedStyle(textRef.current).fontSize);
-        const underlineHeight = fontSize * underlineHeightRatio;
-        const underlinePadding = fontSize * underlinePaddingRatio;
-        textRef.current.style.setProperty(
-          "--underline-height",
-          `${underlineHeight}px`,
-        );
-        textRef.current.style.setProperty(
-          "--underline-padding",
-          `${underlinePadding}px`,
-        );
+        const computed = getComputedStyle(textRef.current);
+        const fontSize = parseFloat(computed.fontSize);
+        setUnderlineHeight(fontSize * underlineHeightRatio);
+        setUnderlinePadding(fontSize * underlinePaddingRatio);
+
+        setBgColor(computed.color);
       }
     };
 
-    updateUnderlineStyles();
-    window.addEventListener("resize", updateUnderlineStyles);
-
-    return () => window.removeEventListener("resize", updateUnderlineStyles);
+    updateStyles();
+    window.addEventListener("resize", updateStyles);
+    return () => window.removeEventListener("resize", updateStyles);
   }, [underlineHeightRatio, underlinePaddingRatio]);
-
-  // Animation variants for the underline background
-  const underlineVariants = {
-    initial: {
-      height: "var(--underline-height)",
-    },
-    target: {
-      height: "100%",
-      transition: transition,
-    },
-  };
-
-  // Animation variants for the text color
-  const textVariants = {
-    initial: {
-      color: "currentColor",
-    },
-    target: {
-      color: targetTextColor,
-      transition: transition,
-    },
-  };
 
   return (
     <MotionComponent
-      className={cn("relative inline-block cursor-pointer", className)}
+      className={cn("cursor-pointer", className)}
+      initial="initial"
       whileHover="target"
       onClick={onClick}
       ref={textRef}
       {...props}
     >
       <motion.span
-        className="absolute bg-current w-full"
         style={{
-          height: "var(--underline-height)",
-          bottom: "calc(-1 * var(--underline-padding))",
+          backgroundImage: `linear-gradient(${bgColor}, ${bgColor})`,
+          backgroundPosition: "0 100%",
+          backgroundRepeat: "no-repeat",
+          padding: `${underlinePadding + 5}px ${underlinePadding + 1}px`,
+          margin: `${-(underlinePadding + 2)}px ${-(underlinePadding + 1)}px`,
+          boxDecorationBreak: "clone",
+          WebkitBoxDecorationBreak: "clone",
+          borderRadius: "3px",
         }}
-        variants={underlineVariants}
-        aria-hidden="true"
-      />
-      <motion.span variants={textVariants} className="text-current relative">
+        variants={{
+          initial: {
+            backgroundSize: `100% ${underlineHeight}px`,
+          },
+          target: {
+            backgroundSize: "100% 100%",
+            color: targetTextColor,
+            transition: transition,
+          },
+        }}
+      >
         {children}
       </motion.span>
     </MotionComponent>
