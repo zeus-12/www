@@ -1,5 +1,5 @@
 import Link from "@/components/ui/link";
-import { cn, serifFont } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image, { ImageProps } from "next/image";
 import { ComponentPropsWithoutRef } from "react";
@@ -46,7 +46,7 @@ const MDXComponents = {
     <p
       {...props}
       className={cn(
-        `${serifFont.className} leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-[17px]/[30px] md:text-lg/8`,
+        "font-serif leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-[17px]/[30px] md:text-lg/8",
         props.className,
       )}
     >
@@ -62,8 +62,7 @@ const MDXComponents = {
   li: (props: ListItemProps) => (
     <li
       className={cn(
-        serifFont.className,
-        `leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-base/7 md:text-lg/8`,
+        "font-serif leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-base/7 md:text-lg/8",
         props.className,
       )}
     >
