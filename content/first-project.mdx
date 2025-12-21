@@ -1,0 +1,70 @@
+---
+title: My first project somehow has 25,000+ daily users
+description: How I learned to code by building something for a community I loved
+date: 2025-12-21
+---
+
+I built something that gets 25,000 daily active users. It’s completely free, with no ads, and honestly, I still can’t quite believe it exists. But let me take you back to where this all started, because trust me, it wasn't pretty.
+
+I absolutely hated computer science in school. Like, genuinely despised it. I was in grades 11 and 12, forced to learn C++, completely focused on JEE prep, and I didn't know shit. There were exams where I scored 0. Not "almost failed", literally zero marks.
+
+Then COVID happened. The computer science exam was scheduled last, and they cancelled it. Instead, they took the average of my top two subjects. I got 97 while barely knowing anything. The universe has a weird sense of humor.
+
+Fast forward: I got into IIT Madras (my dream college) in Engineering Design department (more like a combination of electrical & mechanical, with close to 0 CS). Everyone around me was doing software / coding / just building things in general. Figured I have to give this a shot, so I decided to pick up Python and explore it this time but on my own terms.
+
+I read this book called [Automate the Boring Stuff with Python](https://automatetheboringstuff.com/), and it genuinely changed everything for me. There was this one chapter about making the mouse move and simulating keyboard presses, literally automating tasks, and I found it really cool. (This kinda led to [one of the coolest things I built during my internship days](https://vishnuu.com/posts/beating-captchas-and-saving-seconds)).
+
+Later I fell into this YouTube rabbit hole: "Build a Netflix/YouTube clone in 2 hours", that kind of stuff. I'd watch these videos without understanding a thing, these devs had RGB keyboards, multi-monitor setups, just building shit. It looked insanely cool, the idea of putting your own stuff out into the world, while sitting on a couch sipping coffee seemed unreal.
+
+Around that time, my university had an inter-hostel competition, and someone shared an HTML/CSS book in our group. I finally decided to at least try to learn it, and I really enjoyed it, picked up more and more and did a lot of YouTube courses later, getting actually decently good at it.
+
+Now that's all the context, and now around this time (peak COVID days), I discovered this subreddit r/FMHY (Free Media Heck Yeah). It was basically the holy grail of piracy, privacy tools, ad blockers you name it. Want to watch a movie from the 80s? They knew where. Need the direct video URL for a Google Drive link? They had it. Looking for safe software download sites? Covered.
+
+I learned so much from their Discord community, and I ended up helping a ton of people too. The coolest part? It had all sorts of people knowing all sorts of things, and they were all genuinely tryna help each other. People living in their parents' basements, retired army veterans. It was the internet at its best. Maybe this is what the internet during the dotcom days felt like?
+
+Back then, they had a [wiki page](https://www.reddit.com/r/FREEMEDIAHECKYEAH/wiki/) on Reddit with all their links and resources. But Reddit was painfully slow and ugly, and I realized I could actually fix that.
+
+So I started building a website for it. The best part? Hundreds of people in the community would give suggestions, help with stuff, provide feedback. It was so much fun, we'd have polls posting the dumbest of things, and people would respond genuinely tryna help.
+
+We got a domain fmhy.tk (for free too, thanks to Freenom, RIP).
+
+<br />
+
+<Image
+  src="https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAfSLWrx20I3FYbqPOtTrvZQ1pnmwXgMfuB9AVW"
+  width={600}
+  height={600}
+  className="rounded-md w-full h-auto"
+/>
+
+<p className="text-center text-muted-foreground">
+  {"Oldest version of the site i could find (good days :))"}
+</p>
+
+I enjoyed every second of it. I built [link scrapers](https://github.com/zeus-12/fmhy-scraper), fetched data from their Reddit and GitHub, stored it in my database, discovered Next.js ISR (Incremental Static Regeneration), even built a [Discord bot](https://github.com/zeus-12/fmhy-discord-bot). Safe to say the project went through a shitton of iterations, and we later had the fmhy.net domain.
+
+Then college opened back up in person, and so I couldn't spend as much time on it. The community eventually moved to a Vitepress template, now hosted at fmhy.net. Their version was way cleaner, better organized, just objectively better in every way.
+
+I figured my version ([fmhy.vercel.app](fmhy.vercel.app)) was pretty much done. But a while later, I randomly checked the analytics and... people were still using it? Like, 20k+ daily users. I couldn't believe it. Their site was so much better, but people were still using it (& honestly mine had a much better search :)). I realized I had to make this actually good. So when I had some free time, I went back and made the docs page way better (still need some overhaul), and added a ton of QOL improvements. And now it's fetching 25,000+ daily requests (all for free thank God for Vercel haha). And that still feels surreal. I really wanna make it cleaner, fix a lot of things, experiment with a ton of new ideas.
+
+And the most rewarding part? We have a [feedback page](https://fmhy.vercel.app/feedback), and I'd go through once in a while, and it's just wholesome as hell. Here are some of my favourite ones ❤️
+
+<FeedbackCarousel />
+
+I've once had someone who uses fmhy regularly interview me for a role in their org, and they were stunned to know that I built it.
+
+And there's so many other really cool tools built by other people from the community: [1](https://fmhy-tracker.pages.dev/), [2](https://github.com/fmhy/FMHY-SafeGuard).
+
+
+This project is fully free and ad-free. It always will be. If you want to check it out: [fmhy.vercel.app](fmhy.vercel.app), [GitHub](https://github.com/zeus-12/fmhy)
+
+<Image
+  src="https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAfhN2WITXLOlzs20vjroxMwXp8TJhFGctCdnPA"
+  width={600}
+  height={600}
+  className="rounded-md w-full h-auto"
+/>
+
+<p className="text-center text-muted-foreground">
+    {"Current Version"}
+</p>
