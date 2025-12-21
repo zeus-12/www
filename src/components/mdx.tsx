@@ -118,7 +118,7 @@ interface MdxProps {
 const Mdx = ({ code, components }: MdxProps) => {
   const MDXContent = useMDXComponent(code);
   return (
-    <article className="mb-8 mt-6">
+    <article className="mb-8 mt-6 text-[#EAEAEA]">
       <MDXContent components={{ ...MDXComponents, ...components }} />
     </article>
   );
