@@ -95,7 +95,7 @@ const Intro = () => {
                 <p className="inline">
                   , self-taught developer, and design enthusiast. i enjoy
                   building web, desktop, mobile apps, automations. this is my
-                  little corner of the web where i share my journey, and
+                  little corner on the web where i share my journey and
                   experiments with
                   {" y'all :)"}
                 </p>
