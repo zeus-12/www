@@ -36,7 +36,7 @@ const FeedbackCarousel = () => {
           stopOnInteraction: false,
         }),
       ]}
-      className="w-full max-w-lg mx-auto my-16"
+      className="w-full max-w-lg mx-auto my-12"
     >
       <CarouselContent>
         {FEEDBACKS.map((feedback, index) => (
