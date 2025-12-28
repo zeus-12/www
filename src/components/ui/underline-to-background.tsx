@@ -101,7 +101,7 @@ const UnderlineToBackground = ({
           backgroundPosition: "0 100%",
           backgroundRepeat: "no-repeat",
           padding: `${underlinePadding + 2}px ${underlinePadding + 1}px`,
-          margin: `${-(underlinePadding + 2)}px ${-(underlinePadding + 1)}px`,
+          margin: `${-(underlinePadding + 2)}px ${underlinePadding + 1}px`,
           boxDecorationBreak: "clone",
           WebkitBoxDecorationBreak: "clone",
         }}
