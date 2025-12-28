@@ -100,11 +100,10 @@ const UnderlineToBackground = ({
           backgroundImage: `linear-gradient(${bgColor}, ${bgColor})`,
           backgroundPosition: "0 100%",
           backgroundRepeat: "no-repeat",
-          padding: `${underlinePadding + 5}px ${underlinePadding + 1}px`,
+          padding: `${underlinePadding + 2}px ${underlinePadding + 1}px`,
           margin: `${-(underlinePadding + 2)}px ${-(underlinePadding + 1)}px`,
           boxDecorationBreak: "clone",
           WebkitBoxDecorationBreak: "clone",
-          borderRadius: "3px",
         }}
         variants={{
           initial: {
@@ -114,6 +113,7 @@ const UnderlineToBackground = ({
             backgroundSize: "100% 100%",
             color: targetTextColor,
             transition: transition,
+            borderRadius: "3px",
           },
         }}
       >
