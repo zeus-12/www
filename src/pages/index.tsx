@@ -93,7 +93,7 @@ const Intro = () => {
                   iit madras
                 </Link>
                 <p className="inline">
-                  , self-taught developer, and design enthusiast. i enjoy
+                  , self-taught developer, & design enthusiast. i enjoy
                   building web, desktop, mobile apps, automations. this is my
                   little corner on the web where i share my journey and
                   experiments with
