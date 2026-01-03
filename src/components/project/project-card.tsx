@@ -23,13 +23,13 @@ const ProjectCard: FC<ProjectCardProps> = ({
   return (
     <div className="bg-neutral-950 border-[1px] border-gray-800 text-white hover:scale-[102%] transition-all duration-200 rounded-md">
       <SlideUpWhenVisible>
-        <div className="rounded-md">
+        <div className="rounded-md relative w-full h-[300px] flex items-center justify-center bg-neutral-900">
           <Image
             src={imageSrc}
-            className="w-full rounded-sm object-contain max-h-96"
+            className="rounded-sm object-contain max-w-full max-h-full"
             alt={title}
             width={400}
-            height={400}
+            height={300}
           />
         </div>
         <div className="px-2 pb-2">
