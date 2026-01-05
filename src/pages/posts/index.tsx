@@ -16,7 +16,7 @@ const Posts = () => {
             Posts
           </p>
           <p className="text-gray-400">Blog posts.</p>
-          <div className="grid gap-4 w-full mt-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-col gap-3 w-full mt-8">
             {allContents
               ?.sort(
                 (a, b) =>
@@ -28,6 +28,7 @@ const Posts = () => {
                   key={post.title}
                   title={post.title}
                   description={post.description}
+                  date={post.date}
                 />
               ))}
           </div>

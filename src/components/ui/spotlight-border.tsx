@@ -16,7 +16,7 @@ export function SpotlightBorder({
       />
       <div
         className={cn(
-          "relative h-full w-full rounded-xl bg-white dark:bg-[#101827]",
+          "relative h-full w-full rounded-xl dark:bg-neutral-950",
           className,
         )}
       >

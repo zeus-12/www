@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image, { ImageProps } from "next/image";
 import { ComponentPropsWithoutRef } from "react";
+import FeedbackCarousel from "./content/feedback-carousel";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -45,7 +46,7 @@ const MDXComponents = {
     <p
       {...props}
       className={cn(
-        "leading-7 [&:not(:first-child)]:mt-6 text-gray-200 md:text-base",
+        "font-serif leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-[17px]/[30px] md:text-lg/8",
         props.className,
       )}
     >
@@ -59,7 +60,14 @@ const MDXComponents = {
     />
   ),
   li: (props: ListItemProps) => (
-    <li className="leading-7 md:list-disc text-gray-300">{props.children}</li>
+    <li
+      className={cn(
+        "font-serif leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-base/7 md:text-lg/8",
+        props.className,
+      )}
+    >
+      {props.children}
+    </li>
   ),
   hr: (props: HrProps) => <hr className="my-8 border-gray-800" />,
   blockquote: (props: BlockquoteProps) => (
@@ -98,6 +106,7 @@ const MDXComponents = {
     </video>
   ),
   span: (props: SpanProps) => <span {...props} />,
+  FeedbackCarousel: () => <FeedbackCarousel />,
 };
 
 interface MdxProps {
@@ -108,7 +117,7 @@ interface MdxProps {
 const Mdx = ({ code, components }: MdxProps) => {
   const MDXContent = useMDXComponent(code);
   return (
-    <article className="mb-8 mt-6">
+    <article className="mb-8 mt-6 text-[#EAEAEA]">
       <MDXContent components={{ ...MDXComponents, ...components }} />
     </article>
   );

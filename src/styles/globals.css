@@ -28,7 +28,7 @@ body {
 }
 
 :not(pre) > code {
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: var(--font-geist-mono);
   font-size: 0.85em;
   background: #022a4b;
   border-radius: 0.25rem;

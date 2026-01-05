@@ -102,7 +102,7 @@ export const PROJECTS_DATA: Project[] = [
     githubLink: "https://github.com/zeus-12/Everhealth",
     deployedLink:
       "https://expo.dev/@vishnu_v12/gfg-hackathon?serviceType=classic&distribution=expo-go",
-    imageSrc: "/projects/everhealth.jpeg",
+    imageSrc: "/projects/everhealth.png",
     isFeatured: true,
   },
   {
