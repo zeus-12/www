@@ -21,15 +21,15 @@ const ProjectCard: FC<ProjectCardProps> = ({
   techStack,
 }) => {
   return (
-    <div className="bg-slate-900 border-[1px] border-gray-800 text-white hover:scale-[102%] transition-all duration-200 rounded-md">
+    <div className="bg-neutral-950 border border-gray-800 text-white hover:scale-[102%] transition-all duration-200 rounded-md">
       <SlideUpWhenVisible>
-        <div className="rounded-md">
+        <div className="relative w-full aspect-video overflow-hidden rounded-t-md">
           <Image
             src={imageSrc}
-            className="w-full rounded-sm object-contain max-h-96"
+            className="rounded-t-md object-contain"
             alt={title}
-            width={400}
-            height={400}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
         <div className="px-2 pb-2">

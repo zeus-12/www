@@ -8,14 +8,24 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
 const CURRENT_SECTION = [
-  {
-    start: "Building",
-    end: (
-      <Link underline href="https://uxie.vercel.app">
-        🔨 Uxie
-      </Link>
-    ),
-  },
+  <>
+    founding eng @{" "}
+    <Link underline href="https://getunbound.ai/">
+      unbound
+    </Link>
+  </>,
+  <>
+    building 🔨{" "}
+    <Link underline href="https://uxie.vercel.app">
+      uxie
+    </Link>
+  </>,
+  <>
+    prev: quant analyst intern @{" "}
+    <Link underline href="https://www.natwestgroup.com/">
+      natwest
+    </Link>
+  </>,
 ];
 
 const LINKS = [
@@ -60,7 +70,7 @@ const Intro = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"]);
 
   return (
-    <div className="h-screen overflow-hidden">
+    <div className="h-screen overflow-hidden bg-white text-black">
       <motion.div style={{ y }} className="h-full relative">
         <div
           className={cn(
@@ -69,8 +79,6 @@ const Intro = () => {
         >
           <FloatingWithImages>
             <div className="md:max-w-lg mx-auto space-y-6">
-              <Logo />
-
               <div className="text-base tracking-tight">
                 <p className="inline">
                   hey, i&apos;m{" "}
@@ -85,30 +93,32 @@ const Intro = () => {
                   iit madras
                 </Link>
                 <p className="inline">
-                  , self-taught developer, and design enthusiast. i enjoy
+                  , self-taught developer, & design enthusiast. i enjoy
                   building web, desktop, mobile apps, automations. this is my
-                  little corner of the web where i share my journey, and
+                  little corner on the web where i share my journey and
                   experiments with
                   {" y'all :)"}
                 </p>
               </div>
-              <div className="space-y-2">
+
+              <div className="space-y-1.5">
                 <div className="flex items-center">
                   <div className="w-[0.35rem] h-[0.35rem] rounded-full bg-green-400 animate-pulse" />
                   <p className="ml-2">Currently</p>
                 </div>
 
                 {CURRENT_SECTION.map((item, idx) => (
-                  <li className="list-none ml-3 text-start" key={idx}>
-                    <span className="text-gray-400">{item.start}</span>{" "}
-                    {item.end}
-                  </li>
+                  <div className="ml-3 text-gray-500" key={idx}>
+                    {item}
+                  </div>
                 ))}
               </div>
 
               <div className="flex gap-2 flex-col md:flex-row">
                 <Link href={SOCIALS.email} className="w-fit">
-                  <Button className="rounded-3xl w-fit">Say Hello</Button>
+                  <Button className="rounded-3xl w-fit bg-black text-white hover:bg-gray-800">
+                    Say Hello
+                  </Button>
                 </Link>
 
                 <OtherLinksSection />
@@ -121,13 +131,13 @@ const Intro = () => {
   );
 };
 
-const Logo = () => {
-  return (
-    <div className="md:text-lg text-white aspect-square w-fit h-auto items-center flex bg-black p-1 rounded-full md:mx-auto">
-      <p className="text-base">&#123;V&#125;</p>
-    </div>
-  );
-};
+// const Logo = () => {
+//   return (
+//     <div className="md:text-lg text-white aspect-square w-fit h-auto items-center flex bg-black p-1 rounded-full md:mx-auto">
+//       <p className="text-base">&#123;V&#125;</p>
+//     </div>
+//   );
+// };
 
 const OtherLinksSection = () => {
   return (
@@ -140,7 +150,7 @@ const OtherLinksSection = () => {
         <motion.div>
           <Button
             variant="ghost"
-            className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500 flex"
+            className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500 flex hover:bg-gray-200"
           >
             Links
           </Button>
@@ -184,7 +194,7 @@ const OtherLinks = ({ animate }: { animate: boolean }) => {
           <Link href={link.link}>
             <Button
               variant="ghost"
-              className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500"
+              className="bg-gray-100 text-gray-400 rounded-3xl hover:text-gray-500 hover:bg-gray-200"
             >
               {link.title}
             </Button>

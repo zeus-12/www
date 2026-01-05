@@ -8,7 +8,7 @@ date: 2024-07-07
 
 Picture this: new sem just started, and you're already drowning in PDFs. Lectures, assignments, scanned notes, random textbook pages, all dumped into random folders. Then come the quizzes, midsems, endsems, with the same topic over and over again. You know you'll need proper notes later. So what do you do? Highlight some text, screenshot a few diagrams, copy-paste them into an app like Notion, then hope future-you can find it all during finals. It (kinda) works, but everything feels scattered. Notes are disconnected from the source, and organisation is just vibes at that point.
 
-This started bothering me back in my first year. I really wanted a better way to study. I'm someone obsessed w finding the right tool for every little task (if you're curious, [here's my whole setup](/posts/uses)). I tried every PDF reader app I could find. The closest I got to what i wanted was [Highlights](https://highlightsapp.net). Clean UI, worked really well. But a lot of useful features were behind a paywall, and most of the other decent web / electron apps used a library called `react-pdf`, which has this [really annoying bug](https://github.com/wojtekmaj/react-pdf/issues/101) (super cool lib except for this 1 issue).
+This started bothering me back in my first year. I really wanted a better way to study. I'm someone obsessed with finding the right tool for every little task (if you're curious, [here's my whole setup](/posts/uses)). I tried every PDF reader app I could find. The closest I got to what I wanted was [Highlights](https://highlightsapp.net). Clean UI, worked really well. But a lot of useful features were behind a paywall, and most of the other decent web / electron apps used a library called `react-pdf`, which has this [really annoying bug](https://github.com/wojtekmaj/react-pdf/issues/101) (super cool lib except for this 1 issue).
 
 <br />
 
@@ -27,7 +27,7 @@ This started bothering me back in my first year. I really wanted a better way to
   </span>
 </div>
 
-I soo wanted to build a better one, but having zero coding experience, I decided to leave it to someone better, but the thought never left me. A couple of years later, I had picked up full-stack dev, built a few apps, done a few internships. Around then, my uni launched a hackathon event called BuildSchool, a 10-week program where students pitch ideas, 10 teams get selected, and it ends w a big demo day.
+I really wanted to build a better one, but having zero coding experience, I figured someone else would eventually do it. But the thought never left me. A couple of years later, I had picked up full-stack dev, built a few apps, done a few internships. Around then, my uni launched a hackathon event called BuildSchool, a 10-week program where students pitch ideas, 10 teams get selected, and it ends with a big demo day.
 
 <br />
 
@@ -35,7 +35,7 @@ I soo wanted to build a better one, but having zero coding experience, I decided
 
 It felt like the perfect chance, with chatgpt and gen-ai exploding everywhere, I knew I could build something more than just a PDF reader. I'd already seen apps that only did flashcards, or just AI chat, or only PDF annotations, and they were all doing really well. So I thought, why not combine all of that into one clean, nice experience? We pitched the idea, a PDF reader with annotations, note-taking and AI features, and got selected.
 
-We called it Uxie, named after the [_knowledge_ pokémon](https://www.pokemon.com/us/pokedex/uxie). (credit to [t3dotgg](https://x.com/theo) for the idea of naming side projects after pokémons. idk a thing about pokémon, but i love this way of naming things haha)
+We called it Uxie, named after the [_knowledge_ pokémon](https://www.pokemon.com/us/pokedex/uxie). (credit to [Theo](https://x.com/theo) for the idea of naming side projects after pokémons. idk a thing about pokémon, but i love this way of naming things haha)
 
 About a week after getting selected, our university held a separate event, a 24-hour hackathon. One of the problem statements was vaguely close to what we had in mind for uxie. Not the same, but close enough to take a shot. We knew it probably would hurt our chances of winning the hackathon, but figured it was a good excuse to start building. So we went for it.
 
@@ -43,7 +43,7 @@ About a week after getting selected, our university held a separate event, a 24-
 
 That was all the validation we needed. If people liked it in that state, we knew we were onto something. We grinded so hard, we spent the next few weeks building out a much better version, fixed a ton of stuff, added features, and the mid-demo day program went really well.
 
-But the final demo day didn't go as well as we hoped. Bunch of ai provider issues, we hit all sorts of rate limits, had to show pre-recorded demos, we could only get the 2nd, which was cool, but it hurt, we knew the product deserved better.
+But the final demo day didn't go as well as we hoped. Bunch of AI provider issues, we hit all sorts of rate limits, had to show pre-recorded demos. We placed second, which was cool, but it hurt. We knew the product deserved better.
 
 <br />
 <Youtube id="m97zcPWSceU" />
@@ -53,8 +53,8 @@ But the final demo day didn't go as well as we hoped. Bunch of ai provider issue
   </span>
 </div>
 
-I absolutely loved the product and wanted to improve it, I would literally be using uxie to read something, get an idea, and immediately stop reading to go build it. It was chaotic but fun. Life got busy eventually, but a few months later I came back to the project and started fixing all the rough edges. I added flashcard generation with AI feedback, built a text-to-speech feature that highlights the current sentence as it reads (easily the most time i've spent on a single feature, but super happy w how it turned out, still has a few issues [source code for that part](https://github.com/zeus-12/uxie/blob/main/src/hooks/use-pdf-reader.tsx) if you're curious), added pdf background colors for readability, and kept polishing things bit by bit.
+I absolutely loved the product and wanted to improve it. I would literally be using Uxie to read something, get an idea, and immediately stop reading to go build it. It was chaotic but fun. Life got busy eventually, but a few months later I came back to the project and started fixing all the rough edges. I added flashcard generation with AI feedback, built a text-to-speech feature that highlights the current sentence as it reads (easily the most time I've spent on a single feature, but super happy with how it turned out, still has a few issues [source code for that part](https://github.com/zeus-12/uxie/blob/main/src/hooks/use-pdf-reader.tsx) if you're curious), added PDF background colors for readability, and kept polishing things bit by bit.
 
-Today, Uxie has 450+ active users and is easily the best thing I’ve built. Building Uxie has been one of the most rewarding projects I've undertaken. It is fully open-source and free for anyone to use. It started off as a random itch I couldn't ignore and somehow turned into something that actually helps people learn better.
+Today, Uxie has 500+ active users (& around 200 stars on GitHub) and is easily the best thing I’ve built. It is fully open-source and free for anyone to use. It started off as a random itch I couldn't ignore and somehow turned into something that actually helps people learn better.
 
 Funny how that works.
