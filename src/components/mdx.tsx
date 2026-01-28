@@ -4,6 +4,7 @@ import { useMDXComponent } from "next-contentlayer/hooks";
 import Image, { ImageProps } from "next/image";
 import { ComponentPropsWithoutRef } from "react";
 import FeedbackCarousel from "./content/feedback-carousel";
+import { Quote } from "./content/quote";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -107,6 +108,7 @@ const MDXComponents = {
   ),
   span: (props: SpanProps) => <span {...props} />,
   FeedbackCarousel: () => <FeedbackCarousel />,
+  Quote: (props: { text: string }) => <Quote {...props} />,
 };
 
 interface MdxProps {
