@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { Quote } from "lucide-react";
+import { Quote } from "./quote";
 
 // copied from fmhy feedback page
 const FEEDBACKS = [
@@ -41,12 +41,7 @@ const FeedbackCarousel = () => {
       <CarouselContent>
         {FEEDBACKS.map((feedback, index) => (
           <CarouselItem key={index} className="flex items-center">
-            <div className="max-w-md mx-auto px-8 py-6 relative">
-              <Quote className="w-6 h-6 text-gray-600 fill-gray-600 absolute top-0 left-0" />
-              <p className="text-gray-300 text-base md:text-lg italic pl-8 pt-2">
-                {feedback}
-              </p>
-            </div>
+            <Quote text={feedback} />
           </CarouselItem>
         ))}
       </CarouselContent>
