@@ -57,23 +57,25 @@ I absolutely loved the product and wanted to keep improving it. I would literall
 
 I added flashcard generation with AI feedback, built a text-to-speech feature that highlights the current sentence as it reads (easily the most time I've spent on a single feature, but super happy with how it turned out, still has a few issues. [source code for that part](https://github.com/zeus-12/uxie/blob/main/src/hooks/use-pdf-reader.tsx) if you're curious), added PDF background colors for readability, and kept polishing things bit by bit.
 
-All of this was built by me, with very little help from ai (just copilot completions, ughh things were so much better when it was just that). Lately though (post opus-4.5), I've been shipping a ton of new features on uxie, mostly with ai doing the heavy lifting and me reprompting / making minor edits / getting it to output the way i want, with a lot of swearing at the llms (surprisingly effective). Shipped ai powered text-to-speech running locally on gpu w much better voice quality, [bionic reading](https://www.reddit.com/r/BeAmazed/comments/11jy27e/bionic_reading_method/) mode, [rsvp reading](https://en.wikipedia.org/wiki/Rapid_serial_visual_presentation) mode, and a bunch of other stuff.
+All of this was built by me, with very little help from ai (just copilot completions, ughh things were so much better when it was just that). Lately though (post opus-4.5), I've been shipping a ton of new features on uxie, mostly with ai doing the heavy lifting and me reprompting / making minor edits / getting it to output the way i want, with a lot of swearing at the llms (surprisingly effective). Shipped ai powered text-to-speech models running locally on webgpu w much better voice quality, [bionic reading](https://www.reddit.com/r/BeAmazed/comments/11jy27e/bionic_reading_method/) mode, [rsvp reading](https://x.com/iruletheworldmo/status/2011411177843085343) mode, and a bunch of other stuff.
 
 I also have this habit where I keep clicking on lines while I'm reading, and a lot of times they’re links, taking me to some other URL or a different section of the PDF, and I completely lose my flow. So I built a toggleable setting (entirely with ai) that disables links in the pdf completely. Tiny thing, but it saved me a surprising amount of time.
 
-There's this one quote i really like:
+When it comes to building things, there's one quote I absolutely live by:
 
 <br />
 
-<Quote text="If you want your product to be good, you need to use your product. Really, properly, deeply use it." />
+<Quote text="To make a product people love, you have to obsessively use it yourself. Deeply, properly, every single day." />
 
-I live by that. I’ve had tons of ideas in the past and even worked on a few, but nothing really stuck. This did, because it’s a problem I kept facing.
+I live by that. I’ve had tons of ideas in the past and even worked on a few, but
+nothing really stuck. This did, because it’s a problem i (and many people i
+know) keep facing.
 
 That’s also where I feel a bit stuck now. I can’t, for the life of me, come up with a new idea I care about as much. I’ve been thinking about building a single all in one app for little things I personally want, (a 1 second everyday thing like [this](https://www.youtube.com/watch?v=Ka-miwm-7to), a place where i can share url or large text blobs and it'd generate speech, fully offline with PWA maybe?, might even add this to uxie, might improve seo rankings too, gosh i need a proper domain first).
 
-I've also been thinking of a "speech helper" tool, like tts but reverse (kinda), it'd highlight a word, use local speech-to-text models, and only move forward when the user says it correctly, helping users with reading / pronunciations. Not sure if this is possible at a decent pace using just webgpu though. Might even move uxie to a desktop app, everything local. storage, highlights, embeddings, llms would be really fun.
+And I've also been thinking of a "speech helper" tool, like tts but reverse (kinda), it'd highlight a word, use local speech-to-text models, and only move forward when the user says it correctly, helping users with reading / pronunciations. Not sure if this is possible at a decent pace using just webgpu though. I Might even move uxie to a desktop app, everything local. storage, highlights, embeddings, llms would be really fun.
 
-And now that LLMs are actually really good (never thought I’d say that out loud), all of this feels weirdly possible. Or maybe I should just keep improving Uxie. Or grind DSA and chill for a bit haha.
+And now that LLMs are actually really good (never thought I’d ever say this out loud haha), all of this feels weirdly possible. Or maybe I should just keep improving Uxie, or grind DSA and chill for a bit haha.
 
 Anyways, today Uxie has 500+ active users (& around 200 stars on GitHub) and is easily the best thing I’ve built. It is fully open-source and free for anyone to use. What started off as a random itch I couldn't ignore somehow turned into something that actually helps people learn better.
 
