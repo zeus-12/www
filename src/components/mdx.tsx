@@ -1,10 +1,10 @@
 import Link from "@/components/ui/link";
 import { cn } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
-import Image, { ImageProps } from "next/image";
 import { ComponentPropsWithoutRef } from "react";
 import FeedbackCarousel from "./content/feedback-carousel";
 import { Quote } from "./content/quote";
+import { LightboxImage } from "./lightbox-image";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -16,8 +16,8 @@ type HrProps = ComponentPropsWithoutRef<"hr">;
 type SpanProps = ComponentPropsWithoutRef<"span">;
 
 const MDXComponents = {
-  img: (props: any) => <Image {...props} alt={props.alt} />,
-  Image: (props: ImageProps) => <Image {...props} />,
+  img: (props: any) => <LightboxImage {...props} />,
+  Image: (props: any) => <LightboxImage {...props} />,
   Link: (props: any) => <Link {...props} />,
   a: (props: AnchorProps) => (
     <Link underline textColorClassName="text-cyan-500" {...props} />
