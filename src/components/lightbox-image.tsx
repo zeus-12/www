@@ -12,9 +12,14 @@ import { createPortal } from "react-dom";
 
 const SPRING = { type: "spring" as const, stiffness: 300, damping: 30 };
 const PADDING = 48;
+const SCROLL_DISMISS_PX = 150;
 
 type Rect = { top: number; left: number; width: number; height: number };
 type Phase = "closed" | "open" | "closing";
+
+function lerp(a: number, b: number, t: number) {
+  return a + (b - a) * t;
+}
 
 function computeExpandedRect(el: HTMLImageElement, sourceRect: DOMRect): Rect {
   const vw = window.innerWidth;
@@ -42,20 +47,6 @@ function computeExpandedRect(el: HTMLImageElement, sourceRect: DOMRect): Rect {
   };
 }
 
-function lockScroll() {
-  const scrollbarWidth =
-    window.innerWidth - document.documentElement.clientWidth;
-  document.documentElement.style.overflow = "hidden";
-  document.body.style.overflow = "hidden";
-  document.body.style.paddingRight = `${scrollbarWidth}px`;
-}
-
-function unlockScroll() {
-  document.documentElement.style.overflow = "";
-  document.body.style.overflow = "";
-  document.body.style.paddingRight = "";
-}
-
 type LightboxImageProps = ImgHTMLAttributes<HTMLImageElement>;
 
 export function LightboxImage({
@@ -69,10 +60,12 @@ export function LightboxImage({
   const phaseRef = useRef<Phase>("closed");
   const [phase, setPhase] = useState<Phase>("closed");
 
-  const sourceRect = useRef<DOMRect | null>(null);
   const expandedRect = useRef<Rect | null>(null);
   const resolvedSrc = useRef("");
   const pendingOpen = useRef(false);
+  const openScrollY = useRef(0);
+  const openAnims = useRef<{ stop: () => void }[]>([]);
+  const openAnimDone = useRef(false);
 
   const imgTop = useMotionValue(0);
   const imgLeft = useMotionValue(0);
@@ -83,23 +76,28 @@ export function LightboxImage({
   const finishClose = useCallback(() => {
     phaseRef.current = "closed";
     setPhase("closed");
-    unlockScroll();
   }, []);
 
   const animateClose = useCallback(() => {
     if (phaseRef.current === "closing") return;
     phaseRef.current = "closing";
 
+    openAnims.current.forEach((a) => a.stop());
+    openAnims.current = [];
+
     const el = imgRef.current;
-    if (el) sourceRect.current = el.getBoundingClientRect();
-    const sr = sourceRect.current!;
+    if (!el) {
+      finishClose();
+      return;
+    }
+    const sr = el.getBoundingClientRect();
 
     Promise.all([
       animate(imgTop, sr.top, SPRING),
       animate(imgLeft, sr.left, SPRING),
       animate(imgW, sr.width, SPRING),
       animate(imgH, sr.height, SPRING),
-      animate(backdropOpacity, 0, { duration: 0.2 }),
+      animate(backdropOpacity, 0, { duration: 0.35 }),
     ]).then(finishClose);
   }, [imgTop, imgLeft, imgW, imgH, backdropOpacity, finishClose]);
 
@@ -110,9 +108,9 @@ export function LightboxImage({
     const rect = el.getBoundingClientRect();
     if (rect.width === 0 || rect.height === 0) return;
 
-    sourceRect.current = rect;
     resolvedSrc.current = el.currentSrc || el.src;
     expandedRect.current = computeExpandedRect(el, rect);
+    openScrollY.current = window.scrollY;
 
     imgTop.set(rect.top);
     imgLeft.set(rect.left);
@@ -122,28 +120,31 @@ export function LightboxImage({
 
     phaseRef.current = "open";
     pendingOpen.current = true;
+    openAnimDone.current = false;
     setPhase("open");
-    lockScroll();
   }, [imgTop, imgLeft, imgW, imgH, backdropOpacity]);
 
-  // Animate open after portal mounts
-  useEffect(() => {
+  const startOpenAnimation = useCallback(() => {
     if (!pendingOpen.current) return;
     pendingOpen.current = false;
 
     const er = expandedRect.current;
     if (!er) return;
 
-    const raf = requestAnimationFrame(() => {
-      animate(imgTop, er.top, SPRING);
-      animate(imgLeft, er.left, SPRING);
-      animate(imgW, er.width, SPRING);
-      animate(imgH, er.height, SPRING);
-      animate(backdropOpacity, 0.9, { duration: 0.25 });
+    requestAnimationFrame(() => {
+      openAnims.current = [
+        animate(imgTop, er.top, SPRING),
+        animate(imgLeft, er.left, SPRING),
+        animate(imgW, er.width, SPRING),
+        animate(imgH, er.height, SPRING),
+        animate(backdropOpacity, 0.9, { duration: 0.25 }),
+      ];
+      Promise.all(openAnims.current).then(() => {
+        openAnimDone.current = true;
+        openScrollY.current = window.scrollY;
+      });
     });
-
-    return () => cancelAnimationFrame(raf);
-  }, [phase, imgTop, imgLeft, imgW, imgH, backdropOpacity]);
+  }, [imgTop, imgLeft, imgW, imgH, backdropOpacity]);
 
   // Escape key
   useEffect(() => {
@@ -155,19 +156,34 @@ export function LightboxImage({
     return () => window.removeEventListener("keydown", onKey);
   }, [phase, animateClose]);
 
-  // Wheel dismiss — intercept and close on any scroll
+  // Scroll-driven dismiss — page scrolls naturally, image tracks source
   useEffect(() => {
     if (phase !== "open") return;
 
-    const onWheel = (e: WheelEvent) => {
-      e.stopPropagation();
-      if (phaseRef.current === "open") animateClose();
+    const onScroll = () => {
+      if (phaseRef.current !== "open" || !openAnimDone.current) return;
+
+      const el = imgRef.current;
+      const er = expandedRect.current;
+      if (!el || !er) return;
+
+      const scrollDelta = Math.abs(window.scrollY - openScrollY.current);
+      const progress = Math.min(scrollDelta / SCROLL_DISMISS_PX, 1);
+
+      const sr = el.getBoundingClientRect();
+
+      imgTop.set(lerp(er.top, sr.top, progress));
+      imgLeft.set(lerp(er.left, sr.left, progress));
+      imgW.set(lerp(er.width, sr.width, progress));
+      imgH.set(lerp(er.height, sr.height, progress));
+      backdropOpacity.set(0.9 * (1 - progress));
+
+      if (progress >= 1) finishClose();
     };
 
-    window.addEventListener("wheel", onWheel, { capture: true });
-    return () =>
-      window.removeEventListener("wheel", onWheel, { capture: true });
-  }, [phase, animateClose]);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [phase, finishClose, imgTop, imgLeft, imgW, imgH, backdropOpacity]);
 
   // Touch dismiss
   useEffect(() => {
@@ -202,9 +218,6 @@ export function LightboxImage({
     };
   }, [phase, animateClose]);
 
-  // Cleanup on unmount
-  useEffect(() => () => unlockScroll(), []);
-
   const isVisible = phase !== "closed";
 
   return (
@@ -233,6 +246,7 @@ export function LightboxImage({
               src={resolvedSrc.current}
               alt={alt ?? ""}
               className="fixed z-50 cursor-zoom-out"
+              onLoad={startOpenAnimation}
               onClick={animateClose}
               style={{
                 top: imgTop,
