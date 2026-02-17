@@ -1,25 +1,40 @@
 import { allContents } from "contentlayer/generated";
 
 const URL = "https://vishnuu.com";
-const PAGES = ["", "/projects", "/posts"];
 
 function generateSiteMap() {
+  const today = new Date().toISOString().split("T")[0];
+
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     ${PAGES.map((page) => {
-       return `
-        <url>
-            <loc>${URL}${page}</loc>
-        </url>
-      `;
-     }).join("")}
+     <url>
+       <loc>${URL}</loc>
+       <lastmod>${today}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>1.0</priority>
+     </url>
+     <url>
+       <loc>${URL}/projects</loc>
+       <lastmod>${today}</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.8</priority>
+     </url>
+     <url>
+       <loc>${URL}/posts</loc>
+       <lastmod>${today}</lastmod>
+       <changefreq>weekly</changefreq>
+       <priority>0.8</priority>
+     </url>
      ${allContents
-       .map((snippet) => {
+       .map((post) => {
+         const lastmod = new Date(post.date).toISOString().split("T")[0];
          return `
-       <url>
-           <loc>${`${URL}/posts/${snippet.slug}`}</loc>
-       </url>
-     `;
+     <url>
+       <loc>${URL}/posts/${post.slug}</loc>
+       <lastmod>${lastmod}</lastmod>
+       <changefreq>yearly</changefreq>
+       <priority>0.6</priority>
+     </url>`;
        })
        .join("")}
    </urlset>

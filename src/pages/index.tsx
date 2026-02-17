@@ -5,6 +5,7 @@ import Link from "@/components/ui/link";
 import { SOCIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useTransform } from "motion/react";
+import { NextSeo } from "next-seo";
 import { useRef } from "react";
 
 const CURRENT_SECTION = [
@@ -46,6 +47,12 @@ const LINKS = [
 const Landing = () => {
   return (
     <>
+      <NextSeo
+        title="Vishnu | Software Developer & Design Enthusiast"
+        titleTemplate="%s"
+        description="Hey, I'm Vishnu a new-grad from IIT Madras, self-taught developer, and design enthusiast. I build web, desktop, and mobile apps."
+        canonical="https://vishnuu.com"
+      />
       <Intro />
       <AboutMe />
     </>
@@ -93,10 +100,10 @@ const Intro = () => {
                   iit madras
                 </Link>
                 <p className="inline">
-                  , self-taught developer, & design enthusiast. i enjoy
-                  building web, desktop, mobile apps, automations. this is my
-                  little corner on the web where i share my journey and
-                  experiments with
+                  , self-taught developer, & design enthusiast. i enjoy building
+                  web, desktop, mobile apps, automations. this is my little
+                  corner on the web where i share my journey and experiments
+                  with
                   {" y'all :)"}
                 </p>
               </div>
