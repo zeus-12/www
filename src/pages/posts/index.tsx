@@ -7,8 +7,9 @@ const Posts = () => {
   return (
     <>
       <NextSeo
-        title="Blogs | Vishnu"
-        description="A collection of my blog posts."
+        title="Blog"
+        description="Blog posts by Vishnu on software development, web technologies, and building things."
+        canonical="https://vishnuu.com/posts"
       />
       <SlideUpWhenVisible>
         <div className="pt-8 pb-8 px-4 lg:px-24 lg:py-16">
