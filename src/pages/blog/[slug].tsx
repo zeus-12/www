@@ -25,7 +25,7 @@ const Post: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <hr className="border-gray-700 my-3" />
         <Mdx code={snippet?.body?.code} />
         <div className="border-gray-700 border-[0.2px]" />
-        <Link href="/posts" className="flex justify-center mt-12 mb-16">
+        <Link href="/blog" className="flex justify-center mt-12 mb-16">
           <div className="flex gap-2 hover:bg-gray-800 px-4 py-2 rounded-md hover:cursor-pointer">
             <AiOutlineSwapLeft className="w-5 h-5" />
             <p className="text-sm">See all posts</p>

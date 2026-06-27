@@ -9,12 +9,12 @@ const Posts = () => {
       <NextSeo
         title="Blog"
         description="Blog posts by Vishnu on software development, web technologies, and building things."
-        canonical="https://vishnuu.com/posts"
+        canonical="https://vishnuu.com/blog"
       />
       <SlideUpWhenVisible>
         <div className="pt-8 pb-8 px-4 lg:px-24 lg:py-16">
           <p className="text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight">
-            Posts
+            Blog
           </p>
           <p className="text-gray-400">Blog posts.</p>
           <div className="flex flex-col gap-3 w-full mt-8">

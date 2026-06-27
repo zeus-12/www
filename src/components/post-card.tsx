@@ -25,7 +25,7 @@ const PostCard: React.FC<PostCardProps> = ({
 
   return (
     <SpotlightBorder>
-      <Link href={`/posts/${slug}`} className="group block p-4 rounded-lg">
+      <Link href={`/blog/${slug}`} className="group block p-4 rounded-lg">
         <div className="flex items-start justify-between gap-4">
           <div className="flex-1 min-w-0">
             <h3 className="text-lg font-medium text-white group-hover:text-sky-200 transition-colors mb-1">
