@@ -15,8 +15,8 @@ let navItems = [
     icon: <FolderClosedIcon size={18} />,
   },
   {
-    name: "Posts",
-    href: "/posts",
+    name: "Blog",
+    href: "/blog",
     icon: <TextIcon size={18} />,
   },
 ];

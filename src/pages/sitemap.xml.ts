@@ -20,7 +20,7 @@ function generateSiteMap() {
        <priority>0.8</priority>
      </url>
      <url>
-       <loc>${URL}/posts</loc>
+       <loc>${URL}/blog</loc>
        <lastmod>${today}</lastmod>
        <changefreq>weekly</changefreq>
        <priority>0.8</priority>
@@ -30,7 +30,7 @@ function generateSiteMap() {
          const lastmod = new Date(post.date).toISOString().split("T")[0];
          return `
      <url>
-       <loc>${URL}/posts/${post.slug}</loc>
+       <loc>${URL}/blog/${post.slug}</loc>
        <lastmod>${lastmod}</lastmod>
        <changefreq>yearly</changefreq>
        <priority>0.6</priority>
