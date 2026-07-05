@@ -17,8 +17,8 @@ const CURRENT_SECTION = [
   </>,
   <>
     building 🔨{" "}
-    <Link underline href="https://uxie.vercel.app">
-      uxie
+    <Link underline href="https://github.com/zeus-12/plan">
+      plan
     </Link>
   </>,
   <>
