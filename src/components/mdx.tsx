@@ -33,7 +33,7 @@ const MDXComponents = {
     </h2>
   ),
   h3: (props: HeadingProps) => (
-    <h3 className="scroll-m-20 text-xl font-semibold tracking-tight text-gray-100">
+    <h3 className="scroll-m-20 text-xl font-semibold tracking-tight text-gray-100 mt-10 mb-1">
       {props.children}
     </h3>
   ),
