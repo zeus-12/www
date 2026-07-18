@@ -1,0 +1,82 @@
+---
+title: The agentic coding rabbit hole
+description: "How i've been coding with agents lately, the app i built around it, and the apps that fell out of it :)"
+date: 2026-07-06
+---
+
+It's been a crazy few months. i've gone deep into agentic coding, trying out a bunch of workflows, tweaking em, and copying whatever cool stuff other people are doing. i think i've finally settled on a setup that works for me. took a lot of trial and error, and it eventually got me to build my own app to makes the whole thing simpler.
+
+This is mostly a dump of everything i picked up along the way (i promise i'll keep this updated as i learn new things), the workflow stuff that stuck, and the pile of side projects that came out of it now that building things is so much easier.
+
+## Plan
+
+I find myself chatting quite a lot w the llm before getting into code, usually w skills (grill-me by matt pocock is among my favs), and only once we both reach a mutual understanding and i'm satisfied w the soln, i'll get it to write the code.
+
+I also make sure to review the code every time before pushing, going through the diffs, very often copying some lines, pasting em in chat and asking it to make certain changes (and if it's simple enough i'd just make the edit myself (ik, too complicated xd)).
+
+I've used claude code throughout, almost since it dropped, and loved how good it was even back in the day. but i absolutely hated the ux around it, how bad dealing w the terminals was, and on top of that how awful claude code used to be w the flickering and other random ui bugs.
+
+All of this made me realise how much more productive i'd be if only i could have something like that, but personalised to me. even something as small as a copy-trimmed button for text inside a code block, that strips the newlines and replaces em w spaces, so i can paste it straight into a terminal.
+
+I tried [conductor](https://conductor.build/) (and few other similar apps), i liked the idea, but a couple of things made it unusable for me.
+
+- The big one: at work i deal w a bunch of microservices, each in its own git repo. i dump em all into a single folder so i can run claude from there and it has the full context across all of them. that folder obviously isn't git tracked, and these apps needs every project you add to be git tracked. i wanted something that'd instead spin up worktrees for each git repo inside that folder (pretty sure this is a super common problem, and the soln is super simple yet none of em seems to do this).
+
+- The other thing: pretty much every app in this space was built on the claude code sdk. then anthropic dropped sdk support for subscription plans (they reverted this later), so you'd have to bring your own api key. so i built mine w/o the sdk at all, it just runs things in a plain terminal and mirrors everything to a ui (requires some hacky soln here and there, but works pretty well now). honestly the best part of this is that it works w any cli (only claude-code atm, but requires very little code changes to support others), so it can support basically every harness, and even the ones that don't expose a sdk.
+
+It started really small, just an app that watched the plans folder in claude code. every time the ai made a plan through plan mode, it'd open w that text. from there i could select a bit of the plan, add comments on it, copy all the comments i'd added, and send em back to the agent. when the agent comes back w a new plan, it'd show me the diff between v2 and v1, and so on for every version after that.
+
+This was super handy w plan mode, which i really liked early on but grew to hate on bigger projects, where it felt like the agent was just eager to jump into plan mode and didn't care much about the details (grill-me skill FTW).
+
+Then i realised how much more i could do w this, so i took it in that direction, the heart of it now is the commenting: i select some part of what the ai wrote, or some code, or a message it sent, a little popover shows up, i type a comment, and then i can send all my comments to the agent at once.
+
+Around that i've added a bunch of small things, the exact ux, features and keyboard shortcuts i want, plus the worktree support and not being tied to the claude code sdk from earlier. all my little nitpicks, basically.
+
+## The other apps
+
+Here's the fun part. now that shipping is easy, i went a bit overboard. none of these are a "clone of x" kinda apps, it's more me taking apps i've used daily for years, and making it even better.
+
+### Tab
+
+Coming from windows, mac's command-tab drove me nuts. finder shows up even when you don't have a single finder window open. multiple windows of the same app don't show up at all, and to switch between em you have to tab to the app first and then hit cmd + ` to cycle through its windows. and minimized, full-screen or windows on other "screens" are a guessing game.
+
+[Alttab](https://alt-tab-macos.netlify.app/) got me most of the way there and i loved it, but its latest version requires you to pay to have more than 1 workflow, and i wanted a bunch. so i built my own. i can create multiple switchers, give each its own shortcut, and configure each one separately, like whether it shows hidden or minimized apps.
+
+Incase you're interested, my setup:
+
+- cmd-tab shows all the non-minimized apps
+- option-tab shows everything.
+
+so i just minimize whatever i don't want around at the moment, and switching stays dead simple.
+
+### Proxy
+
+This one started as a rant. i hate long subscriptions, w all these ai apps paying $10 per app makes no sense when i'm barely using that much, pricing should be based on how much inference you actually use, not some flat number the dev picks, and the claude/codex subscription is also just way more cost-effective than paying for api keys everywhere, and since i'm paying for it anyway, so it makes sense to use it to run the other apps i use (obv as long as i stay within my rate limits), so win-win for all.
+
+So proxy exposes a local endpoint that lets me use inference from claude code subcription on other apps (also supports streaming), but its pretty slow (really wish claude/codex exposes a decent fast model just for this). i also reverse-engineered claude's speech-to-text and exposed it over websocket, hooked it into typewhisper as a custom integration. (tho i actually prefer groq's speech-to-text for quality and speed, so i don't use this much), but it's exposed anyways :)
+
+### Notch
+
+Apple put the notch on the iphone and built that whole dynamic island experience around it. then they brought the notch to macbooks and did nothing w it. a bunch of apps jumped in to fill the gap, some of the animations were really nice, but it quickly became a mess, every app shoving its own ui into the notch and overlapping each other.
+
+So i thought, why not one app that owns the notch and lets the others plug into it through an api? on top of that i added a dropzone-style shelf, drag files in, go somewhere else, drop em out (mac still has no proper cut-and-paste for files, which is wild), plus drag-to-imgur uploads and quick airdrop. and an extension store, because if raycast (one of my fav apps on mac) taught me anything, it's that people build great stuff when you give em room to.
+
+### Ral
+
+A little voice assistant that listens, talks back and runs things on my machine for me. just the simple stuff i actually use, w a few extras i couldn't find anywhere else. Still a WIP, not too happy w local ai models.
+
+### blink
+
+My wellness app, heavily inspired by lookaway. at its core it just reminds you to take a break every few minutes. on top of that i added stand-up reminders every ten minutes, and posture detection (using a neat library) that tells me to sit up when i start slouching into the desk.
+
+### Scan
+
+The odd one out. my cousin set up a radiology lab, so i built a tool that takes DICOM scans and gives back findings. drawing square boxes on the exact slices where it found something, listing the issue, and then a written final report similar to the ones he generates otherwise. it actually worked, but it was expensive. i ran all sorts of evals and a ton of experiments across a bunch of different models trying to bring the cost down, but the only ones accurate enough to trust were too costly. so it's mostly retired now.
+
+<hr />
+
+So yeah, looking at this list all at once, it's a bit ridiculous. half of these exist just because building them is so easy. that's the part that still gets me, 2 years ago most of em would've stayed as "ideas" notes in my phone, now it's way easier to experiment them, i can poke at a few ideas at once, and even if one turns out to be a flop, it's completely fine.
+
+But im ngl i still miss coding by hand like the good old days, spending hours debugging the dumbest of bugs, and the joy of seeing it work for the first time. lately though i've started to embrace this new way of doing things, and i'm slowly finding some joy in it too, & honestly it's starting to get really addictive :)
+
+And it def doesn't look like it's stopping anytime soon ;)
