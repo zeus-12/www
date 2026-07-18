@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  /* Always reserve space for the vertical scrollbar so the viewport width
+     stays constant across pages. Without this, navigating from a page with no
+     scrollbar (e.g. the overflow-hidden home page) to a scrollable one (blog)
+     shifts every centered fixed element — like the bottom navbar. */
+  scrollbar-gutter: stable;
+}
+
 html,
 body {
   padding: 0;
