@@ -1,13 +1,15 @@
 import ProjectCard from "@/components/project/project-card";
 import SlideUpWhenVisible from "@/components/slide-up-when-visible";
 import { Input } from "@/components/ui/input";
+import { useColumnCount } from "@/hooks/use-column-count";
 import { PROJECTS_DATA } from "@/lib/projects";
 import { SearchIcon } from "lucide-react";
 import { NextSeo } from "next-seo";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const Projects = () => {
   const [query, setQuery] = useState("");
+  const columnCount = useColumnCount();
 
   const [projects, setProjects] = useState(PROJECTS_DATA);
 
@@ -21,6 +23,14 @@ const Projects = () => {
       setProjects(PROJECTS_DATA);
     }
   }, [query]);
+
+  const columns = useMemo(
+    () =>
+      Array.from({ length: columnCount }, (_, columnIndex) =>
+        projects.filter((_, index) => index % columnCount === columnIndex),
+      ),
+    [projects, columnCount],
+  );
 
   return (
     <>
@@ -54,22 +64,25 @@ const Projects = () => {
 
         <div className="mb-4 mt-8">
           {projects.length > 0 ? (
-            <div className="lg:columns-3 sm:columns-2 gap-3 mb-2">
-              {projects.map((project) => (
+            <div className="flex gap-3 mb-2 items-start">
+              {columns.map((column, columnIndex) => (
                 <div
-                  className="break-inside-avoid-column mb-3"
-                  key={project.title}
+                  className="flex flex-1 min-w-0 flex-col gap-3"
+                  key={columnIndex}
                 >
-                  <ProjectCard
-                    shortDescription={project.shortDescription}
-                    isFeatured={project.isFeatured}
-                    title={project.title}
-                    description={project.description}
-                    imageSrc={project.imageSrc}
-                    deployedLink={project.deployedLink}
-                    githubLink={project.githubLink}
-                    techStack={project.techStack}
-                  />
+                  {column.map((project) => (
+                    <ProjectCard
+                      key={project.title}
+                      shortDescription={project.shortDescription}
+                      isFeatured={project.isFeatured}
+                      title={project.title}
+                      description={project.description}
+                      imageSrc={project.imageSrc}
+                      deployedLink={project.deployedLink}
+                      githubLink={project.githubLink}
+                      techStack={project.techStack}
+                    />
+                  ))}
                 </div>
               ))}
             </div>

@@ -23,15 +23,17 @@ const ProjectCard: FC<ProjectCardProps> = ({
   return (
     <div className="w-full bg-neutral-950 border border-gray-800 text-white hover:scale-[1.02] transition-transform duration-200 rounded-md will-change-transform overflow-hidden">
       <SlideUpWhenVisible>
-        <div className="relative w-full aspect-video overflow-hidden">
-          <Image
-            src={imageSrc}
-            className="object-contain"
-            alt={title}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          />
-        </div>
+        {imageSrc && (
+          <div className="relative w-full aspect-video overflow-hidden">
+            <Image
+              src={imageSrc}
+              className="object-contain"
+              alt={title}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            />
+          </div>
+        )}
         <div className="px-2 pb-2">
           <div className="p-1 font-semibold md:p-2 flex justify-between">
             <p>{title}</p>
