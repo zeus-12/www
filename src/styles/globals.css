@@ -35,7 +35,8 @@ body {
   border-top-right-radius: 0;
 }
 
-:not(pre) > code {
+:not(pre) > code,
+kbd {
   font-family: var(--font-geist-mono);
   font-size: 0.85em;
   background: #022a4b;

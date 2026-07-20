@@ -1,3 +1,4 @@
+import Kbd from "@/components/ui/kbd";
 import Link from "@/components/ui/link";
 import { cn } from "@/lib/utils";
 import { useMDXComponent } from "next-contentlayer/hooks";
@@ -23,22 +24,34 @@ const MDXComponents = {
     <Link underline textColorClassName="text-cyan-500" {...props} />
   ),
   h1: (props: HeadingProps) => (
-    <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+    <h1
+      id={props.id}
+      className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl"
+    >
       {props.children}
     </h1>
   ),
   h2: (props: HeadingProps) => (
-    <h2 className="scroll-m-20 pb-1 text-xl font-semibold tracking-tight transition-colors first:mt-0 mt-8">
+    <h2
+      id={props.id}
+      className="scroll-m-20 pb-1 text-xl font-semibold tracking-tight transition-colors first:mt-0 mt-8"
+    >
       {props.children}
     </h2>
   ),
   h3: (props: HeadingProps) => (
-    <h3 className="scroll-m-20 text-xl font-semibold tracking-tight text-gray-100 mt-10 mb-1">
+    <h3
+      id={props.id}
+      className="scroll-m-20 text-xl font-semibold tracking-tight text-gray-100 mt-10 mb-1"
+    >
       {props.children}
     </h3>
   ),
   h4: (props: HeadingProps) => (
-    <h4 className="scroll-m-20 text-base tracking-tight text-gray-300 mb-4">
+    <h4
+      id={props.id}
+      className="scroll-m-20 text-base tracking-tight text-gray-300 mb-4"
+    >
       {props.children}
     </h4>
   ),
@@ -107,6 +120,7 @@ const MDXComponents = {
     </video>
   ),
   span: (props: SpanProps) => <span {...props} />,
+  Kbd: (props: ComponentPropsWithoutRef<"kbd">) => <Kbd {...props} />,
   FeedbackCarousel: () => <FeedbackCarousel />,
   Quote: (props: { text: string }) => <Quote {...props} />,
 };

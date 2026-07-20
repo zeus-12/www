@@ -24,6 +24,11 @@ export const TECH_STACK: { [key: string]: techStack } = {
   GPT: { title: "GPT", color: COLOR.BLUE },
   PUSHER: { title: "Pusher", color: COLOR.VIOLET },
   REDIS: { title: "Redis", color: COLOR.RED },
+  SWIFT: { title: "Swift", color: COLOR.ORANGE },
+  SWIFTUI: { title: "SwiftUI", color: COLOR.CYAN },
+  ELECTRON: { title: "Electron", color: COLOR.CYAN },
+  TYPESCRIPT: { title: "TypeScript", color: COLOR.BLUE },
+  AI_SDK: { title: "AI SDK", color: COLOR.PINK },
 };
 
 interface techStack {
@@ -37,11 +42,84 @@ export interface Project {
   techStack: techStack[];
   githubLink?: string;
   deployedLink?: string;
-  imageSrc: string;
+  imageSrc?: string;
   isFeatured: boolean;
   shortDescription: string;
 }
 export const PROJECTS_DATA: Project[] = [
+  {
+    title: "Plan",
+    shortDescription:
+      "Desktop cockpit for driving coding agents. Comment on any chat, diff or file and send it straight to the live session.",
+    description:
+      "A desktop app for reviewing and iterating on coding agents without copy-pasting your life away. It reads your local Claude projects and sessions, and lets you select any text in a chat, diff, or file, leave comments on it, and send them all into the live agent session running in an embedded terminal. Also does staged/unstaged diff review down to the hunk level, fuzzy file search, project-wide search, and spins up git worktrees per repo. Drives the terminal CLI rather than an SDK, so it can support any harness.",
+    techStack: [TECH_STACK.ELECTRON, TECH_STACK.REACT, TECH_STACK.TYPESCRIPT],
+    githubLink: "https://github.com/zeus-12/plan",
+    deployedLink: "https://plan.vishnuu.com",
+    imageSrc:
+      "https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAfFOuT3hNmMjUZQu26cV4YNfizSEWRHx0IkDLq",
+    isFeatured: true,
+  },
+  {
+    title: "Tab",
+    shortDescription:
+      "A fast macOS window switcher with live previews and custom switching workflows, each with its own shortcut.",
+    description:
+      "A window switcher for macOS that lists every window across every Space with live previews. Lets you build multiple switching workflows, each with its own keyboard shortcut and its own rules for whether hidden or minimized apps show up.",
+    techStack: [TECH_STACK.SWIFT, TECH_STACK.SWIFTUI],
+    githubLink: "https://github.com/zeus-12/tab",
+    isFeatured: false,
+  },
+  {
+    title: "Claude Proxy",
+    shortDescription:
+      "One subscription, AI in every app. Exposes your Claude subscription as a local OpenAI-compatible endpoint.",
+    description:
+      "A menu-bar-only macOS app that turns your Claude Code subscription into a local, OpenAI-compatible API. Point any app that supports a custom OpenAI endpoint at it, and that app now has AI, powered by the subscription you already pay for. Supports streaming and as many endpoints as you want, one per port. Also exposes a reverse-engineered speech-to-text endpoint over WebSocket.",
+    techStack: [TECH_STACK.SWIFT, TECH_STACK.SWIFTUI],
+    githubLink: "https://github.com/zeus-12/claude-proxy",
+    imageSrc:
+      "https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAfSf47HjF0I3FYbqPOtTrvZQ1pnmwXgMfuB9AV",
+    isFeatured: false,
+  },
+  {
+    title: "Notch",
+    shortDescription:
+      "Dynamic-Island-style companion for the MacBook notch, with an open standard any app can post to.",
+    description:
+      "A Dynamic-Island-style panel pinned to the MacBook notch, floating over full-screen apps on every Space. Ships a local socket API so any app can post notifications and live activities to it, instead of every app building its own notch layer. Callers are identified by code signature, with a per-app allowlist and rate limiting.",
+    techStack: [TECH_STACK.SWIFT, TECH_STACK.SWIFTUI],
+    isFeatured: false,
+  },
+  {
+    title: "Ral",
+    shortDescription:
+      "Local-first macOS voice assistant that sees your screen, talks back, and acts on your machine.",
+    description:
+      "A fully on-device macOS assistant. Hold a hotkey to talk: transcription runs on the Apple Neural Engine, a local vision model reads the screen, and speech synthesis replies. It can OCR or actually see the screen, read and replace your current selection, type into fields, and run shell actions. Nothing leaves the machine.",
+    techStack: [TECH_STACK.ELECTRON, TECH_STACK.TYPESCRIPT, TECH_STACK.SWIFT],
+    isFeatured: false,
+  },
+  {
+    title: "Blink",
+    shortDescription:
+      "macOS menu-bar app that protects your eyes, posture and movement during long sessions.",
+    description:
+      "A menu-bar wellness app for long computer sessions: 20-20-20 eye breaks, sit/stand and hydration reminders, full-screen break overlays across every display, and on-device posture detection. Smart-pauses for full-screen apps, meetings and recordings, and never saves a camera frame.",
+    techStack: [TECH_STACK.ELECTRON, TECH_STACK.TYPESCRIPT, TECH_STACK.SWIFT],
+    isFeatured: false,
+  },
+  {
+    title: "Scan",
+    shortDescription:
+      "Takes DICOM radiology scans and returns annotated findings plus a written report.",
+    description:
+      "Built for a radiology lab. Ingests DICOM scans, draws boxes on the exact slices where it finds something, lists the issues, and produces a written final report. Comes with an eval harness used to compare accuracy and cost across a bunch of different models.",
+    techStack: [TECH_STACK.NEXTJS, TECH_STACK.TYPESCRIPT, TECH_STACK.AI_SDK],
+    imageSrc:
+      "https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAfKeuhI4cy4FBiO65mqgIW1pZLTYkJhuoEvUaj",
+    isFeatured: false,
+  },
   {
     title: "Uxie",
     shortDescription:
