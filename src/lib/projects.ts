@@ -68,6 +68,8 @@ export const PROJECTS_DATA: Project[] = [
       "A window switcher for macOS that lists every window across every Space with live previews. Lets you build multiple switching workflows, each with its own keyboard shortcut and its own rules for whether hidden or minimized apps show up.",
     techStack: [TECH_STACK.SWIFT, TECH_STACK.SWIFTUI],
     githubLink: "https://github.com/zeus-12/tab",
+    imageSrc:
+      "https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAf9SsxiPI558FlTzKsOEuG1C64McjHw2tIko7D",
     isFeatured: false,
   },
   {
