@@ -4,7 +4,7 @@ description: "How i've been coding with agents lately, the app i built around it
 date: 2026-07-20
 ---
 
-It's been a crazy few months. i've gone deep into agentic coding, trying out a bunch of workflows, copying whatever cool stuff other people are doing, and tweaking em. i think i've finally settled on a setup that works for me. took a lot of trial and error, and it eventually got me to build my own app to makes the whole thing simpler.
+It's been a crazy few months. i've gone deep into agentic coding, trying out a bunch of workflows, copying whatever cool stuff other people are doing, and tweaking em. i think i've finally settled on a setup that works for me. took a lot of trial and error, and it eventually got me to build my own app to make the whole thing simpler.
 
 This is mostly a dump of everything i picked up along the way (promise i'll keep this updated as i learn new things), the workflow stuff that stuck, and the pile of side projects that came out of it now that building things is so much easier.
 
@@ -14,13 +14,13 @@ I also make sure to review the code every time before pushing, going through the
 
 I've used claude code throughout, almost since it dropped, and loved how good it was even back in the day. but i absolutely hated the ux around it, how bad dealing w the terminals was, and on top of that how awful claude code used to be w the flickering and other random ui bugs.
 
-All of this made me realise how much more productive i'd be if only i could have something like that, but personalised to me, outside of the terminal. even something as small as a copy-trimmed button for text inside a code block, that strips the newlines and replaces em w spaces, so i can paste it straight into a terminal.
+All of this made me realise how much more productive i'd be if only i could have something like that, but personalised to me, outside of the terminal. even something as small as a copy-trim button on text inside a code block that strips the newlines and replaces em w spaces, so i can paste it straight into a terminal.
 
-I tried [conductor](https://conductor.build/) (and few other similar apps), i liked the idea, but a couple of things made it totally unusable for me.
+I tried [conductor](https://conductor.build/) (and a few other similar apps), i liked the idea, but a couple of things made it totally unusable for me.
 
-- The big one: at work i deal w a bunch of microservices, each in its own git repo. i dump em all into a single folder so i can run claude from there and it has the full context across all of them. that folder obviously isn't git tracked, and these apps needs every project you add to be git tracked. i wanted something that'd instead spin up worktrees for each git repo inside that folder (pretty sure this is a super common problem, and the soln is super simple yet none of em seems to do this).
+- The big one: at work i deal w a bunch of microservices, each in its own git repo. i dump em all into a single folder so i can run claude from there and it has the full context across all of them. that folder obviously isn't git tracked, and these apps need every project you add to be git tracked. i wanted something that'd instead spin up worktrees for each git repo inside that folder (pretty sure this is a super common problem, and the soln is super simple yet none of em seem to do this).
 
-- The other thing: pretty much every app in this space was built on the claude code sdk. then anthropic dropped sdk support for subscription plans (they reverted this later), so you'd have to bring your own api key. so i built mine w/o the sdk at all, it just runs things in a plain terminal and mirrors everything to a ui (requires some hacky soln here and there, but works pretty well now). honestly the best part of this is that it works w any cli (only claude-code atm, but requires very little code changes to support others), so it can support basically every harness, and even the ones that don't expose a sdk.
+- The other thing: pretty much every app in this space was built on the claude code sdk. then anthropic dropped sdk support for subscription plans (they reverted this later), so you'd have to bring your own api key. so i built mine w/o the sdk at all, it just runs things in a plain terminal and mirrors everything to a ui (requires some hacky soln here and there, but works pretty well now). honestly the best part of this is that it works w any cli (only claude-code atm, but requires very few code changes to support others), so it can support basically every harness, and even the ones that don't expose a sdk.
 
 All of this led me to build my own app:
 
@@ -32,7 +32,7 @@ This was super handy w plan mode, which i really liked early on but grew to hate
 
 Then i realised how much more i could do w this, so i took it in that direction. it's built around commenting & worktrees: i select some part of what the ai wrote, or some code, or a message it sent, a little popover shows up, i type a comment, and send all my comments to the agent at once, and worktrees let me work on multiple things at the same time w/o them getting in each other's way.
 
-Around that i've added a bunch of small things, the exact ux, features and keyboard shortcuts i want, plus the worktree support and not being tied to the claude code sdk from earlier, pr tab to see file changes, diffs tab, all my little nitpicks/annoyances basically, a soln to completely replace all other coding apps.
+Around that i've added a bunch of small things: the exact ux, features and keyboard shortcuts i want, worktree support, not tied to the claude code sdk, a pr tab for file changes, a diffs tab, and all my little nitpicks: basically a soln to completely replace all other coding apps.
 
 <br />
 
@@ -48,11 +48,11 @@ Theres also a [web version](https://plan.vishnuu.com), a lite tool for checking 
 
 ## The other apps
 
-Here's the fun part. now that shipping is easy, i went a bit overboard. none of these are a "clone of x" kinda apps, it's more me taking apps i've used daily for years, and making it even better. And all of these are built w claude code running on the [plan](#plan) app.
+Here's the fun part. now that shipping is easy, i went a bit overboard. none of these are "clone of x" kinda apps, it's more me taking apps i've used daily for years and making them even better. And all of these are built w claude code running on the [plan](#plan) app.
 
 ### Tab
 
-Coming from windows, mac's command-tab drove me nuts. finder shows up even when you don't have a single finder window open. multiple windows of the same app don't show up at all, and to switch between em you have to tab to the app first and then hit cmd + ` to cycle through its windows. and minimized, full-screen or windows on other "screens" are a guessing game.
+Coming from windows, mac's command-tab drove me nuts. finder shows up even when you don't have a single finder window open. multiple windows of the same app don't show up at all, and to switch between em you have to tab to the app first and then hit cmd + ` to cycle through its windows. and figuring out whether something's minimized, full-screen, or on another screen is basically a guessing game.
 
 [Alttab](https://alt-tab-macos.netlify.app/) got me most of the way there and i loved it, but its latest version requires you to pay to have more than 1 workflow, and i wanted a bunch. so i built my own. i can create multiple switchers, give each its own shortcut, and configure each one separately, like whether it shows hidden or minimized apps.
 
@@ -74,9 +74,9 @@ so i just minimize whatever i don't want around at the moment, and switching sta
 
 ### Claude Proxy
 
-This one started as a rant. i hate long subscriptions, w all these ai apps paying $10 per app makes no sense when i'm barely using that much, pricing should be based on how much inference you actually use, not some flat number the dev picks, and the claude/codex subscription is also just way more cost-effective than paying for api keys everywhere, and since i'm paying for it anyway, so it makes sense to use it to run the other apps i use (obv as long as i stay within my rate limits), so win-win for all.
+This one started as a rant. i hate long subscriptions w all these ai apps, paying $10+ per app makes no sense when i'm barely using that much. pricing should be based on how much inference you actually use, not some flat number the dev picks. the claude/codex subscription is also just way more cost-effective than paying for api keys everywhere, and since i'm paying for it anyway, it makes sense to use it to run the other apps i use too (obv as long as i stay within my rate limits) win-win for all.
 
-So proxy exposes a local endpoint that lets me use inference from claude code subcription on other apps (also supports streaming), but its pretty slow (really wish claude/codex exposes a decent fast model just for this). i also reverse-engineered claude's speech-to-text and exposed it over websocket, and wrote a [typewhisper plugin](https://github.com/zeus-12/claude-subscription-typewhisper-plugin) that uses that endpoint. (tho i actually prefer groq's speech-to-text for quality and speed, so i don't use this much), but it's exposed anyways :)
+So _Claude Proxy_ exposes a local endpoint that lets me use inference from my claude code subscription on other apps (also supports streaming), but its pretty slow (really wish claude/codex exposes a decent fast model just for this). i also reverse-engineered claude's speech-to-text and exposed it over websocket, and wrote a [typewhisper plugin](https://github.com/zeus-12/claude-subscription-typewhisper-plugin) that uses that endpoint (tho i actually prefer groq's speech-to-text for quality and speed, so i don't use this much, but it's exposed anyways :))
 
 <br />
 
@@ -99,7 +99,7 @@ A little voice assistant that listens, talks back and runs things on my machine 
 
 ### Blink
 
-My wellness app, heavily inspired by [Lookaway](https://lookaway.com/) (very well designed app). at its core it just reminds you to take a break every few minutes. on top of that i added stand-up reminders every ten minutes, and posture detection (using a neat library) that tells me to sit up when i start slouching into the desk.
+My wellness app, heavily inspired by [Lookaway](https://lookaway.com/) (very well designed app). at its core it just reminds you to take a break every few minutes. on top of that i added stand-up reminders every ten minutes, and posture detection (using a neat library) that tells me to sit up when i start slouching at my desk.
 
 ### Scan
 
@@ -116,7 +116,7 @@ The odd one out. my cousin set up a radiology lab, so i built a tool that takes 
 
 <hr />
 
-So yeah, looking at this list all at once, it's a bit ridiculous. half of these exist just because building them is so easy. that's the part that still gets me, 2 years ago most of em would've stayed as "ideas" notes in my phone, now it's way easier to experiment them, i can poke at a few ideas at once, and even if one turns out to be a flop, it's completely fine.
+So yeah, looking at this list all at once, it's a bit ridiculous. half of these exist just because building them is so easy. that's the part that still gets me, 2 years ago most of em would've stayed as "ideas" notes in my phone, now it's way easier to experiment w them, i can poke at a few ideas at once, and even if one turns out to be a flop, it's completely fine.
 
 But im ngl i still miss coding by hand like the good old days, spending hours debugging the dumbest of bugs, and the joy of seeing it work for the first time. lately though i've started to embrace this new way of doing things, and i'm slowly finding some joy in it too, & honestly it's starting to get really addictive :)
 
