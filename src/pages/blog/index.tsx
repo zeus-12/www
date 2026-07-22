@@ -16,7 +16,9 @@ const Posts = () => {
           <p className="text-3xl lg:text-5xl lg:mb-2 font-semibold tracking-tight">
             Blog
           </p>
-          <p className="text-gray-400">Blog posts.</p>
+          <p className="text-gray-400">
+            Thoughts on code, tools, and building things.
+          </p>
           <div className="flex flex-col gap-3 w-full mt-8">
             {allContents
               ?.sort(
