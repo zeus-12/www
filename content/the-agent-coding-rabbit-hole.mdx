@@ -76,7 +76,9 @@ so i just minimize whatever i don't want around at the moment, and switching sta
 
 This one started as a rant. i hate long subscriptions w all these ai apps, paying $10+ per app makes no sense when i'm barely using that much. pricing should be based on how much inference you actually use, not some flat number the dev picks. the claude/codex subscription is also just way more cost-effective than paying for api keys everywhere, and since i'm paying for it anyway, it makes sense to use it to run the other apps i use too (obv as long as i stay within my rate limits) win-win for all.
 
-So _Claude Proxy_ exposes a local endpoint that lets me use inference from my claude code subscription on other apps (also supports streaming), but its pretty slow (really wish claude/codex exposes a decent fast model just for this). i also reverse-engineered claude's speech-to-text and exposed it over websocket, and wrote a [typewhisper plugin](https://github.com/zeus-12/claude-subscription-typewhisper-plugin) that uses that endpoint (tho i actually prefer groq's speech-to-text for quality and speed, so i don't use this much, but it's exposed anyways :))
+So _Claude Proxy_ exposes a local endpoint that lets me use inference from my claude code subscription on other apps (also supports streaming), but its pretty slow (really wish claude/codex exposes a decent fast model just for this). i also reverse-engineered claude's speech-to-text and exposed it over websocket, and wrote a [typewhisper plugin](https://github.com/zeus-12/claude-subscription-typewhisper-plugin) that uses that endpoint (tho i actually prefer groq's speech-to-text for quality and speed).
+
+For long meetings tho, it's still claude proxy. it powers [Anarlog](https://github.com/fastrepl/anarlog) (the granola alternative i use) for both speech-to-text and summarisation, and it works really well.
 
 <br />
 
@@ -114,6 +116,18 @@ The odd one out. my cousin set up a radiology lab, so i built a tool that takes 
   className="mx-auto h-auto w-full rounded-md"
 />
 
+### Uxie on desktop
+
+Right at the end of [the uxie post](/blog/why-i-built-uxie) i wrote that maybe the next step was pushing it to desktop, w everything happening locally: storage, highlights, embeddings, llms, all on device. that was mostly me daydreaming out loud. well, it's built now :)
+
+The whole thing runs on my machine. embeddings are generated and stored on device, so nothing ever hits our web servers. no upload step, no waiting on a server to chunk & embed a 300 page textbook, and none of what i read leaves my laptop.
+
+And all the inference goes through [claude proxy](#claude-proxy): chat (added tool call support to claude proxy for this to work), flashcard generation. which means every dumb question i ask about the pdf, and i mean dumb ("what is this paragraph even saying", "explain this diagram like im five"), gets answered by opus for 0 additional cost.
+
+Back in 2024 the ai features in uxie were me rationing api calls and praying we wouldn't hit rate limits mid-demo (we did, on the final demo day, and had to fall back to pre-recorded videos). now it's the actual state-of-the-art model sitting on my laptop, patiently answering my silliest questions. absolutely wild!
+
+<br />
+<br />
 <hr />
 
 So yeah, looking at this list all at once, it's a bit ridiculous. half of these exist just because building them is so easy. that's the part that still gets me, 2 years ago most of em would've stayed as "ideas" notes in my phone, now it's way easier to experiment w them, i can poke at a few ideas at once, and even if one turns out to be a flop, it's completely fine.
