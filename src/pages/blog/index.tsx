@@ -7,7 +7,7 @@ const Posts = () => {
   return (
     <>
       <NextSeo
-        title="Blog"
+        title="blog"
         description="Blog posts by Vishnu on software development, web technologies, and building things."
         canonical="https://vishnuu.com/blog"
       />

@@ -48,7 +48,7 @@ const Landing = () => {
   return (
     <>
       <NextSeo
-        title="Vishnu | Software Developer & Design Enthusiast"
+        title="vishnu · swe"
         titleTemplate="%s"
         description="Hey, I'm Vishnu a new-grad from IIT Madras, self-taught developer, and design enthusiast. I build web, desktop, and mobile apps."
         canonical="https://vishnuu.com"
