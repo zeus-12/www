@@ -35,7 +35,7 @@ const Projects = () => {
   return (
     <>
       <NextSeo
-        title="Projects"
+        title="projects"
         description="Projects by Vishnu: web apps, desktop apps, mobile apps, and automations. Featuring Uxie (PDF reader with collaboration), FMHY, and more."
         canonical="https://vishnuu.com/projects"
       />

@@ -1,6 +1,6 @@
 export const SEO = {
-  titleTemplate: "%s | Vishnu",
-  defaultTitle: "Vishnu | Software Developer & Design Enthusiast",
+  titleTemplate: "%s · vishnu",
+  defaultTitle: "vishnu · swe",
   description:
     "Hey, I'm Vishnu a new-grad from IIT Madras, self-taught developer, and design enthusiast. I build web, desktop, and mobile apps.",
   canonical: "https://vishnuu.com",

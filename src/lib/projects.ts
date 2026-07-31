@@ -252,3 +252,9 @@ export const PROJECTS_DATA: Project[] = [
 export const FEATURED_PROJECTS = PROJECTS_DATA.filter(
   (project) => project.isFeatured,
 );
+
+export const slugifyProject = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
