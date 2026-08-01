@@ -57,7 +57,7 @@ export const PROJECTS_DATA: Project[] = [
     githubLink: "https://github.com/zeus-12/plan",
     deployedLink: "https://plan.vishnuu.com",
     imageSrc:
-      "https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAfFOuT3hNmMjUZQu26cV4YNfizSEWRHx0IkDLq",
+      "https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAfIyEvtCZRsbfWuJcAjPqXUzlwTD7e34rxG18H",
     isFeatured: true,
   },
   {
