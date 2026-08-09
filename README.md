@@ -1,3 +1,5 @@
+
+
 # Vishnu's Portfolio
 
 This site is built with
@@ -42,8 +44,8 @@ to start production server
 
 #### `bun build`
 
-to generate production build. The built assets will be in under `/.next` directory.
+to generate production build. The built assets will be in the `/.next` directory.
 
 ## Todo
 
-- move images in public/ to ut.
+- move images in public/ to `.`.
