@@ -4,13 +4,11 @@ description: "How i've been coding with agents lately, the app i built around it
 date: 2026-07-20
 ---
 
-It's been a crazy few months. i've gone deep into agentic coding, trying out a bunch of workflows, copying whatever cool stuff other people are doing, and tweaking em. i think i've finally settled on a setup that works for me. took a lot of trial and error, and it eventually got me to build my own app to make the whole thing simpler.
+It's been a crazy few months. i've gone deep into agentic coding, trying out a bunch of workflows, copying whatever cool stuff other people are doing, and tweaking em. i think i've finally settled on a setup that works for me, & it eventually got me to build my own app to make the whole thing simpler.
 
 This is mostly a dump of everything i picked up along the way (promise i'll keep this updated as i learn new things), the workflow stuff that stuck, and the pile of side projects that came out of it now that building things is so much easier.
 
-I find myself chatting quite a lot w the llm before getting into code, usually w skills (grill-me by matt pocock is among my favs), and only once we both reach a mutual understanding and i'm satisfied w the soln, i'll get it to write the code.
-
-I also make sure to review the code every time before pushing, going through the diffs, very often copying some lines, pasting em in chat and asking it to make certain changes (and if it's simple enough i'd just make the edit myself (ik, too complicated xd)).
+I find myself chatting quite a lot w the llm before getting into code, usually w skills (grill-me by matt pocock is among my favs), and i also make sure to review the code every time before pushing, going through the diffs, very often copying some lines, pasting em in chat and asking it to make certain changes (and if it's simple enough i'd just make the edit myself (ik, too complicated xd)).
 
 I've used claude code throughout, almost since it dropped, and loved how good it was even back in the day. but i absolutely hated the ux around it, how bad dealing w the terminals was, and on top of that how awful claude code used to be w the flickering and other random ui bugs.
 
@@ -30,7 +28,7 @@ It started really small, just an app that watched the plans folder in claude cod
 
 This was super handy w plan mode, which i really liked early on but grew to hate on bigger projects, where it felt like the agent was just eager to jump into plan mode and didn't care much about the details ([grill-me](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md) skill FTW).
 
-Then i realised how much more i could do w this, so i took it in that direction. it's built around commenting & worktrees: i select some part of what the ai wrote, or some code, or a message it sent, a little popover shows up, i type a comment, and send all my comments to the agent at once, and worktrees let me work on multiple things at the same time w/o them getting in each other's way.
+Then i realised how much more i could do w this, so i took it in that direction. it's built around commenting & worktrees: i select some part of what the ai wrote, or some code, or a message it sent, a little popover shows up, i type a comment, and send all my comments to the agent at once, and worktrees let me work on multiple things at the same time w/o them getting in each other's way. and i manage the worktrees myself, i explicitly ask the agent not to touch em.
 
 Around that i've added a bunch of small things: the exact ux, features and keyboard shortcuts i want, worktree support, not tied to the claude code sdk, a pr tab for file changes, a diffs tab, and all my little nitpicks: basically a soln to completely replace all other coding apps.
 
