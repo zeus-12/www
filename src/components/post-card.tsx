@@ -31,9 +31,7 @@ const PostCard: React.FC<PostCardProps> = ({
             <h3 className="text-lg font-medium text-white group-hover:text-sky-200 transition-colors mb-1">
               {title}
             </h3>
-            <p className="text-sm text-gray-400 line-clamp-2 font-mono">
-              {description}
-            </p>
+            <p className="line-clamp-2 text-sm text-gray-400">{description}</p>
           </div>
           {formattedDate && (
             <p className="shrink-0 text-gray-400 hidden sm:block">

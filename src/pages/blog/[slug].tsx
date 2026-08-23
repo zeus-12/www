@@ -16,11 +16,13 @@ const Post: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <>
       <NextSeo title={snippet?.title} description={snippet?.description} />
-      <div className="max-w-3xl mx-auto px-4 sm:px-8 mb-24">
+      <div className="mx-auto mb-24 max-w-2xl px-4 sm:px-8">
         <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold mt-12 md:mt-20">
           {snippet?.title}
         </h1>
-        <p className="text-gray-400 mt-1 font-mono text-sm sm:text-base">{snippet?.description}</p>
+        <p className="mt-1 text-sm text-gray-400 sm:text-base">
+          {snippet?.description}
+        </p>
 
         <hr className="border-gray-700 my-3" />
         <Mdx code={snippet?.body?.code} />

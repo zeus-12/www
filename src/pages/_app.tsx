@@ -1,16 +1,16 @@
 import Navbar from "@/components/navbar";
 import ScrollObserver from "@/lib/scroll-observer";
+import { serifFont } from "@/lib/utils";
 import "@/styles/globals.css";
-import { AppProps } from "next/app";
-import "prism-themes/themes/prism-night-owl.css";
 import { Analytics } from "@vercel/analytics/next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import Lenis from "lenis";
 import { DefaultSeo } from "next-seo";
+import { AppProps } from "next/app";
+import "prism-themes/themes/prism-night-owl.css";
 import { useEffect } from "react";
 import { SEO } from "../../next-seo.config";
-import { serifFont } from "@/lib/utils";
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -28,7 +28,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ScrollObserver>
-      <main className={`${GeistSans.variable} ${GeistMono.variable} ${serifFont.variable} font-sans`}>
+      <main
+        className={`${GeistSans.variable} ${GeistMono.variable} ${serifFont.variable} font-sans antialiased`}
+      >
         <DefaultSeo {...SEO} />
         <Navbar />
         <Component {...pageProps} />

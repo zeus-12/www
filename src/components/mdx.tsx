@@ -60,7 +60,7 @@ const MDXComponents = {
     <p
       {...props}
       className={cn(
-        "font-serif leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-[17px]/[30px] md:text-lg/8",
+        "font-serif leading-7 [&:not(:first-child)]:mt-6 text-gray-300 text-[17px]/[30px] md:text-lg/8",
         props.className,
       )}
     >
@@ -76,7 +76,7 @@ const MDXComponents = {
   li: (props: ListItemProps) => (
     <li
       className={cn(
-        "font-serif leading-7 [&:not(:first-child)]:mt-6 text-gray-200 text-base/7 md:text-lg/8",
+        "font-serif leading-7 [&:not(:first-child)]:mt-6 text-gray-300 text-base/7 md:text-lg/8",
         props.className,
       )}
     >
