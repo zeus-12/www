@@ -90,7 +90,7 @@ const Intro = () => {
                 <p className="inline">
                   hey, i&apos;m{" "}
                   <span className="bg-green-200 font-medium">vishnu</span>, a{" "}
-                  {age} y/o new-grad from{" "}
+                  {age} y/o grad from{" "}
                 </p>
                 <Link
                   underline
