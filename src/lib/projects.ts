@@ -94,15 +94,15 @@ export const PROJECTS_DATA: Project[] = [
     isFeatured: true,
   },
   {
-    title: "Claude Proxy",
+    title: "LLM Proxy",
     shortDescription:
       "One subscription, AI in every app. Exposes your Claude subscription as a local OpenAI-compatible endpoint.",
     description:
       "A menu-bar-only macOS app that turns your Claude Code subscription into a local, OpenAI-compatible API. Point any app that supports a custom OpenAI endpoint at it, and that app now has AI, powered by the subscription you already pay for. Supports streaming and as many endpoints as you want, one per port. Also exposes a reverse-engineered speech-to-text endpoint over WebSocket.",
     techStack: [TECH_STACK.SWIFT, TECH_STACK.SWIFTUI],
-    githubLink: "https://github.com/zeus-12/claude-proxy",
+    githubLink: "https://github.com/zeus-12/llm-proxy",
     imageSrc:
-      "https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAfSf47HjF0I3FYbqPOtTrvZQ1pnmwXgMfuB9AV",
+      "https://3t8svmawgx.ufs.sh/f/l1Rzm4sjmoAfzXgW1No5o0w9dDYHk3GgKVBOERNIlJT1mPXx",
     isFeatured: false,
   },
   {
